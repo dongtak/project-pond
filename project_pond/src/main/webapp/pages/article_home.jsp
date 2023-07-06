@@ -1,27 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<form action="Login" method="POST">
-				<input type="text" placeholder="아이디 입력" id="id" name="id"> <input
-					type="password" placeholder="비밀번호 입력" id="pwd" name="pwd">
-				<button>로그인</button>
+			
+			<form action="LeaveComment" method="post">
+				<input type="text" placeholder="댓글을 남겨주세요" id="comment" name="comment">
+				<button>댓글 쓰기</button>
 			</form>
-			<a href="findAcc">아이디/비밀번호 찾기</a> <a href="signup">회원가입</a>
+				
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
-
-
-
 </body>
 </html>
