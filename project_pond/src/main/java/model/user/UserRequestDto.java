@@ -19,6 +19,7 @@ public class UserRequestDto {
 	
 	public UserRequestDto(String id, String pwd, String name, String email, int birth, String phone, String address,
 			int rank) {
+		
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
@@ -31,6 +32,7 @@ public class UserRequestDto {
 	
 	public UserRequestDto(String id, String pwd, String name, String email
 			) {
+		
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
