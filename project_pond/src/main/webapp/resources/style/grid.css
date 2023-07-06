@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+div#wrap{
+	display:grid;
+    grid-template-rows : 120px minmax(60vh, 1fr) 200px;
+    grid-template-columns: 150px auto auto;
+
+    grid-template-areas: 
+        "header header header"
+        "aside section section"
+        "footer footer footer"
+    ;
+}
+
+.header{
+	grid-area:header;
+}
+
+.aside{
+	grid-area:aside;
+}
+
+.section{
+	grid-area:section;
+}
+
+
+.footer{
+	grid-area:footer;
+}
