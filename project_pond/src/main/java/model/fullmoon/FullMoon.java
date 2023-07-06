@@ -1,11 +1,13 @@
 package model.fullmoon;
 
+import java.sql.Timestamp;
+
 public class FullMoon {
 
 	private String moonNum;
 	private String title;
 	private String content;
-//	private Date createdAt;
+	private Timestamp createdAt;
 	private int goal;
 	private int donate;
 	private String donateId;
