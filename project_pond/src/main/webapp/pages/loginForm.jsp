@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="signup">
+	회원가입
+	</a>
 
 </body>
 </html>

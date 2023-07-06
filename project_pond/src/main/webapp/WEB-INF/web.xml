@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>project_pond</display-name>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
@@ -15,9 +15,19 @@
 	</welcome-file-list>
 
 	<!-- 1. 서블릿 페이지 맵핑 -->
-	
-	
-		<!-- 2. JSP 페이지 맵핑 -->
+
+	<servlet>
+		<servlet-name>LeaveCommentFromAction</servlet-name>
+		<servlet-class>controller.LeaveCommentFromAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LeaveCommentFromAction</servlet-name>
+		<url-pattern>/LeaveComment</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 2. JSP 페이지 맵핑 -->
 	<servlet>
 		<servlet-name>header</servlet-name>
 		<jsp-file>/header.jsp</jsp-file>
@@ -37,8 +47,8 @@
 		<servlet-name>footer</servlet-name>
 		<url-pattern>/footer</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>about</servlet-name>
 		<jsp-file>/pages/about.jsp</jsp-file>
 	</servlet>
@@ -47,8 +57,8 @@
 		<servlet-name>about</servlet-name>
 		<url-pattern>/about</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>moon</servlet-name>
 		<jsp-file>/pages/moon.jsp</jsp-file>
 	</servlet>
@@ -57,8 +67,8 @@
 		<servlet-name>moon</servlet-name>
 		<url-pattern>/moon</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>article</servlet-name>
 		<jsp-file>/pages/article.jsp</jsp-file>
 	</servlet>
@@ -67,8 +77,8 @@
 		<servlet-name>article</servlet-name>
 		<url-pattern>/article</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>loginForm</servlet-name>
 		<jsp-file>/pages/loginForm.jsp</jsp-file>
 	</servlet>
@@ -77,15 +87,7 @@
 		<servlet-name>loginForm</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
-		<servlet-name>sinupForm</servlet-name>
-		<jsp-file>/signupForm.jsp</jsp-file>
-	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>signupForm</servlet-name>
-		<url-pattern>/signup</url-pattern>
-	</servlet-mapping>
+
 </web-app>
 

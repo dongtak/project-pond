@@ -8,13 +8,13 @@ import java.sql.ResultSet;
 public class DBManager {
 
 	public static Connection getConnection() {
-		
+
 		Connection conn = null;
-		
+
 		String url = ***
 		String username = "admin";
 		String password = ***
-			
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, username, password);
@@ -26,10 +26,10 @@ public class DBManager {
 		}
 
 		return conn;
-		
+
 	}
 
-		public static void close(Connection conn, PreparedStatement pstmt) {
+	public static void close(Connection conn, PreparedStatement pstmt) {
 		try {
 			pstmt.close();
 			conn.close();
@@ -37,7 +37,7 @@ public class DBManager {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			rs.close();
