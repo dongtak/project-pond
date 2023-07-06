@@ -1,7 +1,8 @@
 package model.payinfo;
 
-public class PayInfo {
-
+public class PayInfoRequestDto {
+	
+	
 	private String userid;
 	private String cardName;
 	private String cardNum;
@@ -9,7 +10,7 @@ public class PayInfo {
 	private String cardExpire;
 	
 	
-	public PayInfo(String userid, String cardName, String cardNum, String cardPwd, String cardExpire) {
+	public PayInfoRequestDto(String userid, String cardName, String cardNum, String cardPwd, String cardExpire) {
 		
 		this.userid = userid;
 		this.cardName = cardName;
@@ -24,8 +25,18 @@ public class PayInfo {
 	}
 
 
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+
 	public String getCardName() {
 		return cardName;
+	}
+
+
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
 	}
 
 
@@ -34,14 +45,33 @@ public class PayInfo {
 	}
 
 
+	public void setCardNum(String cardNum) {
+		this.cardNum = cardNum;
+	}
+
+
 	public String getCardPwd() {
 		return cardPwd;
+	}
+
+
+	public void setCardPwd(String cardPwd) {
+		this.cardPwd = cardPwd;
 	}
 
 
 	public String getCardExpire() {
 		return cardExpire;
 	}
+
+
+	public void setCardExpire(String cardExpire) {
+		this.cardExpire = cardExpire;
+	}
+	
+	
+	
+	
 	
 	
 	

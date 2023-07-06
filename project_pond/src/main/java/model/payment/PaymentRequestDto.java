@@ -2,7 +2,7 @@ package model.payment;
 
 import java.sql.Timestamp;
 
-public class Payment {
+public class PaymentRequestDto {
 	
 	private String userid;
 	private int field;
@@ -10,8 +10,9 @@ public class Payment {
 	private Timestamp payday;
 	
 	
-	public Payment(String userid, int field, String moonNum, Timestamp payday) {
 	
+	public PaymentRequestDto(String userid, int field, String moonNum, Timestamp payday) {
+		
 		this.userid = userid;
 		this.field = field;
 		this.moonNum = moonNum;
@@ -19,14 +20,29 @@ public class Payment {
 	}
 
 
+
 	public String getUserid() {
 		return userid;
 	}
 
 
-	public int getfield() {
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+
+
+	public int getField() {
 		return field;
 	}
+
+
+
+	public void setField(int field) {
+		this.field = field;
+	}
+
 
 
 	public String getMoonNum() {
@@ -34,8 +50,21 @@ public class Payment {
 	}
 
 
+
+	public void setMoonNum(String moonNum) {
+		this.moonNum = moonNum;
+	}
+
+
+
 	public Timestamp getPayday() {
 		return payday;
+	}
+
+
+
+	public void setPayday(Timestamp payday) {
+		this.payday = payday;
 	}
 	
 	
@@ -43,4 +72,5 @@ public class Payment {
 	
 	
 	
+
 }

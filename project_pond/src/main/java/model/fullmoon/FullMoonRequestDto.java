@@ -2,8 +2,9 @@ package model.fullmoon;
 
 import java.sql.Timestamp;
 
-public class FullMoon {
-
+public class FullMoonRequestDto {
+	
+	
 	private String moonNum;
 	private String title;
 	private String content;
@@ -14,9 +15,9 @@ public class FullMoon {
 	private String adminId;
 	
 	
-	public FullMoon(String moonNum, String title, String content, Timestamp createdAt, int goal, int donate,
+	public FullMoonRequestDto(String moonNum, String title, String content, Timestamp createdAt, int goal, int donate,
 			String donateId, String adminId) {
-		
+	
 		this.moonNum = moonNum;
 		this.title = title;
 		this.content = content;
@@ -33,8 +34,18 @@ public class FullMoon {
 	}
 
 
+	public void setMoonNum(String moonNum) {
+		this.moonNum = moonNum;
+	}
+
+
 	public String getTitle() {
 		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 
@@ -43,8 +54,18 @@ public class FullMoon {
 	}
 
 
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+
 	public Timestamp getCreatedAt() {
 		return createdAt;
+	}
+
+
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
 	}
 
 
@@ -53,8 +74,18 @@ public class FullMoon {
 	}
 
 
+	public void setGoal(int goal) {
+		this.goal = goal;
+	}
+
+
 	public int getDonate() {
 		return donate;
+	}
+
+
+	public void setDonate(int donate) {
+		this.donate = donate;
 	}
 
 
@@ -63,8 +94,18 @@ public class FullMoon {
 	}
 
 
+	public void setDonateId(String donateId) {
+		this.donateId = donateId;
+	}
+
+
 	public String getAdminId() {
 		return adminId;
+	}
+
+
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
 	}
 	
 	
@@ -73,5 +114,4 @@ public class FullMoon {
 	
 	
 
-	
 }
