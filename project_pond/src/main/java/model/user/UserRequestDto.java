@@ -1,6 +1,8 @@
+
 package model.user;
 
-public class User {
+public class UserRequestDto {
+	
 
 	private String id;
 	private String email;
@@ -12,7 +14,9 @@ public class User {
 	private int rank;
 	
 	
-	public User(String id, String email, String pwd, String name, int birth, String phone, String address, int rank) {
+	
+	public UserRequestDto(String id, String email, String pwd, String name, int birth, String phone, String address,
+			int rank) {
 		
 		this.id = id;
 		this.email = email;
@@ -25,9 +29,17 @@ public class User {
 	}
 
 
+
 	public String getId() {
 		return id;
 	}
+
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 
 
 	public String getEmail() {
@@ -35,9 +47,23 @@ public class User {
 	}
 
 
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
 	public String getPwd() {
 		return pwd;
 	}
+
+
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
 
 
 	public String getName() {
@@ -45,9 +71,23 @@ public class User {
 	}
 
 
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
 	public int getBirth() {
 		return birth;
 	}
+
+
+
+	public void setBirth(int birth) {
+		this.birth = birth;
+	}
+
 
 
 	public String getPhone() {
@@ -55,19 +95,42 @@ public class User {
 	}
 
 
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+
 	public String getAddress() {
 		return address;
 	}
 
 
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
 	public int getRank() {
 		return rank;
+	}
+
+
+
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 	
 	
 	
 	
 	
-
 	
+	
+	
+	
+
 }
