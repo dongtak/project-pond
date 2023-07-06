@@ -1,8 +1,8 @@
 package controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,27 +11,34 @@ import javax.servlet.http.HttpSession;
 import model.user.User;
 import model.user.UserDao;
 
-
+/**
+ * Servlet implementation class LoginFormAction
+ */
+@WebServlet("/LoginFormAction")
 public class LoginFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginFormAction() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public LoginFormAction() {
-		super();
-		// TODO Auto-generated constructor stub
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		// 1. 파라미터 값 가져오기 (id, password)
-		// 2. User 조회 getUserById(id)
-		// 3. 결과에 따른 페이징 처리
-		// ㄴ User 객체가 null -> loginForm.jsp
-		// ㄴ User 객체가 있으면
-//		    ㄴ 비밀번호 일치 -> main.jsp -> welcome message 
-//		    ㄴ 비밀번호 불일치 -> loginForm.jsp 
-
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
@@ -61,6 +68,6 @@ public class LoginFormAction extends HttpServlet {
 			System.out.println("로그인 성공");
 		}
 		response.sendRedirect(url);
-
 	}
+
 }
