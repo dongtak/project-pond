@@ -4,6 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>project_pond</display-name>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
@@ -13,6 +14,10 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 
+	<!-- 1. 서블릿 페이지 맵핑 -->
+	
+	
+		<!-- 2. JSP 페이지 맵핑 -->
 	<servlet>
 		<servlet-name>header</servlet-name>
 		<jsp-file>/header.jsp</jsp-file>
