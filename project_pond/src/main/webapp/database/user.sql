@@ -24,6 +24,13 @@ create table article(
 
 );
 
+create table articlePage(
+	pageNum int primary key,
+    total int,
+    amount int
+	);
+
+
 
 
 insert into `article` (id, title,content,adminId)
@@ -66,8 +73,8 @@ create table `user`(
     email VARCHAR(50) ,
    birth int not null,
    phone VARCHAR(20),
-   address VARCHAR(100),
-   `rank` int
+   address VARCHAR(100)
+   
 );
 insert into `user` (id,pwd,`name`,birth,phone,address)
 values ("id","pwd", "성이름",977777,01012345678,"뉴욕시 맨해튼구 센트럴파크");
@@ -95,6 +102,7 @@ create table articleComment(
     content VARCHAR(255),
 	createdAt timestamp default current_timestamp,
     modifiedAt timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
+    `like` int,
     
     foreign key (articleId) references article(id),
     foreign key (userId) references `user`(id)
@@ -102,8 +110,9 @@ create table articleComment(
 );
 
 INSERT INTO articleComment (articleId,userId,content)
-VALUES ("abc123","id","내용");
+VALUES ("abc124","id","내용");
 
+truncate articleComment;
     select * from articleComment;
 
 
