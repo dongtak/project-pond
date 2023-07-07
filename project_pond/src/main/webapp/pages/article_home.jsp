@@ -13,10 +13,11 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<form action="LeaveComment" method="post">
-				<input type="text" placeholder="댓글을 남겨주세요" id="comment" name="comment">
-				<button>댓글 쓰기</button>
-			</form>
+		
+			<a href="articleList">게시글 목록보기</a>
+			
+			<br><a href="article">댓글달기 테스트</a>
+			
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
