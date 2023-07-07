@@ -22,6 +22,7 @@
 		<button onclick="location.href='logout'">로그아웃</button>
 	</section>
 	<jsp:include page="/footer"></jsp:include>
+	<jsp:include page="/dummy"></jsp:include>
 </div>
 </body>
 </html>
