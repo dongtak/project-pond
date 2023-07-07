@@ -10,6 +10,7 @@ public class ArticleRequestDto {
 	private Timestamp createdAt;
 	private Timestamp modifiedAt;
 	private String adminId;
+	private String moonNum;
 	
 	
 	

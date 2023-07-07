@@ -9,8 +9,9 @@ public class Article {
 	private Timestamp createdAt;
 	private Timestamp modifiedAt;
 	private String adminId;
+	private String moonNum;
 
-	public Article(String id, String title, String content, Timestamp createdAt, Timestamp modifiedAt, String adminId) {
+	public Article(String id, String title, String content, Timestamp createdAt, Timestamp modifiedAt, String adminId, String moonNum) {
 
 		this.id = id;
 		this.title = title;
@@ -18,6 +19,7 @@ public class Article {
 		this.createdAt = createdAt;
 		this.modifiedAt = modifiedAt;
 		this.adminId = adminId;
+		this.moonNum = moonNum;
 	}
 
 	public String getId() {
@@ -44,6 +46,9 @@ public class Article {
 		return adminId;
 	}
 	
+	public String getMoonNum() {
+		return moonNum;
+	}
 	
 
 }

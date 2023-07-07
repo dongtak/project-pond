@@ -16,6 +16,9 @@
 		
 			<a href="articleList">게시글 목록보기</a>
 			
+			
+			
+			
 			<br><a href="article">댓글달기 테스트</a>
 			
 		</section>

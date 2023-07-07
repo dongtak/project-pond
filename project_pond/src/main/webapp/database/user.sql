@@ -11,37 +11,6 @@ create table `admin`(
 insert into `admin` (id,pwd)
 values ("admin", "pwd");
 
-drop table `article`;
-create table article(
-	id VARCHAR(20) primary key,
-    title VARCHAR(50) not null,
-    content VARCHAR(3000) not null,
-    createdAt timestamp default current_timestamp,
-    modifiedAt timestamp default current_timestamp on update current_timestamp,
-    adminId VARCHAR(20),
-    
-    foreign key(adminId) references `admin`(id)
-
-);
-
-create table articlePage(
-	pageNum int primary key,
-    total int,
-    amount int
-	);
-
-
-
-
-insert into `article` (id, title,content,adminId)
-values
-("abc124", "유기견 후원센터 모금","왈왈 멍멍","admin"),
-("abc125", "어린이 봉사활동","꺄르륵","admin"),
-("abc126", "산불화재 모금","타닥 화르르","admin"),
-("abc127", "생필품 후원 모금","모여봐요","admin")
-
-;
-select * from article;
 
 drop table `fullmoon`;
 create table fullmoon (
@@ -60,8 +29,49 @@ create table fullmoon (
 );
 
 insert into fullmoon (moonNum, title, content, goal,donation,donationId,adminId)
-values ("보름달번호123","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin");
+values ("보름달번호123","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
+		("보름달번호124","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
+		("보름달번호125","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
+		("보름달번호126","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin");
 select * from fullmoon;
+
+drop table `article`;
+create table article(
+	id VARCHAR(20) primary key,
+    title VARCHAR(50) not null,
+    content VARCHAR(3000) not null,
+    createdAt timestamp default current_timestamp,
+    modifiedAt timestamp default current_timestamp on update current_timestamp,
+    adminId VARCHAR(20),
+    moonNum VARCHAR(10),
+    
+    
+    foreign key(adminId) references `admin`(id),
+	foreign key(moonNum) references fullmoon(moonNum)
+);
+
+
+
+create table articlePage(
+	pageNum int primary key,
+    total int,
+    amount int
+	);
+
+
+
+
+insert into `article` (id, title,content,adminId,moonNum)
+values
+("abc124", "유기견 후원센터 모금","왈왈 멍멍","admin","보름달번호123"),
+("abc125", "어린이 봉사활동","꺄르륵","admin","보름달번호124"),
+("abc126", "산불화재 모금","타닥 화르르","admin","보름달번호125"),
+("abc127", "생필품 후원 모금","모여봐요","admin","보름달번호126")
+
+;
+select * from article;
+
+
 
 
 drop table `user`;
@@ -99,7 +109,7 @@ create table articleComment(
 	id int primary key auto_increment,
     articleId VARCHAR(20) ,
     userId VARCHAR(20) ,
-    content VARCHAR(255),
+    content VARCHAR(255) not null, 
 	createdAt timestamp default current_timestamp,
     modifiedAt timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
     `like` int,

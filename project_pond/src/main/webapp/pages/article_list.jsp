@@ -29,22 +29,17 @@ try {
 	
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(sql);
-	
-	%>
-	<table border="1">
-		<tr>
-			<td>캠페인ID</td>
-			<td>제목</td>
-			<td>내용</td>
-			<td>생성일자</td>
-			<td>수정일자</td>
-			<td>관리자ID</td>
-			
-		</tr>
-		<%
+
 			while(rs.next()){
 		%>
-			<tr>
+			
+			<div class="pond">
+				<h2><%=rs.getString("title") %></h2>
+				<span><%=rs.getString("moonNum") %></span>
+			</div>
+		
+	<!--  
+		<tr>
 				<td><%=rs.getString("id") %></td>
 				<td><a href=""><%=rs.getString("title") %></a></td>
 				<td><%=rs.getString("content") %></td>
@@ -52,6 +47,7 @@ try {
 				<td><%=rs.getTimestamp("modifiedAt") %></td>
 				<td><%=rs.getString("adminId") %></td>
 			</tr>
+	-->	
 			<%
 			}
 			}catch(Exception e){
@@ -76,7 +72,7 @@ try {
 				
 			}
 			%>
-	</table>
+
 
 
 </body>
