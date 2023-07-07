@@ -5,16 +5,16 @@ import java.sql.Timestamp;
 public class Payment {
 	
 	private String userid;
-	private int field;
 	private String moonNum;
+	private int cost;
 	private Timestamp payday;
 	
 	
-	public Payment(String userid, int field, String moonNum, Timestamp payday) {
+	public Payment(String userid, String moonNum,int cost, Timestamp payday) {
 	
 		this.userid = userid;
-		this.field = field;
 		this.moonNum = moonNum;
+		this.cost = cost;
 		this.payday = payday;
 	}
 
@@ -24,8 +24,8 @@ public class Payment {
 	}
 
 
-	public int getfield() {
-		return field;
+	public int getCost() {
+		return cost;
 	}
 
 
