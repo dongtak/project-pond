@@ -15,11 +15,11 @@
 	</welcome-file-list>
 
 	<!-- 1. 서블릿 페이지 맵핑 -->
-
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
 	</servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
@@ -118,7 +118,7 @@
 		<servlet-name>loginForm</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>signUpForm</servlet-name>
 		<jsp-file>/pages/signupForm.jsp</jsp-file>

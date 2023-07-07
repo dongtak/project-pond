@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -14,5 +15,6 @@
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+	
 </body>
 </html>
