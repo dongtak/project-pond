@@ -19,16 +19,7 @@
 
 
 	<!-- 1. 서블릿 페이지 맵핑 -->
-	<servlet>
-		<servlet-name>LeaveCommentFormAction</servlet-name>
-		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
-	</servlet>
-
-
-	<servlet-mapping>
-		<servlet-name>LeaveCommentFormAction</servlet-name>
-		<url-pattern>/LeaveComment</url-pattern>
-	</servlet-mapping>
+	
 
 	<servlet>
 		<servlet-name>LoginFormAction</servlet-name>
@@ -39,7 +30,6 @@
 		<servlet-name>LoginFormAction</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
-<<<<<<< HEAD
 
 	<servlet>
 		<servlet-name>LogOut</servlet-name>
@@ -61,12 +51,25 @@
 		<servlet-name>JoinFormAction</servlet-name>
 		<url-pattern>/Join</url-pattern>
 	</servlet-mapping>
-
-=======
 	
->>>>>>> refs/remotes/origin/#3-lee-seoyoung
+	
+	<!--  -->
+	
+	<servlet>
+		<servlet-name>LeaveCommentFormAction</servlet-name>
+		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LeaveCommentFormAction</servlet-name>
+		<url-pattern>/LeaveComment</url-pattern>
+	</servlet-mapping>
+
+
+
 
 	<!-- 2. JSP 페이지 맵핑 -->
+
 	<servlet>
 		<servlet-name>header</servlet-name>
 		<jsp-file>/header.jsp</jsp-file>
@@ -159,6 +162,8 @@
 		<servlet-name>dummy</servlet-name>
 		<url-pattern>/dummy</url-pattern>
 	</servlet-mapping>
+	
+	
 
 	<servlet>
 		<servlet-name>articleList</servlet-name>

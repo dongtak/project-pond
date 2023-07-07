@@ -12,6 +12,20 @@ public class ArticleComment {
 	private Timestamp modifiedAt;
 	
 	
+	
+	//write 설정시 추가
+	
+	public ArticleComment(int id,  String userId, String content, Timestamp createdAt) {
+		
+		this.id = id;
+		this.userId = userId;
+		this.content = content;
+		this.createdAt = createdAt;
+	}
+
+	
+	
+	
 	public ArticleComment(int id, String articleId, String userId, String content, Timestamp createdAt,
 			Timestamp modifiedAt) {
 	

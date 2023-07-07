@@ -1,14 +1,9 @@
-<%@page import="model.articleComment.ArticleCommentDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <style>
 textarea {
 	height: 100%
@@ -21,13 +16,16 @@ textarea {
 ;
 </style>
 
-
-
+<title>Insert title here</title>
 </head>
 <body>
+
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
+
+		
 			<h2>댓글</h2>
 			<div class="comment-box">
 
@@ -40,15 +38,7 @@ textarea {
 						쓰기</button>
 				</form>
 
-				<div class="comment-list">
-
-					<h3>댓글</h3>
-
-					<!-- 댓글 목록 출력 -->
-
-
-
-				</div>
+			<!-- 댓글 출력 > commentprint.jsp -->
 
 
 				<h1>============글수정===========</h1>
@@ -76,7 +66,7 @@ textarea {
 									<tr>
 
 										<td><textarea class="form" placeholder="글내용"
-												name="bbsContent"></textarea></td>
+												name="commentContent"></textarea></td>
 
 
 
@@ -103,7 +93,8 @@ textarea {
 
 
 	</section>
+	
 	<jsp:include page="/footer"></jsp:include>
-	</div>
+
 </body>
 </html>
