@@ -9,21 +9,9 @@ public class User {
 	private int birth;
 	private String phone;
 	private String address;
-	private int rank;
 	
 	
 	
-	public User(String id, String pwd, String name, String email, int birth, String phone, String address, int rank) {
-		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.email = email;
-		this.birth = birth;
-		this.phone = phone;
-		this.address = address;
-		this.rank = rank;
-	}
-
 	public User(String id, String pwd, String name, String email, int birth, String phone, String address) {
 		this.id = id;
 		this.pwd = pwd;
@@ -32,8 +20,9 @@ public class User {
 		this.birth = birth;
 		this.phone = phone;
 		this.address = address;
-
 	}
+
+
 	public User(String id, String pwd, String name, String email, int birth, String phone) {
 		this.id = id;
 		this.pwd = pwd;
@@ -65,9 +54,7 @@ public class User {
 	public String getAddress() {
 		return address;
 	}
-	public int getRank() {
-		return rank;
-	}
+
 	
 	
 	

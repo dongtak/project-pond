@@ -167,9 +167,7 @@ public class UserDao {
 					String birthNum = this.rs.getString(5);
 					String phone = this.rs.getString(6);
 					String address = this.rs.getString(7);
-					int rank = Integer.parseInt(this.sdf.format(this.rs.getInt(8)));
-					String rankNum = this.rs.getString(8);
-					user = new User(id, pwd, name, email, birth, phone, address, rank);
+					user = new User(id, pwd, name, email, birth, phone, address);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
