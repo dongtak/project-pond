@@ -9,8 +9,8 @@ public class FullMoon {
 	private String content;
 	private Timestamp createdAt;
 	private int goal;
-	private int donate;
-	private String donateId;
+	private int donation;
+	private String donationId;
 	private String adminId;
 	
 	
@@ -22,8 +22,8 @@ public class FullMoon {
 		this.content = content;
 		this.createdAt = createdAt;
 		this.goal = goal;
-		this.donate = donate;
-		this.donateId = donateId;
+		this.donation = donate;
+		this.donationId = donateId;
 		this.adminId = adminId;
 	}
 
@@ -54,12 +54,12 @@ public class FullMoon {
 
 
 	public int getDonate() {
-		return donate;
+		return donation;
 	}
 
 
 	public String getDonateId() {
-		return donateId;
+		return donationId;
 	}
 
 

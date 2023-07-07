@@ -32,27 +32,6 @@ public class UserDao {
 		return instance;
 	}
 
-	public static Connection getConnection() {
-		Connection conn = null;
-
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-
-			String url = "jdbc:mysql://localhost:3306/webExDB?serverTimeZone=UTC";
-			String username = "root";
-			String password = "root";
-
-			conn = DriverManager.getConnection(url, username, password);
-
-			System.out.println("데이터베이스 연동 성공 >>>");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println("데이터베이스 연동 실패 >>>");
-		}
-
-		return conn;
-	}
-
 	// CRUD
 	// ㄴ Create
 	// ㄴ Read

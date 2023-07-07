@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="resources/style/grid.css">
 <body>
 <div class="header">
-		<a href="/"><span>로고</span></a>
+		<a href="main"><span>로고</span></a>
 		<div class="top-nav">
 			<span><a href="login">로그인</a></span>
 		</div>

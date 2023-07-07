@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,17 +41,14 @@ public class ArticleCommentDao {
 
 	public int getNext() {
 
-		String SQL = "SELECT id FROM Article ORDER BY id DESC";
+		String SQL = "SELECT id FROM articleComment ORDER BY id DESC";
 		try {
 			conn = DBManager.getConnection();
-
 			pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				String lastId = rs.getString(1);
-				int nextId = Integer.parseInt(lastId) + 1;
 
-				return nextId;
+				return rs.getInt(1)+1;
 
 			}
 			return 1; // 첫번째 게시물
@@ -66,26 +64,34 @@ public class ArticleCommentDao {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				e.printStackTrace(); // 또는 적절한 오류 처리를 수행해주세요.
+				e.printStackTrace(); 
 			}
 		}
 
 	}
-}
 
-//	public int write(String content, String userId,String  ) {
-//		String SQL = "INSERT INTO articlecomment VALUE(?,?,?,?,?,?)"
-//		try {
-//			PreparedStatement pstmt = conn.prepareStatement(SQL);
-//		
-//			pstmt.setInt(1,getNext());
-//			pstmt.setString(2,getuserId());
-//			pstmt.setString(3,getuserId());
-//		}
-//	}
-//		
 
-//	public static List<ArticleComment> getComments() {
+	public int write(int id, String userId, String content,Timestamp createdAt) {
+		String SQL = "INSERT INTO articleComment VALUES(?,?,?,?)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setInt(1,getNext());
+			pstmt.setString(2,userId);
+			pstmt.setString(3,content);
+			pstmt.setTimestamp(4,createdAt);
+			
+			return pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;	//db오류시!
+	}
+
+		
+
+
+	public static List<ArticleComment> getComments() {
 //		List<ArticleComment> comments = new ArrayList<>();
 //
 //		Connection conn = null;
@@ -146,3 +152,5 @@ public class ArticleCommentDao {
 //		}
 //	}
 //}
+	
+}

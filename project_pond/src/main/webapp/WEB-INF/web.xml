@@ -19,11 +19,11 @@
 
 
 	<!-- 1. 서블릿 페이지 맵핑 -->
-
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
 	</servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
@@ -39,7 +39,21 @@
 		<servlet-name>LoginFormAction</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
+<<<<<<< HEAD
 	
+=======
+
+	<servlet>
+		<servlet-name>JoinFormAction</servlet-name>
+		<servlet-class>controller.JoinFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JoinFormAction</servlet-name>
+		<url-pattern>/Join</url-pattern>
+	</servlet-mapping>
+
+>>>>>>> refs/remotes/origin/main
 
 	<!-- 2. JSP 페이지 맵핑 -->
 	<servlet>
@@ -115,7 +129,7 @@
 
 	<servlet>
 		<servlet-name>signUpForm</servlet-name>
-		<jsp-file>/pages/sinupForm.jsp</jsp-file>
+		<jsp-file>/pages/signupForm.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
