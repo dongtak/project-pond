@@ -51,11 +51,11 @@ public class LoginFormAction extends HttpServlet {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-		System.out.println(1);
+//		System.out.println(1);
 		UserDao userDao = UserDao.getInstance();
-		System.out.println(2);
+//		System.out.println(2);
 		User user = userDao.getUserById(id);
-		System.out.println(3);
+//		System.out.println(3);
 //		System.out.println(user.getId()+user.getPwd());
 
 		String url = "login";
@@ -68,6 +68,8 @@ public class LoginFormAction extends HttpServlet {
 			HttpSession session = request.getSession();
 			System.out.println(6);
 			session.setAttribute("log", id);
+			
+			
 			System.out.println(7);
 		}
 

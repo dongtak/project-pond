@@ -39,9 +39,9 @@ public class UserDao {
 	// ㄴ Delete (DELETE FROM 테이블명 WHERE 기본키=값1)
 
 	public boolean createUser(UserRequestDto userDto) {
-		User result = getUserById(userDto.getId());
+		User result = getUserById(userDto.getId());//아이디 중복체크 user 모든 정보를 채워서 온다
 		if (result != null)
-			return false;
+			return false;//
 
 		String id = userDto.getId();
 		String pwd = userDto.getPwd();
