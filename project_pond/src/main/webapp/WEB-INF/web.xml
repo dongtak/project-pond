@@ -14,6 +14,10 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 
+
+
+
+
 	<!-- 1. 서블릿 페이지 맵핑 -->
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
@@ -35,6 +39,7 @@
 		<servlet-name>LoginFormAction</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
+<<<<<<< HEAD
 
 	<servlet>
 		<servlet-name>LogOut</servlet-name>
@@ -57,6 +62,9 @@
 		<url-pattern>/Join</url-pattern>
 	</servlet-mapping>
 
+=======
+	
+>>>>>>> refs/remotes/origin/#3-lee-seoyoung
 
 	<!-- 2. JSP 페이지 맵핑 -->
 	<servlet>
@@ -139,6 +147,8 @@
 		<servlet-name>joinForm</servlet-name>
 		<url-pattern>/join</url-pattern>
 	</servlet-mapping>
+	
+	
 
 	<servlet>
 		<servlet-name>dummy</servlet-name>
