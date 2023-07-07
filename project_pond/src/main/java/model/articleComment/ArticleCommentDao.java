@@ -33,6 +33,7 @@ public class ArticleCommentDao {
 	public boolean createComment(ArticleCommentRequestDto commentdto) {
 		
 		String userId = commentdto.getUserId();
+		
 		String content = commentdto.getContent();
 		String articleId = "abc126";
 		

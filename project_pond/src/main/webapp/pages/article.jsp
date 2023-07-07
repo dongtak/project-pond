@@ -80,7 +80,7 @@ boolean login = id == null ? false : true;
 				while (rs.next()) {
 				%>
 				<tr>
-					<td><%=rs.getString("id")%></td>
+					<td><%=rs.getString("userId")%></td>
 					<td><%=rs.getString("content")%></td>
 					<td><%=rs.getTimestamp("createdAt")%></td>
 
