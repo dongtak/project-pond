@@ -36,6 +36,16 @@
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>JoinFormAction</servlet-name>
+		<servlet-class>controller.JoinFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JoinFormAction</servlet-name>
+		<url-pattern>/Join</url-pattern>
+	</servlet-mapping>
+
 
 	<!-- 2. JSP 페이지 맵핑 -->
 	<servlet>
@@ -111,7 +121,7 @@
 	
 	<servlet>
 		<servlet-name>signUpForm</servlet-name>
-		<jsp-file>/pages/sinupForm.jsp</jsp-file>
+		<jsp-file>/pages/signupForm.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
