@@ -45,8 +45,8 @@ public class UserDao {
 
 		String id = userDto.getId();
 		String pwd = userDto.getPwd();
-		String email = userDto.getEmail();
 		String name = userDto.getName();
+		String email = userDto.getEmail();
 		int birth = userDto.getBirth();
 		String phone = userDto.getPhone();
 
@@ -56,14 +56,14 @@ public class UserDao {
 			this.conn = DBManager.getConnection();
 			if (this.conn != null) {
 				if (!email.equals("")) {
-					String sql = "INSERT INTO user VALUES(?, ?, ?, ?, DATE(?), ?)";
+					String sql = "INSERT INTO user(id, pwd, name, email, birth, phone) VALUES(?, ?, ?, ?, DATE(?), ?)";
 
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, id);
 						this.pstmt.setString(2, pwd);
-						this.pstmt.setString(3, email);
-						this.pstmt.setString(4, name);
+						this.pstmt.setString(3, name);
+						this.pstmt.setString(4, email);
 						this.pstmt.setInt(5, birth);
 						this.pstmt.setString(6, phone);
 
@@ -76,7 +76,7 @@ public class UserDao {
 						DBManager.close(this.conn, this.pstmt);
 					}
 				} else {
-					String sql = "INSERT INTO user(id, password, name, birth, telecom, phone) VALUES(?, ?, ?, DATE(?), ?, ?)";
+					String sql = "INSERT INTO user(id, pwd, name, birth, phone) VALUES(?, ?, ?, DATE(?), ?)";
 
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);

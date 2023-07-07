@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <c:if test="${empty sessionScope.log }">
 	<c:redirect url="login"></c:redirect>
 </c:if>
@@ -23,6 +22,7 @@
 		<button onclick="location.href='logout'">로그아웃</button>
 	</section>
 	<jsp:include page="/footer"></jsp:include>
+	<jsp:include page="/dummy"></jsp:include>
 </div>
 </body>
 </html>

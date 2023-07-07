@@ -78,7 +78,7 @@
 
 	<servlet>
 		<servlet-name>main</servlet-name>
-		<jsp-file>/index.jsp</jsp-file>
+		<jsp-file>/pages/main.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
@@ -128,17 +128,26 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>signUpForm</servlet-name>
-		<jsp-file>/pages/signupForm.jsp</jsp-file>
+		<servlet-name>joinForm</servlet-name>
+		<jsp-file>/pages/joinForm.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>signUpForm</servlet-name>
-		<url-pattern>/signup</url-pattern>
+		<servlet-name>joinForm</servlet-name>
+		<url-pattern>/join</url-pattern>
 	</servlet-mapping>
 	
 	
 
+<servlet>
+		<servlet-name>dummy</servlet-name>
+		<jsp-file>/pages/dummyprint.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dummy</servlet-name>
+		<url-pattern>/dummy</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
