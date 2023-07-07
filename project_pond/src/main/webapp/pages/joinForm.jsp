@@ -48,33 +48,6 @@
 						</select>
 					</div>
 					<div>
-						<input type="radio" id="gender-man" name="gender" value="man"
-							checked> <input type="radio" id="gender-woman"
-							name="gender" value="woman"> <input type="radio"
-							id="foreigner-false" name="foreigner" value="false" checked>
-						<input type="radio" id="foreigner-true" name="foreigner"
-							value="true">
-
-						<div class="label-wrapper">
-							<div class="label-container">
-								<label for="gender-man">
-									<div class="radio-box radio-left" id="box-gender-man">남</div>
-								</label> <label for="gender-woman">
-									<div class="radio-box radio-right" id="box-gender-woman">여</div>
-								</label>
-							</div>
-
-							<div class="label-container">
-								<label for="foreigner-false">
-									<div class="radio-box radio-left" id="box-foreigner-false">내국인</div>
-								</label> <label for="foreigner-true">
-									<div class="radio-box radio-right" id="box-foreigner-true">외국인</div>
-								</label>
-							</div>
-						</div>
-
-					</div>
-					<div>
 						<input type="text" id="phone" name="phone" placeholder="휴대전화 번호">
 					</div>
 				</div>

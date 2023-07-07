@@ -32,6 +32,17 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name>LogOut</servlet-name>
+		<servlet-class>controller.LogOut</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogOut</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
 		<servlet-name>JoinFormAction</servlet-name>
 		<servlet-class>controller.JoinFormAction</servlet-class>
 	</servlet>
@@ -111,13 +122,13 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>article</servlet-name>
-		<jsp-file>/pages/article.jsp</jsp-file>
+		<servlet-name>articleHome</servlet-name>
+		<jsp-file>/pages/article_home.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>article</servlet-name>
-		<url-pattern>/article</url-pattern>
+		<servlet-name>articleHome</servlet-name>
+		<url-pattern>/articleHome</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -169,6 +180,24 @@
 	
 	
 
+	<servlet>
+		<servlet-name>articleList</servlet-name>
+		<jsp-file>/pages/article_list.jsp</jsp-file>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>articleList</servlet-name>
+		<url-pattern>/articleList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>article</servlet-name>
+		<jsp-file>/pages/article.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>article</servlet-name>
+		<url-pattern>/article</url-pattern>
+	</servlet-mapping>
 </web-app>
 

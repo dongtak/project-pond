@@ -20,7 +20,7 @@
 			<ul>
 				<li><a href="about">ABOUT</a></li>
 				<li><a href="moon">보름달</a></li>
-				<li><a href="article">나눗샘</a></li>
+				<li><a href="articleHome">나눗샘</a></li>
 			</ul>
 		</div>
 	</div>
