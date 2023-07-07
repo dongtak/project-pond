@@ -44,25 +44,25 @@ public class updateCommentFromAction extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-		ArticleCommentRequestDto articleDto = null;
-		
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-		String articleId = request.getParameter("articleId");
-		String userId =request.getParameter("userId");
-		String content =request.getParameter("content");
-		Timestamp createdAt =new Timestamp(System.currentTimeMillis()); 
-		Timestamp modifiedAt =new Timestamp(System.currentTimeMillis()); 
-		
-		articleDto = new ArticleCommentRequestDto(id,articleId,userId,content,createdAt,modifiedAt);
-	
-		
-		ArticleCommentDao articleDao = ArticleCommentDao.getInstance();
-	
-		articleDao.updateArticleComment(articleDto,userId);
-		
-		String url = "UpdateCommentRequest";
-		response.sendRedirect(url);
+//		ArticleCommentRequestDto articleDto = null;
+//		
+//		
+//		int id = Integer.parseInt(request.getParameter("id"));
+//		String articleId = request.getParameter("articleId");
+//		String userId =request.getParameter("userId");
+//		String content =request.getParameter("content");
+//		Timestamp createdAt =new Timestamp(System.currentTimeMillis()); 
+//		Timestamp modifiedAt =new Timestamp(System.currentTimeMillis()); 
+//		
+//		articleDto = new ArticleCommentRequestDto(id,articleId,userId,content,createdAt,modifiedAt);
+//	
+//		
+//		ArticleCommentDao articleDao = ArticleCommentDao.getInstance();
+//	
+//		articleDao.updateArticleComment(articleDto,userId);
+//		
+//		String url = "UpdateCommentRequest";
+//		response.sendRedirect(url);
 		
 	
 		

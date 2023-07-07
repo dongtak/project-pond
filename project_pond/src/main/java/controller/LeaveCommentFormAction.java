@@ -28,6 +28,8 @@ public class LeaveCommentFormAction extends HttpServlet {
 //		    ㄴ 비밀번호 불일치 -> loginForm.jsp 
 
 		String comment = request.getParameter("comment");
+	
+	
 		System.out.println(comment);
 
 		String url = "article";
