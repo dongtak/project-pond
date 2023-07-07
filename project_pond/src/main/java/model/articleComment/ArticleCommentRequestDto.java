@@ -13,6 +13,15 @@ public class ArticleCommentRequestDto {
 	
 	
 	
+	
+	public ArticleCommentRequestDto(String userId, String content) {
+		this.userId = userId;
+		this.content = content;
+	}
+	
+	
+	
+	
 	public ArticleCommentRequestDto(int id, String articleId, String userId, String content, Timestamp createdAt,
 			Timestamp modifiedAt) {
 	

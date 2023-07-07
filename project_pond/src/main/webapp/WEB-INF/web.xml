@@ -51,14 +51,14 @@
 		<servlet-name>JoinFormAction</servlet-name>
 		<url-pattern>/Join</url-pattern>
 	</servlet-mapping>
-
-
-	<!-- comment 추가 -->
+	
+	
+	<!--  -->
+	
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
 	</servlet>
-
 
 	<servlet-mapping>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
@@ -162,21 +162,6 @@
 		<servlet-name>dummy</servlet-name>
 		<url-pattern>/dummy</url-pattern>
 	</servlet-mapping>
-	
-		
-	<!-- comment 추가 -->
-	
-	
-	<servlet>
-		<servlet-name>comment</servlet-name>
-		<jsp-file>/pages/commentprint.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>comment</servlet-name>
-		<url-pattern>/comment</url-pattern>
-	</servlet-mapping>
-	
 	
 	
 
