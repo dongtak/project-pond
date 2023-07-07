@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <c:if test="${empty sessionScope.log }">
 	<c:redirect url="login"></c:redirect>
 </c:if>
