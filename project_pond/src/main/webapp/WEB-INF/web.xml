@@ -120,13 +120,13 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>signUpForm</servlet-name>
-		<jsp-file>/pages/signupForm.jsp</jsp-file>
+		<servlet-name>joinForm</servlet-name>
+		<jsp-file>/pages/joinForm.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>signUpForm</servlet-name>
-		<url-pattern>/signup</url-pattern>
+		<servlet-name>joinForm</servlet-name>
+		<url-pattern>/join</url-pattern>
 	</servlet-mapping>
 
 

@@ -16,7 +16,7 @@
 					type="password" placeholder="비밀번호 입력" id="pwd" name="pwd">
 				<button>로그인</button>
 			</form>
-			<a href="findAcc">아이디/비밀번호 찾기</a> <a href="signup">회원가입</a>
+			<a href="findAcc">아이디/비밀번호 찾기</a> <a href="join">회원가입</a>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>

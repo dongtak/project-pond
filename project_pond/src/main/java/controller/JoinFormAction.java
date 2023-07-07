@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.user.UserDao;
+import model.user.UserRequestDto;
+
 /**
  * Servlet implementation class JoinFormAction
  */
@@ -35,7 +38,28 @@ public class JoinFormAction extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		int birth = Integer.parseInt(request.getParameter("birth"));
+		String phone = request.getParameter("phone");
+
+		UserRequestDto user = new UserRequestDto(id, password, name, email, birth, phone);
+
+		UserDao userDao = UserDao.getInstance();
+		boolean result = userDao.createUser(user);
+
+		String url = "";
+
+		if(result) 
+			url = "login";
+		else
+			url = "join";
+
+		response.sendRedirect(url);
 	}
 
 }

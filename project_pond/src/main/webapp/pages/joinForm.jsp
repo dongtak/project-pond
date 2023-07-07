@@ -83,6 +83,7 @@
 					<li class="error" id="error-birth">생년월일: 필수 정보입니다.</li>
 					<li class="error" id="error-phone">휴대전화: 필수 정보입니다.</li>
 				</ul>
+				<button>alter</button>
 				<input type="button" id="submit-btn" value="회원가입"
 					onclick="checkValue(form)">
 			</form>
