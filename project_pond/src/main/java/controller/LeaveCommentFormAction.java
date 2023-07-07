@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.articleComment.ArticleComment;
+import model.articleComment.ArticleCommentDao;
+
 /**
  * Servlet implementation class LeaveCommentFormAction
  */
@@ -39,20 +42,23 @@ public class LeaveCommentFormAction extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-<<<<<<< HEAD
-		String comment = request.getParameter("comment");
-	
-	
-		System.out.println(comment);
-=======
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		String text = request.getParameter("comment");
-		System.out.println(text);
->>>>>>> refs/remotes/origin/main
-
-		String url = "article";
-		response.sendRedirect(url);
+//
+//		String comment = request.getParameter("comment");
+//	
+//		ArticleCommentDao commentDao = ArticleCommentDao.getInstance();
+//		ArticleComment articlecomment = commentDao.getUserById(id);
+//		
+//		String url = "comment";
+//		
+//		System.out.println(comment);
+//
+//		// TODO Auto-generated method stub
+//		request.setCharacterEncoding("UTF-8");
+//		String text = request.getParameter("comment");
+//		System.out.println(text);
+//
+//		String url = "article";
+//		response.sendRedirect(url);
 
 	}
 

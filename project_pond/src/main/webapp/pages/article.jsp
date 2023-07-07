@@ -29,7 +29,7 @@ textarea {
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-<<<<<<< HEAD
+		
 			<h2>댓글</h2>
 			<div class="comment-box">
 
@@ -42,15 +42,7 @@ textarea {
 						쓰기</button>
 				</form>
 
-				<div class="comment-list">
-
-					<h3>댓글</h3>
-
-					<!-- 댓글 목록 출력 -->
-
-
-
-				</div>
+			<!-- 댓글 출력 > commentprint.jsp -->
 
 
 				<h1>============글수정===========</h1>
@@ -78,7 +70,7 @@ textarea {
 									<tr>
 
 										<td><textarea class="form" placeholder="글내용"
-												name="bbsContent"></textarea></td>
+												name="commentContent"></textarea></td>
 
 
 
@@ -105,15 +97,15 @@ textarea {
 
 
 	</section>
+	
 	<jsp:include page="/footer"></jsp:include>
-=======
-			<form action="LeaveComment" method="post">
+		<form action="LeaveComment" method="post">
 				<input type="text" placeholder="댓글을 남겨주세요" id="comment" name="comment">
 				<button>댓글 쓰기</button>
 			</form>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
->>>>>>> refs/remotes/origin/main
+
 	</div>
 	
 </body>

@@ -8,11 +8,24 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import model.user.UserDao;
 import model.user.UserRequestDto;
 import util.DBManager;
 
 public class ArticleCommentDao {
+	
+	
+	private ArticleCommentDao() {
+	}
+
+	private static ArticleCommentDao instance = new ArticleCommentDao();
+
+	public static ArticleCommentDao getInstance() {
+		return instance;
+	}
+
+	
+	
 
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -88,24 +101,30 @@ public class ArticleCommentDao {
 		return -1;	//db오류시!
 	}
 
-		
 
+	
+	
+	
+	
+	
+	
 
-	public static List<ArticleComment> getComments() {
-//		List<ArticleComment> comments = new ArrayList<>();
 //
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//
+//	public static List<ArticleComment> getCommentsAll() {
+//	List<ArticleComment> comments = new ArrayList<>();
+//		this.conn = DBManager.getConnection();
+//	
 //		try {
-//			conn = DBManager.getConnection();
-//			String sql = "SELECT * FROM ArticleComment";
-//			pstmt = conn.prepareStatement(sql);
-//			rs = pstmt.executeQuery();
+//			this.pstmt = this.conn.prepateStatement(sql);
+//			this.rs = this.pstmt.executeQuery();
+//	
 //
-//			while (rs.next()) {
-//				int id = rs.getInt("id");
+////			String sql = "SELECT * FROM ArticleComment";
+////			pstmt = conn.prepareStatement(sql);
+////			rs = pstmt.executeQuery();
+//
+//		while (this.rs.next()) {
+//				int id = this.rs.getInt("id");
 //				String articleId = rs.getString("article_id");
 //				String userId = rs.getString("user_id");
 //				String content = rs.getString("content");
@@ -152,5 +171,51 @@ public class ArticleCommentDao {
 //		}
 //	}
 //}
+	
+	
+	// LeaveCommentFormAction 입력 후 작성
+	public ArticleComment getUserById(int id) {
+		ArticleComment comment = null;
+		
+		conn = DBManager.getConnection();
+		
+		if(this.conn !=null) {
+			String sql = "SELECT * FROM articleComment WHERE id=?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, id);
+				
+				this.rs = this.pstmt.executeQuery();
+				
+				
+				if(this.rs.next()) {
+					
+					
+					String articleId = this.rs.getString(2);
+					String userId = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					Timestamp createdAt = this.rs.getTimestamp(5);
+					Timestamp modifiedAt = this.rs.getTimestamp(5);
+				
+				}
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+			
+			
+		}
+		
+		return comment;
+		
+		
+	}
+	
+	
 	
 }
