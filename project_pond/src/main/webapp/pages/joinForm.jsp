@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
@@ -17,7 +19,14 @@
 					<div>
 						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
 					</div>
-					<button action="duplIdCheck">아이디 중복체크</button>
+						<input type="button" action="duplIdCheck(form)" value="아이디 중복체크">
+						<% boolean dupl = (boolean) request.getAttribute("dupl"); 
+						if(dupl==true){%>
+						<span class="verified" id="verifiedId">사용가능한 아이디입니다</span>
+						
+						<%}else {%>
+						<span class="error" id="error-id">이미 존재하는 아이디입니다.</span>
+						<%} %>
 					<div>
 						<input type="text" id="password" name="password"
 							placeholder="비밀번호">
@@ -39,16 +48,14 @@
 					<div>
 						<input type="text" id="birth" name="birth" placeholder="생년월일 8자리">
 					</div>
-					<div>
-						<select name="telecom">
-							<option value="">통신사 선택</option>
-							<option value="skt">SKT</option>
-							<option value="kt">KT</option>
-							<option value="lgu">LG U+</option>
-						</select>
-					</div>
+
 					<div>
 						<input type="text" id="phone" name="phone" placeholder="휴대전화 번호">
+					</div>
+
+					<div>
+					<jsp:include page="/address"></jsp:include>
+
 					</div>
 				</div>
 				<ul>
@@ -56,7 +63,6 @@
 					<li class="error" id="error-birth">생년월일: 필수 정보입니다.</li>
 					<li class="error" id="error-phone">휴대전화: 필수 정보입니다.</li>
 				</ul>
-				<button>alter</button>
 				<input type="button" id="submit-btn" value="회원가입"
 					onclick="checkValue(form)">
 			</form>
@@ -66,6 +72,9 @@
 
 
 
-	<script src="resources/script/validation.js"></script>
+
 </body>
+	<script src="resources/script/validation.js"></script>
+
+
 </html>

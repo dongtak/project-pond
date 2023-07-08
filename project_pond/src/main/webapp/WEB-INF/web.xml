@@ -192,5 +192,23 @@
 		<servlet-name>article</servlet-name>
 		<url-pattern>/article</url-pattern>
 	</servlet-mapping>
+	
+	
+	
+		<servlet>
+		<servlet-name>address</servlet-name>
+		<jsp-file>/pages/address.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>address</servlet-name>
+		<url-pattern>/address</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
 </web-app>
 

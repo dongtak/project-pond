@@ -2,7 +2,7 @@
 
 * {
 	text-decoration: none;
-	color: black;
+	color:black;
 }
 
 .header>top-nav {
@@ -14,4 +14,133 @@
 	height: 520px;
 	border: 3px solid yellow;
 	border-radius: 260px;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+form {
+	min-width: 400px;
+	width: 60vw;
+	margin: 0 auto 0 0;
+}
+
+.div-form {
+	margin-top: 20px;
+}
+
+.div-form>div {
+	border: solid 1px lightgrey;
+}
+
+.div-form>div:first-child {
+	border-radius: 10px 10px 0 0;
+}
+
+.div-form>div:last-child {
+	border-radius: 0 0 10px 10px;
+}
+
+.div-form>div:not(:first-child) {
+	border-top: none;
+}
+
+.div-form>div:not(:first-child):has(input:focus),
+.div-form>div:not(:first-child):has(select:focus) {
+	border-top: solid 1px #04C75A;	
+}
+
+div:has(input:focus),
+div:has(select:focus) {
+	border-color: #04C75A;	
+}
+
+input {
+	width: 70%;
+	margin: 5px;
+	padding: 10px 15px;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+
+
+input[type="text"], 
+input[type="email"] {
+	border: none;
+	outline: none;
+}
+
+select {
+	margin: 5px;
+	padding: 10px 15px;
+	width: 96%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.label-container {
+	margin: 5px;
+}
+
+.label-wrapper, 
+.label-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.radio-box {
+	text-align: center;
+	width: 60px;
+	padding: 10px 15px;
+	border: solid 1px lightgrey;
+	cursor: pointer;
+	font-size: 0.8em;
+}
+
+.radio-left {
+	border-radius: 5px 0 0 5px;
+}
+
+.radio-right {
+	border-radius: 0 5px 5px 0;
+}
+
+#submit-btn {
+	width: 100%;
+	margin: 100px auto auto auto;
+	padding: 15px;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	background-color: #04C75A;
+	cursor: pointer;
+}
+
+ul {
+	padding: 0 15px;	
+}
+
+li {
+	margin: 5px;
+}
+
+.error {
+	display: none;
+	color: red;
+	font-size: 0.7em;
+}
+
+
+.verified{
+	color: rgb(0, 255, 0);
+	font-size: 0.7em;
+	
 }

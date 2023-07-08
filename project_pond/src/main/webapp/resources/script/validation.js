@@ -40,15 +40,13 @@ $('#phone').on('change', e => {
 	}
 });
 
+
+
 function checkValue(htmlForm) {
 	const id = htmlForm.id.value;
 	const password = htmlForm.password.value;
-	const email = htmlForm.email.value;
 	const name = htmlForm.name.value;
 	const birth = htmlForm.birth.value;
-	const telecom = htmlForm.telecom.value;
-	const gender = htmlForm.gender.value;
-	const foreigner = htmlForm.foreigner.value;
 	const phone = htmlForm.phone.value;
 	
 	let check = true;

@@ -17,6 +17,13 @@ public class UserRequestDto {
 	
 	
 	
+	public UserRequestDto(String id) {
+		
+		this.id = id;
+	
+	}
+	
+	
 	public UserRequestDto(String id, String pwd, String name, String email, int birth, String phone, String address
 			) {
 		

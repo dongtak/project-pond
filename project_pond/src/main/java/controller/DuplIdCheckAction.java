@@ -1,26 +1,31 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
 
 /**
- * Servlet implementation class JoinFormAction
+ * Servlet implementation class DuplIdCheckAction
  */
-@WebServlet("/JoinFormAction")
-public class JoinFormAction extends HttpServlet {
+@WebServlet("/DuplIdCheckAction")
+public class DuplIdCheckAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JoinFormAction() {
+    public DuplIdCheckAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,39 +42,26 @@ public class JoinFormAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-
+		
+		 request.setCharacterEncoding("utf8");
+	        response.setCharacterEncoding("utf8");
+		  PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		int birth = Integer.parseInt(request.getParameter("birth"));
-		String phone = request.getParameter("phone");
-	
 		
-		
-		String address =request.getParameter("sample6_postcode");
-		address += " " + request.getParameter("sample6_address");
-		address += request.getParameter("sample6_detailAddress");	
-		address += request.getParameter("sample6_extraAddress");
-		
-		
-		System.out.print(address + " = address 확인용");
-
-		UserRequestDto user = new UserRequestDto(id, password, name, email, birth, phone);
-
+		UserRequestDto user = new UserRequestDto(id);
 		UserDao userDao = UserDao.getInstance();
-		boolean result = userDao.createUser(user);
-
-		String url = "";
-
-		if(result) 
-			url = "login";
-		else
-			url = "join";
-
-		response.sendRedirect(url);
+		User result = userDao.getUserById(id);
+		
+		
+		
+		boolean dupl = true;
+		if(result!=null) {
+			dupl=false;
+		}
+		
+		request.setAttribute("dupl", dupl);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/joinForm.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
