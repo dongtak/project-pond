@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String id = (String) session.getAttribute("log");
+boolean login = id == null ? false : true;
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +14,23 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <link rel="stylesheet" href="resources/style/grid.css">
+<link rel="stylesheet" href="resources/style/form.css">
+
 <body>
 <div class="header">
 		<a href="main"><span>로고</span></a>
 		<div class="top-nav">
+			<%
+			if (login) {
+			%>
+			<span><a href="myPage">마이페이지</a></span>
+			<%
+			} else {
+			%>
 			<span><a href="login">로그인</a></span>
+			<%
+			}
+			%>
 		</div>
 		<div class="nav-bar">
 			<ul>
