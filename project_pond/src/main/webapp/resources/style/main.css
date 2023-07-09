@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+progress{
+	height: 20px;
+	background: black;
+}
+
+
+body{
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+}
+
+.main_moon {
+	display:flex;
+	text-align:center;
+	width: 520px;
+	height: 520px;
+	border:3px solid #ffbc00;
+	border-radius: 260px;
+	margin:0 auto;
+	justify-content: center;
+	
+	color:white;
+}
+
+.
+

@@ -9,12 +9,7 @@
 	display: inline-block;
 }
 
-.main_moon {
-	width: 520px;
-	height: 520px;
-	border: 3px solid yellow;
-	border-radius: 260px;
-}
+
 
 
 * {
@@ -96,22 +91,6 @@ select {
 	justify-content: space-between;
 }
 
-.radio-box {
-	text-align: center;
-	width: 60px;
-	padding: 10px 15px;
-	border: solid 1px lightgrey;
-	cursor: pointer;
-	font-size: 0.8em;
-}
-
-.radio-left {
-	border-radius: 5px 0 0 5px;
-}
-
-.radio-right {
-	border-radius: 0 5px 5px 0;
-}
 
 #submit-btn {
 	width: 100%;
@@ -122,14 +101,6 @@ select {
 	border-radius: 10px;
 	background-color: #04C75A;
 	cursor: pointer;
-}
-
-ul {
-	padding: 0 15px;	
-}
-
-li {
-	margin: 5px;
 }
 
 .error {

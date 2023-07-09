@@ -19,6 +19,7 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="resources/style/form.css">
+<link rel="stylesheet" href="resources/style/main.css">
 <body>
 
 	<div id="wrap">
@@ -37,13 +38,18 @@
 				while (rs.next()) {
 			%>
 
+			<%
+			if (rs.getString("status").equals("1")) { //모금상태가 1인경우
+			%>
 			<div class="fullmoon" id="fullmoon">
 				<h2><%=rs.getString("title")%></h2>
 				<span><%=rs.getString("moonNum")%></span> <span><%=rs.getString("goal")%></span>
 				<span><%=rs.getString("donation")%></span>
-
+				<progress value="<%=Integer.parseInt(rs.getString("donation")) %>" max="<%= Integer.parseInt(rs.getString("goal"))%>"></progress>
 			</div>
-
+			<%
+			}
+			%>
 			<%
 			}
 			} catch (Exception e) {
