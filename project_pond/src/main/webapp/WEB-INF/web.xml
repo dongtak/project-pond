@@ -141,6 +141,16 @@
 		<servlet-name>articleHome</servlet-name>
 		<url-pattern>/articleHome</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>payAction</servlet-name>
+		<jsp-file>/pages/payAction.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>payAction</servlet-name>
+		<url-pattern>/payment</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>loginForm</servlet-name>

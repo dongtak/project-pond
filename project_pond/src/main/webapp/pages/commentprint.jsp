@@ -22,8 +22,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
 	<div class="comment-list">
 
 					<h3>댓글</h3>
@@ -42,17 +40,9 @@
 					<%
 					}
 					
-					
-					
 					%>
 
-
-
 				</div>
-
-
-
-
 
 
 </body>

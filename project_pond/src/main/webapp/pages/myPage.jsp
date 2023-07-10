@@ -8,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="resources/style/form.css">
-
-
 <body>
 <c:if test="${empty sessionScope.log }">
 	<c:redirect url="login"></c:redirect>

@@ -67,18 +67,11 @@ textarea {
 
 										<td><textarea class="form" placeholder="글내용"
 												name="commentContent"></textarea></td>
-
-
-
 									</tr>
-
 								</tbody>
-
-
 							</table>
 							<input type="submit" class="btn" value="글쓰기">
 						</form>
-
 					</div>
 
 
