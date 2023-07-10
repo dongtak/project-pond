@@ -24,8 +24,8 @@ boolean login = id == null ? false : true;
 </head>
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
-<body>
 
+<body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section class="main_moon">
@@ -49,8 +49,10 @@ boolean login = id == null ? false : true;
 				<h2><%=rs.getString("title")%></h2>
 				<span><%=rs.getString("moonNum")%></span> <span><%=rs.getString("goal")%></span>
 				<span><%=rs.getString("donation")%></span>
-				<progress value="<%=Integer.parseInt(rs.getString("donation")) %>" max="<%= Integer.parseInt(rs.getString("goal"))%>"></progress>
+				<progress value="<%=Integer.parseInt(rs.getString("donation"))%>"
+					max="<%=Integer.parseInt(rs.getString("goal"))%>"></progress>
 				
+
 			</div>
 			<%
 			}
@@ -81,7 +83,12 @@ boolean login = id == null ? false : true;
 			%>
 
 
-
+			<%
+			if (login) {
+			%><p>로그인상태</p>
+			<%
+			}
+			%>
 
 
 		</section>

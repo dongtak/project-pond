@@ -29,11 +29,11 @@ create table fullmoon (
     
 );
 
-insert into fullmoon (moonNum, title, content, goal,donation,donationId,adminId)
-values ("보름달번호123","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
-		("보름달번호124","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
-		("보름달번호125","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin"),
-		("보름달번호126","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin");
+insert into fullmoon (moonNum, title, content, goal,donation,donationId,adminId,`status`)
+values ("보름달번호123","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin",1),
+		("보름달번호124","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin",0),
+		("보름달번호125","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin",0),
+		("보름달번호126","보름달 제목입니다","보름달 내용입니다",256000,12200,"보름달결제번호","admin",0);
 select * from fullmoon;
 
 drop table `article`;
@@ -158,10 +158,10 @@ create table message(
     userId VARCHAR(20) ,
     content VARCHAR(50) not null,
     msgDate timestamp default current_timestamp,
-
+	moonNum VARCHAR(10) not null,
     
-    foreign key (userId) references `user`(id) On delete set null
-
+    foreign key (userId) references `user`(id) On delete set null,
+	foreign key(moonNum) references fullmoon(moonNum)
 );
 
 insert into message (id,content,userId)
