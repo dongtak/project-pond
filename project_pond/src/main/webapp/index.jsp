@@ -13,7 +13,7 @@
 
 <%
 	DBManager.getConnection();
-	%>
+%>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">

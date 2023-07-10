@@ -24,7 +24,7 @@
 
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section class="main_moon">
+		<section class="main_moon section">
 
 			<%
 			try {
@@ -74,10 +74,6 @@
 
 			}
 			%>
-
-
-
-
 
 		</section>
 

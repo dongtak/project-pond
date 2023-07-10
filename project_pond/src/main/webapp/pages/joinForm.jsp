@@ -19,7 +19,7 @@
 					<div>
 						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
 					</div>
-						<input type="button" action="duplIdCheck(form)" value="아이디 중복체크">
+						<button onclick="duplIdCheck(form)">아이디 중복체크</button>
 						<% boolean dupl = (boolean) request.getAttribute("dupl"); 
 						if(dupl==true){%>
 						<span class="verified" id="verifiedId">사용가능한 아이디입니다</span>
