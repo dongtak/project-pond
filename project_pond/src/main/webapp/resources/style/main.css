@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-progress {
-	height: 20px;
-	background: black;
-}
-
 body {
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
@@ -22,4 +17,5 @@ body {
 
 .fullmoon {
 	color: white;
+	
 }
