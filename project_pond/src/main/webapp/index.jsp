@@ -18,6 +18,9 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<h1>hello pond</h1>
+			<script>
+				location.href="main";
+			</script>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>

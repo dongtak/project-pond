@@ -1,28 +1,25 @@
 @charset "UTF-8";
 
-progress{
+progress {
 	height: 20px;
 	background: black;
 }
 
-
-body{
+body {
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
 }
 
 .main_moon {
-	display:flex;
-	text-align:center;
+	display: flex;
+	text-align: center;
 	width: 520px;
 	height: 520px;
-	border:3px solid #ffbc00;
+	border: 3px solid #ffbc00;
 	border-radius: 260px;
-	margin:0 auto;
-	justify-content: center;
-	
-	color:white;
+	margin: 0 auto;
 }
 
-.
-
+.fullmoon {
+	color: white;
+}

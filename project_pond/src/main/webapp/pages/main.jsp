@@ -46,6 +46,7 @@
 				<span><%=rs.getString("moonNum")%></span> <span><%=rs.getString("goal")%></span>
 				<span><%=rs.getString("donation")%></span>
 				<progress value="<%=Integer.parseInt(rs.getString("donation")) %>" max="<%= Integer.parseInt(rs.getString("goal"))%>"></progress>
+				
 			</div>
 			<%
 			}

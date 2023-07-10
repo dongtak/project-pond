@@ -1,22 +1,17 @@
 @charset "UTF-8";
 
 * {
+	
+	margin: 0;
+	padding: 0;
 	text-decoration: none;
 	color:black;
+	
 }
 
 .header>top-nav {
 	display: inline-block;
 }
-
-
-
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
 
 form {
 	min-width: 400px;
