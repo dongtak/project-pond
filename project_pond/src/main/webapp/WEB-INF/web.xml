@@ -74,6 +74,32 @@
 	</servlet-mapping>
 
 
+<!-- 아이디 중복체크 추가 -->
+
+
+
+<servlet>
+		<servlet-name>IdCheckFormAction</servlet-name>
+		<servlet-class>controller.IdCheckFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IdCheckFormAction</servlet-name>
+		<url-pattern>/IdCheck</url-pattern>
+	</servlet-mapping>
+
+<!-- 회원탈퇴 추가 -->
+
+
+<servlet>
+		<servlet-name>DeleteUserFormAction</servlet-name>
+		<servlet-class>controller.DeleteUserFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeleteUserFormAction</servlet-name>
+		<url-pattern>/leave</url-pattern>
+	</servlet-mapping>
 
 
 	<!-- 2. JSP 페이지 맵핑 -->
