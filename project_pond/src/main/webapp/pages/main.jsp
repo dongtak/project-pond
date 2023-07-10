@@ -13,6 +13,10 @@
 	String password = ***
 	String sql = "select * from `fullmoon`";%>
 <!DOCTYPE html>
+<%
+String id = (String) session.getAttribute("log");
+boolean login = id == null ? false : true;
+%>
 <html>
 <head>
 <meta charset="UTF-8">

@@ -23,6 +23,7 @@ create table fullmoon (
     donation int not null,
 	donationId varchar(25) not null,
     adminId VARCHAR(20) not null,
+	`status` int not null,
     
     foreign key (adminId) references `admin`(id)
     
@@ -44,7 +45,7 @@ create table article(
     modifiedAt timestamp default current_timestamp on update current_timestamp,
     adminId VARCHAR(20),
     moonNum VARCHAR(10),
-    
+
     
     foreign key(adminId) references `admin`(id),
 	foreign key(moonNum) references fullmoon(moonNum)
@@ -115,7 +116,7 @@ create table articleComment(
     `like` int,
     
     foreign key (articleId) references article(id),
-    foreign key (userId) references `user`(id)
+    foreign key (userId) references `user`(id) On delete set null
     
 );
 
@@ -154,12 +155,12 @@ create table payment(
 drop table message;
 create table message(
 	id VARCHAR(10) primary key,
-    userId VARCHAR(20) not null,
+    userId VARCHAR(20) ,
     content VARCHAR(50) not null,
     msgDate timestamp default current_timestamp,
 
     
-    foreign key (userId) references `user`(id)
+    foreign key (userId) references `user`(id) On delete set null
 
 );
 

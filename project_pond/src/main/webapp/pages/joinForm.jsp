@@ -19,14 +19,6 @@
 					<div>
 						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
 					</div>
-						<input type="button" action="duplIdCheck(form)" value="아이디 중복체크">
-						<% boolean dupl = (boolean) request.getAttribute("dupl"); 
-						if(dupl==true){%>
-						<span class="verified" id="verifiedId">사용가능한 아이디입니다</span>
-						
-						<%}else {%>
-						<span class="error" id="error-id">이미 존재하는 아이디입니다.</span>
-						<%} %>
 					<div>
 						<input type="text" id="password" name="password"
 							placeholder="비밀번호">
@@ -54,7 +46,7 @@
 					</div>
 
 					<div>
-					<jsp:include page="/address"></jsp:include>
+						<jsp:include page="/address"></jsp:include>
 
 					</div>
 				</div>
@@ -74,7 +66,7 @@
 
 
 </body>
-	<script src="resources/script/validation.js"></script>
+<script src="resources/script/validation.js"></script>
 
 
 </html>

@@ -62,6 +62,16 @@
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<url-pattern>/LeaveComment</url-pattern>
 	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>dupleIdCheckAction</servlet-name>
+		<servlet-class>controller.dupleIdCheckAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dupleIdCheckAction</servlet-name>
+		<url-pattern>/dupleIdCheckt</url-pattern>
+	</servlet-mapping>
 
 
 
