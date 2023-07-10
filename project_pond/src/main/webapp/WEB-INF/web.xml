@@ -38,7 +38,6 @@
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 
-
 	<servlet>
 		<servlet-name>JoinFormAction</servlet-name>
 		<servlet-class>controller.JoinFormAction</servlet-class>
@@ -48,10 +47,6 @@
 		<servlet-name>JoinFormAction</servlet-name>
 		<url-pattern>/Join</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	<!--  -->
 	
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
@@ -72,8 +67,6 @@
 		<servlet-name>dupleIdCheckAction</servlet-name>
 		<url-pattern>/dupleIdCheckt</url-pattern>
 	</servlet-mapping>
-
-
 
 
 	<!-- 2. JSP 페이지 맵핑 -->

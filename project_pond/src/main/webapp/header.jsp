@@ -19,8 +19,14 @@ boolean login = id == null ? false : true;
 <body>
 <div class="header">
 		<a href="main"><span>로고</span></a>
-		<div class="top-nav">
-			<%
+		<div class="nav-bar">
+			<ul>
+				<li><a href="about">ABOUT</a></li>
+				<li><a href="moon">보름달</a></li>
+				<li><a href="articleHome">나눗샘</a></li>
+			</ul>
+		</div>
+		<%
 			if (login) {
 			%>
 			<span><a href="myPage">마이페이지</a></span>
@@ -30,15 +36,7 @@ boolean login = id == null ? false : true;
 			<span><a href="login">로그인</a></span>
 			<%
 			}
-			%>
-		</div>
-		<div class="nav-bar">
-			<ul>
-				<li><a href="about">ABOUT</a></li>
-				<li><a href="moon">보름달</a></li>
-				<li><a href="articleHome">나눗샘</a></li>
-			</ul>
-		</div>
+		%>
 	</div>
 </body>
 </html>
