@@ -22,9 +22,43 @@ boolean login = id == null ? false : true;
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
+<script src="https://js.bootpay.co.kr/bootpay-.min.js" type="application/javascript"></script>
+<script type="text/javascript">
 
+import { Bootpay } from '@bootpay/client-js'
+
+const response = await Bootpay.requestPayment({
+  "application_id": "64abb74900c78a001c29caa2",
+  "price": 1000,
+  "order_name": "테스트결제",
+  "order_id": "TEST_ORDER_ID",
+  "pg": "",
+  "method": "카드",
+  "tax_free": 0,
+  "user": {
+    "id": "회원아이디",
+    "username": "회원이름",
+    "phone": "01000000000",
+    "email": "test@test.com"
+  },
+  "items": [
+    {
+      "id": "item_id",
+      "name": "테스트아이템",
+      "qty": 1,
+      "price": 1000
+    }
+  ],
+  "extra": {
+    "open_type": "iframe",
+    "card_quota": "0,2,3",
+    "escrow": false
+  }
+});
+</script>
 <body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
@@ -47,8 +81,9 @@ boolean login = id == null ? false : true;
 			%>
 			<div class="fullmoon" id="fullmoon">
 				<h2><%=rs.getString("title")%></h2>
-				<span><%=rs.getString("moonNum")%></span><br> <span>목표모금액
-					: <%=rs.getString("goal")%></span><br> <span>누적모금액 : <%=rs.getString("donation")%></span><br>
+				<span><%=rs.getString("moonNum")%></span><br> 
+				<span>목표모금액: <%=rs.getString("goal")%></span><br> 
+				<span>누적모금액 : <%=rs.getString("donation")%></span><br>
 				<%
 				int donate = Integer.parseInt(rs.getString("donation"));
 				int total = Integer.parseInt(rs.getString("goal"));
@@ -57,14 +92,13 @@ boolean login = id == null ? false : true;
 				%>
 				<progress value="<%=formattedMoney%>" max="100"></progress>
 				<span>달성률 : <%=formattedMoney%>%
-				</span><br> <a class="payBtn" href="payment">후원하기</a>
-
-
+				</span><br>
+			
 				<%
-						}
+				}
 				%>
 				<%
-					}
+				}
 				} catch (Exception e) {
 				e.printStackTrace();
 
@@ -78,13 +112,10 @@ boolean login = id == null ? false : true;
 				}
 				if (conn != null) {
 					conn.close();
-
 				}
-
 				} catch (Exception e) {
 				e.printStackTrace();
 				}
-
 				}
 				%>
 
@@ -95,7 +126,7 @@ boolean login = id == null ? false : true;
 				<%
 				}
 				%>
-			
+				<button type="button" onclick="requestPayment()">결제 요청</button>
 		</section>
 
 		<jsp:include page="/footer"></jsp:include>
