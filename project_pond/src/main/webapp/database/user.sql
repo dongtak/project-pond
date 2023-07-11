@@ -14,7 +14,6 @@ values ("admin", "pwd");
 
 drop table `fullmoon`;
 create table fullmoon (
-
 	moonNum VARCHAR(10) primary key,
     title VARCHAR(50) not null,
     content VARCHAR(50),
