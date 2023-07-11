@@ -49,6 +49,7 @@ public class UserDao {
 		String email = userDto.getEmail();
 		int birth = userDto.getBirth();
 		String phone = userDto.getPhone();
+		String address = userDto.getAddress();
 
 		boolean check = true;
 
@@ -56,7 +57,7 @@ public class UserDao {
 			this.conn = DBManager.getConnection();
 			if (this.conn != null) {
 				if (!email.equals("")) {
-					String sql = "INSERT INTO user(id, pwd, name, email, birth, phone) VALUES(?, ?, ?, ?, DATE(?), ?)";
+					String sql = "INSERT INTO user(user_id, user_pwd, user_name, user_email, user_birth, user_phone,user_addr) VALUES(?, ?, ?, ?, DATE(?), ?,?)";
 
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
@@ -66,6 +67,7 @@ public class UserDao {
 						this.pstmt.setString(4, email);
 						this.pstmt.setInt(5, birth);
 						this.pstmt.setString(6, phone);
+						this.pstmt.setString(7, address);
 
 						this.pstmt.execute();
 
@@ -76,7 +78,7 @@ public class UserDao {
 						DBManager.close(this.conn, this.pstmt);
 					}
 				} else {
-					String sql = "INSERT INTO user(id, pwd, name, birth, phone) VALUES(?, ?, ?, DATE(?), ?)";
+					String sql = "INSERT INTO user(user_id, user_pwd, user_name, user_birth, user_phone,user_addr) VALUES(?, ?, ?, DATE(?), ?,?)";
 
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
@@ -85,7 +87,7 @@ public class UserDao {
 						this.pstmt.setString(3, name);
 						this.pstmt.setInt(4, birth);
 						this.pstmt.setString(5, phone);
-
+						this.pstmt.setString(6, address);
 						this.pstmt.execute();
 
 					} catch (Exception e) {
