@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/style/form.css">
 
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="resources/style/form.css">
 
 </head>
 <body>
@@ -32,7 +31,40 @@
 			
 			</div>
 		
-			<input type="submit" id="submit-btn" value="찾기"
+			<input type="button" id="id-submit-btn" value="찾기"
+					onclick="validationFindUser(form)">
+			
+					<input type="button" id="id-submit-btn" value="취소"
+					onclick="back()">
+		
+			</form>
+			
+			
+			
+			
+				<h1>비밀번호 찾기</h1>
+			<form mehtod="POST" action="/findPwd">
+			<div class="div-form">
+			
+			<div>
+			<input type="text" id="id" name="id" placeholder="아아디를 입력하세요" required autofocus>
+			
+			</div>
+			
+			
+			<div>
+			<input type="text" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
+			
+			</div>
+			
+			<div>
+			<input type="text"  name="email" class="email" placeholder="email주소를 입력하세요." required>
+			</div>
+			
+			
+			</div>
+		
+			<input type="button" id="pwd-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
 					<input type="button" id="submit-btn" value="취소"
@@ -40,9 +72,11 @@
 		
 			</form>
 			
+			
+			
+			
+			
 		
-			
-			
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>

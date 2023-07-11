@@ -69,8 +69,6 @@
 	</servlet-mapping>
 
 
-<!-- 아이디 중복체크 추가 -->
-
 
 
 <servlet>
@@ -248,7 +246,7 @@
 	
 	
 	
-		<servlet>
+	<servlet>
 		<servlet-name>address</servlet-name>
 		<jsp-file>/pages/address.jsp</jsp-file>
 	</servlet>
@@ -258,9 +256,17 @@
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
 	
+	<!-- id중복체크 -->
 	
+	<servlet>
+		<servlet-name>idCheckForm</servlet-name>
+		<jsp-file>/pages/idCheckForm.jsp</jsp-file>
+	</servlet>
 	
-	
+	<servlet-mapping>
+		<servlet-name>idCheckForm</servlet-name>
+		<url-pattern>/idCheckForm</url-pattern>
+	</servlet-mapping>
 	
 	
 </web-app>

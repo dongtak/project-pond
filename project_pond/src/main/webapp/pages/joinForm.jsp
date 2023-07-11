@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -72,8 +73,10 @@
 <!-- 아이디중복체크 추가 -->
 <script>
 function idCheck(){
-	
-	window.open("idCheckForm.jsp","idcheck","width=400,height=350")
+	String id = $(#id).val();
+	String url = "idCheckForm";
+	console.log(id);
+	window.open(url,"idcheck","width=400,height=350")
 }
 </script>
 
