@@ -3,31 +3,47 @@
 body {
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
+	overflow: hidden;
 }
 
 .main_moon {
 	display: flex;
+	background: black;
 	text-align: center;
 	width: 520px;
 	height: 520px;
-	border: 3px solid #ffbc00;
+	brgb: 3px solid black;
 	border-radius: 260px;
 	margin: 0 auto;
+	justify-content: center;
+	box-shadow: -20px 0px 50px 0px #feffc1;
+	transition: 0.2s;
+	color: white;
+}
+
+.main_moon:hover {
+	box-shadow: -20px 0px 30px 15px #feffc1;
 }
 
 .fullmoon {
-	text-align:center;
+	margin-top: 150px;
+	text-align: center;
 	color: white;
 }
 
 .payBtn {
 	border: 1px solid white;
 	border-radius: 5px;
-	color:white;
+	color: white;
 }
 
-button{
+button {
 	width: 120px;
 	height: 40px;
-	
 }
+
+.modal{
+	color:black;
+}
+
+

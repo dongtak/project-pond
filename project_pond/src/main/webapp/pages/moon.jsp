@@ -11,7 +11,10 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<h1>hello pond</h1>
+			
+			
+			
+			
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
