@@ -46,8 +46,6 @@ public class JoinFormAction extends HttpServlet {
 		String email = request.getParameter("email");
 		int birth = Integer.parseInt(request.getParameter("birth"));
 		String phone = request.getParameter("phone");
-	
-		
 		
 		String address =request.getParameter("sample6_postcode");
 		address += " " + request.getParameter("sample6_address");
@@ -57,7 +55,7 @@ public class JoinFormAction extends HttpServlet {
 		
 		System.out.print(address + " = address 확인용");
 
-		UserRequestDto user = new UserRequestDto(id, password, name, email, birth, phone);
+		UserRequestDto user = new UserRequestDto(id, password, name, email, birth, phone,address);
 
 		UserDao userDao = UserDao.getInstance();
 		boolean result = userDao.createUser(user);
