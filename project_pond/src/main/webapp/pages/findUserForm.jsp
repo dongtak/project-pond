@@ -21,23 +21,26 @@
 			<div class="div-form">
 			
 			<div>
-			<input type="text" id="id" name="id" placeholder="아이디 찾기" autofocus>
+			<input type="text" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
 			
 			<div>
-			<input type="text" onKeyup="addHypen(this);" name="phone" class="phone" placeholder="휴대폰번호를 '-'없이 입력">
+			<input type="text"  name="email" class="email" placeholder="email주소를 입력하세요." required>
 			</div>
 			
 			
 			</div>
 		
-			<input type="button" id="submit-btn" value="찾기"
+			<input type="submit" id="submit-btn" value="찾기"
 					onclick="idSearch()">
+			
 					<input type="button" id="submit-btn" value="취소"
 					onclick="back()">
 		
 			</form>
+			
+		
 			
 			
 		</section>
@@ -50,6 +53,10 @@
 
 <script>
 
+function idSearch(){
+	
+	
+}
 
 
 </script>

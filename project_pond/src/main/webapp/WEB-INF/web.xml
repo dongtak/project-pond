@@ -95,6 +95,18 @@
 		<servlet-name>DeleteUserFormAction</servlet-name>
 		<url-pattern>/leave</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 아이디 찾기 추가 -->
+	
+	<servlet>
+		<servlet-name>FindIdAction</servlet-name>
+		<servlet-class>controller.FindIdAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FindIdAction</servlet-name>
+		<url-pattern>/findId</url-pattern>
+	</servlet-mapping>
 
 
 	<!-- 2. JSP 페이지 맵핑 -->
