@@ -3,52 +3,56 @@ package model.article;
 import java.sql.Timestamp;
 
 public class Article {
-	private String id;
-	private String title;
-	private String content;
-	private Timestamp createdAt;
-	private Timestamp modifiedAt;
-	private String adminId;
-	private String moonNum;
-
-	public Article(String id, String title, String content, Timestamp createdAt, Timestamp modifiedAt, String adminId, String moonNum) {
-
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.createdAt = createdAt;
-		this.modifiedAt = modifiedAt;
-		this.adminId = adminId;
-		this.moonNum = moonNum;
+	private String moon_num;
+	private String admin_id;
+	private String article_title;
+	private String article_content;
+	private Timestamp article_createdAt;
+	private Timestamp atricle_modifiedAt;
+	
+	public Article(String moon_num, String admin_id, String article_title, String article_content,
+			Timestamp article_createdAt, Timestamp atricle_modifiedAt) {
+		this.moon_num = moon_num;
+		this.admin_id = admin_id;
+		this.article_title = article_title;
+		this.article_content = article_content;
+		this.article_createdAt = article_createdAt;
+		this.atricle_modifiedAt = atricle_modifiedAt;
 	}
 
-	public String getId() {
-		return id;
+	public Article(String moon_num, String admin_id, String article_title, String article_content) {
+		super();
+		this.moon_num = moon_num;
+		this.admin_id = admin_id;
+		this.article_title = article_title;
+		this.article_content = article_content;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getMoon_num() {
+		return moon_num;
 	}
 
-	public String getContent() {
-		return content;
+	public String getAdmin_id() {
+		return admin_id;
 	}
 
-	public Timestamp getCreatedAt() {
-		return createdAt;
+	public String getArticle_title() {
+		return article_title;
 	}
 
-	public Timestamp getModifiedAt() {
-		return modifiedAt;
+	public String getArticle_content() {
+		return article_content;
 	}
 
-	public String getAdminId() {
-		return adminId;
+	public Timestamp getArticle_createdAt() {
+		return article_createdAt;
+	}
+
+	public Timestamp getAtricle_modifiedAt() {
+		return atricle_modifiedAt;
 	}
 	
-	public String getMoonNum() {
-		return moonNum;
-	}
+	
 	
 
 }

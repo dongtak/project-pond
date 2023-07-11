@@ -14,7 +14,6 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<h2>JOIN</h2>
 			<form method="POST" action="Join">
 				<div class="div-form">
 					<div>

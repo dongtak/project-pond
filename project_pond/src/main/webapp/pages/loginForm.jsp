@@ -24,7 +24,7 @@
 				</ul>
 				<input type="button" onclick="checkValue(form)" value=" 로그인">
 			</form>
-			<a href="findAcc">아이디/비밀번호 찾기</a> <a href="join">회원가입</a>
+			<a href="findUser">아이디/비밀번호 찾기</a> <a href="join">회원가입</a>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>

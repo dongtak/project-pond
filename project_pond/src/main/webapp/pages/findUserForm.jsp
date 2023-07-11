@@ -23,11 +23,9 @@
 			<input type="text" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
-			
 			<div>
 			<input type="text"  name="email" class="email" placeholder="email주소를 입력하세요." required>
 			</div>
-			
 			
 			</div>
 		
