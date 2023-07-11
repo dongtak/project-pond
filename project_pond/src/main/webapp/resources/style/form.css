@@ -52,11 +52,21 @@ position: relative;
 
 .idCheckBtn{
     position: absolute;
-    top: 60px;
-    right:100px;
+    top: 20px;
+    right:60px;
     
     
 }
+
+input#sample6_postcode ,  input.addressBtn{
+	width: 30%;
+	
+	
+}
+
+
+
+
 
 /* .div-form>div:not(:first-child) {
 	border-top: none;
@@ -135,9 +145,9 @@ ul{
 
 }
 .error {
-	/* display: none; */
+	display: none; 
 	color: red;
-	font-size: 0.7em;
+	font-size: 0.8em;
     width: 70%;
     margin: 0 auto ;
     

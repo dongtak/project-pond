@@ -70,7 +70,9 @@
 
 
 
+
 	<!-- 아이디 중복체크 추가 -->
+
 
 
 
@@ -95,6 +97,18 @@
 	<servlet-mapping>
 		<servlet-name>DeleteUserFormAction</servlet-name>
 		<url-pattern>/leave</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 아이디 찾기 추가 -->
+	
+	<servlet>
+		<servlet-name>FindIdAction</servlet-name>
+		<servlet-class>controller.FindIdAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FindIdAction</servlet-name>
+		<url-pattern>/findId</url-pattern>
 	</servlet-mapping>
 
 
@@ -256,8 +270,19 @@
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
 
-
-
-
+	
+	<!-- id중복체크 -->
+	
+	<servlet>
+		<servlet-name>idCheckForm</servlet-name>
+		<jsp-file>/pages/idCheckForm.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>idCheckForm</servlet-name>
+		<url-pattern>/idCheckForm</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
 

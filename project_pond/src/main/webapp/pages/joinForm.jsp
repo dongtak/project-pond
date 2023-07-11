@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -18,7 +19,7 @@
 					<div>
 						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
 						<!-- 아이디 중복체크 추가-->
-						<button onclick="idCheck()" >중복확인</button>
+						<button class="idCheckBtn" onclick="idCheck()" >중복확인</button>
 					</div>
 					<div>
 						<input type="text" id="password" name="password"
@@ -71,8 +72,10 @@
 <!-- 아이디중복체크 추가 -->
 <script>
 function idCheck(){
-	
-	window.open("idCheckForm.jsp","idcheck","width=400,height=350")
+	String id = $(#id).val();
+	String url = "idCheckForm";
+	console.log(id);
+	window.open(url,"idcheck","width=400,height=350")
 }
 </script>
 

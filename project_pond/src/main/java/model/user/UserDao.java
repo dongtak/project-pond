@@ -248,5 +248,74 @@ public class UserDao {
 
 		return check;
 	}
+	//아이디 찾기 1)
+	
+//	public boolean findIdbyEmail(UserRequestDto userDto) {
+//		boolean check =false;
+//		try {
+//			this.conn = DBManager.getConnection();
+//			String sql = "SELECT id FROM User WHERE name=? AND email=?";
+//			//이름과 이메일이 일치하는 id 조회
+//			this.pstmt = this.conn.prepareStatement(sql);
+//			this.pstmt.setString(1, userDto.getName());
+//			this.pstmt.setString(2, userDto.getEmail());
+//			this.pstmt = this.conn.prepareStatement(sql);
+//			this.pstmt.executeQuery();
+//			if (rs.next()) {	//이름과 이메일이 일치되면 아이디 
+//				String id = rs.getString("id");
+//		
+//				
+//				
+//			}
+//			
+//			
+//		}catch(Exception e) {
+//			check = false;
+//			System.out.println("이메일 중복확인 실패 : " +  e);
+//			
+//		}finally {
+//			DBManager.close(this.conn, this.pstmt, this.rs);
+//			
+//			
+//		}
+//		
+//		return check;
+//		
+//	}
+//	
+//	
+	
+	
+	//아이디찾기 2)
+
+	
+	public String findIdbyEmail(String name, String email) {
+		String id = null;
+		String sql = "SELECT user_id FROM User WHERE user_name=? AND user_email=?";
+
+		try {
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.pstmt.setString(1, name);
+			this.pstmt.setString(2, email);
+			rs = this.pstmt.executeQuery();
+			if (rs.next()) {
+				id = rs.getString("id");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(this.conn, this.pstmt, this.rs);
+		}
+
+		System.out.print("id 확인용 =" + id);
+		return id;
+
+	}
+	
+	
+	
+	
+	
 
 }
