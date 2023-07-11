@@ -153,7 +153,7 @@ public class UserDao {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String sql = "SELECT * FROM `user` WHERE id=?";
+			String sql = "SELECT * FROM `user` WHERE user_id=?";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
@@ -166,7 +166,6 @@ public class UserDao {
 					String name = this.rs.getString(3);
 					String email = this.rs.getString(4);
 					int birth = Integer.parseInt(this.sdf.format(this.rs.getInt(5)));
-					String birthNum = this.rs.getString(5);
 					String phone = this.rs.getString(6);
 					String address = this.rs.getString(7);
 					user = new User(id, pwd, name, email, birth, phone, address);
@@ -186,7 +185,7 @@ public class UserDao {
 
 		if (this.conn != null && userDto.getPwd() != null && userDto.getEmail() != null && userDto.getId() != null) {
 			if (userDto.getPwd() != "") {
-				String sql = "UPDATE user SET password=?, email=? WHERE id=? AND password=?";
+				String sql = "UPDATE user SET user_pwd=?, email=? WHERE user_id=? AND user_pwd=?";
 
 				try {
 					this.pstmt = this.conn.prepareStatement(sql);
@@ -203,7 +202,7 @@ public class UserDao {
 					DBManager.close(this.conn, this.pstmt);
 				}
 			} else {
-				String sql = "UPDATE user SET email=? WHERE id=? AND password=?";
+				String sql = "UPDATE user SET user_email=? WHERE user_id=? AND user_pwd=?";
 
 				try {
 					this.pstmt = this.conn.prepareStatement(sql);
@@ -228,7 +227,7 @@ public class UserDao {
 		boolean check = true;
 
 		if (this.conn != null) {
-			String sql = "DELETE FROM user WHERE id=? AND password=?";
+			String sql = "DELETE FROM user WHERE user_id=? AND user_pwd=?";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
