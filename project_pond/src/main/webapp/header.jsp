@@ -14,8 +14,6 @@ boolean login = id == null ? false : true;
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <link rel="stylesheet" href="resources/style/grid.css">
-<link rel="stylesheet" href="resources/style/form.css">
-
 <body>
 <div class="header">
 		<a href="main"><span>로고</span></a>

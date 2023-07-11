@@ -7,21 +7,45 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="resources/style/article.css">
+<title>게시판</title>
 </head>
 <body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
+		<div class="section">
+		<div class="items">
+			<div class="item">
+				<a href="#">
+				게시판1
+				</a>
+			</div>
+			<div class="item">
+				<a href="#">
+				게시판2
+				</a>
+			</div>
+			<div class="item">
+				<a href="#">
+				게시판3
+				</a>
+			</div>
+			<div class="item">
+				<a href="#">
+				게시판4
+				</a>
+			</div>
 		
-			<a href="articleList">게시글 목록보기</a>
-			
-			
-			
-			
-			<br><a href="article">댓글달기 테스트</a>
-			
-		</section>
+		</div>
+		<div class="page">		
+		<span>&lt;</span>	
+		<span>1</span>	
+		<span>2</span>	
+		<span>3</span>	
+		<span>&gt;</span>	
+		</div>
+		
+		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 </body>
