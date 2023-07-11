@@ -210,6 +210,7 @@ VALUES
 ('FM078', 'admin', '어린이 봉사활동', '꺄르륵'),
 ('FM079', 'admin', '산불화재 모금', '타닥 화르르');
 
+
 select * from article;
 
 
