@@ -17,7 +17,7 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<h1>아이디 찾기</h1>
-			<form mehtod="POST" action="findId">
+			<form mehtod="POST" action="/findId">
 			<div class="div-form">
 			
 			<div>
@@ -33,7 +33,7 @@
 			</div>
 		
 			<input type="submit" id="submit-btn" value="찾기"
-					onclick="idSearch()">
+					onclick="validationFindUser(form)">
 			
 					<input type="button" id="submit-btn" value="취소"
 					onclick="back()">
@@ -53,10 +53,16 @@
 
 <script>
 
-function idSearch(){
+function validationFindUser(htmlForm){
+	const name = htmlForm.name.value;
+	const email = htmlForm.email.value;
+	
+	let check= true;
 	
 	
 }
+
+
 
 
 </script>

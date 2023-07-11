@@ -291,7 +291,7 @@ public class UserDao {
 	
 	public String findIdbyEmail(String name, String email) {
 		String id = null;
-		String sql = "SELECT id FROM User WHERE name=? AND email=?";
+		String sql = "SELECT user_id FROM User WHERE user_name=? AND user_email=?";
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
@@ -308,6 +308,7 @@ public class UserDao {
 			DBManager.close(this.conn, this.pstmt, this.rs);
 		}
 
+		System.out.print("id 확인용 =" + id);
 		return id;
 
 	}

@@ -10,7 +10,7 @@
 
 	<input type="text" id="sample6_postcode" name="sample6_postcode"
 		placeholder="우편번호">
-	<input type="button" onclick="sample6_execDaumPostcode()"
+	<input class="addressBtn" type="button" onclick="sample6_execDaumPostcode()"
 		value="우편번호 찾기">
 	<br>
 	<input type="text" id="sample6_address" name="sample6_address"

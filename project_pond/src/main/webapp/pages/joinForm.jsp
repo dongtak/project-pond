@@ -19,7 +19,7 @@
 					<div>
 						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
 						<!-- 아이디 중복체크 추가-->
-						<button onclick="idCheck()" >중복확인</button>
+						<button class="idCheckBtn" onclick="idCheck()" >중복확인</button>
 					</div>
 					<div>
 						<input type="text" id="password" name="password"
