@@ -16,7 +16,7 @@
 
 
 	<!-- 1. 서블릿 페이지 맵핑 -->
-	
+
 
 	<servlet>
 		<servlet-name>LoginFormAction</servlet-name>
@@ -47,7 +47,7 @@
 		<servlet-name>JoinFormAction</servlet-name>
 		<url-pattern>/Join</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<servlet-class>controller.LeaveCommentFormAction</servlet-class>
@@ -57,8 +57,8 @@
 		<servlet-name>LeaveCommentFormAction</servlet-name>
 		<url-pattern>/LeaveComment</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>dupleIdCheckAction</servlet-name>
 		<servlet-class>controller.dupleIdCheckAction</servlet-class>
 	</servlet>
@@ -69,11 +69,12 @@
 	</servlet-mapping>
 
 
-<!-- 아이디 중복체크 추가 -->
+
+	<!-- 아이디 중복체크 추가 -->
 
 
 
-<servlet>
+	<servlet>
 		<servlet-name>IdCheckFormAction</servlet-name>
 		<servlet-class>controller.IdCheckFormAction</servlet-class>
 	</servlet>
@@ -83,10 +84,10 @@
 		<url-pattern>/IdCheck</url-pattern>
 	</servlet-mapping>
 
-<!-- 회원탈퇴 추가 -->
+	<!-- 회원탈퇴 추가 -->
 
 
-<servlet>
+	<servlet>
 		<servlet-name>DeleteUserFormAction</servlet-name>
 		<servlet-class>controller.DeleteUserFormAction</servlet-class>
 	</servlet>
@@ -169,7 +170,7 @@
 		<servlet-name>articleHome</servlet-name>
 		<url-pattern>/articleHome</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>payAction</servlet-name>
 		<jsp-file>/pages/payAction.jsp</jsp-file>
@@ -199,8 +200,8 @@
 		<servlet-name>joinForm</servlet-name>
 		<url-pattern>/join</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 
 	<servlet>
 		<servlet-name>dummy</servlet-name>
@@ -211,8 +212,8 @@
 		<servlet-name>dummy</servlet-name>
 		<url-pattern>/dummy</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 
 	<servlet>
 		<servlet-name>articleList</servlet-name>
@@ -233,10 +234,19 @@
 		<servlet-name>article</servlet-name>
 		<url-pattern>/article</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-		<servlet>
+
+<servlet>
+		<servlet-name>findUser</servlet-name>
+		<jsp-file>/pages/findUserForm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>findUser</servlet-name>
+		<url-pattern>/findUser</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
 		<servlet-name>address</servlet-name>
 		<jsp-file>/pages/address.jsp</jsp-file>
 	</servlet>
@@ -245,11 +255,9 @@
 		<servlet-name>address</servlet-name>
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
-	
-	
+
+
+
+
 </web-app>
 

@@ -21,21 +21,13 @@ boolean login = id == null ? false : true;
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-
+<script src="resources/script/payment_modal.js"></script>
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
-<link rel="stylesheet" href="resources/style/fireflies.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+</head>
 <body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<div class="fireflies">날파리</div>
 		<section class="main_moon section">
 
 			<%
@@ -55,9 +47,10 @@ boolean login = id == null ? false : true;
 			%>
 			<div class="fullmoon" id="fullmoon">
 				<h2><%=rs.getString("moon_title")%></h2>
-				<span><%=rs.getString("moon_num")%></span><br> 
-				<span>목표모금액 : <%=rs.getString("moon_goal")%>원</span><br> 
-					<span>누적모금액 : <%=rs.getString("moon_donate")%>원</span><br>
+				<span><%=rs.getString("moon_num")%></span><br> <span>목표모금액
+					: <%=rs.getString("moon_goal")%>원
+				</span><br> <span>누적모금액 : <%=rs.getString("moon_donate")%>원
+				</span><br>
 				<%
 				int donate = Integer.parseInt(rs.getString("moon_donate"));
 				int total = Integer.parseInt(rs.getString("moon_goal"));
@@ -65,40 +58,37 @@ boolean login = id == null ? false : true;
 				String formattedMoney = String.format("%.2f", money);
 				%>
 				<progress value="<%=formattedMoney%>" max="100"></progress>
-				<br>
-				<span>달성률 : <%=formattedMoney%>%
+				<br> <span>달성률 : <%=formattedMoney%>%
 				</span><br>
+				<!-- 
+				
+				
+				 -->
 
 
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#myModal">후원하기</button>
+				<!-- Trigger/Open The Modal -->
+				<button id="myBtn">후원하기</button>
 
 				<!-- The Modal -->
-				<div class="modal" id="myModal">
-					<div class="modal-dialog">
-						<div class="modal-content">
+				<div id="myModal" class="modal">
 
-							<!-- Modal Header -->
-							<div class="modal-header">
-								<h4 class="modal-title">Modal Heading</h4>
-								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-							</div>
-
-							<!-- Modal body -->
-							<div class="modal-body">
-								<jsp:include page="/pay"></jsp:include>
-
-							</div>
-
-							<!-- Modal footer -->
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger"
-									data-bs-dismiss="modal">Close</button>
-							</div>
-
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">&times;</span>
+							<h2>결제페이지</h2>
+						</div>
+						<div class="modal-body">
+								<jsp:include page="/findUser"></jsp:include>
+						</div>
+						<div class="modal-footer">
+							<h3>Modal Footer</h3>
 						</div>
 					</div>
+
 				</div>
+
+
 				<%
 				}
 				%>
@@ -137,6 +127,35 @@ boolean login = id == null ? false : true;
 
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+	
+	<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
-<script src="resources/script/fireflies.js"></script>
+
+
 </html>

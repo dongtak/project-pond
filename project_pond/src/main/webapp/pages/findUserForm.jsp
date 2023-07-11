@@ -24,11 +24,9 @@
 			<input type="text" id="id" name="id" placeholder="아이디 찾기" autofocus>
 			
 			</div>
-			
 			<div>
 			<input type="text" onKeyup="addHypen(this);" name="phone" class="phone" placeholder="휴대폰번호를 '-'없이 입력">
 			</div>
-			
 			
 			</div>
 		
