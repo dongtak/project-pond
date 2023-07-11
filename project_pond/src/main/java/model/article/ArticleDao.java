@@ -86,7 +86,12 @@ public class ArticleDao {
 		
 		this.conn = DBManager.getConnection();
 		if(conn!=null) {
-			String sql="SELECT * FROM article ORDER BY article_createAt DESC LIMIT ?,?";
+			/*
+			 select * from article where moon_num in (
+			 select moon_num from fullmoon where moon_status=0
+			 ) order by article_createAt desc;
+			*/
+			String sql="SELECT * FROM article WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=0 ) ORDER BY article_createAt DESC LIMIT ?,?";
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, startRow-1); // 시작행-1

@@ -40,6 +40,9 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
+		<div class="section_title">
+        	<h2>만월 게시판</h2>
+     	</div>
 		<div class="items">
 		
 		<%
@@ -47,15 +50,14 @@
 				String title = list.get(i).getArticle_title();
 				%>
 			<div class="item">
-				<span>
-					<a href="#">
-						<%=title %>						
-					</a>
-				</span>
+				<a href='https://ifh.cc/v-zfn8YG' target='_blank'>
+	            	<img src='https://ifh.cc/g/zfn8YG.jpg' border='0'>
+					<span>
+						<span><%=title %></span>
+					</span>
+				</a>
 			</div>
-		<%	
-			}
-		%>
+		<% } %>
 		
 		</div>
 
@@ -80,15 +82,25 @@
 			%>
 		
 			<% if(startPage > pageBlock) { %>
-				<a href="articleHome?pageNum=<%=startPage-pageBlock %>">Prev</a>
+				<div>
+					<a href="articleHome?pageNum=<%=startPage-pageBlock %>">Prev</a>
+				</div>
 			<% } %>
 			
 			<% for(int i=startPage;i<=endPage;i++){ %>
-				<a href="articleHome?pageNum=<%=i %>"><%=i %></a>
+				<div>
+					<a href="articleHome?pageNum=<%=i %>"
+						<% if(i==Integer.parseInt(pageNum)){ %>
+						class="currPage"
+						<%} %>
+					><%=i %></a>
+				</div>
 			<% } %>
 			
 			<% if(endPage < pageCount){ %>
-				<a href="articleHome?pageNum=<%=startPage+pageBlock %>">Next</a>			
+				<div>
+					<a href="articleHome?pageNum=<%=startPage+pageBlock %>">Next</a>			
+				</div>
 			<% } %>
 
 			<% } %>
@@ -98,5 +110,10 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+	
+	<script type="text/javascript">
+		
+	
+	</script>
 </body>
 </html>
