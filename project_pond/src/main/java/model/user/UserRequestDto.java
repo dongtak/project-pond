@@ -15,12 +15,8 @@ public class UserRequestDto {
 	private String address;
 
 	
-	
-	
 	public UserRequestDto(String id) {
-		
 		this.id = id;
-	
 	}
 	
 	
