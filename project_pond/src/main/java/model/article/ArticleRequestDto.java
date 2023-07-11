@@ -10,6 +10,8 @@ public class ArticleRequestDto {
 	private Timestamp article_createdAt;
 	private Timestamp atricle_modifiedAt;
 	
+	public ArticleRequestDto() {}
+	
 	public ArticleRequestDto(String moon_num, String admin_id, String article_title, String article_content,
 			Timestamp article_createdAt, Timestamp atricle_modifiedAt) {
 		super();

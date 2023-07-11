@@ -18,25 +18,40 @@ public class ArticleDao {
 	
 	private ArticleDao() {}
 	private static ArticleDao instance = new ArticleDao();
-	public ArticleDao getInstance() {
+	public static ArticleDao getInstance() {
 		return instance;
 	}
-	
-	/*
-	private String moon_num;
-	private String admin_id;
-	private String article_title;
-	private String article_content;
-	private Timestamp article_createdAt;
-	private Timestamp atricle_modifiedAt;
-	*/
 	
 	
 	// create
 	
-	
-	
 	// read
+	public ArticleRequestDto getArticleByNum(String moonNum) {
+		ArticleRequestDto article = null;
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql = "SELECT * FROM article WHERE moon_num=?";
+			try {
+				this.pstmt=this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, moonNum);
+				this.rs = this.pstmt.executeQuery();
+				if(rs.next()) {
+					String admin = this.rs.getString(2);
+					String title = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					Timestamp create = this.rs.getTimestamp(5);
+					Timestamp modify = this.rs.getTimestamp(6);
+					article = new ArticleRequestDto(moonNum,admin,title,content,create,modify);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return article;
+	}
+	
 	public List<Article> showAll(){
 		List<Article> list = new ArrayList<Article>();
 		
@@ -44,19 +59,80 @@ public class ArticleDao {
 		if(conn!=null) {
 			String sql = "SELECT * FROM article";
 			try {
-				this.pstmt = conn.prepareStatement(sql);
-				this.rs = pstmt.executeQuery();
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
 				while(this.rs.next()) {
-					
-					this.rs.getString(1);
+					String num = this.rs.getString(1);
+					String admin = this.rs.getString(2);
+					String title = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					Timestamp create = this.rs.getTimestamp(5);
+					Timestamp modify = this.rs.getTimestamp(6);
+					Article article = new Article(num,admin,title,content,create,modify);
+					list.add(article);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return list;
+	}
+	
+	public List<ArticleRequestDto> getArticleList(int startRow, int pageSize) {
+		List<ArticleRequestDto> list = new ArrayList<ArticleRequestDto>();
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql="SELECT * FROM article ORDER BY article_createAt DESC LIMIT ?,?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, startRow-1); // 시작행-1
+				this.pstmt.setInt(2, pageSize); // 페이지 크기
+				this.rs = this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					ArticleRequestDto articleDto = new ArticleRequestDto();
+					articleDto.setMoon_num(this.rs.getString(1));
+					articleDto.setAdmin_id(this.rs.getString(2));
+					articleDto.setArticle_title(this.rs.getString(3));
+					articleDto.setArticle_content(this.rs.getString(4));
+					articleDto.setArticle_createdAt(this.rs.getTimestamp(5));
+					articleDto.setAtricle_modifiedAt(this.rs.getTimestamp(6));
+					list.add(articleDto);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
 			}
 			
 		}
 		
 		return list;
+	}
+	
+	public int getCount() {
+		int count=0;
+		
+		this.conn = DBManager.getConnection();
+		if(this.conn!=null) {
+			String sql = "SELECT * FROM article";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					count++;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return count;
 	}
 	
 
