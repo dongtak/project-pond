@@ -15,7 +15,6 @@
 <title>게시판</title>
 </head>
 <body>
-<c:set var="articleList" value="${requestScope.articleList }"/>
 <c:set var="count" value="${requestScope.count }"/>
 <c:set var="pageNum" value="${requestScope.pageNum }"/>
 <c:set var="pageSize" value="4"/>
@@ -34,7 +33,7 @@
 						<a href='showArticle?moonNum=${articleList.getMoon_num() }' target='_self'>
 	            		<img src='https://ifh.cc/g/zfn8YG.jpg' border='0'>
 							<span>
-								<span>${articleList.getArticle_title() }</span>
+								${articleList.getArticle_title() }
 							</span>
 						</a>
 					</div>
@@ -51,6 +50,7 @@
 					<fmt:parseNumber value="${tempStartPage}" var="startPage" integerOnly="true" />
 					<c:set var="tempEndPage" value="${startPage + pageBlock-1 }"/>
 					<fmt:parseNumber value="${tempEndPage }" var="endPage" integerOnly="true" />
+					
 					<c:if test="${endPage>pageCount }">
 						<c:set target="${endPage}" value="${pageCount }"/>
 					</c:if>
