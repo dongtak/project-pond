@@ -17,6 +17,13 @@ $('#password').on('change', e => {
 	}
 });
 
+$('#email').on('change', e => {
+	if($('#email').val() !== "") {
+		$('#error-email').hide();
+		$('#email').parent().css('border-color', 'lightgrey');
+		$('#email').parent().css('border-top', 'none');
+	}
+});
 $('#name').on('change', e => {
 	if($('#name').val() !== "") {
 		$('#error-name').hide();
@@ -45,6 +52,7 @@ $('#phone').on('change', e => {
 function checkValue(htmlForm) {
 	const id = htmlForm.id.value;
 	const password = htmlForm.password.value;
+	const email = htmlForm.email.value;
 	const name = htmlForm.name.value;
 	const birth = htmlForm.birth.value;
 	const phone = htmlForm.phone.value;
@@ -62,11 +70,18 @@ function checkValue(htmlForm) {
 		$('#password').parent().css('border-top', 'solid 1px red');
 		check = false;
 	}
+	else if(email === "") {
+		$('#error-password').show();
+		$('#password').parent().css('border-color', 'red');
+		$('#password').parent().css('border-top', 'solid 1px red');
+		check = false;
+	}
 	else if(name === "") {
 		$('#error-name').show();
 		$('#name').parent().css('border-color', 'red');
 		check = false;
 	}
+	
 	else if(birth.length !== 8 || birth.match(/\d{8}/) === null) {
 		$('#error-birth').show();
 		$('#birth').parent().css('border-color', 'red');
