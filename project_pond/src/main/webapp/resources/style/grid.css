@@ -3,10 +3,11 @@
 
 a{
     text-decoration: none;
+    color:black;
 }
 
-a::after{
-    color:black;
+a:visited{
+	color:black;
 }
 
 div#wrap {

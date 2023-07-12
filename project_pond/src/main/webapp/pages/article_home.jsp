@@ -29,12 +29,12 @@
 				<h2>만월 게시판</h2>
 			</div>
 			<div class="items">
-				<c:forEach var="article" items="${requestScope.articleList }" varStatus="vs">
+				<c:forEach var="articleList" items="${requestScope.articleList }" varStatus="vs">
 					<div class="item">
-						<a href='showArticle?moonNum=${article.getMoon_num() }' target='_blank'>
+						<a href='showArticle?moonNum=${articleList.getMoon_num() }' target='_self'>
 	            		<img src='https://ifh.cc/g/zfn8YG.jpg' border='0'>
 							<span>
-								<span>${article.getArticle_title() }</span>
+								<span>${articleList.getArticle_title() }</span>
 							</span>
 						</a>
 					</div>

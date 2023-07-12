@@ -4,115 +4,97 @@ import java.sql.Timestamp;
 
 public class ArticleCommentRequestDto {
 	
-	private int id;
-	private String articleId;
+	private String commentNum;
 	private String userId;
-	private String content;
-	private Timestamp createdAt;
-	private Timestamp modifiedAt;
+	private String moonNum;
+	private String commentContent;
+	private Timestamp commentCreatedAt;
+	private Timestamp commentModifiedAt;
+	private int like;
+	private String userName;
 	
-	
-	
-	
-	public ArticleCommentRequestDto(String userId, String content) {
+	public ArticleCommentRequestDto(String commentNum, String userId, String moonNum, String commentContent,
+			Timestamp commentCreatedAt, Timestamp commentModifiedAt, int like) {
+		this.commentNum = commentNum;
 		this.userId = userId;
-		this.content = content;
+		this.moonNum = moonNum;
+		this.commentContent = commentContent;
+		this.commentCreatedAt = commentCreatedAt;
+		this.commentModifiedAt = commentModifiedAt;
+		this.like = like;
 	}
 	
-	
-	
-	
-	public ArticleCommentRequestDto(int id, String articleId, String userId, String content, Timestamp createdAt,
-			Timestamp modifiedAt) {
-	
-		this.id = id;
-		this.articleId = articleId;
+	public ArticleCommentRequestDto(String commentNum, String userId, String moonNum, String commentContent) {
+		this.commentNum = commentNum;
 		this.userId = userId;
-		this.content = content;
-		this.createdAt = createdAt;
-		this.modifiedAt = modifiedAt;
+		this.moonNum = moonNum;
+		this.commentContent = commentContent;
 	}
 
-
-
-	public int getId() {
-		return id;
+	public String getCommentNum() {
+		return commentNum;
 	}
 
-
-
-	public void setId(int id) {
-		this.id = id;
+	public void setCommentNum(String commentNum) {
+		this.commentNum = commentNum;
 	}
-
-
-
-	public String getArticleId() {
-		return articleId;
-	}
-
-
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-
 
 	public String getUserId() {
 		return userId;
 	}
 
-
-
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-
-
-	public String getContent() {
-		return content;
+	public String getMoonNum() {
+		return moonNum;
 	}
 
-
-
-	public void setContent(String content) {
-		this.content = content;
+	public void setMoonNum(String moonNum) {
+		this.moonNum = moonNum;
 	}
 
-
-
-	public Timestamp getCreatedAt() {
-		return createdAt;
+	public String getCommentContent() {
+		return commentContent;
 	}
 
-
-
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
+	public void setCommentContent(String commentContent) {
+		this.commentContent = commentContent;
 	}
 
-
-
-	public Timestamp getModifiedAt() {
-		return modifiedAt;
+	public Timestamp getCommentCreatedAt() {
+		return commentCreatedAt;
 	}
 
-
-
-	public void setModifiedAt(Timestamp modifiedAt) {
-		this.modifiedAt = modifiedAt;
+	public void setCommentCreatedAt(Timestamp commentCreatedAt) {
+		this.commentCreatedAt = commentCreatedAt;
 	}
+
+	public Timestamp getCommentModifiedAt() {
+		return commentModifiedAt;
+	}
+
+	public void setCommentModifiedAt(Timestamp commentModifiedAt) {
+		this.commentModifiedAt = commentModifiedAt;
+	}
+
+	public int getLike() {
+		return like;
+	}
+
+	public void setLike(int like) {
+		this.like = like;
+	}
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	
 	
 

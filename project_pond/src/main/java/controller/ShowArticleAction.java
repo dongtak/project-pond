@@ -1,10 +1,17 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.article.ArticleDao;
+import model.article.ArticleRequestDto;
+import model.articleComment.ArticleCommentDao;
+import model.articleComment.ArticleCommentRequestDto;
 
 /**
  * Servlet implementation class ShowArticleAction
@@ -21,13 +28,22 @@ public class ShowArticleAction extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String moonNum = request.getParameter("moonNum");
-		System.out.println("t:"+moonNum);
+		
+		ArticleDao articleDao = ArticleDao.getInstance();
+		ArticleCommentDao articleCommentDao = ArticleCommentDao.getInstance();
+		
+		ArticleRequestDto article = articleDao.getArticleByNum(moonNum);
+		List<ArticleCommentRequestDto> list = articleCommentDao.getCommentByNum(moonNum);
+		
+		
 		if(moonNum==null){
-			response.sendRedirect("articleHome");
+			response.sendRedirect("articleHomeAction");
+		}else {
+			request.setAttribute("article",article );
+			request.setAttribute("commentList", list);
+			request.getRequestDispatcher("article").forward(request, response);
 		}
 		
-		request.setAttribute("moonNum",moonNum );
-		request.getRequestDispatcher("article").forward(request, response);
 	
 	}
 
