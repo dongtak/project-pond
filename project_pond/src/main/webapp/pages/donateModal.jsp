@@ -8,12 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="resources/style/modal.css">
 </head>
 
 <body>
 
-	<form id="modal-form" method="post" action="modal2">
+	<form id="modal-form" method="post" action="/modal2">
 
 		<div class="donor">
 

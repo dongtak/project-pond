@@ -61,11 +61,7 @@ position: relative;
 input#sample6_postcode ,  input.addressBtn{
 	width: 30%;
 	
-	
 }
-
-
-
 
 
 /* .div-form>div:not(:first-child) {
@@ -78,7 +74,7 @@ input:focus{
 
 div:has(input:focus),
 div:has(select:focus) {
-	border-color: #04C75A;	
+
 }
 
 input {
@@ -91,11 +87,6 @@ input {
     color:black;
 
 }
-
-input[type="radio"] {
-	display: none;
-}
-
 
 
 input[type="text"], 
