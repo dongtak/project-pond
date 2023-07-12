@@ -291,8 +291,8 @@ public class UserDao {
 	
 	public String findIdbyEmail(String name, String email) {
 		String id = null;
-		String sql = "SELECT user_id FROM User WHERE user_name=? AND user_email=?";
-
+		String sql = "SELECT user_id FROM user WHERE user_name=? AND user_email=?";
+		this.conn = DBManager.getConnection();
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
 			this.pstmt.setString(1, name);
@@ -313,7 +313,28 @@ public class UserDao {
 
 	}
 	
-	
+	// 유저 아이디로 해당 유저의 이름만 리턴
+	public String findUserNameById(String id) {
+		String name = null;
+		this.conn=DBManager.getConnection();
+		if(conn!=null) {
+			String sql = "SELECT user_name FROM user WHERE user_id=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, id);
+				this.rs = this.pstmt.executeQuery();
+				if(this.rs.next()) {
+					name = this.rs.getString(1);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return name;
+	}
 	
 	
 	

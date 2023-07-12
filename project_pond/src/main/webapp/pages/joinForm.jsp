@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<title>Insert title here</title>
+<title>회원가입</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
@@ -64,18 +64,13 @@
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 
-
-
-
 </body>
 <script src="resources/script/validation.js"></script>
 <!-- 아이디중복체크 추가 -->
 <script>
 function idCheck(){
-	String id = $(#id).val();
-	String url = "idCheckForm";
-	console.log(id);
-	window.open(url,"idcheck","width=400,height=350")
+	
+	window.open("idCheckForm","idcheck","width=400,height=350")
 }
 </script>
 

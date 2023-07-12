@@ -111,6 +111,26 @@
 		<url-pattern>/findId</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>ArticleHomeAction</servlet-name>
+		<servlet-class>controller.ArticleHomeAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ArticleHomeAction</servlet-name>
+		<url-pattern>/articleHomeAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ShowArticleAction</servlet-name>
+		<servlet-class>controller.ShowArticleAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ShowArticleAction</servlet-name>
+		<url-pattern>/showArticle</url-pattern>
+	</servlet-mapping>
+
 
 	<!-- 2. JSP 페이지 맵핑 -->
 
@@ -184,6 +204,16 @@
 		<servlet-name>articleHome</servlet-name>
 		<url-pattern>/articleHome</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>article</servlet-name>
+		<jsp-file>/pages/article.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>article</servlet-name>
+		<url-pattern>/article</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>payAction</servlet-name>
@@ -229,25 +259,6 @@
 
 
 
-	<servlet>
-		<servlet-name>articleList</servlet-name>
-		<jsp-file>/pages/article_list.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>articleList</servlet-name>
-		<url-pattern>/articleList</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>article</servlet-name>
-		<jsp-file>/pages/article.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>article</servlet-name>
-		<url-pattern>/article</url-pattern>
-	</servlet-mapping>
 
 <servlet>
 		<servlet-name>findUser</servlet-name>

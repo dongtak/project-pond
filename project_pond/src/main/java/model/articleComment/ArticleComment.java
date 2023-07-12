@@ -4,72 +4,59 @@ import java.sql.Timestamp;
 
 public class ArticleComment {
 
-	private int id;
-	private String articleId;
+	private String commentNum;
 	private String userId;
-	private String content;
-	private Timestamp createdAt;
-	private Timestamp modifiedAt;
+	private String moonNum;
+	private String commentContent;
+	private Timestamp commentCreatedAt;
+	private Timestamp commentModifiedAt;
+	private int like;
 	
-	
-	
-	//write 설정시 추가
-	
-	public ArticleComment(int id,  String userId, String content, Timestamp createdAt) {
-		
-		this.id = id;
+	public ArticleComment(String commentNum, String userId, String moonNum, String commentContent,
+			Timestamp commentCreatedAt, Timestamp commentModifiedAt, int like) {
+		this.commentNum = commentNum;
 		this.userId = userId;
-		this.content = content;
-		this.createdAt = createdAt;
+		this.moonNum = moonNum;
+		this.commentContent = commentContent;
+		this.commentCreatedAt = commentCreatedAt;
+		this.commentModifiedAt = commentModifiedAt;
+		this.like = like;
 	}
 
-	
-	
-	
-	public ArticleComment(int id, String articleId, String userId, String content, Timestamp createdAt,
-			Timestamp modifiedAt) {
-	
-		this.id = id;
-		this.articleId = articleId;
+	public ArticleComment(String commentNum, String userId, String moonNum, String commentContent) {
+		this.commentNum = commentNum;
 		this.userId = userId;
-		this.content = content;
-		this.createdAt = createdAt;
-		this.modifiedAt = modifiedAt;
+		this.moonNum = moonNum;
+		this.commentContent = commentContent;
 	}
 
-
-	public int getId() {
-		return id;
+	public String getCommentNum() {
+		return commentNum;
 	}
-
-
-	public String getArticleId() {
-		return articleId;
-	}
-
 
 	public String getUserId() {
 		return userId;
 	}
 
-
-	public String getContent() {
-		return content;
+	public String getMoonNum() {
+		return moonNum;
 	}
 
-
-	public Timestamp getCreatedAt() {
-		return createdAt;
+	public String getCommentContent() {
+		return commentContent;
 	}
 
-
-	public Timestamp getModifiedAt() {
-		return modifiedAt;
+	public Timestamp getCommentCreatedAt() {
+		return commentCreatedAt;
 	}
-	
-	
-	
-	
+
+	public Timestamp getCommentModifiedAt() {
+		return commentModifiedAt;
+	}
+
+	public int getLike() {
+		return like;
+	}
 	
 	
 

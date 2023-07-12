@@ -16,7 +16,7 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<h1>아이디 찾기</h1>
-			<form mehtod="POST" action="/findId">
+			<form method="POST" action="/findId">
 			<div class="div-form">
 			
 			<div>
@@ -41,7 +41,7 @@
 			
 			
 				<h1>비밀번호 찾기</h1>
-			<form mehtod="POST" action="/findPwd">
+			<form method="POST" action="/findPwd">
 			<div class="div-form">
 			
 			<div>
