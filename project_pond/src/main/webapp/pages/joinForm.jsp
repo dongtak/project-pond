@@ -27,12 +27,13 @@
 					</div>
 					<div>
 						<input type="email" id="email" name="email"
-							placeholder="[선택] 비밀번호 분실 시 확인용 이메일">
+							placeholder="이메일">
 					</div>
 				</div>
 				<ul>
 					<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
 					<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
+					<li class="error" id="error-email">이메일: 필수 정보입니다.</li>
 				</ul>
 
 				<div class="div-form">
