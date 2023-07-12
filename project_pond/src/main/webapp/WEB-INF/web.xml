@@ -247,19 +247,6 @@
 
 
 
-	<servlet>
-		<servlet-name>dummy</servlet-name>
-		<jsp-file>/pages/dummyprint.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>dummy</servlet-name>
-		<url-pattern>/dummy</url-pattern>
-	</servlet-mapping>
-
-
-
-
 <servlet>
 		<servlet-name>findUser</servlet-name>
 		<jsp-file>/pages/findUserForm.jsp</jsp-file>
@@ -279,6 +266,26 @@
 	<servlet-mapping>
 		<servlet-name>address</servlet-name>
 		<url-pattern>/address</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>modal</servlet-name>
+		<jsp-file>/pages/donateModal.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>modal</servlet-name>
+		<url-pattern>/modal</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>modal2</servlet-name>
+		<jsp-file>/pages/donateModal2.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>modal2</servlet-name>
+		<url-pattern>/modal2</url-pattern>
 	</servlet-mapping>
 
 	
