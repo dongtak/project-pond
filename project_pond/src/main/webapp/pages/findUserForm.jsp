@@ -16,23 +16,23 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<h1>아이디 찾기</h1>
-			<form method="POST" action="/findId">
+			<form method="POST" class=user-form action="/findId">
 			<div class="div-form">
 			
 			<div>
-			<input type="text" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
+			<input type="text" class=user-input id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
 			<div>
-			<input type="text"  name="email" class="email" placeholder="email주소를 입력하세요." required>
+			<input type="text" class=user-input  name="email" class="email" placeholder="email주소를 입력하세요." required>
 			</div>
 			
 			</div>
 		
-			<input type="button" id="id-submit-btn" value="찾기"
+			<input type="button" class=user-input id="id-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
-					<input type="button" id="id-submit-btn" value="취소"
+					<input type="button" class=user-input id="id-submit-btn" value="취소"
 					onclick="back()">
 		
 			</form>
@@ -41,31 +41,31 @@
 			
 			
 				<h1>비밀번호 찾기</h1>
-			<form method="POST" action="/findPwd">
+			<form method="POST" class=user-form action="/findPwd">
 			<div class="div-form">
 			
 			<div>
-			<input type="text" id="id" name="id" placeholder="아아디를 입력하세요" required autofocus>
+			<input type="text" class=user-input id="id" name="id" placeholder="아아디를 입력하세요" required autofocus>
 			
 			</div>
 			
 			
 			<div>
-			<input type="text" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
+			<input type="text" class=user-input id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
 			
 			<div>
-			<input type="text"  name="email" class="email" placeholder="email주소를 입력하세요." required>
+			<input type="text" class=user-input name="email" class="email" placeholder="email주소를 입력하세요." required>
 			</div>
 			
 			
 			</div>
 		
-			<input type="button" id="pwd-submit-btn" value="찾기"
+			<input type="button" class=user-input id="pwd-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
-					<input type="button" id="submit-btn" value="취소"
+					<input type="button" class=user-input id="submit-btn" value="취소"
 					onclick="back()">
 		
 			</form>
