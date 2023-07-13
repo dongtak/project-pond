@@ -13,7 +13,25 @@
 		<c:set var="size" value="${userList.size()}"/>
 		userList : ${userList }<br/>
 		size : ${size }<br/>
+			<table>
+				<tr>
+					<c:forEach begin="1" end="${size }">
+						<th>
+							
+						</th>
+					</c:forEach>
+				</tr>
 			
+				<c:forEach var="users" items="${userList }">
+					<tr>
+						<th>
+						
+							
+						</th>
+					</tr>
+					
+				</c:forEach>
+			</table>
 		</c:when>
 		<c:when test="${menu eq '활동'}">
 

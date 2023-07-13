@@ -37,7 +37,7 @@
 			<c:if test="${not empty menu }">
 				<span>${menu } 관리</span>
 				<div class="content">
-					<jsp:include page="/adminManage"></jsp:include>
+				<jsp:include page="/adminManage"></jsp:include>
 				</div>
 			</c:if>
 		</section>

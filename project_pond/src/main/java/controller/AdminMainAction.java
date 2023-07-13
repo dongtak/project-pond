@@ -25,32 +25,29 @@ public class AdminMainAction extends HttpServlet {
 		String menu = request.getParameter("menu");
 		String id= (String) request.getSession().getAttribute("log");
 		
-		System.out.println("log : "+id);
-		
 		AdminDao adminDao = AdminDao.getInstance();
 		Admin admin = adminDao.getAdminById(id);
 
-		System.out.println("admin : "+admin);
-		System.out.println("menu : "+menu);
-		
 		if(admin!=null) {
 			request.setAttribute("admin", admin);
 		}
-		
-		if(menu.equals("회원")) {
-			UserDao userDao = UserDao.getInstance();
-			ArrayList<User> userList = userDao.getUserAll();
-			if(!userList.isEmpty()) {
-				request.setAttribute("userList", userList);
+
+		if (menu != null) {
+			if (menu.equals("회원")) {
+				UserDao userDao = UserDao.getInstance();
+				ArrayList<User> userList = userDao.getUserAll();
+				if (!userList.isEmpty()) {
+					request.setAttribute("userList", userList);
+				}
+			} else if (menu.equals("활동")) {
+				
+			} else if (menu.equals("게시글")) {
+
+			} else if (menu.equals("후원")) {
+
 			}
 		}
-//		else if(menu.equals("활동")) {
-//			
-//		}else if(menu.equals("게시글")) {
-//			
-//		}else if(menu.equals("후원")) {
-//			
-//		}
+		
 		
 		request.setAttribute("menu", menu);
 		request.getRequestDispatcher("adminMain").forward(request, response);

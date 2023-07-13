@@ -40,7 +40,7 @@ public class UserDao {
 	public boolean createUser(UserRequestDto userDto) {
 		User result = getUserById(userDto.getId());//아이디 중복체크 user 모든 정보를 채워서 온다
 		if (result != null)
-			return false;//
+			return false;
 
 		String id = userDto.getId();
 		String pwd = userDto.getPwd();
