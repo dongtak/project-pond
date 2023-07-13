@@ -40,8 +40,9 @@ public class AdminMainAction extends HttpServlet {
 		if(menu.equals("회원")) {
 			UserDao userDao = UserDao.getInstance();
 			ArrayList<User> userList = userDao.getUserAll();
-//			request.setAttribute("userList", userList);
-			System.out.println("userList.size : "+userList.size());
+			if(!userList.isEmpty()) {
+				request.setAttribute("userList", userList);
+			}
 		}
 //		else if(menu.equals("활동")) {
 //			
