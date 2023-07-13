@@ -69,10 +69,7 @@
 <script src="resources/script/validation.js"></script>
 <!-- 아이디중복체크 추가 -->
 <script>
-function idCheck(){
-	
-	window.open("idCheckForm","idcheck","width=400,height=350")
-}
+
 </script>
 
 </html>

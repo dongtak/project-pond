@@ -68,7 +68,7 @@
     </style>
 <body>
 
-    <form action="" method="post" class="form-container">
+    <form action="main" method="post" class="form-container">
        
 <div class=donorinfo>
  <div class="form-group">
@@ -195,9 +195,9 @@ for (var i = 0; i < fields.length; i++) {
 }
 
          
-        if (result === 1) {
+        
             htmlForm.submit();
-        }
+       
 
     }
 

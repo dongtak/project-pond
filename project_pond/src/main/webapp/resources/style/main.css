@@ -7,6 +7,7 @@ body {
 }
 
 .main_moon {
+	position:relative;
 	text-align: center;
 	width: 520px;
 	height: 520px;
@@ -17,6 +18,7 @@ body {
 	box-shadow: -20px 0px 50px 0px #feffc1;
 	transition: 0.2s;
 	color: white;
+	z-index: 1001;
 }
 
 .main_moon:hover {

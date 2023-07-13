@@ -30,6 +30,7 @@
     border-radius: 50%;
     left: -17px;
     top: -17px;
+    
 }
 
 .box.expanded {
@@ -39,7 +40,8 @@
 }
 
 .box:hover {
-    background: #34ff02;
+	
+    box-shadow: 0px 0px 10px 10px #47ff33;
 }
 
 .box .content {
