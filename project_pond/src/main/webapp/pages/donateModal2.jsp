@@ -67,8 +67,11 @@
         }
     </style>
 <body>
+
     <form action="" method="post" class="form-container">
-        <div class="form-group">
+       
+<div class=donorinfo>
+ <div class="form-group">
             <label for="donorName" class="form-label">성함</label>
             <input type="text" name="donorName" id="donorName" placeholder="성함" class="form-input">
             <span id="nameError" class="error-message">성함을 입력해주세요</span>
@@ -91,8 +94,9 @@
             <input type="email" name="donorEmail" id="donorEmail" placeholder="이메일" class="form-input">
             <span id="emailError" class="error-message">이메일을 입력해주세요</span>
         </div>
-
-        <div class="form-group">
+</div>
+	<div class=cardinfo>
+	<div class="form-group">
             <label for="cardType" class="form-label">카드 타입</label>
             <select name="cardType" id="cardType" class="form-input">
                 <option value="">카드 타입 선택</option>
@@ -136,6 +140,8 @@
             </select>
             <span id="cardExpirationError" class="error-message">카드 유효기간을 입력해주세요</span>
         </div>
+	</div>
+        
 
         <input type="button" id="payCheck" onclick="payInfoCheck(form)" value="결제하기" class="submit-button">
     </form>

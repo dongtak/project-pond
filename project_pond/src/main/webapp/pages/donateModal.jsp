@@ -63,9 +63,9 @@
 				<button type="button" onclick="enableCustomAmount()">직접입력</button>
 				<input type="text" class="inputmoney" name="cntrAmount"
 					id="cntrAmount" title="금액직접입력" placeholder="후원금액" numberonly=""
-					maxlength="9" tabindex="0" disabled> <span id="moneyError"
-					class="error-message"> 후원금을 입력해주세요 </span> <br> <input
-					type="button" value="다음" onclick="nameAndNumber(form)">
+					maxlength="9" tabindex="0" disabled value=""> 
+					<span id="moneyError"class="error-message"> 후원금을 입력해주세요 </span> <br> 
+					<input type="button" value="다음" onclick="nameAndNumber(form)">
 			</div>
 
 		</form>
