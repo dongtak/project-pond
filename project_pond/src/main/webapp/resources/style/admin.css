@@ -23,6 +23,7 @@ nav{
 	grid-area:nav;
 	text-align: center;
 	background-color:cornflowerblue;
+	position: relative;
 }
 
 section{
@@ -63,7 +64,6 @@ a, a:visited{
 	font-size: 1.8rem;
 }
 
-
 .menu li{
 	height: 50px;
 	line-height: 50px;
@@ -80,8 +80,21 @@ a, a:visited{
 	line-height: 50px;
 }
 
+.logout{
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	transform : translateX(-50%);
+}
+
+.logout>a:hover{
+	color:white;
+}
+
 .content{
 	border:1px solid black;
 	margin:10px;
 	padding:10px;
 }
+
+
