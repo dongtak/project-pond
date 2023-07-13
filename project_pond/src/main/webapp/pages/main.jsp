@@ -19,7 +19,10 @@ String id = (String) session.getAttribute("log");
 boolean login = id == null ? false : true;
 %>
 
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -27,14 +30,18 @@ boolean login = id == null ? false : true;
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
 <link rel="stylesheet" href="resources/style/modal.css">
+<link rel="stylesheet" href="resources/style/firefly.css">
 </head>
 <body>
 	<div id="wrap">
-		
+
 		<jsp:include page="/header"></jsp:include>
+		<div class=firefly_base>
+			<div class="fireflypack"></div>
 		
 		<section class="main_moon section">
-			
+
+
 			<%
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -100,10 +107,12 @@ boolean login = id == null ? false : true;
 
 
 		</section>
+		
+		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 
 
 </body>
-
+<script src="resources/script/firefly.js"></script>
 </html>
