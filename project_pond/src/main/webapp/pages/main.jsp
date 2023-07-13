@@ -18,6 +18,8 @@
 String id = (String) session.getAttribute("log");
 boolean login = id == null ? false : true;
 %>
+
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -28,9 +30,11 @@ boolean login = id == null ? false : true;
 </head>
 <body>
 	<div id="wrap">
+		
 		<jsp:include page="/header"></jsp:include>
+		
 		<section class="main_moon section">
-
+			
 			<%
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -59,15 +63,13 @@ boolean login = id == null ? false : true;
 			String formattedMoney = String.format("%.2f", money);
 			%>
 			<progress value="<%=formattedMoney%>" max="100"></progress>
-			<br> <span>달성률 : <%=formattedMoney%>%
-			
-			<c:choose>
-				<c:when test="${empty sessionScope.log}">
-					</span><br> <a class=donateBtn href="modal">후원하기</a>
-				</c:when>
-				<c:otherwise>
-					<span><a href="myPage">마이페이지</a></span>
-				</c:otherwise>
+			<br> <span>달성률 : <%=formattedMoney%>% <c:choose>
+					<c:when test="${empty sessionScope.log}"></span><br> <a
+				class=donateBtn href="modal">후원하기</a>
+			</c:when>
+			<c:otherwise>
+				<span><a href="myPage">마이페이지</a></span>
+			</c:otherwise>
 			</c:choose>
 
 
@@ -103,6 +105,5 @@ boolean login = id == null ? false : true;
 
 
 </body>
-
 
 </html>

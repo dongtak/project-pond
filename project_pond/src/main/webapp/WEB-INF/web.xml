@@ -291,6 +291,16 @@
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>firefly</servlet-name>
+		<jsp-file>/pages/firefly.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>firefly</servlet-name>
+		<url-pattern>/firefly</url-pattern>
+	</servlet-mapping>
+	
 	<!-- jsp admin 페이지 매핑 -->
 	
 	<servlet>

@@ -55,14 +55,14 @@
             <span id="cardPasswordError" class="error-message">카드비밀번호를 입력해주세요</span>
 
             <input type="text" name="cexpire" id="cexpire" placeholder="카드 유효기간">
-            <label for="cardExpYear">카드 유효기간</label>
+            <label for="cardExpYear">카드 유효기간(년)</label>
             <select name="cardExpYear" id="cardExpiration">
                 <c:forEach var="year" begin="23" end="50" step="1">
                     <option value=${year}>${year}</option>
                 </c:forEach>
 
             </select>
-
+ <label for="cardExpMonth">카드 유효기간(월)</label>
             <select name="cardExpMonth" id="cardExpiration">
                 <c:forEach var="month" begin="1" end="12" step="1">
                     <option value=${month}>${month}</option>
