@@ -24,6 +24,7 @@ boolean login = id == null ? false : true;
 <title>나눗샘</title>
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
+<link rel="stylesheet" href="resources/style/modal.css">
 </head>
 <body>
 	<div id="wrap">
@@ -59,14 +60,17 @@ boolean login = id == null ? false : true;
 			%>
 			<progress value="<%=formattedMoney%>" max="100"></progress>
 			<br> <span>달성률 : <%=formattedMoney%>%
-			</span><br>
-			<button class="accordion">후원하기</button>
-			<div class="panel">
-				<p>
-					<jsp:include page="/modal"></jsp:include>
-				</p>
-			</div>
 			
+			<c:choose>
+				<c:when test="${empty sessionScope.log}">
+					</span><br> <a class=donateBtn href="modal">후원하기</a>
+				</c:when>
+				<c:otherwise>
+					<span><a href="myPage">마이페이지</a></span>
+				</c:otherwise>
+			</c:choose>
+
+
 			<%
 			}
 			%>
@@ -93,12 +97,6 @@ boolean login = id == null ? false : true;
 			%>
 
 
-			<%
-			if (login) {
-			%><p>로그인상태</p>
-			<%
-			}
-			%>
 
 		</section>
 
