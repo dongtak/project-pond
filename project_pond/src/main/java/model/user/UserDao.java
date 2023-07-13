@@ -221,31 +221,62 @@ public class UserDao {
 	}
 
 	public boolean deleteUserById(String id, String password) {
-		this.conn = DBManager.getConnection();
+	    this.conn = DBManager.getConnection();
 
-		boolean check = true;
+	    boolean check = false;
 
-		if (this.conn != null) {
-			String sql = "DELETE FROM user WHERE user_id=? AND user_pwd=?";
+	    if (this.conn != null) {
+	        String sql = "DELETE FROM user WHERE user_id=?";
+	        String keyOff = "Set foreign_Key_checks = 0";
+	        String keyOn = "Set foreign_Key_checks = 1";
+	        String killcard = "DELETE FROM cardInfo WHERE user_id=?";
+	        String checkpwd = "SELECT user_pwd FROM user WHERE user_id=?";
 
-			try {
-				this.pstmt = this.conn.prepareStatement(sql);
-				this.pstmt.setString(1, id);
-				this.pstmt.setString(2, password);
+	        try {
+	            this.pstmt = this.conn.prepareStatement(keyOff);
+	            this.pstmt.execute();
+	            
+	            this.pstmt = this.conn.prepareStatement(checkpwd);
+	            this.pstmt.setString(1, id);
+	            
+	            ResultSet resultSet = this.pstmt.executeQuery();
+	            
+	            if (resultSet.next()) {
+	                String storedPassword = resultSet.getString("user_pwd");
+	                
+	                if (storedPassword.equals(password)) {
+	                    this.pstmt = this.conn.prepareStatement(killcard);
+	                    this.pstmt.setString(1, id);
+	                    this.pstmt.execute();
+	                    
+	                    this.pstmt = this.conn.prepareStatement(sql);
+	                    this.pstmt.setString(1, id);
+	                    this.pstmt.execute();
+	                    
+	                    this.pstmt = this.conn.prepareStatement(keyOn);
+	                    this.pstmt.execute();
+	                    
+	                    check = true;
+	                } else {
+	                    System.out.println("잘못된 비밀번호입니다.");
+	                    check = false;
+	                }
+	            } else {
+	                System.out.println("해당 ID의 회원을 찾을 수 없습니다.");
+	                check = false;
+	            }
 
-				this.pstmt.execute();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-				check = false;
-			} finally {
-				DBManager.close(this.conn, this.pstmt);
-			}
-		} else {
-			check = false;
-		}
-
-		return check;
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            check = false;
+	        } finally {
+	            DBManager.close(this.conn, this.pstmt);
+	        }
+	    } else {
+	        check = false;
+	    }
+	    System.out.println(check);
+	    return check;
 	}
 	//아이디 찾기 1)
 	

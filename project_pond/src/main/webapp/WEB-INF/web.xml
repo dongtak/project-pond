@@ -17,6 +17,42 @@
 
 	<!-- 서블릿 페이지 맵핑 -->
 
+	<!-- 회원수정 추가 -->
+
+
+	<servlet>
+		<servlet-name>UpdateUserFormAction</servlet-name>
+		<servlet-class>controller.UpdateUserFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateUserFormAction</servlet-name>
+		<url-pattern>/Update</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>UpdateUserRequest</servlet-name>
+		<servlet-class>controller.UpdateUserRequest</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateUserRequest</servlet-name>
+		<url-pattern>/UpdateRequest</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>DeleteUserFormAction</servlet-name>
+		<servlet-class>controller.DeleteUserFormAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeleteUserFormAction</servlet-name>
+		<url-pattern>/Leave</url-pattern>
+	</servlet-mapping>
+
+
 	<servlet>
 		<servlet-name>LoginFormAction</servlet-name>
 		<servlet-class>controller.LoginFormAction</servlet-class>
@@ -78,16 +114,6 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>DeleteUserFormAction</servlet-name>
-		<servlet-class>controller.DeleteUserFormAction</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>DeleteUserFormAction</servlet-name>
-		<url-pattern>/leave</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
 		<servlet-name>FindIdAction</servlet-name>
 		<servlet-class>controller.FindIdAction</servlet-class>
 	</servlet>
@@ -116,19 +142,45 @@
 		<servlet-name>ShowArticleAction</servlet-name>
 		<url-pattern>/showArticle</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>AdminMainAction</servlet-name>
 		<servlet-class>controller.AdminMainAction</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>AdminMainAction</servlet-name>
 		<url-pattern>/adminMainAction</url-pattern>
 	</servlet-mapping>
-	
 
-	<!--  JSP 페이지 맵핑 -->
+
+	<!-- JSP 페이지 맵핑 -->
+
+	<!-- 회원수정 추가 -->
+
+
+	<servlet>
+		<servlet-name>updateUserForm</servlet-name>
+		<jsp-file>/pages/updateUserForm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>updateUserForm</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+	<!-- 회원탈퇴 추가 -->
+
+
+
+	<servlet>
+		<servlet-name>deleteUserForm</servlet-name>
+		<jsp-file>/pages/deleteUserForm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deleteUserForm</servlet-name>
+		<url-pattern>/leave</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>header</servlet-name>
@@ -199,7 +251,7 @@
 		<servlet-name>articleHome</servlet-name>
 		<url-pattern>/articleHome</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>article</servlet-name>
 		<jsp-file>/pages/article.jsp</jsp-file>
@@ -250,22 +302,22 @@
 		<servlet-name>address</servlet-name>
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>modal</servlet-name>
 		<jsp-file>/pages/donateModal.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>modal</servlet-name>
 		<url-pattern>/modal</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>modal2</servlet-name>
 		<jsp-file>/pages/donateModal2.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>modal2</servlet-name>
 		<url-pattern>/modal2</url-pattern>
@@ -275,43 +327,43 @@
 		<servlet-name>idCheckForm</servlet-name>
 		<jsp-file>/pages/idCheckForm.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>idCheckForm</servlet-name>
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>firefly</servlet-name>
 		<jsp-file>/pages/firefly.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>firefly</servlet-name>
 		<url-pattern>/firefly</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- jsp admin 페이지 매핑 -->
-	
+
 	<servlet>
 		<servlet-name>admin_main</servlet-name>
 		<jsp-file>/adminPages/admin_main.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>admin_main</servlet-name>
 		<url-pattern>/adminMain</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>admin_manage</servlet-name>
 		<jsp-file>/adminPages/admin_manage.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>admin_manage</servlet-name>
 		<url-pattern>/adminManage</url-pattern>
 	</servlet-mapping>
-	
+
 </web-app>
 

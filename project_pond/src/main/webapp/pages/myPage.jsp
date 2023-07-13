@@ -20,7 +20,7 @@
 	
 		<h2>My Page</h2>
 		<h3>${sessionScope.log }님 환영합니다.</h3>
-		<button onclick="location.href='UpdateUserRequest'">회원정보 수정</button>
+		<button onclick="location.href='update'">회원정보 수정</button>
 		<button onclick="location.href='leave'">회원탈퇴</button>
 		<button onclick="location.href='logout'">로그아웃</button>
 	</section>

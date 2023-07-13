@@ -15,42 +15,54 @@ import model.user.UserDao;
 @WebServlet("/DeleteUserFormAction")
 public class DeleteUserFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteUserFormAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public DeleteUserFormAction() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		
+		System.out.println(id + "action");
 		UserDao userDao = UserDao.getInstance();
 		boolean result = userDao.deleteUserById(id, password);
-		
+
 		String url = "leave";
-		
-		if(result) {
+
+		System.out.println(result + "확인용");
+		if (result) {
 			request.getSession().removeAttribute("log");
-			url ="/";
-			
+			url = "main";
+
+		}
+
+		if (url.equals("leave")) {
+			System.out.println("탈퇴 실패");
+		} else {
+			System.out.println("탈퇴 성공");
 		}
 		response.sendRedirect(url);
 	}
-	
 
 }

@@ -23,7 +23,7 @@
 				<c:redirect url="/login"></c:redirect>
 			</c:if>
 
-			<form method="POST" action="leave">
+			<form method="POST" action="Leave">
 
 				<div class="div-form">
 					<input type="text" id="id" name="id" value="${sessionScope.log}"
@@ -40,7 +40,7 @@
 							<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
 							<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
 						</ul>
-
+							<button>버튼</button>
 						<input type="button" id="submit-btn" value="회원탈퇴"
 							onclick="checkValue(form)">
 			</form>
