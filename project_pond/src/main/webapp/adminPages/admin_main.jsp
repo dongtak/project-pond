@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/style/admin.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <title>관리자</title>
 </head>
 <body>
@@ -34,7 +35,10 @@
 		</nav>
 		<section>
 			<c:if test="${not empty menu }">
-				<jsp:include page="adminManageAction?menu=${menu }"></jsp:include>
+				<span>${menu } 관리</span>
+				<div class="content">
+					<jsp:include page="/adminManage"></jsp:include>
+				</div>
 			</c:if>
 		</section>
 		<footer>
@@ -42,5 +46,17 @@
 		</footer>
 	</div>
 	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  var selectedMenu = '${requestScope.menu}';
+		  $('.menu li').each(function() {
+		    var menuValue = $(this).find('a').attr('href').split('=')[1];
+		    if (menuValue === selectedMenu) {
+		      $(this).addClass('selected');
+		    }
+		  });
+		});
+	
+	</script>
 </body>
 </html>
