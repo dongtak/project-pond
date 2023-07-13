@@ -15,6 +15,7 @@ function nameAndNumber() {
 	var customAmountInput = document.getElementById("cntrAmount");
 	var moneyError = document.getElementById("moneyError");
 	var resultN = nameValue !== null ? 1 : 0;
+	var url;
 	if (resultN === 0) {
 		nameError.style.display = "block";
 	} else {
@@ -30,13 +31,18 @@ function nameAndNumber() {
 		moneyError.style.display = "none";
 		resultM = 1;
 	}
-
+	
 	if (resultN === 1 && resultM === 1) {
+		
 		if (nameValue === "anonymous") {
-
+			url="anonymous?"
+		}else{
+			url="modal2?"
 		}
-		var form = document.getElementById("modal-form");
-		var url = "modal2?" + new URLSearchParams(new FormData(form)).toString();
+		
+		form = document.getElementById("modal-form");
+		url += new URLSearchParams(new FormData(form)).toString();
+		console.log(url)
 		window.location.href = url;
 	}
 }

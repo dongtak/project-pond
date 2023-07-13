@@ -13,7 +13,7 @@
 
 <body>
 
-	<form id="modal-form" method="post" action="/modal2">
+	<form id="modal-form" method="post" action="">
 
 		<div class="donor">
 
@@ -35,7 +35,8 @@
 			<button type="button" onclick="enableCustomAmount()">직접입력</button>
 			<input type="text" class="inputmoney" name="cntrAmount"
 				id="cntrAmount" title="금액직접입력" placeholder="직접입력" numberonly=""
-				maxlength="9" tabindex="0" disabled> <span id="moneyError"
+				maxlength="9" tabindex="0" disabled> 
+				<span id="moneyError"
 				class="error-message"> 후원금을 입력해주세요 </span> <br> <input
 				type="button" value="다음" onclick="nameAndNumber(form)">
 		</div>
@@ -60,5 +61,16 @@
 			}
 		});
 	}
+	
+
+	//숫자만 입력
+	var inputElement = document.getElementById("cntrAmount");
+
+	inputElement.addEventListener("input", function() {
+	  var inputValue = inputElement.value;
+	  var numericValue = inputValue.replace(/[^0-9]/g, "");
+	  inputElement.value = numericValue;
+	});
+
 </script>
 </html>

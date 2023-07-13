@@ -19,18 +19,46 @@
 
     <form action="" method="post">
         <div class="donorInfo">
-            <input ty.pe="text" id="donorName" name="donorName" placeholder="성함">
-            <input type="email" id="donorEmail" name="donorEmail" placeholder="이메일">
-            <input type="tel" id="donorPhone" name="donorPhone" placeholder="전화번호">
-        </div>
-        <div class="cardInfo">
-            <select name="" id=""></select>
-            <input type="text" name="cnum" id="cnum" placeholder="카드번호">
-            <input type="text" name="cpwd" id="cpwd" placeholder="카드 비밀번호 2자리">
-            <input type="text" name="cexpire" id="cexpire" placeholder="카드 유효기간">
-            <span id="blankError" class="error-message">필수항목을 입력해주세요</span>
+         <label for="donorName">성함</label>
+<input type="text" name="donorName" id="donorName" placeholder="성함">
+<span id="nameError" class="error-message">성함을 입력해주세요</span>
 
-        </div>
+<label for="donorBirth">생년월일</label>
+<input type="text" name="donorBirth" id="donorBirth" placeholder="생년월일">
+<span id="birthError" class="error-message">생년월일을 입력해주세요</span>
+
+<label for="donorPhone">전화번호</label>
+<input type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호">
+<span id="phoneError" class="error-message">전화번호를 입력해주세요</span>
+
+<label for="donorEmail">이메일</label>
+<input type="email" name="donorEmail" id="donorEmail" placeholder="이메일">
+<span id="emailError" class="error-message">이메일을 입력해주세요</span>
+
+<label for="cardType">카드 타입</label>
+<select name="cardType" id="cardType">
+    <option value="">카드 타입 선택</option>
+    <option value="visa">Visa</option>
+    <option value="mastercard">Mastercard</option>
+</select>
+<span id="cardTypeError" class="error-message">카드 타입을 선택해주세요</span>
+
+<label for="cardNumber">카드번호</label>
+<input type="text" name="cardNumber" id="cardNumber" placeholder="카드번호">
+<span id="cardNumberError" class="error-message">카드번호를 입력해주세요</span>
+
+<label for="cardPassword">카드 비밀번호 2자리</label>
+<input type="text" name="cardPassword" id="cardPassword" placeholder="카드 비밀번호 2자리">
+<span id="cardPasswordError" class="error-message">카드 비밀번호를 입력해주세요</span>
+
+<label for="cardExpiration">카드 유효기간</label>
+<input type="text" name="cardExpiration" id="cardExpiration" placeholder="카드 유효기간">
+<span id="cardExpirationError" class="error-message">카드 유효기간을 입력해주세요</span>
+
+<span id="blankError" class="error-message">필수항목을 입력해주세요</span>
+
+<input type="button" id="payCheck" onclick="payInfoCheck()" value="결제하기">
+
 
         <input type="button" id="payCheck" onclick="payInfoCheck(form)" value="결제하기">
 
@@ -40,28 +68,47 @@
 <script>
 
     function payInfoCheck(htmlForm) {
-        var selectValue = document.getElementById("mySelect").value;
-        var radioValue = document.querySelector('input[name="myRadio"]:checked');
-        var selectError = document.getElementById("selectError");
-        var radioError = document.getElementById("radioError");
+    	 var donorName = document.getElementById("donorName");
+         var donorBirth = document.getElementById("donorBirth");
+         var donorPhone = document.getElementById("donorPhone");
+         var donorEmail = document.getElementById("donorEmail");
+         var cardType = document.getElementById("cardType");
+         var cardNumber = document.getElementById("cardNumber");
+         var cardPassword = document.getElementById("cardPassword");
+         var cardExpiration = document.getElementById("cardExpiration");
+         var nameError = document.getElementById("nameError");
+         var birthError = document.getElementById("birthError");
+         var phoneError = document.getElementById("phoneError");
+         var emailError = document.getElementById("emailError");
+         var cardTypeError = document.getElementById("cardTypeError");
+         var cardNumberError = document.getElementById("cardNumberError");
+         var cardPasswordError = document.getElementById("cardPasswordError");
+         var cardExpirationError = document.getElementById("cardExpirationError");
 
-        var result = 0;
-        if (selectValue === "") {
-            selectError.style.display = "block";
-            result = 0;
-        } else {
-            selectError.style.display = "none";
-            result = 1;
-        }
+         var fields = [
+             { input: donorName, error: nameError },
+             { input: donorBirth, error: birthError },
+             { input: donorPhone, error: phoneError },
+             { input: donorEmail, error: emailError },
+             { input: cardType, error: cardTypeError },
+             { input: cardNumber, error: cardNumberError },
+             { input: cardPassword, error: cardPasswordError },
+             { input: cardExpiration, error: cardExpirationError }
+         ];
 
-        if (radioValue === null) {
-            radioError.style.display = "block";
-            result = 0;
-        } else {
-            radioError.style.display = "none";
-            result = 1;
-        }
+         var firstEmptyField = null;
 
+         // 빈칸 검사
+         for (var i = 0; i < fields.length; i++) {
+             var field = fields[i];
+             if (!field.input.value.trim()) {
+                 field.error.style.display = "block";
+                 if (!firstEmptyField) {
+                     firstEmptyField = field.input;
+                 }
+             }
+         }
+         
         if (result === 1) {
             htmlForm.submit();
         }

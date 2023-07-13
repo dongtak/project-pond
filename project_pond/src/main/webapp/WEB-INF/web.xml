@@ -216,16 +216,6 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>payAction</servlet-name>
-		<jsp-file>/pages/payAction.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>payAction</servlet-name>
-		<url-pattern>/pay</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 		<servlet-name>loginForm</servlet-name>
 		<jsp-file>/pages/loginForm.jsp</jsp-file>
 	</servlet>
