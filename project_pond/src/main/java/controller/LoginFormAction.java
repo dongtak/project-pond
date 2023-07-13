@@ -2,44 +2,29 @@ package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.admin.Admin;
+import model.admin.AdminDao;
 import model.user.User;
 import model.user.UserDao;
 
 /**
  * Servlet implementation class LoginFormAction
  */
-@WebServlet("/LoginFormAction")
 public class LoginFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginFormAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		
 		// 1. 파라미터 값 가져오기 (id, password)
 		// 2. User 조회 getUserById(id)
 		// 3. 결과에 따른 페이징 처리
@@ -51,26 +36,26 @@ public class LoginFormAction extends HttpServlet {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-//		System.out.println(1);
+
 		UserDao userDao = UserDao.getInstance();
-//		System.out.println(2);
 		User user = userDao.getUserById(id);
-//		System.out.println(3);
-//		System.out.println(user.getId()+user.getPwd());
-
+		
 		String url = "login";
-		System.out.println(4);
-		if (user != null && user.getPwd().equals(pwd)) {
+		boolean isAdmin = false;
+		
+		if(user!=null&&user.getPwd().equals(pwd)) {
 			url = "main";
-			System.out.println(5);
-
-			// 4. 로그인한 회원의 아이디를 -> session 에 속성값으로 저장
-			HttpSession session = request.getSession();
-			System.out.println(6);
 			session.setAttribute("log", id);
-			
-			
-			System.out.println(7);
+			session.setAttribute("isAdmin", isAdmin);
+		}else {
+			AdminDao adminDao = AdminDao.getInstance();
+			Admin admin = adminDao.getAdminById(id);
+			if(admin!=null&&admin.getAdmin_pwd().equals(pwd)) {
+				url = "main";
+				isAdmin=true;
+				session.setAttribute("log", id);
+				session.setAttribute("isAdmin", isAdmin);
+			}
 		}
 
 		if (url.equals("login")) {

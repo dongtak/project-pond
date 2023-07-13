@@ -16,8 +16,6 @@ public class Admin {
 		this.admin_auth = admin_auth;
 	}
 	
-	
-	
 	public String getAdmin_id() {
 		return admin_id;
 	}

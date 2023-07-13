@@ -92,17 +92,7 @@ boolean login = id == null ? false : true;
 			}
 			%>
 
-
-			<%
-			if (login) {
-			%><p>로그인상태</p>
-			<%
-			}
-			%>
-
 		</section>
-
-
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 

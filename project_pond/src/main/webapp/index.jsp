@@ -3,18 +3,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link rel="stylesheet" href="resources/style/grid.css">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/style/grid.css">
 
 <title>index</title>
 </head>
 <body>
-
-	<c:set var="connection" value="<%=DBManager.getConnection()%>" />
-
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
