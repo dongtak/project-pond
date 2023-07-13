@@ -116,6 +116,26 @@
 		<servlet-name>ShowArticleAction</servlet-name>
 		<url-pattern>/showArticle</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminMainAction</servlet-name>
+		<servlet-class>controller.AdminMainAction</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminMainAction</servlet-name>
+		<url-pattern>/adminMainAction</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminManageAction</servlet-name>
+		<servlet-class>controller.AdminManageAction</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminManageAction</servlet-name>
+		<url-pattern>/adminManageAction</url-pattern>
+	</servlet-mapping>
 
 
 	<!--  JSP 페이지 맵핑 -->
@@ -281,6 +301,16 @@
 	<servlet-mapping>
 		<servlet-name>admin_main</servlet-name>
 		<url-pattern>/adminMain</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_manage</servlet-name>
+		<jsp-file>/adminPages/admin_manage.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>admin_manage</servlet-name>
+		<url-pattern>/adminManage</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

@@ -25,12 +25,14 @@
 				<span><a href="login">로그인</a></span>
 			</c:when>
 			<c:otherwise>
-				<c:when test="${isAdmin }">
-					<span><a href="adminMain">관리자페이지</a></span>
-				</c:when>
-				<c:otherwise>
-					<span><a href="myPage">마이페이지</a></span>
-				</c:otherwise>
+				<c:choose>
+					<c:when test="${isAdmin }">
+						<span><a href="adminMainAction">관리자페이지</a></span>
+					</c:when>
+					<c:otherwise>
+						<span><a href="myPage">마이페이지</a></span>
+					</c:otherwise>
+				</c:choose>
 			</c:otherwise>
 		</c:choose>
 	</div>
