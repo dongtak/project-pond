@@ -9,6 +9,8 @@
 </head>
 <link rel="stylesheet" href="resources/style/grid.css">
 <body>
+<c:set var="log" value="${sessionScope.log }"/>
+<c:set var="isAdmin" value="${sessionScope.isAdmin }"/>
 	<div class="header">
 		<a href="main"><span>로고</span></a>
 		<div class="nav-bar">
@@ -19,11 +21,16 @@
 			</ul>
 		</div>
 		<c:choose>
-			<c:when test="${empty sessionScope.log}">
+			<c:when test="${empty log}">
 				<span><a href="login">로그인</a></span>
 			</c:when>
 			<c:otherwise>
-				<span><a href="myPage">마이페이지</a></span>
+				<c:when test="${isAdmin }">
+					<span><a href="adminMain">관리자페이지</a></span>
+				</c:when>
+				<c:otherwise>
+					<span><a href="myPage">마이페이지</a></span>
+				</c:otherwise>
 			</c:otherwise>
 		</c:choose>
 	</div>

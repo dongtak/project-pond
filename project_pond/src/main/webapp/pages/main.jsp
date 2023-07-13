@@ -97,10 +97,7 @@ boolean login = id == null ? false : true;
 			%>
 
 
-
 		</section>
-
-
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 

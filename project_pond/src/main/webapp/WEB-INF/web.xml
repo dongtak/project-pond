@@ -15,8 +15,7 @@
 	</welcome-file-list>
 
 
-	<!-- 1. 서블릿 페이지 맵핑 -->
-
+	<!-- 서블릿 페이지 맵핑 -->
 
 	<servlet>
 		<servlet-name>LoginFormAction</servlet-name>
@@ -68,14 +67,6 @@
 		<url-pattern>/dupleIdCheckt</url-pattern>
 	</servlet-mapping>
 
-
-
-
-	<!-- 아이디 중복체크 추가 -->
-
-
-
-
 	<servlet>
 		<servlet-name>IdCheckFormAction</servlet-name>
 		<servlet-class>controller.IdCheckFormAction</servlet-class>
@@ -86,9 +77,6 @@
 		<url-pattern>/IdCheck</url-pattern>
 	</servlet-mapping>
 
-	<!-- 회원탈퇴 추가 -->
-
-
 	<servlet>
 		<servlet-name>DeleteUserFormAction</servlet-name>
 		<servlet-class>controller.DeleteUserFormAction</servlet-class>
@@ -98,8 +86,6 @@
 		<servlet-name>DeleteUserFormAction</servlet-name>
 		<url-pattern>/leave</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 아이디 찾기 추가 -->
 	
 	<servlet>
 		<servlet-name>FindIdAction</servlet-name>
@@ -132,7 +118,7 @@
 	</servlet-mapping>
 
 
-	<!-- 2. JSP 페이지 맵핑 -->
+	<!--  JSP 페이지 맵핑 -->
 
 	<servlet>
 		<servlet-name>header</servlet-name>
@@ -163,7 +149,6 @@
 		<servlet-name>main</servlet-name>
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
-
 
 	<servlet>
 		<servlet-name>myPage</servlet-name>
@@ -235,9 +220,7 @@
 		<url-pattern>/join</url-pattern>
 	</servlet-mapping>
 
-
-
-<servlet>
+	<servlet>
 		<servlet-name>findUser</servlet-name>
 		<jsp-file>/pages/findUserForm.jsp</jsp-file>
 	</servlet>
@@ -268,7 +251,7 @@
 		<url-pattern>/modal</url-pattern>
 	</servlet-mapping>
 	
-		<servlet>
+	<servlet>
 		<servlet-name>modal2</servlet-name>
 		<jsp-file>/pages/donateModal2.jsp</jsp-file>
 	</servlet>
@@ -278,9 +261,6 @@
 		<url-pattern>/modal2</url-pattern>
 	</servlet-mapping>
 
-	
-	<!-- id중복체크 -->
-	
 	<servlet>
 		<servlet-name>idCheckForm</servlet-name>
 		<jsp-file>/pages/idCheckForm.jsp</jsp-file>
@@ -291,6 +271,17 @@
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
 	
+	<!-- jsp admin 페이지 매핑 -->
+	
+	<servlet>
+		<servlet-name>admin_main</servlet-name>
+		<jsp-file>/adminPages/admin_main.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>admin_main</servlet-name>
+		<url-pattern>/adminMain</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
 
