@@ -127,16 +127,6 @@
 		<url-pattern>/adminMainAction</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>AdminManageAction</servlet-name>
-		<servlet-class>controller.AdminManageAction</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>AdminManageAction</servlet-name>
-		<url-pattern>/adminManageAction</url-pattern>
-	</servlet-mapping>
-
 
 	<!--  JSP 페이지 맵핑 -->
 

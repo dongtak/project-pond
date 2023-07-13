@@ -73,6 +73,10 @@ a, a:visited{
 	background-color: lightblue;
 }
 
+.selected{
+	background-color: lightblue;
+}
+
 .menu>div:first-child {
 	border-top:1px solid darkslateblue;
 	border-bottom:1px solid darkslateblue;
