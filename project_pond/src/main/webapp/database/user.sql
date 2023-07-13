@@ -309,8 +309,9 @@ create table articleComment(
 	comment_modifiedAt timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
     `like` int,
     
-    foreign key (user_id) references `user`(user_id) On delete set null
-    
+    foreign key (user_id) references `user`(user_id) On delete set null,
+   foreign key (moon_num) references fullmoon(moon_num) On delete set null
+ 
 );
 
 INSERT INTO articleComment VALUES ("abc124","id","내용");

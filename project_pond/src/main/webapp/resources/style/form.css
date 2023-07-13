@@ -21,7 +21,7 @@
 
 
 
-form {
+.user-form {
 	min-width: 400px;
 	width:45vw;
 	margin: 0 auto;
@@ -61,11 +61,7 @@ position: relative;
 input#sample6_postcode ,  input.addressBtn{
 	width: 30%;
 	
-	
 }
-
-
-
 
 
 /* .div-form>div:not(:first-child) {
@@ -78,10 +74,10 @@ input:focus{
 
 div:has(input:focus),
 div:has(select:focus) {
-	border-color: #04C75A;	
+
 }
 
-input {
+.user-input {
 	width: 70%;
 	margin: 5px;
 	padding: 15px 15px;
@@ -91,11 +87,6 @@ input {
     color:black;
 
 }
-
-input[type="radio"] {
-	display: none;
-}
-
 
 
 input[type="text"], 

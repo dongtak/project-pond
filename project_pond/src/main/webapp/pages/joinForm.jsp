@@ -14,19 +14,19 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<form method="POST" action="Join">
+			<form method="POST" class=user-form action="Join">
 				<div class="div-form">
 					<div>
-						<input type="text" id="id" name="id" placeholder="아이디" autofocus>
+						<input type="text" id="id" class=user-input name="id" placeholder="아이디" autofocus>
 						<!-- 아이디 중복체크 추가-->
 						<button class="idCheckBtn" onclick="idCheck()" >중복확인</button>
 					</div>
 					<div>
-						<input type="text" id="password" name="password"
+						<input type="text" id="password" class=user-input name="password"
 							placeholder="비밀번호">
 					</div>
 					<div>
-						<input type="email" id="email" name="email"
+						<input type="email" class=user-input id="email" name="email"
 							placeholder="이메일">
 					</div>
 				</div>
@@ -38,14 +38,14 @@
 
 				<div class="div-form">
 					<div>
-						<input type="text" id="name" name="name" placeholder="이름">
+						<input type="text" class=user-input id="name" name="name" placeholder="이름">
 					</div>
 					<div>
-						<input type="text" id="birth" name="birth" placeholder="생년월일 8자리">
+						<input type="text" class=user-input id="birth" name="birth" placeholder="생년월일 8자리">
 					</div>
 
 					<div>
-						<input type="text" id="phone" name="phone" placeholder="휴대전화 번호">
+						<input type="text" class=user-input id="phone" name="phone" placeholder="휴대전화 번호">
 					</div>
 
 					<div>
@@ -58,7 +58,7 @@
 					<li class="error" id="error-birth">생년월일: 필수 정보입니다.</li>
 					<li class="error" id="error-phone">휴대전화: 필수 정보입니다.</li>
 				</ul>
-				<input type="button" id="submit-btn" value="회원가입"
+				<input type="button" class=user-input id="submit-btn" value="회원가입"
 					onclick="checkValue(form)">
 			</form>
 		</section>

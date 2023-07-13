@@ -4,6 +4,7 @@
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.ResultSet"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%!// 변수 선언
 	Connection conn = null;
 	Statement stmt = null;
@@ -59,8 +60,13 @@ boolean login = id == null ? false : true;
 			<progress value="<%=formattedMoney%>" max="100"></progress>
 			<br> <span>달성률 : <%=formattedMoney%>%
 			</span><br>
-			<jsp:include page="/modal" flush="true" />
-
+			<button class="accordion">후원하기</button>
+			<div class="panel">
+				<p>
+					<jsp:include page="/modal"></jsp:include>
+				</p>
+			</div>
+			
 			<%
 			}
 			%>

@@ -8,20 +8,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="resources/style/modal.css">
 </head>
 
 <body>
 
-	<form id="modal-form" method="post" action="modal2">
+	<form id="modal-form" method="post" action="/modal2">
 
 		<div class="donor">
 
 			<label><input type="radio" name="leavename" value="anonymous">
-				익명으로 후원하기 </label> <br>
-			<label><input type="radio" name="leavename" value="nominated">
-				후원자 이름 남기기 </label> <br>
-			<span id="nameError" class="error-message"> 후원옵션을 선택해주세요 </span>
+				익명으로 후원하기 </label> <label><input type="radio" name="leavename"
+				value="nominated"> 후원자 이름 남기기 </label> <br> <span
+				id="nameError" class="error-message"> 후원옵션을 선택해주세요 </span>
 		</div>
 
 
@@ -45,4 +44,21 @@
 
 </body>
 <script src="resources/script/validationPay.js"></script>
+
+<script type="text/javascript">
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
+		});
+	}
+</script>
 </html>
