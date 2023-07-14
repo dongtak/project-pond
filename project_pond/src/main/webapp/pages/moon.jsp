@@ -9,10 +9,10 @@
 <title>보름달</title>
 </head>
 <body>
-<c:set var="pageCount" value=""/>
+	<c:set var="moonMenu" value="${requestScope.moonMenu }" />
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
+		<div class="section">
 			<div class="menu">
 				<ul>
 					<li><a href="moonMenu?moonMenu=new">최신순</a></li>
@@ -21,14 +21,11 @@
 					<li><a href="moonMenu?moonMenu=topMsg">가장 많은 메시지</a></li>
 				</ul>
 			</div>
-			<div class="content">
-				<c:choose>
-					<c:when test="">
-					</c:when>
-				</c:choose>	
-			</div>
-		</section>
+			<div class="content">내용</div>
+		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+	
+	<script type="text/javascript" src="resources/script/moonMenu.js"></script>
 </body>
 </html>

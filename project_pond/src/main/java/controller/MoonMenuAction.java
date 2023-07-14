@@ -36,6 +36,9 @@ public class MoonMenuAction extends HttpServlet {
 //			
 //		}
 		
+		request.setAttribute("moonMenu", moonMenu);
+		
+		request.getRequestDispatcher("moon").forward(request, response);
 	
 	}
 
