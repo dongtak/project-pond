@@ -60,6 +60,9 @@
 				</ul>
 				<input type="button" class=user-input id="submit-btn" value="회원가입"
 					onclick="checkValue(form)">
+					<input
+					type="button" class="cancelBtn" id="cancel-btn" value="취소"
+					onclick="history.back()">
 			</form>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
