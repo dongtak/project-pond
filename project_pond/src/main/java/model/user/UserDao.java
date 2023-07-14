@@ -295,7 +295,10 @@ public class UserDao {
 					this.pstmt = this.conn.prepareStatement(sql);
 					this.pstmt.setString(1, password);
 					this.pstmt.setString(2, userDto.getId());
-					this.pstmt.setString(3, password);
+					this.pstmt.setString(3, userDto.getPwd());
+					
+					
+					
 					
 					this.pstmt.execute();
 

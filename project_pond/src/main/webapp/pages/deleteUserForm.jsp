@@ -26,25 +26,26 @@
 			<form method="POST" action="Leave">
 
 				<div class="div-form">
-					<input type="text" id="id" name="id" value="${sessionScope.log}"
-						readonly>
 					<div>
+						<input type="text" class=user-input id="id" name="id"
+							value="${sessionScope.log}" readonly>
+					</div>
 
-						<div>
-							<input type="text" id="password" name="password"
-								placeholder="비밀번호" autofocus>
-						</div>
+					<div>
+						<input type="text" class=user-input id="password" name="password"
+							placeholder="비밀번호" autofocus>
+					</div>
 
 
-						<ul>
-							<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
-							<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
-						</ul>
-							<button>버튼</button>
-						<input type="button" id="submit-btn" value="회원탈퇴"
-							onclick="checkValue(form)">
-							<input
-					type="button" class="cancelBtn" id="cancel-btn" value="취소"
+					<ul>
+						<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
+						<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
+					</ul>
+				</div>
+				<button>버튼</button>
+				<input type="button" id="submit-btn" value="회원탈퇴"
+					onclick="checkValue(form)"> <input type="button"
+					class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">
 			</form>
 

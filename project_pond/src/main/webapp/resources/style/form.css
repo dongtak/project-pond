@@ -23,12 +23,19 @@
 
 .user-form {
 	min-width: 400px;
-	width:45vw;
+	width:40vw;
 	margin: 0 auto;
+	text-align: center;
     /* padding:20px; */
     background-color: rgba(255, 255, 255, 0);
     position: relative;
    
+}
+
+.bottom-nav{
+	text-align: center;
+	line-height: 30px;
+	height: 30px;
 }
 
 .div-form,ul {
@@ -40,23 +47,7 @@
   text-align: center;
 }
 
-/* .div-form:first-child{
-position: relative;
-}
 
-#id{
-    position: absolute;
-
-} */
-
-
-.idCheckBtn{
-    position: absolute;
-    top: 20px;
-    right:60px;
-    
-    
-}
 
 input#sample6_postcode ,  input.addressBtn{
 	width: 30%;
@@ -64,36 +55,22 @@ input#sample6_postcode ,  input.addressBtn{
 }
 
 
-/* .div-form>div:not(:first-child) {
-	border-top: none;
-} */
-
 input:focus{
-	border-bottom: solid 1px #04C75A;	
-}
-
-div:has(input:focus),
-div:has(select:focus) {
-
+	border-bottom: solid 1px #ffff80;	
 }
 
 .user-input {
 	width: 70%;
-	margin: 5px;
+	margin: 5px auto;
 	padding: 15px 15px;
     border: none;
     border-bottom:1px solid gray;
     background-color:#04c75800;
     color:black;
-
 }
 
 
-input[type="text"], 
-input[type="email"] {
-	/* border: none; */
-	outline: none;
-}
+
 
 select {
 	margin: 5px;
@@ -115,18 +92,19 @@ select {
 }
 
 
-#submit-btn {
+#submit-btn,#cancel-btn,#pwd-submit-btn,#id-submit-btn {
     display: flex;
     justify-content: center;
-	width: 70%;
-	margin: 100px auto auto auto;
+	width: 50%;
+	margin:  10px auto;
+	text-align: center;
 	padding: 15px;
 	color: white;
    
 	border: none;
 	border-radius: 10px;
 	background-color: #dce8e1;
-	cursor: pointer;
+	cursor:  pointer;
 }
 
 ul{

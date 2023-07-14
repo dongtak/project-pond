@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.pay.PayDao;
+import model.pay.PayRequestDto;
+import model.user.UserDao;
+import model.user.UserRequestDto;
+
 /**
  * Servlet implementation class PayAction
  */
@@ -33,11 +38,32 @@ public class PayAction extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+
+		String name = request.getParameter("name");
+		String money = request.getParameter("money");
+		String message = request.getParameter("message");
 		
+		System.out.println(name);
+		System.out.println(money);
 		
+		System.out.println(message);
+		
+		PayRequestDto pay = new PayRequestDto(name,money,message);
+
+		PayDao payDao = PayDao.getInstance();
+		boolean result = payDao.payment(pay);
+
+		String url = "modal";
+
+		if(result) 
+			url = "main";
+		
+
+		response.sendRedirect(url);
 	}
 
 }

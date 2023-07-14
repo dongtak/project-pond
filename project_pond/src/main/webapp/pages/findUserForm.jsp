@@ -32,8 +32,9 @@
 			<input type="button" class=user-input id="id-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
-					<input type="button" class=user-input id="id-submit-btn" value="취소"
-					onclick="back()">
+				<input
+					type="button" class="cancelBtn" id="cancel-btn" value="취소"
+					onclick="history.back()">
 		
 			</form>
 			

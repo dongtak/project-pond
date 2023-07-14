@@ -152,6 +152,16 @@
 		<servlet-name>AdminMainAction</servlet-name>
 		<url-pattern>/adminMainAction</url-pattern>
 	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>donate</servlet-name>
+		<servlet-class>controller.PayAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>donate</servlet-name>
+		<url-pattern>/donate</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>MoonMenuAction</servlet-name>
@@ -337,6 +347,7 @@
 		<servlet-name>idCheckForm</servlet-name>
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>firefly</servlet-name>
