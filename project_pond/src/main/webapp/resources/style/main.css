@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
-body {
-	background-image: url("../images/bg.jpg");
+body { 
+	background: linear-gradient(to top, #21241f, black);
 	background-size: cover;
 	
 }
 
 .main_moon {
+
 	position:relative;
 	text-align: center;
 	width: 520px;
@@ -15,14 +16,16 @@ body {
 	border-radius: 50%;
 	margin: 0 auto;
 	justify-content: center;
-	box-shadow: -20px 0px 50px 0px #feffc1;
+	box-shadow: -20px 0px 50px 0px #feffe3;
 	transition: 0.2s;
 	color: white;
 	z-index: 1001;
+	background-image: url("../images/fullMoon.jpg");
+	background-image: cover;
 }
 
 .main_moon:hover {
-	box-shadow: -20px 0px 30px 15px #feffc1;
+	box-shadow : -20px 0px 30px 15px #feffe3;
 }
 
 .fullmoon {
