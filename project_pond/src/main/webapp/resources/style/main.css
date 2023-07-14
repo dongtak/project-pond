@@ -21,7 +21,7 @@ body {
 	color: white;
 	z-index: 1001;
 	background-image: url("../images/fullMoon.jpg");
-	background-image: cover;
+	background-size: cover;
 }
 
 .main_moon:hover {
