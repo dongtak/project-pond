@@ -163,10 +163,18 @@
 		<url-pattern>/donate</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>MoonMenuAction</servlet-name>
+		<servlet-class>controller.MoonMenuAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MoonMenuAction</servlet-name>
+		<url-pattern>/moonMenu</url-pattern>
+	</servlet-mapping>
+
 
 	<!-- JSP 페이지 맵핑 -->
-
-	<!-- 회원수정 추가 -->
 
 
 	<servlet>
@@ -178,9 +186,6 @@
 		<servlet-name>updateUserForm</servlet-name>
 		<url-pattern>/update</url-pattern>
 	</servlet-mapping>
-	<!-- 회원탈퇴 추가 -->
-
-
 
 	<servlet>
 		<servlet-name>deleteUserForm</servlet-name>
@@ -343,6 +348,17 @@
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>firefly</servlet-name>
+		<jsp-file>/pages/firefly.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>firefly</servlet-name>
+		<url-pattern>/firefly</url-pattern>
+	</servlet-mapping>
+	
 
 	<!-- jsp admin 페이지 매핑 -->
 
