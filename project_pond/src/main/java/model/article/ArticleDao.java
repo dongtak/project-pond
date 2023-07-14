@@ -91,7 +91,7 @@ public class ArticleDao {
 			 select moon_num from fullmoon where moon_status=0
 			 ) order by article_createAt desc;
 			*/
-			String sql="SELECT * FROM article WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=0 ) ORDER BY article_createAt DESC LIMIT ?,?";
+			String sql="SELECT * FROM article WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=0 ) ORDER BY moon_num DESC LIMIT ?,?";
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, startRow-1); // 시작행-1

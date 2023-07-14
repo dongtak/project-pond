@@ -6,6 +6,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html>
@@ -31,8 +32,26 @@
 				<c:forEach var="articleList" items="${requestScope.articleList }" varStatus="vs">
 					<div class="item">
 						<a href='showArticle?moonNum=${articleList.getMoon_num() }' target='_self'>
-	            		<img src='https://ifh.cc/g/zfn8YG.jpg' border='0'>
-							<span>
+	            		<img src='https://ifh.cc/g/pOdz9l.jpg' border='0'>
+	            		<span class="moonNum"> 
+	            			<c:set var="moonNum" value="${articleList.getMoon_num()}" /> 
+	            			<c:set var="num" value="${fn:substringAfter(moonNum, '0')}" /> 
+	            			<c:set var="do_loof" value="true"/>
+	            			<c:forEach var="item" begin="1" end="${fn:length(num)}">
+	            				<c:if test="${do_loof eq true }">
+	            					<c:choose>
+	            						<c:when test="${fn:startsWith(num, '0')}">
+											<c:set var="num" value="${fn:substringAfter(num, '0')}" />
+	            						</c:when>
+										<c:otherwise>
+											<c:set var="do_loof" value="false"/>
+										</c:otherwise>
+	            					</c:choose>
+	            				</c:if>
+							</c:forEach>
+							[제 ${num }회]
+						</span>
+							<span class="moonTitle">
 								${articleList.getArticle_title() }
 							</span>
 						</a>

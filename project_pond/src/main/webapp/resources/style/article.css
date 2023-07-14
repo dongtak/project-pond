@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .section{
-	padding:0 10%;
-    margin-bottom: 50px;
+	margin : 0 15%;
+	padding-bottom : 50px;
 }
 
 .section_title{
@@ -13,20 +13,24 @@
 }
 
 .items{
-	/* border:1px solid black; */
 	display:flex;
-	justify-content:space-around;
+	justify-content:space-evenly;
 	flex-flow:wrap;
 }
 
 .item{
-	width:400px;
-	height:400px;
-	border:1px solid black;
+	width:350px;
+	height:350px;
 	border-radius:50%;
 	text-align:center;
 	margin:20px;
     position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.item:hover{
+	box-shadow: 0 0 30px rgba(255, 255, 153, 0.5);
 }
 
 .item>a{
@@ -38,19 +42,32 @@
 
 .item img{
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 50%;
+   	transform: scale(1.1);
 }
 
+
 .item span{
-	width: max-content;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    background-color: white;
+	background-color: white;
     opacity: 0.8;
     font-size: 1.5rem;
+}
+
+.item span.moonTitle{
+	width: max-content;
+    position: absolute;
+    top:55%;
+    left:50%;
+    transform: translate(-50%,-55%);
+}
+
+.item span.moonNum{
+	position:absolute;
+	top:35%;
+	left:50%;
+	transform: translateX(-50%);
+	background-color: white;
 }
 
 .page{
