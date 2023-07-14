@@ -17,3 +17,26 @@ function navigo() {
 }
 
 navigo();
+
+
+$('.menu a').click(function(event) {
+	event.preventDefault();
+	// $.ajax({경로, 동기화 여부, 성공시 할 일})
+	// $.ajax({url:"경로", async:true, success:function(result){}})
+	var moonMenu = event.target.id;
+	console.log(moonMenu);
+	
+	$.ajax({
+		'method': 'GET',
+		'url': '/MoonContentAction?moonMenu=' + moonMenu,
+		'async' : true,
+		'success' : function(result) {
+			console.log(result);
+			const num = result.moonNum;
+			console.log("num: "+num);
+			$('#moon-container').append(num);
+		}
+	});
+
+});
+

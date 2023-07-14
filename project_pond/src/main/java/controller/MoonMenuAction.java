@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MoonMenuAction
@@ -25,16 +26,6 @@ public class MoonMenuAction extends HttpServlet {
 		if(moonMenu==null) {
 			moonMenu="new";
 		}
-		
-//		if(moonMenu.equals("new")) {
-//			
-//		}else if(moonMenu.equals("done")) {
-//			
-//		}else if(moonMenu.equals("peak")) {
-//			
-//		}else if(moonMenu.equals("topMsg")) {
-//			
-//		}
 		
 		request.setAttribute("moonMenu", moonMenu);
 		

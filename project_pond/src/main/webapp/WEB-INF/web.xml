@@ -359,6 +359,16 @@
 		<url-pattern>/firefly</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>moonContent</servlet-name>
+		<jsp-file>/pages/moonContent.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>moonContent</servlet-name>
+		<url-pattern>/moonContent</url-pattern>
+	</servlet-mapping>
+	
 
 	<!-- jsp admin 페이지 매핑 -->
 

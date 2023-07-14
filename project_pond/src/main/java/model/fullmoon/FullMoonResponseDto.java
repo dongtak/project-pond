@@ -2,8 +2,7 @@ package model.fullmoon;
 
 import java.sql.Timestamp;
 
-public class FullMoon {
-
+public class FullMoonResponseDto {
 	private String moonNum;
 	private String adminId;
 	private String title;
@@ -13,10 +12,9 @@ public class FullMoon {
 	private int donate;
 	private int status;
 	private int messageCnt;
-
-	public FullMoon(String moonNum, String adminId, String title, String content, Timestamp createdAt, int goal,
-
-			int donate, int status, int messageCnt) {
+	
+	public FullMoonResponseDto(String moonNum, String adminId, String title, String content, Timestamp createdAt,
+			int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
@@ -28,41 +26,61 @@ public class FullMoon {
 		this.status = status;
 		this.messageCnt = messageCnt;
 	}
-
+	
 	public String getMoonNum() {
 		return moonNum;
 	}
-
+	public void setMoonNum(String moonNum) {
+		this.moonNum = moonNum;
+	}
 	public String getAdminId() {
 		return adminId;
 	}
-
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
+	}
 	public String getTitle() {
 		return title;
 	}
-
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public String getContent() {
 		return content;
 	}
-
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
-
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
 	public int getGoal() {
 		return goal;
 	}
-
-	public int getDonation() {
+	public void setGoal(int goal) {
+		this.goal = goal;
+	}
+	public int getDonate() {
 		return donate;
 	}
-
+	public void setDonate(int donate) {
+		this.donate = donate;
+	}
 	public int getStatus() {
 		return status;
 	}
-
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	public int getMessageCnt() {
 		return messageCnt;
 	}
-
+	public void setMessageCnt(int messageCnt) {
+		this.messageCnt = messageCnt;
+	}
+	
+	
 }
