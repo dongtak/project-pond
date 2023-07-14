@@ -72,7 +72,14 @@
 <script src="resources/script/validation.js"></script>
 <!-- 아이디중복체크 추가 -->
 <script>
-
+function idCheck(){
+	var userid=document.all.userid.value;
+	if(userid){
+	url="idcheck.php?userid="+userid;
+	window.open(url,"chkid","width=500,height=500,menubar=no,toolbar=no");
+	}else{
+	alert("ID를 입력하세요!");
+	}
 </script>
 
 </html>
