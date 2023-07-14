@@ -1,73 +1,85 @@
+// <donor>
+// 1. 후원자 이름 남기기가 기본으로 선택되어 있다
+document.querySelector('input[name="leavename"][value="nominated"]').checked = true;
 
-// 1. 후원자 이름 남기기가 기본값으로 선택되어 있음
-document.querySelector('input[name="leavename"][value="anonymous"]').checked = true;
-
-// 2. 익명 선택시 donorname disable 후 anonymous를 value로 입력
+// 2. 익명 선택시 donorname disable 그리고 donorname value에 "익명"을 넣는다
 function toggleDonorName(enable) {
-	var donorNameInput = document.querySelector('input[name="donorname"]');
-	donorNameInput.disabled = enable;
-	donorNameInput.value = enable ? "" : "후원자 이름";
+  var donorNameInput = document.querySelector('input[name="donorname"]');
+  donorNameInput.disabled = enable;
+  donorNameInput.value = enable ? "" : "익명";
+  validateDonorName();
+}
+
+// 3. 후원자 이름 남기기 선택시 donorname에 focus
+function focusDonorName() {
+  var donorNameInput = document.querySelector('input[name="donorname"]');
+  donorNameInput.focus();
 }
 
 toggleDonorName(true);
 
-// 3. 후원금을 button으로 선택시 inputmoney disable후 value에 해당 값을 입력
+// <donate>
+// 1. button으로 후원금 선택시 inputmoney disable, 그리고 해당 금액이 cntrAmount의 value값으로 들어간다
+// 예) 1만원 선택 시 cntrAmount 의 value는 10000
 function setAmount(amount) {
-	var customAmountInput = document.getElementById("cntrAmount");
-	customAmountInput.disabled = true;
-	customAmountInput.value = amount;
-
-	var messageInput = document.getElementById("messageInput");
-	if (amount >= 10000) {
-		messageInput.disabled = false;
-	} else {
-		messageInput.disabled = true;
-		messageInput.value = "";
-	}
-	
+  var customAmountInput = document.getElementById("moneyInput");
+  customAmountInput.disabled = true;
+  customAmountInput.value = amount.toString();
+  validateAmount();
 }
 
-// 4. 직접입력시에는 숫자만 입력 가능
+// 2. 직접입력 선택시 숫자만 입력 가능, 최대 9자리 숫자
 function enableCustomAmount() {
-	var customAmountInput = document.getElementById("cntrAmount");
-	customAmountInput.disabled = false;
-	customAmountInput.value = "";
-	customAmountInput.addEventListener("input", restrictToNumbers);
-	customAmountInput.addEventListener("input", checkAmountAndToggleMessageInput);
+  var moneyInput = document.getElementById("moneyInput");
+  moneyInput.disabled = false;
+  moneyInput.value = "";
+  moneyInput.addEventListener("input", restrictToNumbers);
+  validateAmount();
 }
 
 function restrictToNumbers() {
-	this.value = this.value.replace(/[^0-9]/g, "");
+  this.value = this.value.replace(/[^0-9]/g, "").slice(0, 9);
 }
 
+// 3. 직접입력이 기본으로 선택되어 있다.
+document.querySelector('button[onclick="enableCustomAmount()"]').click();
 
-function checkAmountAndToggleMessageInput() {
-	var customAmountInput = document.getElementById("cntrAmount");
-	var messageInput = document.getElementById("messageInput");
+// 4. 후원금액이 1만원 이상부터 메세지 입력 가능, 1만원 미만일경우 메세지 disable, value는 공백("")
+function validateAmount() {
+  var customAmountInput = document.getElementById("moneyInput");
+  var messageInput = document.getElementById("messageInput");
+  
+  if (parseInt(customAmountInput.value) >= 10000) {
+    messageInput.disabled = false;
+    messageInput.value = "";
+  } else {
+    messageInput.disabled = true;
+    messageInput.value = "";
+  }
+}
 
-	// 직접입력으로 만원 이상인 경우 메시지 입력란 활성화
-	if (parseInt(customAmountInput.value) >= 10000) {
-		messageInput.disabled = false;
-	} else {
-		messageInput.disabled = true;
-		messageInput.value = "";
-	}
+// 폼 유효성 검사
+function validateDonorName() {
+  var donorNameInput = document.querySelector('input[name="donorname"]');
+  var donorNameError = document.getElementById("nameError");
+  
+  if (donorNameInput.value.trim() === "") {
+    donorNameError.style.display = "block";
+  } else {
+    donorNameError.style.display = "none";
+  }
 }
 
 // 초기화
-setAmount(10000);
+validateDonorName();
+validateAmount();
 
-function enableCustomAmount() {
-	var amountInput = document.getElementById("cntrAmount");
-	amountInput.value = "";
-	amountInput.disabled = false;
-	amountInput.focus();
-}
+
 
 function nameAndNumber(htmlForm) {
 	var nameValue = document.querySelector('input[name="leavename"]:checked');
 	var nameError = document.getElementById("nameError");
-	var customAmountInput = document.getElementById("cntrAmount");
+	var customAmountInput = document.getElementById("moneyInput");
 	var moneyError = document.getElementById("moneyError");
 	var resultN = nameValue !== null ? 1 : 0;
 	var url;
@@ -103,19 +115,7 @@ function nameAndNumber(htmlForm) {
 		//	url += new URLSearchParams(new FormData(form)).toString();
 		//	console.log(url)
 		//	window.location.href = url;
-	} else {
-		var donorNameInput = document.querySelector('input[name="donorname"]');
-		var customAmountInput = document.getElementById("cntrAmount");
-		var messageInput = document.getElementById("messageInput");
-		var errorMessage = document.getElementById("moneyError");
-
-		if (donorNameInput.value.trim() === "" || customAmountInput.value.trim() === "" || parseInt(customAmountInput.value) < 10000) {
-			errorMessage.style.display = "block";
-		} else {
-			errorMessage.style.display = "none";
-		}
-
-	}
+	} 
 }
 
 

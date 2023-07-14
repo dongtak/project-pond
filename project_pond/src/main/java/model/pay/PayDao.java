@@ -56,7 +56,7 @@ public class PayDao {
 						this.pstmt.execute();
 
 						this.pstmt = this.conn.prepareStatement(sql);
-						this.pstmt.setString(1, name);
+						this.pstmt.setString(1, "익명");
 						this.pstmt.setString(2, money);
 						this.pstmt.setString(3, message);
 
@@ -72,15 +72,24 @@ public class PayDao {
 						DBManager.close(this.conn, this.pstmt);
 					}
 				} else {
+					String keyOff = "SET FOREIGN_KEY_CHECKS = 0 ";
+					String keyOn = "SET FOREIGN_KEY_CHECKS = 1 ";
 					String sql = "INSERT INTO pay(name, pay_money,message) VALUES(?, ?, ?)";
 
-					
 					System.out.println("dao2"+name);
 					try {
+						this.pstmt = this.conn.prepareStatement(keyOff);
+						this.pstmt.execute();
+
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, name);
-						this.pstmt.setString(2, money);
+						this.pstmt.setInt(2, Integer.parseInt(money));
 						this.pstmt.setString(3, message);
+
+						this.pstmt.execute();
+						
+						this.pstmt = this.conn.prepareStatement(keyOn);
+						this.pstmt.execute();
 
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -98,6 +107,8 @@ public class PayDao {
 		}
 		return check;
 	}
+	
+
 	
 	
 }

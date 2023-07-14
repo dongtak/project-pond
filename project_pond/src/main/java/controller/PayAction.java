@@ -43,9 +43,9 @@ public class PayAction extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
-		String name = request.getParameter("leavename");
-		String money = request.getParameter("cntrAmount");
-		String message = request.getParameter("messageInput");
+		String name = request.getParameter("name");
+		String money = request.getParameter("money");
+		String message = request.getParameter("message");
 		
 		System.out.println(name);
 		System.out.println(money);
