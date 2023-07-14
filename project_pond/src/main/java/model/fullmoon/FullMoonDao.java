@@ -69,6 +69,44 @@ public class FullMoonDao {
 		}
 
 		return list;
+		
+		
+		
+	}
+	
+	public FullMoonResponseDto fullmoonActivated () {
+		FullMoonResponseDto moon = null;
+		
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM fullmoon WHERE moon_status=1";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				if(this.rs.next()) {
+					String moonNum = this.rs.getString(1);
+					String adminId = this.rs.getString(2);
+					String title = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					Timestamp createdAt = this.rs.getTimestamp(5);
+					int goal = this.rs.getInt(6);
+					int donate = this.rs.getInt(7);
+					int status = this.rs.getInt(8);
+					int messageCnt = this.rs.getInt(9);
+					moon = new FullMoonResponseDto(moonNum, adminId, title, content, createdAt, goal, donate, status, messageCnt);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+			
+		}
+		return moon;
 	}
 
 }

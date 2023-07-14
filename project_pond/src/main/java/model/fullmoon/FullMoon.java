@@ -53,7 +53,7 @@ public class FullMoon {
 		return goal;
 	}
 
-	public int getDonation() {
+	public int getDonate() {
 		return donate;
 	}
 

@@ -7,7 +7,7 @@
 </head>
 <body>
 	<script>
-			location.href = "main";
+			location.href = "mainAction";
 	</script>
 </body>
 </html>

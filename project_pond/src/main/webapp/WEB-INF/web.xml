@@ -172,6 +172,16 @@
 		<servlet-name>MoonMenuAction</servlet-name>
 		<url-pattern>/moonMenu</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MainAction</servlet-name>
+		<servlet-class>controller.MainAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MainAction</servlet-name>
+		<url-pattern>/mainAction</url-pattern>
+	</servlet-mapping>
 
 
 	<!-- JSP 페이지 맵핑 -->

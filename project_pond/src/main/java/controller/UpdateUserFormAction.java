@@ -47,15 +47,8 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		String password = request.getParameter("password");
 		System.out.println(password+"=확인용");
 		String newPassword = request.getParameter("new-password");
-	
-
-		
 
 		userDto = new UserRequestDto(id, password);
-		
-		
-		
-		
 		
 		UserDao userDao = UserDao.getInstance();
 		userDao.updateUser(userDto, newPassword);
