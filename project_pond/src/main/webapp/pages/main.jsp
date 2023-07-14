@@ -1,31 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.sql.DriverManager"%>
-<%@ page import="java.sql.Connection"%>
-<%@ page import="java.sql.Statement"%>
-<%@ page import="java.sql.ResultSet"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%!// 변수 선언
-	Connection conn = null;
-	Statement stmt = null;
-	ResultSet rs = null;
-	String url = ***
-	String username = "admin";
-	String password = ***
-	String sql = "select * from `fullmoon`";%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<%
-String id = (String) session.getAttribute("log");
-boolean login = id == null ? false : true;
-%>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <html>
 <head>
 <meta charset="UTF-8">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <title>나눗샘</title>
 <link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/main.css">
@@ -33,84 +16,51 @@ boolean login = id == null ? false : true;
 <link rel="stylesheet" href="resources/style/firefly.css">
 </head>
 <body>
+<c:set var="moonUp" value="${sessionScope.moonUp }"/>
+<c:set var="id" value="${sessionScope.log }"/>
 	<div id="wrap">
 
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
 			<div class="fireflypack"></div>
-		
-		<section class="main_moon section">
 
+			<section class="main_moon section">
+				<div class="moon-content">
+					<c:set var="do_loof" value="true" />
+					<c:set var="moonNum" value="${moonUp.getMoonNum() }" />
+					<c:forEach var="loof" begin="1" end="${fn:length(moonNum)}">
+						<c:if test="${do_loof eq true }">
+							<c:choose>
+								<c:when test="${fn:startsWith(moonNum, '0')}">
+									<c:set var="moonNum" value="${fn:substringAfter(moonNum, '0')}" />
+								</c:when>
+								<c:otherwise>
+									<c:set var="do_loof" value="false" />
+								</c:otherwise>
+							</c:choose>
+						</c:if>
+					</c:forEach>
+					<h2>${moonUp.getTitle()}</h2>
+					<span>${moonNum }회</span><br /> <span>목표모금액 :
+						${moonUp.getGoal() }원</span><br /> <span>누적모금액 :
+						${moonUp.getDonate() }원</span><br />
+					<c:set var="money"
+						value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
+					<fmt:formatNumber var="formattedMoney" value="${money}"
+						pattern="#0.00" />
+					<progress value="${formattedMoney }" max="100"></progress>
+					<br /> <span>달성률 : ${formattedMoney }% </span><br />
+					<c:choose>
+						<c:when test="${empty id}">
+							<a class="donateBtn" href="modal">후원하기</a>
+						</c:when>
+						<c:otherwise>
+							<a class="donateBtn" href="modal">후원하기</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</section>
 
-			<%
-			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				conn = DriverManager.getConnection(url, username, password);
-				System.out.println("Database 연동 성공");
-
-				stmt = conn.createStatement();
-				rs = stmt.executeQuery(sql);
-
-				while (rs.next()) {
-			%>
-
-			<%
-			if (rs.getString("moon_status").equals("1")) { //모금상태가 1인경우
-			%>
-			<div class="fullmoon" id="fullmoon"></div>
-			<h2><%=rs.getString("moon_title")%></h2>
-			<span><%=rs.getString("moon_num")%></span><br> <span>목표모금액
-				: <%=rs.getString("moon_goal")%>원
-			</span><br> <span>누적모금액 : <%=rs.getString("moon_donate")%>원
-			</span><br>
-			<%
-			int donate = Integer.parseInt(rs.getString("moon_donate"));
-			int total = Integer.parseInt(rs.getString("moon_goal"));
-			double money = (double) donate / total * 100;
-			String formattedMoney = String.format("%.2f", money);
-			%>
-			<progress value="<%=formattedMoney%>" max="100"></progress>
-			<br> <span>달성률 : <%=formattedMoney%>% <c:choose>
-					<c:when test="${empty sessionScope.log}"></span>
-					<br> 
-					<a class=donateBtn href="modal">후원하기</a>
-			</c:when>
-			<c:otherwise>
-			<br> 
-			 <a class=donateBtn href="modal">후원하기</a>
-			
-			</c:otherwise>
-			</c:choose>
-
-
-			<%
-			}
-			%>
-			<%
-			}
-			} catch (Exception e) {
-			e.printStackTrace();
-
-			} finally {
-			try {
-			if (rs != null) {
-				rs.close();
-			}
-			if (stmt != null) {
-				stmt.close();
-			}
-			if (conn != null) {
-				conn.close();
-			}
-			} catch (Exception e) {
-			e.printStackTrace();
-			}
-			}
-			%>
-
-
-		</section>
-		
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
