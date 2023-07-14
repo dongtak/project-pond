@@ -24,7 +24,7 @@ function setAmount(amount) {
 		messageInput.disabled = true;
 		messageInput.value = "";
 	}
-	alert(amount + "" + messageInput)
+	
 }
 
 // 4. 직접입력시에는 숫자만 입력 가능
