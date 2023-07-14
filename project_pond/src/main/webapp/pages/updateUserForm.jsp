@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/style/form.css">
+
 </head>
 <body>
 
@@ -12,9 +14,8 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<form method="POST" action="Update">
-				<!-- updateuserformaction -->
 				<div class="div-form">
-
+						<h3>비밀번호 변경</h3>
 					<div>
 						<input type="text" id="id" name="id" value="${sessionScope.log }"
 							readonly>
@@ -27,34 +28,21 @@
 						<input type="text" id="new-password" name="new-password"
 							placeholder="새비밀번호">
 					</div>
+					
 					<div>
-						<input type="email" id="email" name="email"
-							value="${requestScope.email }">
+						<input type="text" id="new-password-con" name="new-password-con"
+							placeholder="새비밀번호확인">
 					</div>
-				</div>
-
-				<div class="div-form">
-					<div>
-						<input type="text" id="name" name="name" placeholder="이름"
-							value="${requestScope.name }" readonly>
-					</div>
-					<div>
-						<input type="text" id="birth" name=" " placeholder="생년월일"
-							value="${requestScope.birth }" readonly>
-					</div>
-
-					<div>
-						<input type="text" id="phone" name="phone" placeholder="핸드폰번호">
-					</div>
-					<div>
-						<jsp:include page="/address"></jsp:include>
-
-					</div>
+					
+					<span class="error" id="error-password">비밀번호를 입력해주세요.</span>
+					<span class="error" id="error-password-con">비밀번호 불일치.</span>
 
 				</div>
+				
 				<button>test</button>
 				<input type="button" class="updateBtn" id="submit-btn"
-					value="회원정보 수정" onclick="update(form)"> <input
+					value="비밀번호 수정" onclick="checkPwd(form)">
+					 <input
 					type="button" class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">
 			</form>
@@ -65,23 +53,8 @@
 	</div>
 
 </body>
+<script src="resources/script/validation.js"></script>
 
-
-<script>
-	function update(form) {
-		var password = form.password.value;
-		var newPassword = form['new-password'].value;
-
-		if (password !== '' && newPassword !== '') {
-			if (newPassword !== password) {
-				alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
-				return;
-			}
-		}
-
-		form.submit();
-	}
-</script>
 
 
 

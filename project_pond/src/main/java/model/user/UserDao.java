@@ -179,7 +179,7 @@ public class UserDao {
 		return user;
 	}
 
-	public void updateUser(UserRequestDto userDto, String password) {
+	public void User(UserRequestDto userDto, String password) {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null && userDto.getPwd() != null && userDto.getEmail() != null && userDto.getId() != null) {
@@ -278,6 +278,40 @@ public class UserDao {
 	    System.out.println(check);
 	    return check;
 	}
+	
+	
+	public void updateUser(UserRequestDto userDto, String password) {
+		this.conn = DBManager.getConnection();
+
+		System.out.println("안녕~");
+		System.out.println(password);
+		System.out.println(userDto.getId());
+		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && password!=null) {
+			
+				String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
+
+				try {
+					System.out.println("뚱이2");
+					this.pstmt = this.conn.prepareStatement(sql);
+					this.pstmt.setString(1, password);
+					this.pstmt.setString(2, userDto.getId());
+					this.pstmt.setString(3, password);
+					
+					this.pstmt.execute();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					DBManager.close(this.conn, this.pstmt);
+				}
+			}
+		}
+	
+	
+	
+	
+	
+	
 	//아이디 찾기 1)
 	
 //	public boolean findIdbyEmail(UserRequestDto userDto) {

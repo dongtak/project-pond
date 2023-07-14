@@ -43,6 +43,9 @@
 							<button>버튼</button>
 						<input type="button" id="submit-btn" value="회원탈퇴"
 							onclick="checkValue(form)">
+							<input
+					type="button" class="cancelBtn" id="cancel-btn" value="취소"
+					onclick="history.back()">
 			</form>
 
 		</section>
