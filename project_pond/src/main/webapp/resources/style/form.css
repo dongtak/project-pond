@@ -40,23 +40,7 @@
   text-align: center;
 }
 
-/* .div-form:first-child{
-position: relative;
-}
 
-#id{
-    position: absolute;
-
-} */
-
-
-.idCheckBtn{
-    position: absolute;
-    top: 20px;
-    right:60px;
-    
-    
-}
 
 input#sample6_postcode ,  input.addressBtn{
 	width: 30%;
@@ -64,17 +48,8 @@ input#sample6_postcode ,  input.addressBtn{
 }
 
 
-/* .div-form>div:not(:first-child) {
-	border-top: none;
-} */
-
 input:focus{
-	border-bottom: solid 1px #04C75A;	
-}
-
-div:has(input:focus),
-div:has(select:focus) {
-
+	border-bottom: solid 1px #ffff80;	
 }
 
 .user-input {
@@ -85,15 +60,9 @@ div:has(select:focus) {
     border-bottom:1px solid gray;
     background-color:#04c75800;
     color:black;
-
 }
 
 
-input[type="text"], 
-input[type="email"] {
-	/* border: none; */
-	outline: none;
-}
 
 select {
 	margin: 5px;

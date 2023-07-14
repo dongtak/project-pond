@@ -36,12 +36,11 @@
 .box.expanded {
     width: 200px;
     height: 120px;
-  
 }
 
 .box:hover {
 	
-    box-shadow: 0px 0px 10px 10px #47ff33;
+     box-shadow: 0px 0px 17px 20px #2bff3a;
 }
 
 .box .content {
@@ -56,6 +55,7 @@
 
 .box.expanded .content {
     display: block;
+     box-shadow:none;
     opacity: 1;
 }
 

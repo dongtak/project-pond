@@ -152,6 +152,16 @@
 		<servlet-name>AdminMainAction</servlet-name>
 		<url-pattern>/adminMainAction</url-pattern>
 	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>donate</servlet-name>
+		<servlet-class>controller.PayAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>donate</servlet-name>
+		<url-pattern>/donate</url-pattern>
+	</servlet-mapping>
 
 
 	<!-- JSP 페이지 맵핑 -->
@@ -333,15 +343,6 @@
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>firefly</servlet-name>
-		<jsp-file>/pages/firefly.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>firefly</servlet-name>
-		<url-pattern>/firefly</url-pattern>
-	</servlet-mapping>
 
 	<!-- jsp admin 페이지 매핑 -->
 
