@@ -5,7 +5,7 @@
  $('#id').on('change', e => {
 	if($('#id').val() !== "") {
 		$('#error-id').hide();
-		$('#id').parent().css('border-color', 'lightgrey');
+		$('#id').css('border-color', 'lightgrey');
 	}
 });
 
@@ -14,24 +14,24 @@
 $('#password').on('change', e => {
 	if($('#password').val() !== "") {
 		$('#error-password').hide();
-		$('#password').parent().css('border-color', 'lightgrey');
-		$('#password').parent().css('border-top', 'none');
+		$('#password').css('border-color', 'lightgrey');
+		/*$('#password').css('border-top', 'none');*/
 	}
 });
 
 $('#new-password').on('change', e => {
 	if($('#new-password').val() !== "") {
 		$('#error-password').hide();
-		$('#new-password').parent().css('border-color', 'lightgrey');
-		$('#new-password').parent().css('border-top', 'none');
+		$('#new-password').css('border-color', 'lightgrey');
+		/*$('#new-password').parent().css('border-top', 'none');*/
 	}
 });
 
 $('#new-password').on('change', e => {
 	if($('#new-password').val() !== "") {
 		$('#error-password-con').hide();
-		$('#new-password').parent().css('border-color', 'lightgrey');
-		$('#new-password').parent().css('border-top', 'none');
+		$('#new-password').css('border-color', 'lightgrey');
+		/* $('#new-password').parent().css('border-top', 'none'); */
 	}
 });
 
@@ -40,32 +40,36 @@ $('#new-password').on('change', e => {
 $('#email').on('change', e => {
 	if($('#email').val() !== "") {
 		$('#error-email').hide();
-		$('#email').parent().css('border-color', 'lightgrey');
-		$('#email').parent().css('border-top', 'none');
+		$('#email').css('border-color', 'lightgrey');
+		/* $('#email').parent().css('border-top', 'none'); */
 	}
 });
 $('#name').on('change', e => {
 	if($('#name').val() !== "") {
 		$('#error-name').hide();
-		$('#name').parent().css('border-color', 'lightgrey');
+		$('#name').css('border-color', 'lightgrey');
 	}
 });
 
 $('#birth').on('change', e => {
 	if($('#birth').val().length === 8 && $('#birth').val().match(/\d{8}/) !== null) {
 		$('#error-birth').hide();
-		$('#birth').parent().css('border-color', 'lightgrey');
-		$('#birth').parent().css('border-top', 'none');
+		$('#birth').css('border-color', 'lightgrey');
+		/* $('#birth').parent().css('border-top', 'none');*/
 	}
 });
 
 $('#phone').on('change', e => {
 	if($('#phone').val().length === 13 && $('#phone').val().match(/\d{3}-\d{4}-\d{4}/) !== null) {
 		$('#error-phone').hide();
-		$('#phone').parent().css('border-color', 'lightgrey');
-		$('#phone').parent().css('border-top', 'none');
+		$('#phone').css('border-color', 'lightgrey');
+		/* $('#phone').parent().css('border-top', 'none');*/
 	}
 });
+
+
+
+
 
 
 
@@ -81,37 +85,37 @@ function checkValue(htmlForm) {
 	
 	if(id === "") {
 		$('#error-id').show();
-		$('#id').parent().css('border-color', 'red');
+		$('#id').css('border-color', 'red');
 		check = false;		
 	} 
 	else if(password === "") {
 		$('#error-password').show();
-		$('#password').parent().css('border-color', 'red');
-		$('#password').parent().css('border-top', 'solid 1px red');
+		$('#password').css('border-color', 'red');
+		/*$('#password').css('border-bottom', 'solid 1px red');*/
 		check = false;
 	}
 	else if(email === "") {
 		$('#error-password').show();
-		$('#password').parent().css('border-color', 'red');
-		$('#password').parent().css('border-top', 'solid 1px red');
+		$('#password').css('border-color', 'red');
+		$('#password').css('border-bottom', 'solid 1px red');
 		check = false;
 	}
 	else if(name === "") {
 		$('#error-name').show();
-		$('#name').parent().css('border-color', 'red');
+		$('#name').css('border-color', 'red');
 		check = false;
 	}
 	
 	else if(birth.length !== 8 || birth.match(/\d{8}/) === null) {
 		$('#error-birth').show();
-		$('#birth').parent().css('border-color', 'red');
-		$('#birth').parent().css('border-top', 'solid 1px red');
+		$('#birth').css('border-color', 'red');
+		/* $('#birth').parent().css('border-top', 'solid 1px red');*/
 		check = false;
 	}
 	else if(phone.length !== 13 || phone.match(/\d{3}-\d{4}-\d{4}/) === null) {
 		$('#error-phone').show();
-		$('#phone').parent().css('border-color', 'red');
-		$('#phone').parent().css('border-top', 'solid 1px red');
+		$('#phone').css('border-color', 'red');
+		 /* $('#phone').parent().css('border-top', 'solid 1px red'); */
 		check = false;
 	}
 	
@@ -119,6 +123,13 @@ function checkValue(htmlForm) {
 		htmlForm.submit();
 	
 }
+
+
+
+
+
+
+
 
 
 

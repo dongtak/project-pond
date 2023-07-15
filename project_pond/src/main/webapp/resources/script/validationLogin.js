@@ -1,15 +1,16 @@
 $('#id').on('change', e => {
 	if($('#id').val() !== "") {
 		$('#error-id').hide();
-		$('#id').parent().css('border-color', 'lightgrey');
+		$('#id').css('border-color', 'lightgrey');
+		$('#id').css('border', 'none');
 	}
 });
 
 $('#pwd').on('change', e => {
 	if($('#pwd').val() !== "") {
 		$('#error-password').hide();
-		$('#pwd').parent().css('border-color', 'lightgrey');
-		$('#pwd').parent().css('border-top', 'none');
+		$('#pwd').css('border-color', 'lightgrey');
+		$('#pwd').css('border', 'none');
 	}
 });
 
@@ -25,13 +26,14 @@ function checkValue(htmlForm) {
 	
 	if(id === "") {
 		$('#error-id').show();
-		$('#id').parent().css('border-color', 'red');
+		$('#id').css('border-color', 'red');
+		$('#id').css('border', 'solid 1px red');
 		check = false;		
 	} 
 	else if(pwd === "") {
 		$('#error-password').show();
-		$('#pwd').parent().css('border-color', 'red');
-		$('#pwd').parent().css('border-top', 'solid 1px red');
+		$('#pwd').css('border-color', 'red');
+		$('#pwd').css('border', 'solid 1px red');
 		check = false;
 	}
 	

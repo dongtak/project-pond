@@ -13,6 +13,7 @@
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
 			<form action="Login" class="user-form" method="POST">
+				<h1>로그인</h1>
 				<input type="text" placeholder="아이디 입력" class="user-input" id="id" name="id">
 				<ul>
 					<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
