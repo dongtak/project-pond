@@ -31,7 +31,6 @@ public class PayDao {
 	
 	public boolean payment(PayRequestDto pay) {
 
-	
 		String name = pay.getName();
 		String money = pay.getPay_money();
 		String message = pay.getMessage();
@@ -49,7 +48,6 @@ public class PayDao {
 					String keyOn = "SET FOREIGN_KEY_CHECKS = 1 ";
 					String sql = "INSERT INTO pay(name, pay_money,message) VALUES(?, ?, ?)";
 
-					
 					System.out.println("dao"+name);
 					try {
 						this.pstmt = this.conn.prepareStatement(keyOff);
