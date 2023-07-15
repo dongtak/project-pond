@@ -74,7 +74,7 @@
 					</div>
 				</div>
 		
-				<input type="button" id="submit-btn" value="회원가입"
+				<input type="button" class="join-btn" id="submit-btn" value="회원가입"
 					onclick="checkValue(form)"> <input type="button"
 					class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">

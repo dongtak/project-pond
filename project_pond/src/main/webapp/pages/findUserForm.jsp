@@ -15,8 +15,12 @@
 <div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-			<h1>아이디 찾기</h1>
+		
+		<div class="find-container">
+		<div class="find-left">
+			
 			<form method="POST" class=user-form action="/findId">
+			<h1>아이디 찾기</h1>
 			<div class="div-form">
 			
 			<div>
@@ -39,10 +43,13 @@
 			</form>
 			
 			
+			</div>
 			
+				<div class="find-right">
 			
-				<h1>비밀번호 찾기</h1>
+		
 			<form method="POST" class=user-form action="/findPwd">
+					<h1>비밀번호 찾기</h1>
 			<div class="div-form">
 			
 			<div>
@@ -66,15 +73,15 @@
 			<input type="button" class=user-input id="pwd-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
-					<input type="button" class=user-input id="submit-btn" value="취소"
+					<input type="button" class="user-input" id="cancel-btn" value="취소"
 					onclick="back()">
 		
 			</form>
 			
 			
+			</div>
 			
-			
-			
+			</div>
 		
 		</section>
 		<jsp:include page="/footer"></jsp:include>

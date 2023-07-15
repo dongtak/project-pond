@@ -1,4 +1,4 @@
-
+	
 * {
 	
 	margin: 0;
@@ -170,11 +170,11 @@ select {
 
 
 
-#pwd-submit-btn,#id-submit-btn {
+#pwd-submit-btn,#id-submit-btn{
     display: flex;
     justify-content: center;
 	width: 50%;
-	margin:  60px auto;
+	margin: 0 auto;
 	text-align: center;
 	padding: 15px;
 	color: white;

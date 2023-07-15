@@ -17,6 +17,7 @@ div#wrap {
 	grid-template-areas: "header" "section" "footer";
 }
 
+
 .header {
 	grid-area: header;
 	display: flex;
