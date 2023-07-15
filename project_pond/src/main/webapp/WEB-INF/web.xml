@@ -328,24 +328,36 @@
 		<url-pattern>/address</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet>
-		<servlet-name>modal</servlet-name>
-		<jsp-file>/pages/donateModal.jsp</jsp-file>
+		<servlet-name>lid</servlet-name>
+		<jsp-file>/pages/loggedInDonate.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>modal</servlet-name>
-		<url-pattern>/modal</url-pattern>
+		<servlet-name>lid</servlet-name>
+		<url-pattern>/loggedInDonate</url-pattern>
 	</servlet-mapping>
-
+	
+	
 	<servlet>
-		<servlet-name>modal2</servlet-name>
-		<jsp-file>/pages/donateModal2.jsp</jsp-file>
+		<servlet-name>lod</servlet-name>
+		<jsp-file>/pages/loggedOutDonate.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>modal2</servlet-name>
-		<url-pattern>/modal2</url-pattern>
+		<servlet-name>lod</servlet-name>
+		<url-pattern>/loggedOutDonate</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>cardInput</servlet-name>
+		<jsp-file>/pages/cardInfo.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>cardInput</servlet-name>
+		<url-pattern>/cardInput</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -358,16 +370,6 @@
 		<url-pattern>/idCheckForm</url-pattern>
 	</servlet-mapping>
 
-
-	<servlet>
-		<servlet-name>firefly</servlet-name>
-		<jsp-file>/pages/firefly.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>firefly</servlet-name>
-		<url-pattern>/firefly</url-pattern>
-	</servlet-mapping>
 	
 	<servlet>
 		<servlet-name>moonContent</servlet-name>
@@ -401,6 +403,8 @@
 		<servlet-name>admin_manage</servlet-name>
 		<url-pattern>/adminManage</url-pattern>
 	</servlet-mapping>
+	
+	
 
 </web-app>
 

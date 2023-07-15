@@ -1,51 +1,38 @@
-
 * {
-	
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-	
+	font-family: 'Open Sans', sans-serif;
 }
 
-.header>top-nav {
+.header > top-nav {
 	display: inline-block;
 }
 
-#main-section{
+#main-section {
+	min-width: 400px;
+	width: 45vw;
+	margin: 0 auto;
+	backdrop-filter: blur(10px);
+}
 
-    min-width: 400px;
-	width:45vw;
-	margin:0 auto;
-    backdrop-filter:blur(10px);
-}
-/*
-#wrap{
-	
-background-color: rgb(234, 237, 244);
-}
-*/
 .user-form {
-
-	
 	border-radius: 10px;
 	min-width: 400px;
-	width:40vw;
+	width: 40vw;
 	margin: 0 auto;
 	text-align: center;
-    /* padding:20px; */
-    background-color:#ebecf0;;
- 
-box-shadow: 5px 5px 6px rgb(205, 203, 203), -10px -10px 50px white;
+	background-color: #ebecf0;
+	box-shadow: 5px 5px 6px rgb(205, 203, 203), -10px -10px 50px white;
 }
 
-.user-form > h1{
-	padding:30px;
+.user-form > h1 {
+	padding: 30px;
 	text-align: center;
 	font-size: 30px;
 }
 
-.bottom-nav{
+.bottom-nav {
 	text-align: center;
 	line-height: 30px;
 	height: 30px;
@@ -55,46 +42,40 @@ box-shadow: 5px 5px 6px rgb(205, 203, 203), -10px -10px 50px white;
 	margin-top: 20px;
 }
 
-.div-form>div {
- /* width:70% ; */
-  text-align: center;
-  margin:5px auto;
+.div-form > div {
+	text-align: center;
+	margin: 5px auto;
 }
 
-
-
-input#sample6_postcode ,  input.addressBtn{
+input#sample6_postcode,
+input.addressBtn {
 	width: 30%;
-	
-	
 }
 
-.address-input{
-		width: 30%;
+.address-input {
+	width: 30%;
 	margin: 10px auto;
-	padding: 15px 15px;
-    border: none;
-   outline: none;
-     border-radius: 20px;
-     background-color: rgb(249, 249, 249);
-  box-shadow: inset -5px -10px 40px rgb(255, 255, 255), inset 10px 5px 10px rgb(158 158 158);
-    color:black;
+	padding: 15px;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	background-color: rgb(249, 249, 249);
+	box-shadow: inset -5px -10px 40px rgb(255, 255, 255), inset 10px 5px 10px rgb(158 158 158);
+	color: black;
 }
 
-.user-input {
+.user-input,
+#lid input[type=text] {
 	width: 70%;
 	margin: 10px auto;
-	padding: 15px 15px;
-    border: none;
-   outline: none;
-     border-radius: 20px;
-     background-color: #eee;
-  box-shadow: inset -5px -5px 20px #ffffff, inset 10px 1px 10px rgb(158 158 158);
-    color:black;
+	padding: 15px;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	background-color: #eee;
+	box-shadow: inset -5px -5px 20px #ffffff, inset 10px 1px 10px rgb(158 158 158);
+	color: black;
 }
-
-
-
 
 select {
 	margin: 5px;
@@ -109,99 +90,91 @@ select {
 	margin: 5px;
 }
 
-.label-wrapper, 
+.label-wrapper,
 .label-container {
 	display: flex;
 	justify-content: space-between;
 }
 
-.input-id{
-	   position: relative;
+.input-id {
+	position: relative;
 }
-.input-id-txt{
+
+.input-id-txt {
 	width: 40%;
-	margin-right:30px;
+	margin-right: 30px;
 }
 
-
-
-#idCheckBtn{
+#idCheckBtn {
 	width: 80px;
 	height: 40px;
 	line-height: 40px;
-
 	color: rgb(0, 0, 0);
-   
 	border: none;
 	border-radius: 20px;
 	outline: none;
 	font-size: 13px;
-	
 	letter-spacing: 1px;
 	background-color: #dce8e1;
-	cursor:  pointer;
+	cursor: pointer;
 	font-weight: bold;
-	
 	transition: transform 80ms ease-in;
 	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
-
-#submit-btn,#cancel-btn,.addressBtn{
-	
+#submit-btn,
+#cancel-btn,
+.addressBtn,
+#lid button,
+#lid input[type=button] {
 	width: 20%;
 	margin: 20px 20px;
 	text-align: center;
 	padding: 15px;
 	color: rgb(0, 0, 0);
 	font-weight: bold;
-   outline: none;
+	outline: none;
 	font-size: 13px;
-	
 	letter-spacing: 1px;
 	border: none;
 	border-radius: 20px;
 	background-color: #dce8e1;
-	cursor:  pointer;
-		box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+	cursor: pointer;
+	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
-
-
-
-
-#pwd-submit-btn,#id-submit-btn {
-    display: flex;
-    justify-content: center;
+#pwd-submit-btn,
+#id-submit-btn {
+	display: flex;
+	justify-content: center;
 	width: 50%;
-	margin:  60px auto;
+	margin: 60px auto;
 	text-align: center;
 	padding: 15px;
 	color: white;
-   
 	border: none;
 	border-radius: 10px;
 	background-color: #dce8e1;
-	cursor:  pointer;
+	cursor: pointer;
 }
 
-ul{
-    width: 100%;
-
+ul {
+	width: 100%;
 }
-.error {
-	display: none; 
+
+input[type=radio]{
+	width: auto;
+}
+
+.error,.error-message {
+	display: none;
 	color: red;
 	font-size: 0.8em;
-    width: 70%;
-    margin: 0 auto ;
-    
-
+	width: 70%;
+	margin: 0 auto;
 }
 
-
-.verified{
+.verified {
 	color: rgb(0, 255, 0);
 	font-size: 0.7em;
-	
 }

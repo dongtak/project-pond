@@ -43,21 +43,15 @@
 					<h2>${moonUp.getTitle()}</h2>
 					<span>${moonNum }회</span><br /> <span>목표모금액 :
 						${moonUp.getGoal() }원</span><br /> <span>누적모금액 :
-						${moonUp.getDonate() }원</span><br />
+						${moonUp.getDonate()}원</span><br />
 					<c:set var="money"
 						value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
 					<fmt:formatNumber var="formattedMoney" value="${money}"
-						pattern="#0.00" />
+						pattern="#0.0" />
 					<progress value="${formattedMoney }" max="100"></progress>
 					<br /> <span>달성률 : ${formattedMoney }% </span><br />
-					<c:choose>
-						<c:when test="${empty id}">
-							<a class="donateBtn" href="loggedInDonate">후원하기</a>
-						</c:when>
-						<c:otherwise>
-							<a class="donateBtn" href="loggedOutDonate">후원하기</a>
-						</c:otherwise>
-					</c:choose>
+					
+					<a class="donateBtn" href="loggedOutDonate">후원하기</a>
 				</div>
 			</section>
 
