@@ -18,7 +18,8 @@ public class AdminDao {
 		return instance;
 	}
 	
-	public void createAdmin() {
+	public void createAdmin(AdminRequestDto newAdmin) {
+		
 		this.conn = DBManager.getConnection();
 		if(conn!=null) {
 			String sql="INSERT INTO ";

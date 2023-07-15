@@ -58,8 +58,6 @@ public class ArticleCommentDao {
 					this.pstmt.setString(2, userId);
 					this.pstmt.setString(3, content);
 					
-				
-					
 					this.pstmt.execute();
 					
 				}catch(Exception e) {
