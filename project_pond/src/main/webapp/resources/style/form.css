@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	padding: 0;
@@ -143,12 +144,15 @@ select {
 	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
-#pwd-submit-btn,
-#id-submit-btn {
-	display: flex;
-	justify-content: center;
-	width: 50%;
+
+
+
+#pwd-submit-btn,#id-submit-btn{
+    display: flex;
+    justify-content: center;
+
 	margin: 60px auto;
+	margin: 0 auto;
 	text-align: center;
 	padding: 15px;
 	color: white;

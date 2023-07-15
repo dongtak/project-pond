@@ -35,19 +35,22 @@
 						<input type="text" class=user-input id="new-password-con" name="new-password-con"
 							placeholder="새비밀번호확인">
 					</div>
+					<ul>
+					<li class="error" id="error-password1">비밀번호를 입력해주세요.</li>
 					
-					<span class="error" id="error-password1">비밀번호를 입력해주세요.</span>
-			<span class="error" id="error-password2">새비밀번호를 입력해주세요.</span>
-					<span class="error" id="error-password-con">비밀번호 불일치.</span>
+			<li class="error" id="error-password2">새비밀번호를 입력해주세요.</li>
+					<li class="error" id="error-password-con">비밀번호 불일치.</li>
+					</ul>
 
 				</div>
 				
-				<button>test</button>
+				
 				<input type="button" class="updateBtn" id="submit-btn"
 					value="비밀번호 수정" onclick="checkPwd(form)">
 					 <input
 					type="button" class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">
+					
 			</form>
 
 		</section>
