@@ -52,10 +52,10 @@
 					<br /> <span>달성률 : ${formattedMoney }% </span><br />
 					<c:choose>
 						<c:when test="${empty id}">
-							<a class="donateBtn" href="modal">후원하기</a>
+							<a class="donateBtn" href="loggedInDonate">후원하기</a>
 						</c:when>
 						<c:otherwise>
-							<a class="donateBtn" href="modal">후원하기</a>
+							<a class="donateBtn" href="loggedOutDonate">후원하기</a>
 						</c:otherwise>
 					</c:choose>
 				</div>

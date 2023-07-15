@@ -43,16 +43,18 @@ public class PayAction extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
+		String moonNum = request.getParameter("moonNum");
 		String name = request.getParameter("name");
 		String money = request.getParameter("money");
 		String message = request.getParameter("message");
 		
+		System.out.println(moonNum);
 		System.out.println(name);
 		System.out.println(money);
 		
 		System.out.println(message);
 		
-		PayRequestDto pay = new PayRequestDto(name,money,message);
+		PayRequestDto pay = new PayRequestDto(moonNum,name,money,message);
 
 		PayDao payDao = PayDao.getInstance();
 		boolean result = payDao.payment(pay);

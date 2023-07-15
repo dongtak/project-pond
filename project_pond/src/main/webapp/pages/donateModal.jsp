@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 
 <html>
 <head>
@@ -20,10 +19,11 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-		
+			<h1>${moonUp.getMoonNum() }</h1>
 			<div>
 			<form method="post" action="donate">
 			test
+			<input type="hidden" value="${moonUp.getMoonNum() }" name = moonNum>
 			<input type="text" name = name>
 			<input type="text" name = money>
 			<input type="text" name = message>
@@ -32,10 +32,11 @@
 			
 			</form>
 			</div>
-		
+					
 			<div id="lod">
 				<form id="modal-form" method="post" action="donate">
 					<div class="donor">
+							
 						<label> <input type="radio" name="leavename"
 							value="nominated" onclick="toggleDonorName(false)"> 후원자 이름
 							남기기
@@ -50,7 +51,6 @@
 					</div>
 
 					<div class="donate">
-						<p>* 메세지는 후원금 1만원 이상부터 작성 할 수 있습니다.</p>
 						<button type="button" onclick="setAmount(1000)">1천원</button>
 						<button type="button" onclick="setAmount(5000)">5천원</button>
 						<button type="button" onclick="setAmount(10000)">1만원</button>

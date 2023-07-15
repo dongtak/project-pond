@@ -31,6 +31,7 @@
 					</c:when>
 					<c:otherwise>
 						<span><a href="myPage">마이페이지</a></span>
+						<span><a href="logout">로그아웃</a></span>
 					</c:otherwise>
 				</c:choose>
 			</c:otherwise>

@@ -24,13 +24,12 @@ public class PayRequestDto {
 		this.pay_money = pay_money;
 	}
 	
-	public PayRequestDto(String name, String pay_money,String message) {
-		this.pay_num = pay_num;
+	public PayRequestDto(String moon_num,String name, String pay_money,String message) {
+		this.moon_num = moon_num;
 		this.name = name;
 		this.message = message;
 		this.pay_money = pay_money;
 	}
-	
 
 	public void setPay_num(String pay_num) {
 		this.pay_num = pay_num;

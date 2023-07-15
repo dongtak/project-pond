@@ -29,6 +29,7 @@ public class PayDao {
 
 	public boolean payment(PayRequestDto pay) {
 
+		String moonNum = pay.getMoon_num();
 		String payNum = PayDao.generateRandomCode();
 		String name = pay.getName();
 		String money = pay.getPay_money();
@@ -45,7 +46,7 @@ public class PayDao {
 				if (name.equals("anonymous")) {
 					String keyOff = "SET FOREIGN_KEY_CHECKS = 0 ";
 					String keyOn = "SET FOREIGN_KEY_CHECKS = 1 ";
-					String sql = "INSERT INTO pay(pay_num,name, pay_money,message) VALUES(?,?, ?, ?)";
+					String sql = "INSERT INTO pay(moon_num,pay_num,name, pay_money,message) VALUES(?,?, ?, ?,?)";
 
 					System.out.println("dao" + name);
 					try {
@@ -53,10 +54,11 @@ public class PayDao {
 						this.pstmt.execute();
 
 						this.pstmt = this.conn.prepareStatement(sql);
-						this.pstmt.setString(1, payNum);
-						this.pstmt.setString(2, "익명");
-						this.pstmt.setString(3, money);
-						this.pstmt.setString(4, message);
+						this.pstmt.setString(1, moonNum);
+						this.pstmt.setString(2, payNum);
+						this.pstmt.setString(3, "익명");
+						this.pstmt.setInt(4, Integer.parseInt(money));
+						this.pstmt.setString(5, message);
 
 						this.pstmt.execute();
 
@@ -72,7 +74,7 @@ public class PayDao {
 				} else {
 					String keyOff = "SET FOREIGN_KEY_CHECKS = 0 ";
 					String keyOn = "SET FOREIGN_KEY_CHECKS = 1 ";
-					String sql = "INSERT INTO pay(pay_num,name, pay_money,message) VALUES(?, ?, ?,?)";
+					String sql = "INSERT INTO pay(moon_num,pay_num,name, pay_money,message) VALUES(?, ?, ?,?,?)";
 					String moon = "SELECT moon_num FROM fullmoon WHERE moon_status = 1";
 					
 					System.out.println("dao2" + name);
@@ -84,10 +86,12 @@ public class PayDao {
 						this.pstmt.execute();
 
 						this.pstmt = this.conn.prepareStatement(sql);
-						this.pstmt.setString(1, payNum);
-						this.pstmt.setString(2, name);
-						this.pstmt.setInt(3, Integer.parseInt(money));
-						this.pstmt.setString(4, message);
+						this.pstmt.setString(1, moonNum);
+						this.pstmt.setString(2, payNum);
+						this.pstmt.setString(3, "익명");
+						this.pstmt.setInt(4, Integer.parseInt(money));
+						this.pstmt.setString(5, message);
+
 
 						this.pstmt.execute();
 
