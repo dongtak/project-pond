@@ -14,13 +14,15 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
+		<div class="container">
 			<form method="POST" class=user-form action="Join">
+			<h1>회원가입</h1>
 				<div class="div-form">
-					<div>
-						<input type="text" id="id" class=user-input name="id"
+					<div class="input-id">
+						<input type="text" id="id" class="user-input input-id-txt" name="id"
 							placeholder="아이디" autofocus>
 						<!-- 아이디 중복체크 추가-->
-						<button class="idCheckBtn" onclick="idCheck()">중복확인</button>
+						<button id="idCheckBtn" onclick="idCheck()">중복확인</button>
 					</div>
 					<ul>
 						<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
@@ -40,17 +42,9 @@
 					<ul>
 						<li class="error" id="error-email">이메일: 필수 정보입니다.</li>
 					</ul>
-				</div>
-				<!-- 
-				<ul>
-					<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
-					<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
-					<li class="error" id="error-email">이메일: 필수 정보입니다.</li>
-				</ul>
-				 -->
+				
+			
 
-
-				<div class="div-form">
 					<div>
 						<input type="text" class=user-input id="name" name="name"
 							placeholder="이름">
@@ -79,18 +73,13 @@
 
 					</div>
 				</div>
-				<!-- 
-				<ul>
-					<li class="error" id="error-name">이름: 필수 정보입니다.</li>
-					<li class="error" id="error-birth">생년월일: 필수 정보입니다.</li>
-					<li class="error" id="error-phone">휴대전화: 필수 정보입니다.</li>
-				</ul> -->
-
-				<input type="button" class=user-input id="submit-btn" value="회원가입"
+		
+				<input type="button" id="submit-btn" value="회원가입"
 					onclick="checkValue(form)"> <input type="button"
 					class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">
 			</form>
+			</div>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
