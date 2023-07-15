@@ -49,6 +49,7 @@ public class PayDao {
 					String sql = "INSERT INTO pay(moon_num,pay_num,name, pay_money,message) VALUES(?,?, ?, ?,?)";
 
 					System.out.println("dao" + name);
+
 					try {
 						this.pstmt = this.conn.prepareStatement(keyOff);
 						this.pstmt.execute();

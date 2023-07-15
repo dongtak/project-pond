@@ -18,6 +18,20 @@ public class AdminDao {
 		return instance;
 	}
 	
+	public void createAdmin() {
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql="INSERT INTO ";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt);
+			}
+		}
+	}
+	
 	public Admin getAdminById(String id) {
 		Admin admin = null;
 		this.conn = DBManager.getConnection();
