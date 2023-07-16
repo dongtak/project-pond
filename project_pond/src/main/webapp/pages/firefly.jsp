@@ -162,5 +162,7 @@ $(document).ready(function() {
 		$(this).toggleClass("expanded");
 	});
 });
+
+
 </script>
 </html>

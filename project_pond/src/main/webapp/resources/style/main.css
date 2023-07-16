@@ -3,8 +3,9 @@
 @import url("form");
 
 html{
-	background:  url("https://ifh.cc/g/1fmCfG.jpg") center no-repeat;
+	background-image: url("../images/mainbg.jpg");
 	background-size: cover;
+	filter:brigthness (70%);
 }
 
 body { 
