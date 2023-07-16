@@ -23,7 +23,6 @@
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
 			<div class="fireflypack"></div>
-
 			<section class="main_moon section">
 				<div class="moon-content">
 					<c:set var="do_loof" value="true" />

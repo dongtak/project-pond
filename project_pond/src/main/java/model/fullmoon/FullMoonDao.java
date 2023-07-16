@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import model.pay.Pay;
 import util.DBManager;
 
 public class FullMoonDao {
@@ -107,6 +108,11 @@ public class FullMoonDao {
 			
 		}
 		return moon;
+	}
+	
+	public void donateAndMessage(Pay pay) {
+		
+		
 	}
 	
 	

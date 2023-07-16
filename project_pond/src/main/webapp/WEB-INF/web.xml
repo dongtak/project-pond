@@ -154,13 +154,13 @@
 	</servlet-mapping>
 	
 		<servlet>
-		<servlet-name>donate</servlet-name>
+		<servlet-name>Donate</servlet-name>
 		<servlet-class>controller.PayAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>donate</servlet-name>
-		<url-pattern>/donate</url-pattern>
+		<servlet-name>Donate</servlet-name>
+		<url-pattern>/Donate</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

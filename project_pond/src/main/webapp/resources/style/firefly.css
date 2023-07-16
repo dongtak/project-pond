@@ -41,8 +41,14 @@
 .box:hover {
 	
      box-shadow: 0px 0px 17px 20px #2bff3a;
+     
 }
 
+.box:hover body { 
+	background: linear-gradient(to top, rgb(78, 162, 60), black);
+	background-size: cover;
+	
+}
 .box .content {
     display: none;
     position: relative;
