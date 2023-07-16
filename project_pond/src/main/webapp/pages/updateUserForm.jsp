@@ -19,8 +19,11 @@
 
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-<h1>${sessionScope.pwd }</h1>
+		<!-- 
+		<h1>${sessionScope.pwd }</h1>
 <h1>${sessionScope.log }</h1>
+		 -->
+
 			<form method="POST" class=user-form action="Update">
 				<h1>비밀번호 변경</h1>
 				<div class="div-form">

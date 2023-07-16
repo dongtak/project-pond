@@ -24,7 +24,7 @@
 			<div class=aside>
 				<div class=asideTop>
 					<h2>My Page</h2>
-					<h3>${sessionScope.log }님환영합니다.</h3>
+					<h3>${sessionScope.log }님 환영합니다.</h3>
 				</div>
 				<div class=asideMenu>
 					<ul>
@@ -36,7 +36,7 @@
 							<input type="hidden" name="id" id="id" value="${sessionScope.log}">
 							<input type=submit value="회원정보 수정">
 						</form></li>
-						<li>내가쓴댓글</li>
+						<li>내가 쓴 댓글</li>
 						<li>결제정보</li>
 						<li onclick="location.href='leave'">회원탈퇴</li>
 						<li onclick="location.href='logout'">로그아웃</li>

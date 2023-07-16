@@ -53,6 +53,23 @@ input.addressBtn {
 	width: 30%;
 }
 
+.find-btn{
+	width:85px;
+	
+	padding: 15px;
+	border: none;
+	outline: none;
+	border-radius: 30px !important;
+	font-weight: 600;
+	background-color: rgb(249, 249, 249);
+	box-shadow: inset -5px -10px 40px rgb(255, 255, 255), inset 10px 5px 10px rgb(158 158 158);
+	color: black !important;
+	
+}
+.find-right{
+	margin: 30px auto;
+}
+
 .address-input {
 	width: 30%;
 	margin: 10px auto;
@@ -90,6 +107,26 @@ select {
 .label-container {
 	margin: 5px;
 }
+
+.aside li:hover,.aside input[type=submit]:hover
+
+
+{
+	background-color: rgb(128, 128, 128);
+	color: white;
+	
+}
+
+.aside input[type=submit] {
+	border: none;
+	background-color: none;
+	font-size: 15px;
+	width: 100%;
+	height: 100%;
+	
+}
+
+
 
 .label-wrapper,
 .label-container {

@@ -24,16 +24,16 @@
 			<div class="div-form">
 			
 			<div>
-			<input type="text" class=user-input id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
+			<input type="text" class="user-input" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
 			<div>
-			<input type="text" class=user-input  name="email" class="email" placeholder="email주소를 입력하세요." required>
+			<input type="text" class="user-input"  name="email" class="email" placeholder="email주소를 입력하세요." required>
 			</div>
 			
 			</div>
 		
-			<input type="button" class=user-input id="id-submit-btn" value="찾기"
+			<input type="button" class="find-btn" id="id-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
 				<input
@@ -48,7 +48,7 @@
 				<div class="find-right">
 			
 		
-			<form method="POST" class=user-form action="/findPwd">
+			<form method="POST" class="user-form" action="/findPwd">
 					<h1>비밀번호 찾기</h1>
 			<div class="div-form">
 			
@@ -59,7 +59,7 @@
 			
 			
 			<div>
-			<input type="text" class=user-input id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
+			<input type="text" class="user-input" id="name" name="name" placeholder="이름을 입력하세요" required autofocus>
 			
 			</div>
 			
@@ -70,7 +70,7 @@
 			
 			</div>
 		
-			<input type="button" class=user-input id="pwd-submit-btn" value="찾기"
+			<input type="button" class="find-btn" id="pwd-submit-btn" value="찾기"
 					onclick="validationFindUser(form)">
 			
 					<input type="button" class="user-input" id="cancel-btn" value="취소"

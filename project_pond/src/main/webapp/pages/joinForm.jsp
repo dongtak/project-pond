@@ -62,7 +62,8 @@
 
 					<div>
 						<input type="text" class=user-input id="phone" name="phone"
-							placeholder="휴대전화 번호">
+							placeholder="휴대전화 번호 ( - 포함)">
+						
 					</div>
 
 					<ul>
