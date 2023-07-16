@@ -12,7 +12,9 @@
 
 
 $('#password').on('change', e => {
-	if($('#password').val() !== "") {
+	//최소한 하나의 특수문자를 포함하고, 8자 이상 20자 이하
+	if ($('#password').val() !== "" && $('#password').val().match(/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/)) {
+
 		$('#error-password').hide();
 		$('#password').css('border-color', 'lightgrey');
 		/*$('#password').css('border-top', 'none');*/

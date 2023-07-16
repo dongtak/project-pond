@@ -182,16 +182,15 @@ public class UserDao {
 	public void User(UserRequestDto userDto, String password) {
 		this.conn = DBManager.getConnection();
 
-		if (this.conn != null && userDto.getPwd() != null && userDto.getEmail() != null && userDto.getId() != null) {
+		if (this.conn != null && userDto.getPwd() != null  && userDto.getId() != null) {
 			if (userDto.getPwd() != "") {
-				String sql = "UPDATE user SET user_pwd=?, email=? WHERE user_id=? AND user_pwd=?";
+				String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
 
 				try {
 					this.pstmt = this.conn.prepareStatement(sql);
 					this.pstmt.setString(1, userDto.getPwd());
-					this.pstmt.setString(2, userDto.getEmail());
-					this.pstmt.setString(3, userDto.getId());
-					this.pstmt.setString(4, password);
+					this.pstmt.setString(2, userDto.getId());
+					this.pstmt.setString(3, password);
 
 					this.pstmt.execute();
 
@@ -200,7 +199,13 @@ public class UserDao {
 				} finally {
 					DBManager.close(this.conn, this.pstmt);
 				}
-			} else {
+			} 
+		}
+	}
+			
+			
+			/*
+			else {
 				String sql = "UPDATE user SET user_email=? WHERE user_id=? AND user_pwd=?";
 
 				try {
@@ -219,6 +224,7 @@ public class UserDao {
 			}
 		}
 	}
+	*/
 
 	public boolean deleteUserById(String id, String password) {
 	    this.conn = DBManager.getConnection();
@@ -280,20 +286,21 @@ public class UserDao {
 	}
 	
 	
-	public void updateUser(UserRequestDto userDto, String password) {
+	public void updateUser(UserRequestDto userDto, String newPassword) {
 		this.conn = DBManager.getConnection();
 
+		
 		System.out.println("안녕~");
-		System.out.println(password);
+		System.out.println(newPassword);
 		System.out.println(userDto.getId());
-		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && password!=null) {
+		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && newPassword!=null) {
 			
 				String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
 
 				try {
 					System.out.println("뚱이2");
 					this.pstmt = this.conn.prepareStatement(sql);
-					this.pstmt.setString(1, password);
+					this.pstmt.setString(1, newPassword);
 					this.pstmt.setString(2, userDto.getId());
 					this.pstmt.setString(3, userDto.getPwd());
 					
