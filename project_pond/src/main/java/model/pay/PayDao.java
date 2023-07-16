@@ -27,7 +27,7 @@ public class PayDao {
 		return instance;
 	}
 
-	public boolean payment(PayRequestDto pay) {
+	public boolean donatePayment(PayRequestDto pay) {
 
 		String moonNum = pay.getMoon_num();
 		String payNum = PayDao.generateRandomCode();
