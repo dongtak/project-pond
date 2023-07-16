@@ -2,9 +2,13 @@
 @import url("firefly.css");
 @import url("form");
 
-body { 
-	background: linear-gradient(to top, #21241f, black);
+html{
+	background:  url("https://ifh.cc/g/1fmCfG.jpg") center no-repeat;
 	background-size: cover;
+}
+
+body { 
+	
 	
 }
 
@@ -52,4 +56,9 @@ button {
 	left:50%;
 	transform:translate(-50%,-50%);
 	color:black;
+}
+
+.footer{
+	color:white;
+	text-align: center;
 }
