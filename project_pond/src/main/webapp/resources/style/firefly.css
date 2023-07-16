@@ -61,7 +61,7 @@
 
 .box.expanded .content {
     display: block;
-     box-shadow:none;
+    box-shadow:none;
     opacity: 1;
 }
 
