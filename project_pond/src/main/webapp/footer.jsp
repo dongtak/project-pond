@@ -7,6 +7,9 @@
 <title>footer</title>
 </head>
 <body>
-	<div class="footer">푸터</div>
+	<div class="footer">
+	주소 : 서울시 강남 어쩌구<br/>
+	copyright all reserved.
+	</div>
 </body>
 </html>
