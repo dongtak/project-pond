@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
 
@@ -16,51 +18,65 @@ import model.user.UserRequestDto;
 @WebServlet("/UpdateUserFormAction")
 public class UpdateUserFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateUserFormAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public UpdateUserFormAction() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	request.setCharacterEncoding("UTF-8");
-	
-		UserRequestDto userDto = null;
-		
-		String id = request.getParameter("id");
-		System.out.println(id+"=확인용");
-		String password = request.getParameter("password");
-		System.out.println(password+"=확인용");
-		String newPassword = request.getParameter("new-password");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-		userDto = new UserRequestDto(id, password);
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		UserRequestDto userDto = null;
+		// 입력값 받아오기
+
+		String id = request.getParameter("id");
+		System.out.println(id + "id");
+		
+		
+		String inputPwd = request.getParameter("password");
+		System.out.println(inputPwd + "inputPwd");
+		String inputNewPwd = request.getParameter("new-password");
+		System.out.println(inputNewPwd + "inputNewPwd");
+		
+		
 		
 		UserDao userDao = UserDao.getInstance();
-		userDao.updateUser(userDto, newPassword);
+
+		if(inputPwd!=null) {
+			System.out.println("비밀번호 변경"+inputPwd);
+			userDto = new UserRequestDto(id, inputPwd);
+			userDao.updateUser(userDto,inputNewPwd);
+		}
 		
-//		String url = "UpdateRequest";
-		
-	String url="update";
-		
+		User user = userDao.getUserById(id);
+
 		
 		
-		
-		response.sendRedirect(url);
+		String password = user.getPwd();
+		System.out.println(password + "=password???");
+		session.setAttribute("pwd", password);
+		response.sendRedirect("update");
+
 	}
 
 }

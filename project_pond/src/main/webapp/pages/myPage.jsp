@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -27,7 +28,14 @@
 				</div>
 				<div class=asideMenu>
 					<ul>
-						<li onclick="location.href='update'">회원정보 수정</li>
+						<!-- 
+						
+						<li onclick="location.href='Update.java'">회원정보 수정</li>
+							 -->
+						<li><form action="Update" method="post">
+							<input type="hidden" name="id" id="id" value="${sessionScope.log}">
+							<input type=submit value="회원정보 수정">
+						</form></li>
 						<li>내가쓴댓글</li>
 						<li>결제정보</li>
 						<li onclick="location.href='leave'">회원탈퇴</li>
