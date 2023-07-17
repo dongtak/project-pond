@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 
 import model.user.User;
+import model.user.UserDao;
 import model.user.UserRequestDto;
 import util.DBManager;
 
@@ -26,7 +27,8 @@ public class CardInfoDao {
 	}
 	
 	public boolean createCardInfo(UserRequestDto userDto) {
-		User result = getUserById(userDto.getId());//아이디 중복체크 user 모든 정보를 채워서 온다
+		UserDao userDao = UserDao.getInstance();
+		User result = userDao.getUserById(userDto.getId());//아이디 중복체크 user 모든 정보를 채워서 온다
 		if (result != null)
 			return false;
 

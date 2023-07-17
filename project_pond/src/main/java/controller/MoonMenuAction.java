@@ -1,12 +1,17 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import model.fullmoon.FullMoonDao;
+import model.fullmoon.FullMoonResponseDto;
 
 /**
  * Servlet implementation class MoonMenuAction
@@ -28,6 +33,13 @@ public class MoonMenuAction extends HttpServlet {
 		}
 		
 		request.setAttribute("moonMenu", moonMenu);
+
+		// 추가
+		FullMoonDao dao = FullMoonDao.getInstance();
+		ArrayList<FullMoonResponseDto> list = null;
+		list = dao.getMoonAllByKeyword(moonMenu);
+		request.setAttribute("moonList", list);
+		
 		
 		request.getRequestDispatcher("moon").forward(request, response);
 	

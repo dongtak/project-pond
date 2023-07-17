@@ -34,19 +34,19 @@ public class MoonContentAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("application/json; charset=utf-8");
-		
-		String moonMenu = request.getParameter("moonMenu");
-		System.out.println("moonMenu : " + moonMenu);
-		
-		ArrayList<FullMoonResponseDto> list = null;
-		
-		FullMoonDao dao = FullMoonDao.getInstance();
-		list = dao.getMoonAllByKeyword(moonMenu);
-		
-		JSONArray result = new JSONArray(list);
-		response.getWriter().append(result.toString());
+//		response.setCharacterEncoding("utf-8");
+//		response.setContentType("application/json; charset=utf-8");
+//		
+//		String moonMenu = request.getParameter("moonMenu");
+//		System.out.println("moonMenu : " + moonMenu);
+//		
+//		ArrayList<FullMoonResponseDto> list = null;
+//		
+//		FullMoonDao dao = FullMoonDao.getInstance();
+//		list = dao.getMoonAllByKeyword(moonMenu);
+//		
+//		JSONArray result = new JSONArray(list);
+//		response.getWriter().append(result.toString());
 	}
 
 

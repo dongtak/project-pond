@@ -46,12 +46,8 @@
 
 			</div>
 			<div id="wrap-container">
-				<h2>내용입니다</h2>
-
 
 			</div>
-
-
 
 		</section>
 		<jsp:include page="/footer"></jsp:include>

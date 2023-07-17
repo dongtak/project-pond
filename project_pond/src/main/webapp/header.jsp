@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>header</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <link rel="stylesheet" href="resources/style/grid.css">
@@ -12,7 +11,7 @@
 <c:set var="log" value="${sessionScope.log }"/>
 <c:set var="isAdmin" value="${sessionScope.isAdmin }"/>
 	<div class="header">
-		<a href="main"><span>로고</span></a>
+		<a href="main"><span class="logo">보름달</span></a>
 		<div class="nav-bar">
 			<ul>
 				<li><a href="about">ABOUT</a></li>
@@ -20,6 +19,7 @@
 				<li><a href="articleHomeAction">나눗샘</a></li>
 			</ul>
 		</div>
+		<div class="login-bar">
 		<c:choose>
 			<c:when test="${empty log}">
 				<span><a href="login">로그인</a></span>
@@ -36,6 +36,7 @@
 				</c:choose>
 			</c:otherwise>
 		</c:choose>
+		</div>
 	</div>
 </body>
 </html>
