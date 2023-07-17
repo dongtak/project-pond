@@ -12,9 +12,12 @@ a:visited {
 }
 
 div#wrap {
+
 	display: grid;
 	grid-template-rows: 120px minmax(60vh, 1fr) 200px;
 	grid-template-areas: "header" "section" "footer";
+	filter:brigthness(70%);
+	
 }
 
 

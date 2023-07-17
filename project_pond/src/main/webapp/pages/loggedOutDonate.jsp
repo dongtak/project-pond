@@ -88,14 +88,13 @@
 				
 				<input type="button" onclick="showCardInput()" value="다음">
 				
-				<div class="cardform" style="display:none;">
+				<div class="cardform" id="cs" style="display:none;">
 				<jsp:include page="/cardInput">
 				 <jsp:param name="additionalData" value="Some Value" />
 				
 				</jsp:include>
 				<input
 						type="button" onclick="nameAndNumber(form)" value="test button!!">
-					<input type="submit" value="후원하기">
 				</div>
 				
 			
@@ -155,15 +154,28 @@
 		moneyInput.value = "";
 		moneyInput.disabled = false;
 	}
-	
+	var button = document.getElementById("cs");
+	var isNext = true;
+
+
 	 function showCardInput() {
 	        var lid = document.getElementById("lid");
-	        var cardInput = document.getElementById("cardInput");
+	        var cs = document.getElementById("cs");
 
-	        lid.style.display = "block";
-	        cardInput.style.display = "block";
+	        if (isNext) {
+	    	    button.value = "이전";
+	    	    lid.style.display = "none";
+		       	cs.style.display = "block";
+	    	  } else {
+	    	    button.value = "다음";
+	    	    lid.style.display = "block";
+		       	cs.style.display = "none";
+	    	  }
+	        isNext = !isNext;
+	       
 	    }
 
+	 
 	function nameAndNumber(form) {
 		var leavenameRadios = document.getElementsByName("leavename");
 		var donorNameInput = document.getElementsByName("donorname")[0];

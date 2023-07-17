@@ -39,12 +39,12 @@
 }
 
 .box:hover {
-	
+	background:#2bff3a;
      box-shadow: 0px 0px 17px 20px #2bff3a;
      
 }
 
-.box:hover body { 
+.box:hover { 
 	background: linear-gradient(to top, rgb(78, 162, 60), black);
 	background-size: cover;
 	
