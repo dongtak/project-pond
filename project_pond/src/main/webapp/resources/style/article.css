@@ -99,3 +99,26 @@
 	font-weight:bold;
 	color:orange;
 }
+
+
+/*article.jsp*/
+
+.article-container{
+	width: 70%;
+	margin:0 auto;
+	background-color: beige;
+	display: flex;
+	
+}
+
+.article-content{
+	flex-grow: 4;
+}
+
+
+.article-category{
+	flex-grow: 2;
+}
+
+
+

@@ -81,6 +81,11 @@ public class ArticleDao {
 		return list;
 	}
 	
+
+	
+	
+	/*페이징 처리 */
+	
 	public List<ArticleRequestDto> getArticleList(int startRow, int pageSize) {
 		List<ArticleRequestDto> list = new ArrayList<ArticleRequestDto>();
 		
@@ -141,6 +146,8 @@ public class ArticleDao {
 	}
 	
 	
+	
+
 	
 
 }
