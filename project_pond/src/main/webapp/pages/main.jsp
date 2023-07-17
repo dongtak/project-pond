@@ -10,9 +10,8 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <title>나눗샘</title>
-<link rel="stylesheet" href="resources/style/form.css">
+
 <link rel="stylesheet" href="resources/style/main.css">
-<link rel="stylesheet" href="resources/style/payment.css">
 <link rel="stylesheet" href="resources/style/firefly.css">
 </head>
 <body>
