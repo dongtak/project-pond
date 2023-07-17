@@ -9,7 +9,7 @@
 <title>보름달</title>
 </head>
 <body>
-	<c:set var="moonMenu" value="${requsetScope.moonMenu }" />
+	<c:set var="moonMenu" value="${requestScope.moonMenu }" />
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
@@ -21,6 +21,14 @@
 					<li><a href="moonMenu?moonMenu=topMsg">가장 많은 메시지</a></li>
 				</ul>
 			</div>
+			<h2 class="title">
+				<c:choose>
+					<c:when test="${moonMenu eq 'new' }">최신순</c:when>
+					<c:when test="${moonMenu eq 'done' }">100% 달성</c:when>
+					<c:when test="${moonMenu eq 'peak' }">최고 금액</c:when>
+					<c:when test="${moonMenu eq 'topMsg' }">가장 많은 메시지</c:when>
+				</c:choose>
+				</h2>
 			<div class="content">
 				<c:forEach var="moonList" items="${requestScope.moonList }" varStatus="vs">
 					<div class="moon-item">
