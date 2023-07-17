@@ -32,6 +32,8 @@ public class MoonMenuAction extends HttpServlet {
 			moonMenu="new";
 		}
 		
+		System.out.println("moonMenu : "+moonMenu);
+		
 		request.setAttribute("moonMenu", moonMenu);
 
 		// 추가

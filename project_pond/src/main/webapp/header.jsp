@@ -15,7 +15,7 @@
 		<div class="nav-bar">
 			<ul>
 				<li><a href="about">ABOUT</a></li>
-				<li><a href="moon">보름달</a></li>
+				<li><a href="moonMenu">보름달</a></li>
 				<li><a href="articleHomeAction">나눗샘</a></li>
 			</ul>
 		</div>
