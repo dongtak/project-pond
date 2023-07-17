@@ -25,6 +25,8 @@ public class FullMoonDao {
 		return instance;
 	}
 
+	
+	
 	public ArrayList<FullMoonResponseDto> getMoonAllByKeyword(String keyword) {
 		ArrayList<FullMoonResponseDto> list = new ArrayList<FullMoonResponseDto>();
 
@@ -70,9 +72,6 @@ public class FullMoonDao {
 		}
 
 		return list;
-		
-		
-		
 	}
 	
 	public FullMoonResponseDto fullmoonActivated () {
@@ -108,11 +107,6 @@ public class FullMoonDao {
 			
 		}
 		return moon;
-	}
-	
-	public void donateAndMessage(Pay pay) {
-		
-		
 	}
 	
 	

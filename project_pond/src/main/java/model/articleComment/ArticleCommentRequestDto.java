@@ -11,7 +11,7 @@ public class ArticleCommentRequestDto {
 	private Timestamp commentCreatedAt;
 	private Timestamp commentModifiedAt;
 	private int like;
-	private String userName;
+	private String userName; // 새로 추가한 정보
 	
 	public ArticleCommentRequestDto(String commentNum, String userId, String moonNum, String commentContent,
 			Timestamp commentCreatedAt, Timestamp commentModifiedAt, int like) {

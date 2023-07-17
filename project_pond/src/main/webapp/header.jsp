@@ -11,7 +11,7 @@
 <c:set var="log" value="${sessionScope.log }"/>
 <c:set var="isAdmin" value="${sessionScope.isAdmin }"/>
 	<div class="header">
-		<a href="main"><span class="logo">보름달</span></a>
+		<a href="mainAction"><span class="logo">보름달</span></a>
 		<div class="nav-bar">
 			<ul>
 				<li><a href="about">ABOUT</a></li>

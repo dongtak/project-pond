@@ -18,7 +18,6 @@
 <c:set var="moonUp" value="${sessionScope.moonUp }"/>
 <c:set var="id" value="${sessionScope.log }"/>
 	<div id="wrap">
-
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
 			<div class="fireflypack"></div>

@@ -10,6 +10,7 @@ public class ArticleCommentResponseDto {
 	private Timestamp commentCreatedAt;
 	private Timestamp commentModifiedAt;
 	private int like;
+	
 	public ArticleCommentResponseDto(String commentNum, String userId, String moonNum, String commentContent,
 			Timestamp commentCreatedAt, Timestamp commentModifiedAt, int like) {
 		super();

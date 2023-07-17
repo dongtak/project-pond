@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글</title>
+<title>보름달</title>
 </head>
 <body>
 	<div id="wrap">
@@ -31,8 +31,6 @@
 			</div>
 		</div>
 		<jsp:include page="/footer"></jsp:include>
-
 	</div>
-
 </body>
 </html>
