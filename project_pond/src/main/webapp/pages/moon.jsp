@@ -24,7 +24,7 @@
 			<div class="content">
 				<c:forEach var="moonList" items="${requestScope.moonList }" varStatus="vs">
 					<div class="moon-item">
-						<span>${moonList.getTitle()}</span>
+						<span>${moonList.getTitle()}</span><br/>
 						<span>${moonList.getContent() }</span>
 					</div>
 				</c:forEach>
