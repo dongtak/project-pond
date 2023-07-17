@@ -45,16 +45,16 @@ public class JoinFormAction extends HttpServlet {
 		boolean result = userDao.createUser(user);
 
 		String url = "";
-		String msg = "";
 		
 		if(result) {
-			msg="회원가입이 완료되었습니다.";
+			String msg="회원가입이 완료되었습니다.";
+			request.setAttribute("msg", msg);
+			
 			url = "login";
 		}else {
 			url = "join";
 		}
 		
-		request.setAttribute("msg", msg);
 
 		request.getRequestDispatcher(url).forward(request, response);
 	}

@@ -11,6 +11,8 @@
 </head>
 <body>
 <c:set var="msg" value="${requestScoope.msg }"/>
+
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -34,17 +36,15 @@
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+	
+<c:if test="${not empty msg }">
+	<script>
+        alert("${msg}");
+        ${msg} = ""; // 변수 비워주기
+    </script>
+</c:if>
 
 <script src="resources/script/validationLogin.js"></script>
-
-<script type="text/javascript">
-	join_finish('init',function(){
-		var msgVal = '${msg}';
-		if(msgVal!==''){
-			alert(msgVal);
-		}
-	});
-</script>
 
 </body>
 
