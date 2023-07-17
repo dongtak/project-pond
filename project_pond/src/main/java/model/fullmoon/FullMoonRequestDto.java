@@ -15,8 +15,6 @@ public class FullMoonRequestDto {
 	private int messageCnt;
 	
 
-	
-
 	public FullMoonRequestDto(String moonNum, String adminId, String title, String content, Timestamp createdAt,
 			int goal, int donate, int status, int messageCnt) {
 		super();

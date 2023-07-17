@@ -15,14 +15,19 @@
 		<div class="section">
 			<div class="menu">
 				<ul>
-					<li><a id="new">최신순</a></li>
-					<li><a id="done">100% 달성</a></li>
-					<li><a id="peak">최고 금액</a></li>
-					<li><a id="topMsg">가장 많은 메시지</a></li>
+					<li><a href="moonMenu?moonMenu=new">최신순</a></li>
+					<li><a href="moonMenu?moonMenu=done">100% 달성</a></li>
+					<li><a href="moonMenu?moonMenu=peak">최고 금액</a></li>
+					<li><a href="moonMenu?moonMenu=topMsg">가장 많은 메시지</a></li>
 				</ul>
 			</div>
 			<div class="content">
-				
+				<c:forEach var="moonList" items="${requestScope.moonList }" varStatus="vs">
+					<div class="moon-item">
+						<span>${moonList.getTitle()}</span>
+						<span>${moonList.getContent() }</span>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 		<jsp:include page="/footer"></jsp:include>

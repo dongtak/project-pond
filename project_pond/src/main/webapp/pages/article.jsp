@@ -20,7 +20,6 @@
 				<c:set var="createdAt" value="${requestScope.article.getArticle_createdAt() }"/>
 				<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd" var="created"/>
 				시작 날짜 : ${created}<br/>
-				
 			</div>
 			<div class="comment">
 				<c:if test="${not empty requestScope.commentList }">

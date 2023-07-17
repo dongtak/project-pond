@@ -2,6 +2,24 @@
 
 @import url("reset.css");
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+*{
+	 font-family: 'Pretendard-Regular';
+}
+
 a {
 	text-decoration: none;
 	color: black;
@@ -24,16 +42,45 @@ div#wrap {
 .header {
 	grid-area: header;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .header a {
-	color: white; /* 텍스트 색상 설정 */
 	font-size:20px;
-	-webkit-text-stroke-width: 1px; /* 테두리 두께 설정 */
-	-webkit-text-stroke-color: black; /* 테두리 색상 설정 */
 	font-weight: 800;
+	display:inline-block;
+}
+
+.logo {
+	width: 250px;
+	font-family: 'PyeongChangPeace-Bold';
+	margin-left:100px;
+	font-weight: 100px;
+	font-size: 2rem;
+	background-color: white;
+	border-radius: 10px;
+	padding:0 10px;
+}
+
+.login-bar{
+	width: 250px;
+}
+
+.login-bar a{
+	background-color: white;
+	border-radius: 10px;
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	font-weight: 100;
+	padding:0 10px;
+}
+
+
+.nav-bar>ul{
+	display: flex;
+	justify-content: center;
 }
 
 .section {
@@ -42,16 +89,21 @@ div#wrap {
 
 .footer {
 	grid-area: footer;
+	padding-top:80px;
+	text-align: center;
 }
+
 
 .nav-bar li {
 	display: inline-block;
-	border: 1px solid gray;
+	border: 1px solid white;
 	width: 100px;
 	height: 50px;
 	line-height: 50px;
 	margin-right: 30px;
 	text-align: center;
+	background-color: white;
+	border-radius: 10px;
 }
 
 .nav-bar li:last-child {
@@ -61,4 +113,6 @@ div#wrap {
 .nav-bar li>a {
 	display: inline-block;
 	width: 100%;
+	color: black;
+	font-weight: 300;
 }

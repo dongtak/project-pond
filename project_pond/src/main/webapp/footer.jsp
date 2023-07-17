@@ -8,8 +8,9 @@
 </head>
 <body>
 	<div class="footer">
-	주소 : 서울시 강남 어쩌구<br/>
-	copyright all reserved.
+	고객센터 : 010-1234-1234<br/>
+	서울시 강남구 테헤란로<br/>
+	email : help@moon.com
 	</div>
 </body>
 </html>

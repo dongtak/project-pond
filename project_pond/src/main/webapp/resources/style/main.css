@@ -21,9 +21,10 @@ html{
 	color: white;
 	z-index: 1001;
 	background-image: url("../images/fullMoon.jpg");
-	background-size: cover;
-	
+	background-size: 110%;
+	background-position: center center;
 }
+
 
 .main_moon:hover {
 	box-shadow : -20px 0px 30px 15px #feffe3;
