@@ -3,7 +3,8 @@
 @import url("form");
 
 html{
-	background-image: url("../images/mainbg.jpg");
+
+			background-image: url("../images/mainbg.jpg");
 	background-size: cover;
 }
 
@@ -54,13 +55,14 @@ button {
 	left:50%;
 	transform:translate(-50%,-50%);
 	color:black;
-	font-size: 20px;
-	min-width:300px;
+	font-size: 20px;	
+	min-width: 300px;
 
 }
 
 .moon-content h2{
 	font-size: 24px;
+	
 	text-shadow : -20px 0px 30px 15px #feffe3;
 }
 .moon-content span{
@@ -78,10 +80,11 @@ button {
 	text-align: center;
 }
 
+
 .donateBtn{
 	position: absolute;
-	top:90%;
-	left:50%;
+	top: 90%;
+	left: 50%;
 	transform:translateX(-50%);
-	width:120px;
+	width: 120px;
 }

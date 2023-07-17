@@ -57,6 +57,7 @@
     transition: opacity 0.4s;
     background-color: rgb(48, 48, 48);
     border-radius: 20px;
+    color:white;
 }
 
 .box.expanded .content {
