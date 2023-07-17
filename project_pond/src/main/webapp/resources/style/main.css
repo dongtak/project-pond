@@ -3,9 +3,9 @@
 @import url("form");
 
 html{
-
-			background-image: url("../images/mainbg.jpg");
+background-image: url("../images/mainbg.jpg");
 	background-size: cover;
+			
 }
 
 .main_moon {

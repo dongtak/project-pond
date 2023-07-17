@@ -23,7 +23,7 @@ firefly 변수에는 jQuery를 사용하여 <div> 요소를 생성하고,
 firefly 클래스를 추가한 객체를 저장합니다.
 */
 for (var i = 0; i < fireflies; i++) {
-	var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>사랑해요</span></div></div></div>');
+	var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>익명</span><br><span>조금이나마 힘이 되었음 좋겠어요!</span></div></div></div>');
 	TweenLite.set(firefly, {
 		/*
 TweenLite.set() 메서드를 사용하여 firefly 요소의 초기 속성을 설정합니다. 
