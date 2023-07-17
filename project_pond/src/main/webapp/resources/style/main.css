@@ -28,6 +28,8 @@ html{
 
 .main_moon:hover {
 	box-shadow : -20px 0px 30px 15px #feffe3;
+	cursor: pointer;
+	
 }
 
 .fullmoon {
@@ -58,6 +60,8 @@ button {
 
 .moon-content h2{
 	font-size: 24px;
+	
+	text-shadow : -20px 0px 30px 15px #feffe3;
 }
 .moon-content span{
 	font-size:18px
