@@ -10,6 +10,7 @@
 
 .footer{
 text-align: center;
+margin-top:30px;
 }
 
 .footer>h1{
