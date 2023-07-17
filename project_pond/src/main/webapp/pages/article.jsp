@@ -41,6 +41,12 @@
 				댓글 : ${requestScope.commentList.get(0).getCommentContent() }<br />
 				작성일 : ${requestScope.commentList.get(0).getCommentCreatedAt() }<br />
 						</c:if>
+						
+						
+						
+						
+						
+						
 					</div>
 
 					<div class="aritcle-img">
