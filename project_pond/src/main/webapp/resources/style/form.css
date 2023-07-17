@@ -21,7 +21,8 @@
 	border-radius: 10px;
 	min-width: 400px;
 	width: 40vw;
-	margin: 0 auto;
+	margin: 0px auto;
+	margin-top:50px;
 	text-align: center;
 	background-color: #ebecf0;
 	box-shadow: 5px 5px 6px rgb(205, 203, 203), -10px -10px 50px white;
@@ -37,6 +38,7 @@
 	text-align: center;
 	line-height: 30px;
 	height: 30px;
+margin-top: 10px;
 }
 
 .div-form {
