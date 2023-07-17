@@ -34,12 +34,12 @@ div#wrap {
 	display: grid;
 	grid-template-rows: 120px minmax(60vh, 1fr) 200px;
 	grid-template-areas: "header" "section" "footer";
-	filter:brigthness(70%);
 	
 }
 
 
 .header {
+	min-width:860px;
 	grid-area: header;
 	display: flex;
 	justify-content: space-between;
@@ -89,7 +89,7 @@ div#wrap {
 
 .footer {
 	grid-area: footer;
-	padding-top:80px;
+
 	text-align: center;
 }
 

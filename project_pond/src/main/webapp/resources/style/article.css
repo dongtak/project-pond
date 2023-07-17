@@ -13,9 +13,11 @@
 }
 
 .items{
+	max-width:1200px;
 	display:flex;
 	justify-content:space-evenly;
 	flex-flow:wrap;
+	margin:0 auto;
 }
 
 .item{

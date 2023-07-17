@@ -45,7 +45,7 @@
 }
 
 .box:hover { 
-	background: linear-gradient(to top, rgb(78, 162, 60), black);
+	background:  #2bff3a;
 	background-size: cover;
 	
 }

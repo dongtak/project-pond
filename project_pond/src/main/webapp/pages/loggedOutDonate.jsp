@@ -94,7 +94,7 @@
 				
 				</jsp:include>
 				<input
-						type="button" onclick="nameAndNumber(form)" value="test button!!">
+						type="button" onclick="nameAndNumber(form)" value="후원하기">
 				</div>
 				
 			

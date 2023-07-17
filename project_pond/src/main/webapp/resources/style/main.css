@@ -55,7 +55,8 @@ button {
 	left:50%;
 	transform:translate(-50%,-50%);
 	color:black;
-	font-size: 20px;
+	font-size: 20px;	
+
 }
 
 .moon-content h2{
@@ -68,8 +69,9 @@ button {
 	}
 .moon-content a {
 	border:1px solid black;
-	
-	
+	margin-top:20px;
+	padding:5px 50px;
+	border-radius: 10px;
 }
 
 .footer{
