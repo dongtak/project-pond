@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
-
+<c:set var="msg" value="${requestScoope.msg }"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -26,15 +28,24 @@
 				<input type="button" id="submit-btn" onclick="checkValue(form)" value=" 로그인">
 			</form>
 			<div class="bottom-nav">
-			<a href="findUser">아이디/비밀번호 찾기</a> <a href="join">회원가입</a>
+			<!--  <a href="findUser">아이디/비밀번호 찾기</a>  -->
+			<a href="join">회원가입</a>
 			</div>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 
+<script src="resources/script/validationLogin.js"></script>
 
+<script type="text/javascript">
+	join_finish('init',function(){
+		var msgVal = '${msg}';
+		if(msgVal!==''){
+			alert(msgVal);
+		}
+	});
+</script>
 
 </body>
 
-<script src="resources/script/validationLogin.js"></script>
 </html>

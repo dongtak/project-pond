@@ -17,22 +17,6 @@ import model.user.UserRequestDto;
 public class JoinFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public JoinFormAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -61,13 +45,18 @@ public class JoinFormAction extends HttpServlet {
 		boolean result = userDao.createUser(user);
 
 		String url = "";
-
-		if(result) 
+		String msg = "";
+		
+		if(result) {
+			msg="회원가입이 완료되었습니다.";
 			url = "login";
-		else
+		}else {
 			url = "join";
+		}
+		
+		request.setAttribute("msg", msg);
 
-		response.sendRedirect(url);
+		request.getRequestDispatcher(url).forward(request, response);
 	}
 
 }

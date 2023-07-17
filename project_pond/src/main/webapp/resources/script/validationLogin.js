@@ -16,7 +16,6 @@ $('#pwd').on('change', e => {
 
 
 
-
 function checkValue(htmlForm) {
 	const id = htmlForm.id.value;
 	const pwd = htmlForm.pwd.value;
