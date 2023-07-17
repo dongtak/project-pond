@@ -14,7 +14,6 @@
 <body>
 	<!-- 비밀번호 가져와서 비밀번호 입력값과 비교 -->
 	<c:set var="pwd" value="${sessionScope.pwd }" />
-	<h1>${sessionScope.pwd }</h1>
 
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>

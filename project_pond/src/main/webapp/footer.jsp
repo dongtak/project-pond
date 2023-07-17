@@ -3,14 +3,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>footer</title>
+<style>
+.footer {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.footer>h1 {
+	font-size: 20px;
+}
+</style>
 </head>
 <body>
 	<div class="footer">
-	고객센터 : 010-1234-1234<br/>
-	서울시 강남구 테헤란로<br/>
-	email : help@moon.com
+		<h1>보름달</h1>
+		<br> 고객센터 : 010-1234-1234<br /> 사업자 등록번호 : 111-11-11111 <br>
+		주소 : (01234) 서울시 강남구 보름로 11 (보름동) <br>
+		<br> email : help@moon.com &copy; 2023 보름달. ALL RIGHTS RESERVED.
 	</div>
 </body>
+
+
 </html>
