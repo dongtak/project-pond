@@ -80,7 +80,6 @@ public class ArticleDao {
 		
 		return list;
 	}
-	
 
 	
 	
@@ -122,7 +121,7 @@ public class ArticleDao {
 		
 		return list;
 	}
-	
+
 	public int getCount() {
 		int count=0;
 		

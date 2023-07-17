@@ -100,7 +100,7 @@ public class ArticleCommentDao {
 					Timestamp modified = this.rs.getTimestamp(6);
 					int like = this.rs.getInt(7);
 					ArticleCommentRequestDto comment = new ArticleCommentRequestDto(commentNum, userId, num, content, created, modified, like);
-					String userName = userDao.findUserNameById(userId);
+					String userName = userDao.findUserNameById(userId); // 유저 아이디를 매개변수로 받아서 해당 아이디를 가진 유저의 이름을 return
 					comment.setUserName(userName);
 					commentList.add(comment);
 				}

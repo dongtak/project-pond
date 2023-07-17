@@ -29,18 +29,29 @@ public class ShowArticleAction extends HttpServlet {
 		
 		String moonNum = request.getParameter("moonNum");
 		
+		// 위 moonNum을 가지고
+		// fullmoon, article, articleComment, pay <- moon_num 을 가지고 있는 애들만
+		// fullmoon, article 각 개체 단 하나만 존재.
+		// articleComment, pay 여러개 존재. 따라서 list로 받아와야 함
+		
 		ArticleDao articleDao = ArticleDao.getInstance();
 		ArticleCommentDao articleCommentDao = ArticleCommentDao.getInstance();
 		
+		// article 받아옴
 		ArticleRequestDto article = articleDao.getArticleByNum(moonNum);
-		List<ArticleCommentRequestDto> list = articleCommentDao.getCommentByNum(moonNum);
+		// articleComment list 받아옴
+		List<ArticleCommentRequestDto> commentList = articleCommentDao.getCommentByNum(moonNum);
 		
+		// fullmoon
+		
+		// pay list
 		
 		if(moonNum==null){
 			response.sendRedirect("articleHomeAction");
 		}else {
 			request.setAttribute("article",article );
-			request.setAttribute("commentList", list);
+			request.setAttribute("commentList", commentList);
+			
 			request.getRequestDispatcher("article").forward(request, response);
 		}
 		

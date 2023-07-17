@@ -162,16 +162,6 @@
 		<servlet-name>Donate</servlet-name>
 		<url-pattern>/Donate</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MoonMenuAction</servlet-name>
-		<servlet-class>controller.MoonMenuAction</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>MoonMenuAction</servlet-name>
-		<url-pattern>/moonMenu</url-pattern>
-	</servlet-mapping>
 	
 	<servlet>
 		<servlet-name>MainAction</servlet-name>
@@ -361,17 +351,6 @@
 	</servlet-mapping>
 
 	
-	<servlet>
-		<servlet-name>moonContent</servlet-name>
-		<jsp-file>/pages/moonContent.jsp</jsp-file>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>moonContent</servlet-name>
-		<url-pattern>/moonContent</url-pattern>
-	</servlet-mapping>
-	
-
 	<!-- jsp admin 페이지 매핑 -->
 
 	<servlet>

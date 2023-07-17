@@ -25,7 +25,9 @@ public class FullMoonDao {
 		return instance;
 	}
 
-	public ArrayList<FullMoonResponseDto> getMoonAllByKeyword(String keyword) {
+	
+	
+	public ArrayList<FullMoonResponseDto> getMoonAllByKeyword(String keyword,int startRow, int pageSize) {
 		ArrayList<FullMoonResponseDto> list = new ArrayList<FullMoonResponseDto>();
 
 		this.conn = DBManager.getConnection();
@@ -34,9 +36,9 @@ public class FullMoonDao {
 			String sql = "SELECT * FROM fullmoon ";
 
 			if (keyword.equals("new"))
-				sql += "ORDER BY moon_createAt DESC";
+				sql += "ORDER BY moon_createAt DESC LIMIT ?,?";
 			else if (keyword.equals("done"))
-				sql += "WHERE moon_goal<=moon_donate";
+				sql += "WHERE moon_goal<=moon_donate ORDER BY moon_createAt DESC LIMIT ?,?";
 			else if (keyword.equals("peak"))
 				sql += "ORDER BY moon_donate DESC LIMIT 8";
 			else if (keyword.equals("topMsg"))
@@ -44,6 +46,10 @@ public class FullMoonDao {
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
+				if(keyword.equals("new") || keyword.equals("done")) {
+					this.pstmt.setInt(1, startRow-1); // 시작행-1
+					this.pstmt.setInt(2, pageSize); // 페이지 크기
+				}
 				this.rs = this.pstmt.executeQuery();
 
 				while (this.rs.next()) {
@@ -70,9 +76,6 @@ public class FullMoonDao {
 		}
 
 		return list;
-		
-		
-		
 	}
 	
 	public FullMoonResponseDto fullmoonActivated () {
@@ -109,21 +112,10 @@ public class FullMoonDao {
 		}
 		return moon;
 	}
+
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	public void donateAndMessage(Pay pay) {
-		
-		
-	}
-	
-	
+
 
 }

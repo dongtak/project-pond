@@ -16,7 +16,7 @@
 			<ul>
 				<li><a href="about">ABOUT</a></li>
 				<li><a href="moonMenu">보름달</a></li>
-				<li><a href="articleHomeAction">나눗샘</a></li>
+				<li><a href="articleHomeAction">히스토리</a></li>
 			</ul>
 		</div>
 		<div class="login-bar">
