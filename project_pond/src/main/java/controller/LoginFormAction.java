@@ -45,14 +45,14 @@ public class LoginFormAction extends HttpServlet {
 		boolean isAdmin = false;
 		
 		if(user!=null&&user.getPwd().equals(pwd)) {
-			url = "main";
+			url = "mainAction";
 			session.setAttribute("log", id);
 			session.setAttribute("isAdmin", isAdmin);
 		}else {
 			AdminDao adminDao = AdminDao.getInstance();
 			Admin admin = adminDao.getAdminById(id);
 			if(admin!=null&&admin.getAdmin_pwd().equals(pwd)) {
-				url = "main";
+				url = "mainAction";
 				isAdmin=true;
 				session.setAttribute("log", id);
 				session.setAttribute("isAdmin", isAdmin);

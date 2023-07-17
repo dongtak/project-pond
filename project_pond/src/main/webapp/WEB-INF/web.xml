@@ -330,25 +330,15 @@
 
 
 	<servlet>
-		<servlet-name>lid</servlet-name>
-		<jsp-file>/pages/loggedInDonate.jsp</jsp-file>
+		<servlet-name>donate</servlet-name>
+		<jsp-file>/pages/donateForm.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>lid</servlet-name>
-		<url-pattern>/loggedInDonate</url-pattern>
+		<servlet-name>donate</servlet-name>
+		<url-pattern>/donate</url-pattern>
 	</servlet-mapping>
-	
-	
-	<servlet>
-		<servlet-name>lod</servlet-name>
-		<jsp-file>/pages/loggedOutDonate.jsp</jsp-file>
-	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>lod</servlet-name>
-		<url-pattern>/loggedOutDonate</url-pattern>
-	</servlet-mapping>
 	
 		<servlet>
 		<servlet-name>cardInput</servlet-name>

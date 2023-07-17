@@ -49,7 +49,7 @@
 					<progress value="${formattedMoney }" max="100"></progress>
 					<br /> <span>달성률 : ${formattedMoney }% </span><br />
 					
-					<a class="donateBtn" href="loggedOutDonate">후원하기</a>
+					<a class="donateBtn" href="donate">후원하기</a>
 				</div>
 			</section>
 

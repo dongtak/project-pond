@@ -25,7 +25,7 @@ public class LogOut extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.getSession().removeAttribute("log");
 		request.getSession().removeAttribute("isAdmin");
-		response.sendRedirect("main");
+		response.sendRedirect("mainAction");
 	}
 
 	/**

@@ -48,19 +48,8 @@ public class PayAction extends HttpServlet {
 		String money = request.getParameter("money");
 		String message = request.getParameter("message");
 		
-		String donorName = request.getParameter("donorName");
-		String donorBirth = request.getParameter("donorBirth");
-		String donorPhone = request.getParameter("donorPhone");
-		String donorEmail = request.getParameter("donorEmail");
+
 		
-		String cardExpMonth = request.getParameter("cardExpMonth");
-		String cardName = request.getParameter("cardType");
-		String cardNumber = request.getParameter("cardNumber");
-		String cardPassword = request.getParameter("cardPassword");
-		String cardExpYear = request.getParameter("cardExpYear");
-		
-		
-		System.out.println(cardExpYear);
 		
 		
 		
@@ -78,7 +67,7 @@ public class PayAction extends HttpServlet {
 		String url = "";
 
 		if(result) 
-			url = "main";
+			url = "mainAction";
 		
 
 		response.sendRedirect(url);
