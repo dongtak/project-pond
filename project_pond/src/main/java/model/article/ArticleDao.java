@@ -81,42 +81,6 @@ public class ArticleDao {
 		return list;
 	}
 	
-	public List<ArticleRequestDto> getArticleList(int startRow, int pageSize) {
-		List<ArticleRequestDto> list = new ArrayList<ArticleRequestDto>();
-		
-		this.conn = DBManager.getConnection();
-		if(conn!=null) {
-			/*
-			 select * from article where moon_num in (
-			 select moon_num from fullmoon where moon_status=0
-			 ) order by article_createAt desc;
-			*/
-			String sql="SELECT * FROM article WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=0 ) ORDER BY moon_num DESC LIMIT ?,?";
-			try {
-				this.pstmt = this.conn.prepareStatement(sql);
-				this.pstmt.setInt(1, startRow-1); // 시작행-1
-				this.pstmt.setInt(2, pageSize); // 페이지 크기
-				this.rs = this.pstmt.executeQuery();
-				while(this.rs.next()) {
-					ArticleRequestDto articleDto = new ArticleRequestDto();
-					articleDto.setMoon_num(this.rs.getString(1));
-					articleDto.setAdmin_id(this.rs.getString(2));
-					articleDto.setArticle_title(this.rs.getString(3));
-					articleDto.setArticle_content(this.rs.getString(4));
-					articleDto.setArticle_createdAt(this.rs.getTimestamp(5));
-					articleDto.setAtricle_modifiedAt(this.rs.getTimestamp(6));
-					list.add(articleDto);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.close(this.conn, this.pstmt, this.rs);
-			}
-			
-		}
-		
-		return list;
-	}
 	
 	public int getCount() {
 		int count=0;

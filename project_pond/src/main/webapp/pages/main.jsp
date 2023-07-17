@@ -18,6 +18,7 @@
 <c:set var="moonUp" value="${sessionScope.moonUp }"/>
 <c:set var="id" value="${sessionScope.log }"/>
 	<div id="wrap">
+
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
 			<div class="fireflypack"></div>
@@ -47,8 +48,9 @@
 						pattern="#0.0" />
 					<progress value="${formattedMoney }" max="100"></progress>
 					<br /> <span>달성률 : ${formattedMoney }% </span><br />
+					<span>달성률 : ${formattedMoney }% </span>
 					
-					<a class="donateBtn" href="loggedOutDonate">후원하기</a>
+					<a class="donateBtn" href="donate">후원하기</a>
 				</div>
 			</section>
 
