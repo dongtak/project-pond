@@ -34,9 +34,6 @@
 							value="${sessionScope.log }" readonly>
 					</div>
 
-
-
-
 					<div>
 						<input type="text" class=user-input id="password" name="password"
 							placeholder="비밀번호" autofocus>
