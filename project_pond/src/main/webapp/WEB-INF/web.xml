@@ -183,6 +183,16 @@
 		<servlet-name>MoonAction</servlet-name>
 		<url-pattern>/moonAction</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CommentAction</servlet-name>
+		<servlet-class>controller.CommentAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CommentAction</servlet-name>
+		<url-pattern>/comments</url-pattern>
+	</servlet-mapping>
 
 
 
