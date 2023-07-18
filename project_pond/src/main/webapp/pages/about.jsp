@@ -12,7 +12,7 @@
 <body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
+		<div id="main-section" class="section">
 
 			<div class="parallax scroll-content">
 				<div class="about">
@@ -80,7 +80,7 @@
 
 
 
-		</section>
+		</div>
 
 
 		<jsp:include page="/footer"></jsp:include>
