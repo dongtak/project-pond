@@ -8,16 +8,14 @@ public class Article {
 	private String article_title;
 	private String article_content;
 	private Timestamp article_createdAt;
-	private Timestamp atricle_modifiedAt;
 	
 	public Article(String moon_num, String admin_id, String article_title, String article_content,
-			Timestamp article_createdAt, Timestamp atricle_modifiedAt) {
+			Timestamp article_createdAt) {
 		this.moon_num = moon_num;
 		this.admin_id = admin_id;
 		this.article_title = article_title;
 		this.article_content = article_content;
 		this.article_createdAt = article_createdAt;
-		this.atricle_modifiedAt = atricle_modifiedAt;
 	}
 
 	public Article(String moon_num, String admin_id, String article_title, String article_content) {
@@ -48,11 +46,5 @@ public class Article {
 		return article_createdAt;
 	}
 
-	public Timestamp getAtricle_modifiedAt() {
-		return atricle_modifiedAt;
-	}
-	
-	
-	
 
 }

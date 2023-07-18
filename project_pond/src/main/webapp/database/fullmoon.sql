@@ -5,6 +5,7 @@ create table fullmoon (
     admin_id VARCHAR(30) not null,
     moon_title VARCHAR(50) not null,
     moon_createAt timestamp default current_timestamp,
+    moon_finishAt timestamp,
     moon_goal int not null,
     moon_donate int,
 	moon_status int not null,

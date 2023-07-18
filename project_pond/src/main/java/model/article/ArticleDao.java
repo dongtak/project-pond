@@ -41,8 +41,7 @@ public class ArticleDao {
 					String title = this.rs.getString(3);
 					String content = this.rs.getString(4);
 					Timestamp create = this.rs.getTimestamp(5);
-					Timestamp modify = this.rs.getTimestamp(6);
-					article = new ArticleRequestDto(moonNum,admin,title,content,create,modify);
+					article = new ArticleRequestDto(moonNum,admin,title,content,create);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -67,8 +66,7 @@ public class ArticleDao {
 					String title = this.rs.getString(3);
 					String content = this.rs.getString(4);
 					Timestamp create = this.rs.getTimestamp(5);
-					Timestamp modify = this.rs.getTimestamp(6);
-					Article article = new Article(num,admin,title,content,create,modify);
+					Article article = new Article(num,admin,title,content,create);
 					list.add(article);
 				}
 			} catch (SQLException e) {
@@ -108,7 +106,6 @@ public class ArticleDao {
 					articleDto.setArticle_title(this.rs.getString(3));
 					articleDto.setArticle_content(this.rs.getString(4));
 					articleDto.setArticle_createdAt(this.rs.getTimestamp(5));
-					articleDto.setAtricle_modifiedAt(this.rs.getTimestamp(6));
 					list.add(articleDto);
 				}
 			} catch (SQLException e) {

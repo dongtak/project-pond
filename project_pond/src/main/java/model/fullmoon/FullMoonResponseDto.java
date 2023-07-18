@@ -8,25 +8,35 @@ public class FullMoonResponseDto {
 	private String title;
 	private String content;
 	private Timestamp createdAt;
+	private Timestamp finishAt;
 	private int goal;
 	private int donate;
 	private int status;
 	private int messageCnt;
 	
 	public FullMoonResponseDto(String moonNum, String adminId, String title, String content, Timestamp createdAt,
-			int goal, int donate, int status, int messageCnt) {
+			Timestamp finishAt,int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
 		this.title = title;
 		this.content = content;
 		this.createdAt = createdAt;
+		this.finishAt = finishAt;
 		this.goal = goal;
 		this.donate = donate;
 		this.status = status;
 		this.messageCnt = messageCnt;
 	}
 	
+	public Timestamp getFinishAt() {
+		return finishAt;
+	}
+
+	public void setFinishAt(Timestamp finishAt) {
+		this.finishAt = finishAt;
+	}
+
 	public String getMoonNum() {
 		return moonNum;
 	}
