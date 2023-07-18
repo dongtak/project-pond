@@ -78,12 +78,29 @@ public class ShowArticleAction extends HttpServlet {
 	
 		}
 		
+
 	
 	}
 	
 	
 	
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String addMsg = request.getParameter("comment");
+		
+		if(addMsg!=null) {
+			// create comment msg <- articleComment dao
+			
+			
+			
+			
+			
+			System.out.println("댓글 등록 완료");
+		}
+		
+		
+	}
 	
 	
 	
