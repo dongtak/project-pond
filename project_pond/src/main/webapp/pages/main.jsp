@@ -46,9 +46,9 @@
 						value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
 					<fmt:formatNumber var="formattedMoney" value="${money}"
 						pattern="#0.0" />
-					<progress value="${formattedMoney }" max="100"></progress>
-					<br /> <span>달성률 : ${formattedMoney }% </span><br />
-					<span>달성률 : ${formattedMoney }% </span>
+					<progress value="${formattedMoney }" max="100"></progress><br>
+					<span>달성률 : ${formattedMoney }% </span><br>
+					<span>모금기간 : ${moonUp.getCreatedAt() }</span>
 					
 					<a class="donateBtn" href="donate">후원하기</a>
 				</div>
