@@ -28,33 +28,31 @@ public class PayDao {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	private SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMdd");
-
 	private PayDao() {
 	}
-
 	private static PayDao instance = new PayDao();
 
 	public static PayDao getInstance() {
 		return instance;
 	}
 
+	
+	// 비회원 후원
 	public boolean donatePayment(PayRequestDto pay) {
 
-		String moonNum = pay.getMoon_num();
 		String payNum = PayDao.generateRandomCode();
+		String moonNum = pay.getMoonNum();
 		String name = pay.getName();
-		String money = pay.getPay_money();
+		int money = pay.getPayMoney();
 		String message = pay.getMessage();
 
 		System.out.println(name + money + message);
 
 		boolean check = true;
 
-		if (name != null && money != null && message != null) {
+		if (name != null && money !=0 && message != null) {
 			this.conn = DBManager.getConnection();
 			if (this.conn != null) {
-				System.out.println("널 아닌디");
 				if (name.equals("anonymous")) {
 					String keyOff = "SET FOREIGN_KEY_CHECKS = 0 ";
 					String keyOn = "SET FOREIGN_KEY_CHECKS = 1 ";
@@ -70,7 +68,7 @@ public class PayDao {
 						this.pstmt.setString(1, moonNum);
 						this.pstmt.setString(2, payNum);
 						this.pstmt.setString(3, "익명");
-						this.pstmt.setInt(4, Integer.parseInt(money));
+						this.pstmt.setInt(4,money);
 						this.pstmt.setString(5, message);
 
 						this.pstmt.execute();
@@ -90,7 +88,6 @@ public class PayDao {
 					String sql = "INSERT INTO pay(moon_num,pay_num,name, pay_money,message) VALUES(?, ?, ?,?,?)";
 					String moon = "SELECT moon_num FROM fullmoon WHERE moon_status = 1";
 					
-					System.out.println("dao2" + name);
 					try {
 						this.pstmt = this.conn.prepareStatement(moon);
 	
@@ -102,7 +99,7 @@ public class PayDao {
 						this.pstmt.setString(1, moonNum);
 						this.pstmt.setString(2, payNum);
 						this.pstmt.setString(3, name);
-						this.pstmt.setInt(4, Integer.parseInt(money));
+						this.pstmt.setInt(4, money);
 						this.pstmt.setString(5, message);
 
 
@@ -119,7 +116,6 @@ public class PayDao {
 					}
 				}
 			} else {
-				System.out.println("널~");
 				check = false;
 			}
 		} else {
@@ -128,12 +124,13 @@ public class PayDao {
 		return check;
 	}
 
+	// 회원 후원
+	
+	
+	
+	// 랜덤 코드 생성
 	private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private static Random random;
-
-	static {
-		random = new Random();
-	}
+	private static Random random = new Random();
 
 	public static String generateRandomCode() {
 		StringBuilder code = new StringBuilder();
@@ -159,6 +156,7 @@ public class PayDao {
 	}
 
 
+	
 	public List<PayRequestDto> getPayByNum(String num){
 		List<PayRequestDto> payList = new ArrayList<PayRequestDto>();
 		
@@ -169,13 +167,17 @@ public class PayDao {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setString(1, num);
 				this.rs = this.pstmt.executeQuery();
-				UserDao userDao = UserDao.getInstance();
 				while(this.rs.next()) {
+					String payNum = this.rs.getString(1);
+					String cardNum = this.rs.getString(2);
+					String userId = this.rs.getString(3);
 					String moonNum = this.rs.getString(4);
 					String name = this.rs.getString(5);
 					String message = this.rs.getString(6);
+					int payMoney = this.rs.getInt(7);
+					Timestamp payDay = this.rs.getTimestamp(8);
 					
-					PayRequestDto pay = new PayRequestDto(moonNum,name,message);
+					PayRequestDto pay = new PayRequestDto(payNum, cardNum, userId, moonNum, name, message, payMoney, payDay);
 					
 					payList.add(pay);
 				}
