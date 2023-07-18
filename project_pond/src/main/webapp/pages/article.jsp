@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
 
 </head>
 <body>
+<c:set var="article" value="${requestScope.article }"/>
+<c:set var="fullmoon" value="${requestScope.fullmoon }"/>
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div id="section">
@@ -22,35 +26,36 @@
 						<div class="article">
 
 							<c:set var="moonNum"
-								value="${requestScope.article.getMoon_num() }" />
+								value="${article.getMoon_num() }" />
 							회차 : ${moonNum }<br />
 
 							<c:set var="title"
-								value="${requestScope.article.getArticle_title() }" />
+								value="${article.getArticle_title() }" />
 							제목 : ${title }<br />
 							<c:set var="content"
-								value="${requestScope.article.getArticle_content() }" />
+								value="${article.getArticle_content() }" />
 							내용 : ${content }<br />
 							<c:set var="createdAt"
-								value="${requestScope.article.getArticle_createdAt() }" />
+								value="${article.getArticle_createdAt() }" />
 							<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
 								var="created" />
 							시작 날짜 : ${created}~ 종료 날짜<br />
 							
-							<c:set var="fullmoon" value="${requestScope.fullmoon }"/>
-							목표 모금액 : ${fullmoon.getGoal()}<br />
+							<c:set var="fullmoon" value="${fullmoon }"/>
+							목표 모금액 : ${fullmoon.getGoal()} 원<br />
 							
-							종료모금액: 
-							
-							<c:set var="money"
-								value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
+							<c:set var="fullmoon" value="${fullmoon }"/>
+							종료모금액:  ${fullmoon.getDonate()} 원<br />
 							
 							
+							<fmt:parseNumber var="percent" value="${moonUp.getDonate() / moonUp.getGoal()*100}" integerOnly="true" />
 							
-							달성률 : ${moonUp.getDonate()} <br />
+								
+								
+							달성률 : ${percent} %<br />
 						</div>
 
-						<div class="arit0le-img">
+						<div class="article-img">
 							<img src='https://ifh.cc/g/zO5wLd.png' border='0'>
 						</div>
 					</div>

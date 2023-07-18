@@ -80,6 +80,13 @@ public class ShowArticleAction extends HttpServlet {
 		
 	
 	}
+	
+	
+	
+	
+	
+	
+	
 
 
 }
