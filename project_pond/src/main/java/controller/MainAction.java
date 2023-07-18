@@ -45,11 +45,10 @@ public class MainAction extends HttpServlet {
 		PayDao payDao = PayDao.getInstance();
 		List<PayRequestDto> pay = payDao.getMoonMessage();
 		
-		
 		session.setAttribute("moonUp", moon);
 		request.setAttribute("payList", pay);
-		System.out.println(pay.get(0).getName());
-		System.out.println(pay);
+		
+		
 		request.getRequestDispatcher("main").forward(request, response);
 
 	}

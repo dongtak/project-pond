@@ -90,6 +90,7 @@ div#wrap {
 .footer {
 	grid-area: footer;
 	text-align: center;
+	padding-top: 20px;
 }
 
 .footer>h1 {
