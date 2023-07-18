@@ -59,10 +59,7 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
-<script>
-var msg = ${msg};
-var msgLeng = ${msg.size()};
-</script>
+
 <script src="resources/script/firefly.js">
 
 </script>

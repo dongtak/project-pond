@@ -10,18 +10,10 @@ $containerWidth 변수에는 $container 요소의 너비를 저장합니다.
 $containerHeight 변수에는 $container 요소의 높이를 저장합니다. 
 .height() 메서드는 요소의 세로 크기를 반환합니다.
 */
-var fireflies;
+var fireflies = 50;
 var $fireflypack = $(".fireflypack");
 var $ffpackWidth = $fireflypack.width();
 var $ffpackHeight = $fireflypack.height();
-
-if(msgLeng >100){
-	fireflies = 100;
-}else{
-	fireflies = msgLeng;
-}
-
-console.log(fireflies)
 
 /*
 fireflies 변수의 값만큼 반복하는 for 루프를 시작합니다. 
@@ -31,10 +23,7 @@ firefly 클래스를 추가한 객체를 저장합니다.
 */
 
 for (var i = 0; i < fireflies; i++) {
-	var randomIndex = Math.floor(Math.random() * msg.length);
-	var randomName = msg[randomIndex].getName();
-	var msg =  msg[randomIndex].getMessage();
-var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>' + randomName + '</span><br><span>' + message + '</span></div></div></div>');
+var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>' + '익명' + '</span><br><span>' + '메세지' + '</span></div></div></div>');
 TweenLite.set(firefly, {
 		/*
 TweenLite.set() 메서드를 사용하여 firefly 요소의 초기 속성을 설정합니다. 
