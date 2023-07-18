@@ -158,40 +158,6 @@ public class PayDao {
 		return ALPHABET.charAt(index);
 	}
 
-	public List<PayRequestDto> getMoonMessage() {
-		List<PayRequestDto> list = new ArrayList<PayRequestDto>();
-		
-		this.conn = DBManager.getConnection();
-		if(conn!=null) {
-			/*
-			 select * from article where moon_num in (
-			 select moon_num from fullmoon where moon_status=0
-			 ) order by article_createAt desc;
-			*/
-			String sql="SELECT * FROM pay WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=1 )";
-			try {
-				this.pstmt = this.conn.prepareStatement(sql);
-				this.rs = this.pstmt.executeQuery();
-				while(this.rs.next()) {
-					PayRequestDto payDto = new PayRequestDto();
-					payDto.setCard_num(this.rs.getString(2));
-					payDto.setUser_id(this.rs.getString(3));
-					payDto.setMoon_num(this.rs.getString(4));
-					payDto.setName(this.rs.getString(5));
-					payDto.setMessage(this.rs.getString(6));
-					payDto.setPay_day(this.rs.getTimestamp(8));
-					list.add(payDto);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.close(this.conn, this.pstmt, this.rs);
-			}
-			
-		}
-		
-		return list;
-	}
 
 	public List<PayRequestDto> getPayByNum(String num){
 		List<PayRequestDto> payList = new ArrayList<PayRequestDto>();

@@ -10,11 +10,18 @@ $containerWidth 변수에는 $container 요소의 너비를 저장합니다.
 $containerHeight 변수에는 $container 요소의 높이를 저장합니다. 
 .height() 메서드는 요소의 세로 크기를 반환합니다.
 */
-var fireflies = 100;
+var fireflies;
 var $fireflypack = $(".fireflypack");
 var $ffpackWidth = $fireflypack.width();
 var $ffpackHeight = $fireflypack.height();
 
+if(msgLeng >100){
+	fireflies = 100;
+}else{
+	fireflies = msgLeng;
+}
+
+console.log(fireflies)
 
 /*
 fireflies 변수의 값만큼 반복하는 for 루프를 시작합니다. 
@@ -22,9 +29,13 @@ fireflies 변수의 값만큼 반복하는 for 루프를 시작합니다.
 firefly 변수에는 jQuery를 사용하여 <div> 요소를 생성하고, 
 firefly 클래스를 추가한 객체를 저장합니다.
 */
+
 for (var i = 0; i < fireflies; i++) {
-	var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>익명</span><br><span>조금이나마 힘이 되었음 좋겠어요!</span></div></div></div>');
-	TweenLite.set(firefly, {
+	var randomIndex = Math.floor(Math.random() * msg.length);
+	var randomName = msg[randomIndex].getName();
+	var msg =  msg[randomIndex].getMessage();
+var firefly = $('<div class="firefly"> <div class="box"><div class="content"><span>' + randomName + '</span><br><span>' + message + '</span></div></div></div>');
+TweenLite.set(firefly, {
 		/*
 TweenLite.set() 메서드를 사용하여 firefly 요소의 초기 속성을 설정합니다. 
 여기서는 x와 y 속성을 무작위로 설정하여 요소가 화면 내의 임의의 위치에 표시되도록 합니다.

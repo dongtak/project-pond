@@ -43,13 +43,13 @@ public class MainAction extends HttpServlet {
 		System.out.println("moon : "+moon.getTitle());
 		
 		PayDao payDao = PayDao.getInstance();
-		List<PayRequestDto> pay = payDao.getMoonMessage();
+		List<PayRequestDto> moonMsg = payDao.getPayByNum(moon.getMoonNum());
 		
 		
 		session.setAttribute("moonUp", moon);
-		request.setAttribute("payList", pay);
-		System.out.println(pay.get(0).getName());
-		System.out.println(pay);
+		request.setAttribute("moonMsg", moonMsg);
+		System.out.println(moonMsg.get(0).getName());
+		System.out.println(moonMsg);
 		request.getRequestDispatcher("main").forward(request, response);
 
 	}

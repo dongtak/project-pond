@@ -17,7 +17,7 @@
 <body>
 <c:set var="moonUp" value="${sessionScope.moonUp }"/>
 <c:set var="id" value="${sessionScope.log }"/>
-<c:set var="msg" value="${requestScope.payList }"/>
+<c:set var="msg" value="${requestScope.moonMsg }"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
@@ -59,8 +59,15 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+<script>
+var msg = ${msg};
+var msgLeng = ${msg.size()};
+</script>
+<script src="resources/script/firefly.js">
 
+</script>
 
 </body>
-<script src="resources/script/firefly.js"></script>
+
+
 </html>
