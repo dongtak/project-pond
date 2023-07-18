@@ -4,12 +4,17 @@
 /*article.jsp*/
 .article{
 	text-align: center;
+	margin:30px auto;
 }
 
 
-.article-img{
+.article-img>img{
 	margin:0 auto;
-	
+
+}
+
+.article-category{
+	background-color: aliceblue;
 }
 
 
@@ -36,17 +41,33 @@
 	width: 70%;
 	margin:0 auto;
 	background-color: rgb(253, 238, 225);
+	
 
 	
 }
 
 
-.comment-write textarea{
-	resize:none;
+
+.comment {
+
+	margin: 0 auto;
+
 }
 
-#commentBtn{
+.comment textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  
+}
+
+.comment #commentBtn {
 	width: 40px;
 	height: 30px;
+
+
+
 }
+
+
 
