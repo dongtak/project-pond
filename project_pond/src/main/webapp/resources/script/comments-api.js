@@ -12,7 +12,7 @@ function addComment() {
 		console.log(response);
 		
 		if(response.msg === 'success') {
-			drawCommnets();
+			drawComments();
 		} else {
 			alert('Beep-');
 		}
@@ -20,20 +20,24 @@ function addComment() {
 	
 }
 
-function drawCommnets() {
+function drawComments() {
 	
 	$.ajax({
 		"method" : "GET",
 		"url" : `/comments?moonNum=${$('#moonNum').text()}`
 	}).done(response => {
-		const list = response;
+		const list = response; // JsonArray
 		console.log(list);
 		
 		$('#comments-container').empty();
 		
 		list.forEach(comment => {
 			$('#comments-container').append(`
+				<div class="comments-item">
+				<p>${comment.userName}</p>
 				<p>${comment.commentContent}</p>
+				<p>${comment.commentCreatedAt}</p>
+				</div>
 			`);
 		})
 	})

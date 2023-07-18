@@ -149,3 +149,7 @@ a.currPage{
 	color:white;
 }
 
+.comments-item{
+	border:1px solid black;
+}
+

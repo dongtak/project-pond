@@ -32,7 +32,6 @@ public class ArticleCommentRequestDto {
 	}
 
 	
-	
 	public ArticleCommentRequestDto(String userId, String moonNum, String commentContent) {
 		super();
 		this.userId = userId;

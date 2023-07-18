@@ -18,7 +18,7 @@
 				<h2>${moonUp.getTitle()}</h2>
 			</div>
 			<div class="content">
-				내용1
+				내용 1111
 			</div>
 			<div class="content">
 				내용2

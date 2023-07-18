@@ -16,7 +16,7 @@
 <body>
 	<c:set var="article" value="${requestScope.article }" />
 	<c:set var="fullmoon" value="${requestScope.fullmoon }" />
-
+	<c:set var="commentList" value="${requestScope.commentList }"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div id="section">
@@ -66,7 +66,8 @@
 						<div class="aritcle-category-name">
 							<c:forEach begin="1" end="5">
 								<div>
-									유저이름<br /> 내용~~~~~~~~~~~~~~<br />
+									유저이름<br> 
+									내용~~~~~~~~~~~~~~<br>
 								</div>
 							</c:forEach>
 
@@ -79,7 +80,7 @@
 
 					<div class="comment">
 						<div>댓글 ></div>
-						<form method="POST" class="comment" action="showArticle">
+						<form method="POST" class="comment">
 							<textarea cols="80" rows="10" id="msg-box" name="msg"
 								onclick="this.select()" onfocus="this.select()">
 							<c:choose>
@@ -96,13 +97,16 @@
 					</div>
 					<!-- 댓글 출력할 공간 -->
 					<div id="comments-container">
-						<c:forEach begin="1" end="5">
-							<div>
-								유저이름<br /> 댓글내용~~~~~~~~~~~~~~<br /> 작성일~~~~<br />
-							</div>
-						</c:forEach>
+						<c:if test="${not empty commentList}">
+							<c:forEach var="li" items="${commentList }">
+								<div class="comments-item">
+									<p>${li.getUserName()}</p>
+									<p>${li.getCommentContent()}</p>
+									<p>${li.getCommentCreatedAt()}</p>
+								</div>
+							</c:forEach>
+						</c:if>
 					</div>
-
 				</div>
 
 			</div>

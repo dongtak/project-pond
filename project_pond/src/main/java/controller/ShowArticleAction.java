@@ -58,17 +58,7 @@ public class ShowArticleAction extends HttpServlet {
 		FullMoonRequestDto fullmoon = fullMoonDao.getFullMoonByMoonNum(moonNum);
 		
 		// pay list
-		
 		List<PayRequestDto> payList =  payDao.getPayByNum(moonNum);
-		
-		System.out.println("article = " + article);
-		System.out.println("commentList = " + commentList);
-		System.out.println("fullmoon = " + fullmoon);
-		System.out.println("payList = " + payList);
-		System.out.println("moonNum = " + moonNum);
-		if (commentList.isEmpty()) {
-			System.out.println("리스트가 존재한다");
-		}
 		
 		
 		if(moonNum==null){
@@ -86,12 +76,6 @@ public class ShowArticleAction extends HttpServlet {
 	
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		
-		
-	}
 
 
 }

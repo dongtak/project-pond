@@ -36,26 +36,21 @@ public class CommentAction extends HttpServlet {
 
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
 
 		JSONObject responseBody = new JSONObject();
 		responseBody.put("msg", "fail");
 
-		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
 		// 받아온 댓글
 		String moonNum = request.getParameter("moonNum");
 		String addMsg = request.getParameter("msg");
-		System.out.println("msg : " + addMsg);
-
-		// 세션에 저장되어 있는 fullmoon 객체 <- 모금중
-		FullMoonResponseDto moonUp = (FullMoonResponseDto) session.getAttribute("moonUp");
 
 		// 세션에 저장되어 있는 로그인중인 유저 id
 		String id = (String) session.getAttribute("log");
 
-		if (addMsg != null && id != null && moonUp != null) {
-
+		if (!addMsg.isEmpty() && id != null) {
 			// create comment msg <- articleComment dao
 			// 유저아이디, moonNum, 댓글내용
 			ArticleCommentDao dao = ArticleCommentDao.getInstance();

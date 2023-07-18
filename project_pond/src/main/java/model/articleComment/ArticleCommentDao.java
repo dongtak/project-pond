@@ -15,7 +15,6 @@ import model.user.UserDao;
 import util.DBManager;
 
 
-
 public class ArticleCommentDao {
 	
 	private Connection conn;
@@ -40,7 +39,7 @@ public class ArticleCommentDao {
 	// 매개변수 ArticleCommentRequestDto -> 유저아이디, moonNum, 댓글
 	public boolean createComment(ArticleCommentRequestDto commentdto) {
 		
-		String commentNum = PayDao.generateRandomCode();
+		String commentNum = PayDao.generateRandomCode(); // 랜덤생성
 		System.out.println("commentNum : "+commentNum); // 확인용
 		String userId = commentdto.getUserId();
 		String content = commentdto.getCommentContent();
@@ -103,9 +102,6 @@ public class ArticleCommentDao {
 					String userName = userDao.findUserNameById(userId); // 유저 아이디를 매개변수로 받아서 해당 아이디를 가진 유저의 이름을 return
 					comment.setUserName(userName);
 					commentList.add(comment);
-				
-
-				
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
