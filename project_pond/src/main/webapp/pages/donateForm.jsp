@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 <title>후원</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>

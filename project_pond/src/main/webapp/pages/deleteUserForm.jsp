@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<title>Insert title here</title>
+<title>회원탈퇴</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
