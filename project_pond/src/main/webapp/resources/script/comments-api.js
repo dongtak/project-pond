@@ -4,7 +4,8 @@ $('#msg-box').click(e => {
 
 function addComment() {
 	const moonNum = $('#moonNum').text();
-	
+	console.log(moonNum);
+	console.log($('#msg-box').val());
 	$.ajax({
 		"method" : "POST",
 		"url" : `/comments?moonNum=${moonNum}&msg=${$('#msg-box').val()}`,
