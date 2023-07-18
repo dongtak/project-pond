@@ -67,7 +67,7 @@
 					</label> 
 					<label><input type="radio" name="leavename" value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기
 					</label> <br /> <span id="nameError" class="error-message"> 후원옵션을
-						선택해주세요 </span> <input type=text id="donorNameInput" name=donorName placeholder="후원자 이름"
+						선택해주세요 </span> <input type=text id="donorNameInput" name=donorNameInput placeholder="후원자 이름"
 						value="">
 				</div>
 
@@ -114,37 +114,37 @@
 
 </body>
 <script type="text/javascript">
-	function showLogin() {
+	function showLogin() {//로그인창 보이기
 		document.getElementById("lod").style.display = "block";
 		document.getElementById("lid").style.display = "none";
 	}
 
-	function showPayment() {
+	function showPayment() {//후원창 보이기
 		document.getElementById("lod").style.display = "none";
 		document.getElementById("lid").style.display = "block";
 	}
 	
-	function toggleDonorName(){
+	//
+	
+	function toggleDonorName(){//이름 남기기 버튼
 		document.getElementById("donorNameInput").disabled=false;
 		document.getElementById("donorNameInput").focus();
 		
 	}
 	
-	function toggleAnonymous() {
+	
+	
+	function toggleAnonymous() {//익명 버튼
 		  var donorNameInput = document.getElementById("donorNameInput");
 		  donorNameInput.disabled = true;
-
-		  var randomWords = ["천사", "영웅", "따뜻한 사람","후원대장","윌스미스의 보이는 손", "헌신자", "빌게이츠", "father teresa", "0.6 예수님", "선행을붓다"];
-		  var randomIndex = Math.floor(Math.random() * randomWords.length);
-		  var randomWord = randomWords[randomIndex];
-
-		  donorNameInput.value = randomWord;
+		  donorNameInput.value ="익명";
 		}
 
 		function toggleDonorName() {
 		  var donorNameInput = document.getElementById("donorNameInput");
 		  donorNameInput.disabled = false;
 		  donorNameInput.focus();
+		  donorNameInput.value = "";
 		}
 
 	function setAmount(amount) {
@@ -181,7 +181,7 @@
 	 
 	function nameAndNumber(form) {
 		var leavenameRadios = document.getElementsByName("leavename");
-		var donorNameInput = document.getElementsByName("donorname")[0];
+		var donorNameInput = document.getElementsByName("donorNameInput")[0];
 		var nameError = document.getElementById("nameError");
 		var moneyInput = document.getElementById("moneyInput");
 		var moneyError = document.getElementById("moneyError");
