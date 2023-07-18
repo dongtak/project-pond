@@ -13,6 +13,8 @@ public class PayRequestDto {
 	private String pay_money;
 	private Timestamp pay_day;
 
+	public PayRequestDto() {}
+	
 	public PayRequestDto(String pay_num, String card_num, String user_id, String moon_num, String name, String message,
 			String pay_money) {
 		this.pay_num = pay_num;
@@ -23,6 +25,16 @@ public class PayRequestDto {
 		this.message = message;
 		this.pay_money = pay_money;
 	}
+	public PayRequestDto( String card_num, String user_id, String moon_num, String name, String message,
+			Timestamp pay_day) {
+		this.card_num = card_num;
+		this.user_id = user_id;
+		this.moon_num = moon_num;
+		this.name = name;
+		this.message = message;
+		this.pay_day = pay_day;
+	}
+	
 	
 	public PayRequestDto(String moon_num,String name, String pay_money,String message) {
 		this.moon_num = moon_num;

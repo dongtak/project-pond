@@ -3,8 +3,13 @@ package model.pay;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import model.article.ArticleRequestDto;
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
@@ -89,7 +94,7 @@ public class PayDao {
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, moonNum);
 						this.pstmt.setString(2, payNum);
-						this.pstmt.setString(3, "익명");
+						this.pstmt.setString(3, name);
 						this.pstmt.setInt(4, Integer.parseInt(money));
 						this.pstmt.setString(5, message);
 
@@ -145,5 +150,48 @@ public class PayDao {
 		int index = random.nextInt(ALPHABET.length());
 		return ALPHABET.charAt(index);
 	}
+	
+	
+	public List<PayRequestDto> getMoonMessage() {
+		List<PayRequestDto> list = new ArrayList<PayRequestDto>();
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			/*
+			 select * from article where moon_num in (
+			 select moon_num from fullmoon where moon_status=0
+			 ) order by article_createAt desc;
+			*/
+			String sql="SELECT * FROM pay WHERE moon_num IN ( SELECT moon_num FROM fullmoon WHERE moon_status=1 )";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					PayRequestDto payDto = new PayRequestDto();
+					payDto.setCard_num(this.rs.getString(2));
+					payDto.setUser_id(this.rs.getString(3));
+					payDto.setMoon_num(this.rs.getString(4));
+					payDto.setName(this.rs.getString(5));
+					payDto.setMessage(this.rs.getString(6));
+					payDto.setPay_day(this.rs.getTimestamp(8));
+					list.add(payDto);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+			
+		}
+		
+		return list;
+	}
+
+	
+	
+	
+	
+	
+	
 
 }

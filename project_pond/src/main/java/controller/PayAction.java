@@ -44,12 +44,21 @@ public class PayAction extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String moonNum = request.getParameter("moonNum");
-		String name = request.getParameter("name");
-		String money = request.getParameter("money");
-		String message = request.getParameter("message");
+		String name = request.getParameter("donorName");
+		String money = request.getParameter("moneyInput");
+		String message = request.getParameter("messageInput");
 		
 
-		
+//		 String donorName = request.getParameter("donorName");
+//		    String donorBirth = request.getParameter("donorBirth");
+//		    String donorPhone = request.getParameter("donorPhone");
+//		    String donorEmail = request.getParameter("donorEmail");
+//		    
+//		    String cardType = request.getParameter("cardType");
+//		    String cardNumber = request.getParameter("cardNumber");
+//		    String cardPassword = request.getParameter("cardPassword");
+//		    String cardExpYear = request.getParameter("cardExpYear");
+//		    String cardExpMonth = request.getParameter("cardExpMonth");
 		
 		
 		

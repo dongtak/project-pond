@@ -17,6 +17,7 @@
 <body>
 <c:set var="moonUp" value="${sessionScope.moonUp }"/>
 <c:set var="id" value="${sessionScope.log }"/>
+<c:set var="msg" value="${requestScope.payList }"/>
 	<div id="wrap">
 
 		<jsp:include page="/header"></jsp:include>
@@ -49,6 +50,8 @@
 					<progress value="${formattedMoney }" max="100"></progress>
 					<br /> <span>달성률 : ${formattedMoney }% </span><br />
 					<span>달성률 : ${formattedMoney }% </span>
+					<h1> ${msg.get(0).getName() }</h1>
+					<h1> ${msg.get(0).getMessage() }</h1>
 					
 					<a class="donateBtn" href="donate">후원하기</a>
 				</div>
