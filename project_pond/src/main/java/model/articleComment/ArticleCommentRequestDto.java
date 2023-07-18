@@ -31,6 +31,15 @@ public class ArticleCommentRequestDto {
 		this.commentContent = commentContent;
 	}
 
+	
+	
+	public ArticleCommentRequestDto(String userId, String moonNum, String commentContent) {
+		super();
+		this.userId = userId;
+		this.moonNum = moonNum;
+		this.commentContent = commentContent;
+	}
+
 	public String getCommentNum() {
 		return commentNum;
 	}

@@ -1,12 +1,15 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.article.ArticleDao;
 import model.article.ArticleRequestDto;
@@ -14,8 +17,10 @@ import model.articleComment.ArticleCommentDao;
 import model.articleComment.ArticleCommentRequestDto;
 import model.fullmoon.FullMoonDao;
 import model.fullmoon.FullMoonRequestDto;
+import model.fullmoon.FullMoonResponseDto;
 import model.pay.PayDao;
 import model.pay.PayRequestDto;
+import util.DBManager;
 
 /**
  * Servlet implementation class ShowArticleAction
@@ -78,32 +83,15 @@ public class ShowArticleAction extends HttpServlet {
 	
 		}
 		
-
 	
 	}
-	
-	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String addMsg = request.getParameter("comment");
-		
-		if(addMsg!=null) {
-			// create comment msg <- articleComment dao
-			
-			
-			
-			
-			
-			System.out.println("댓글 등록 완료");
-		}
 		
 		
 	}
-	
-	
-	
 
 
 }

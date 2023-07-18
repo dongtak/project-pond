@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.article.Article;
+import model.pay.PayDao;
 import model.user.UserDao;
 import util.DBManager;
 
@@ -36,29 +37,29 @@ public class ArticleCommentDao {
 	}
 	
 	
+	// 매개변수 ArticleCommentRequestDto -> 유저아이디, moonNum, 댓글
 	public boolean createComment(ArticleCommentRequestDto commentdto) {
 		
+		String commentNum = PayDao.generateRandomCode();
+		System.out.println("commentNum : "+commentNum); // 확인용
 		String userId = commentdto.getUserId();
-		
 		String content = commentdto.getCommentContent();
-		String articleId = "abc126";
-		
-		System.out.print(userId + "= dao");
-		System.out.print(content + "= dao");
+		String moonNum = commentdto.getMoonNum();
+		int like = 0;
 		
 		boolean check = true;
 		
 		if( userId !=null && content!=null) {
 			this.conn = DBManager.getConnection();
 			if(this.conn !=null) {
-				String sql = "INSERT INTO articleComment(articleId,userId,content) VALUES (?,?,?)";
-				
+				String sql = "INSERT INTO articleComment(comment_num,user_id,moon_num,comment_content,`like`) VALUES (?,?,?,?,?)";
 				try {
 					this.pstmt = this.conn.prepareStatement(sql);
-					this.pstmt.setString(1, articleId);
+					this.pstmt.setString(1, commentNum);
 					this.pstmt.setString(2, userId);
-					this.pstmt.setString(3, content);
-					
+					this.pstmt.setString(3, moonNum);
+					this.pstmt.setString(4, content);
+					this.pstmt.setInt(5, like);
 					this.pstmt.execute();
 					
 				}catch(Exception e) {
@@ -67,9 +68,7 @@ public class ArticleCommentDao {
 				}finally {
 					DBManager.close(this.conn, this.pstmt);
 				}
-				
 			}
-			
 			
 		}else {
 			check = false;
