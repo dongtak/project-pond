@@ -68,7 +68,7 @@ public class PayAction extends HttpServlet {
 		// 실패 시 후원 form 으로 이동, 나중에 실패 메세지 추가
 		String url = "donate";
 
-//		if(result) 
+		if(result) 
 			url = "mainAction";
 		
 

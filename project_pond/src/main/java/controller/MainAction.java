@@ -52,6 +52,8 @@ public class MainAction extends HttpServlet {
 		
 		session.setAttribute("moonUp", moon);
 		request.setAttribute("moonUpPay", moonUpPay);
+		
+
 
 		request.getRequestDispatcher("main").forward(request, response);
 	}
