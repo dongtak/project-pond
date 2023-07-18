@@ -5,11 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>후원</title>
 <link rel="stylesheet" href="resources/style/form.css">
-
-
-
 </head>
 
 <body>
@@ -21,7 +18,6 @@
 		<section id="main-section">
 			<c:choose>
 				<c:when test="${empty log}">
-
 					<button class="lodBtn btn" onclick="showLogin()">로그인 후
 						후원하기</button>
 					<button class="lidBtn btn" onclick="showPayment()">비회원

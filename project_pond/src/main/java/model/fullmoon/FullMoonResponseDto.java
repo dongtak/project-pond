@@ -13,7 +13,8 @@ public class FullMoonResponseDto {
 	private int status;
 	private int messageCnt;
 	
-	public FullMoonResponseDto(String moonNum, String adminId, String title,Timestamp createdAt,
+
+	public FullMoonResponseDto(String moonNum, String adminId, String title, Timestamp createdAt,
 			Timestamp finishAt,int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;

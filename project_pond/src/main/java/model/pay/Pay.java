@@ -4,65 +4,59 @@ import java.sql.Timestamp;
 
 public class Pay {
 	
-	private String pay_num;
-	private String card_num;
-	private String user_id;
-	private String moon_num;
+	private String payNum;
+	private String cardNum;
+	private String userId;
+	private String moonNum;
 	private String name;
 	private String message;
-	private String pay_money;
-	private Timestamp pay_day;
+	private int payMoney;
+	private Timestamp payDay;
 	
-
-	
-	public Pay(String moon_num, String name, String message) {
-		
-		this.moon_num = moon_num;
+	public Pay(String payNum, String cardNum, String userId, String moonNum, String name, String message, int payMoney,
+			Timestamp payDay) {
+		super();
+		this.payNum = payNum;
+		this.cardNum = cardNum;
+		this.userId = userId;
+		this.moonNum = moonNum;
 		this.name = name;
 		this.message = message;
-	
+		this.payMoney = payMoney;
+		this.payDay = payDay;
 	}
-	
 
-	public Pay(String pay_num, String card_num, String user_id, String moon_num, String name, String message,
-			String pay_money, Timestamp pay_day) {
-		this.pay_num = pay_num;
-		this.card_num = card_num;
-		this.user_id = user_id;
-		this.moon_num = moon_num;
-		this.name = name;
-		this.message = message;
-		this.pay_money = pay_money;
-		this.pay_day = pay_day;
+	public String getPayNum() {
+		return payNum;
 	}
-	
-	
-	public String getPay_num() {
-		return pay_num;
+
+	public String getCardNum() {
+		return cardNum;
 	}
-	public String getCard_num() {
-		return card_num;
+
+	public String getUserId() {
+		return userId;
 	}
-	public String getUser_id() {
-		return user_id;
+
+	public String getMoonNum() {
+		return moonNum;
 	}
-	public String getMoon_num() {
-		return moon_num;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public String getMessage() {
 		return message;
 	}
-	public String getPay_money() {
-		return pay_money;
+
+	public int getPayMoney() {
+		return payMoney;
 	}
-	public Timestamp getPay_day() {
-		return pay_day;
+
+	public Timestamp getPayDay() {
+		return payDay;
 	}
-	
-	
 	
 
 }

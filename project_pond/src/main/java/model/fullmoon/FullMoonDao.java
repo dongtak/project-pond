@@ -7,9 +7,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import model.article.ArticleRequestDto;
-
-import model.pay.Pay;
 import util.DBManager;
 
 public class FullMoonDao {
@@ -64,8 +61,9 @@ public class FullMoonDao {
 					int donate = this.rs.getInt(7);
 					int status = this.rs.getInt(8);
 					int messageCnt = this.rs.getInt(9);
-					FullMoonResponseDto moon = new FullMoonResponseDto(moonNum, adminId, title, createdAt,finishAt,
-							goal, donate, status, messageCnt);
+
+					FullMoonResponseDto moon = new FullMoonResponseDto(moonNum, adminId, title, createdAt,finishAt, goal, donate, status, messageCnt);
+
 					list.add(moon);
 				}
 
