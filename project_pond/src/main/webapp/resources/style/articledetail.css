@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+
+/*article.jsp*/
+
+.article-cotainer-top{
+	width: 70%;
+	margin:0 auto;
+	background-color: beige;
+	display: flex;
+	
+}
+
+.article-content{
+	flex-grow: 4;
+}
+
+
+.article-category{
+	flex-grow: 1;
+}
+
+
+.article-cotainer-bottom{
+	
+	width: 70%;
+	margin:0 auto;
+	background-color: rgb(253, 238, 225);
+
+	
+}
+
+
+.comment-write>textarea{
+	resize:none;
+}

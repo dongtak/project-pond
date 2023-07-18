@@ -15,6 +15,16 @@ public class Pay {
 	
 	
 	
+	public Pay(String moon_num, String name, String message) {
+		
+		this.moon_num = moon_num;
+		this.name = name;
+		this.message = message;
+	
+	}
+	
+	
+	
 	public Pay(String pay_num, String card_num, String user_id, String moon_num, String name, String message,
 			String pay_money, Timestamp pay_day) {
 		this.pay_num = pay_num;

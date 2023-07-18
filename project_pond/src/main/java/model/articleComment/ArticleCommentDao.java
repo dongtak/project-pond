@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.article.Article;
 import model.user.UserDao;
 import util.DBManager;
 
@@ -103,6 +104,9 @@ public class ArticleCommentDao {
 					String userName = userDao.findUserNameById(userId); // 유저 아이디를 매개변수로 받아서 해당 아이디를 가진 유저의 이름을 return
 					comment.setUserName(userName);
 					commentList.add(comment);
+				
+
+				
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -114,5 +118,7 @@ public class ArticleCommentDao {
 		return commentList;
 	}
 	
+	
+
 	
 }
