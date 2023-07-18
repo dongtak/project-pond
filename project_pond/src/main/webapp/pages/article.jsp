@@ -42,27 +42,16 @@
 
 							<c:set var="fullmoon" value="${fullmoon }" />
 							목표 모금액 : ${fullmoon.getGoal()} 원<br />
-<<<<<<< HEAD
-							
-							<c:set var="fullmoon" value="${fullmoon }"/>
-							종료모금액:  ${fullmoon.getDonate()} 원<br />
-							
-							
-							<fmt:parseNumber var="percent" value="${moonUp.getDonate() / moonUp.getGoal()*100}" integerOnly="true" />
-								
-=======
+		
 
 							<c:set var="fullmoon" value="${fullmoon }" />
 							종료모금액: ${fullmoon.getDonate()} 원<br />
 
 
 							<fmt:parseNumber var="percent"
-								value="${moonUp.getDonate() / moonUp.getGoal()*100}"
+								value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
 								integerOnly="true" />
 
-
-
->>>>>>> refs/remotes/origin/#3-lee-seoyoung
 							달성률 : ${percent} %<br />
 						</div>
 

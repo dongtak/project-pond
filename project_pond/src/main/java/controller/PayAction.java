@@ -36,7 +36,7 @@ public class PayAction extends HttpServlet {
 		String money = request.getParameter("moneyInput");
 		int payMoney = Integer.parseInt(money);
 		
-		if(session.getAttribute("log")!=null) {
+//		if(session.getAttribute("log")!=null) {
 			// 카드정보 dao -> 해당 log를 가지고 있는 유저의 카드 정보 가져오기
 			// 만약 카드 정보가 있을 경우에
 			// 아래 내용 처리
@@ -53,17 +53,17 @@ public class PayAction extends HttpServlet {
 			//if (카드 정보가 있음)
 			// pay -> new cardNum 포함한 객체
 			// 
+		
+//		}else {
 			
-		}else {
+			PayRequestDto pay = new PayRequestDto(moonNum,name,message,payMoney);
 			
-//			PayRequestDto pay = new PayRequestDto(moonNum,name,message,payMoney);
-			
-		}
+//		}
 
 		
 
-//		PayDao payDao = PayDao.getInstance();
-//		boolean result = payDao.donatePayment(pay);
+		PayDao payDao = PayDao.getInstance();
+		boolean result = payDao.donatePayment(pay);
 
 		// 실패 시 후원 form 으로 이동, 나중에 실패 메세지 추가
 		String url = "donate";

@@ -175,8 +175,6 @@
 		       	cs.style.display = "none";
 		       	
 	    	  }
-	        
-	       
 	    }
 
 	 
