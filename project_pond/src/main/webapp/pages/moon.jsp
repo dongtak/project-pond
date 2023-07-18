@@ -9,11 +9,11 @@
 <title>보름달</title>
 </head>
 <body>
-	<c:set var="moonMenu" value="${requestScope.moonMenu }" />
+	<c:set var="moonUp" value="${sessionScope.moonUp }" />
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
-			
+		
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
