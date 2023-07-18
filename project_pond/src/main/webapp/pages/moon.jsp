@@ -14,10 +14,25 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
-		
+			<div id="title">
+				<h2>${moonUp.getTitle()}</h2>
+			</div>
+			<div class="content">
+				내용1
+			</div>
+			<div class="content">
+				내용2
+			</div>
+			<button class="scrollTop" onclick="scrollToTop();">TOP</button>
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
-	
+	<script>
+		function scrollToTop() {
+			$("html, body").animate({
+				scrollTop : 0
+			}, "slow");
+		}
+	</script>
 </body>
 </html>

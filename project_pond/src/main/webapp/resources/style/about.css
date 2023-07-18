@@ -1,11 +1,9 @@
 @charset "UTF-8";
-		@font-face {
-    font-family: 'PyeongChangPeace-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
 
+
+#main-section{
+	width:100%;
+}
 
 .title1 {
 	background-image: url("../images/img1.jpg");
@@ -28,8 +26,8 @@
 	font-size: 50px;
 	text-align: center;
 	margin: 30px auto;
- font-family: 'PyeongChangPeace-Bold' !important;
-	}
+ 	font-family: 'PyeongChangPeace-Bold' !important;
+}
 
 
 
@@ -109,10 +107,6 @@ i{color: black;}
 }
 
 
-
-
-
-
 .scroll {
 	background: none;
 	width: auto;
@@ -122,23 +116,20 @@ i{color: black;}
 }
 
 
-
-
 .scroll button {
 	background: none;
 	border: 2px solid white;
 	width: 60px;
 	height: 60px;
 	border-radius: 30px;
-	 outline: none;
-  box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+	outline: none;
+  	box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
 }
 
 .scroll button:active{
-	 box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
-  position: relative;
-  top:2px;
-	
+	box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+  	position: relative;
+  	top:2px;
 	
 }
 
