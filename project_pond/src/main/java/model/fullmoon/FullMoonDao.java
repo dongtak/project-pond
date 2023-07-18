@@ -60,11 +60,12 @@ public class FullMoonDao {
 					String title = this.rs.getString(3);
 					String content = this.rs.getString(4);
 					Timestamp createdAt = this.rs.getTimestamp(5);
-					int goal = this.rs.getInt(6);
-					int donate = this.rs.getInt(7);
-					int status = this.rs.getInt(8);
-					int messageCnt = this.rs.getInt(9);
-					FullMoonResponseDto moon = new FullMoonResponseDto(moonNum, adminId, title, content, createdAt,
+					Timestamp finishAt = this.rs.getTimestamp(6);
+					int goal = this.rs.getInt(7);
+					int donate = this.rs.getInt(8);
+					int status = this.rs.getInt(9);
+					int messageCnt = this.rs.getInt(10);
+					FullMoonResponseDto moon = new FullMoonResponseDto(moonNum, adminId, title, content, createdAt,finishAt,
 							goal, donate, status, messageCnt);
 					list.add(moon);
 				}
@@ -98,11 +99,12 @@ public class FullMoonDao {
 					String title = this.rs.getString(3);
 					String content = this.rs.getString(4);
 					Timestamp createdAt = this.rs.getTimestamp(5);
-					int goal = this.rs.getInt(6);
-					int donate = this.rs.getInt(7);
-					int status = this.rs.getInt(8);
-					int messageCnt = this.rs.getInt(9);
-					moon = new FullMoonResponseDto(moonNum, adminId, title, content, createdAt, goal, donate, status, messageCnt);
+					Timestamp finishAt = this.rs.getTimestamp(6);
+					int goal = this.rs.getInt(7);
+					int donate = this.rs.getInt(8);
+					int status = this.rs.getInt(9);
+					int messageCnt = this.rs.getInt(10);
+					moon = new FullMoonResponseDto(moonNum, adminId, title, content, createdAt,finishAt, goal, donate, status, messageCnt);
 				}
 
 			} catch (SQLException e) {
@@ -115,6 +117,8 @@ public class FullMoonDao {
 		return moon;
 	}
 
+	
+	// 수정필요
 	public FullMoonRequestDto getFullMoonByMoonNum(String moonNum) {
 		FullMoonRequestDto fullmoon = null;
 		
@@ -126,12 +130,10 @@ public class FullMoonDao {
 				this.pstmt.setString(1, moonNum);
 				this.rs = this.pstmt.executeQuery();
 				if(rs.next()) {
-					int  moonGoal = this.rs.getInt(6);
+					int moonGoal = this.rs.getInt(6);
 					int moonDonate = this.rs.getInt(7);
 					int messageCnt = this.rs.getInt(9);
 					
-					
-			
 					fullmoon = new FullMoonRequestDto(moonGoal,moonDonate,messageCnt);
 				}
 			} catch (SQLException e) {

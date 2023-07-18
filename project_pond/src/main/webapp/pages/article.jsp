@@ -49,8 +49,6 @@
 							
 							
 							<fmt:parseNumber var="percent" value="${moonUp.getDonate() / moonUp.getGoal()*100}" integerOnly="true" />
-							
-								
 								
 							달성률 : ${percent} %<br />
 						</div>

@@ -9,20 +9,21 @@ public class FullMoon {
 	private String title;
 	private String content;
 	private Timestamp createdAt;
+	private Timestamp finishAt;
 	private int goal;
 	private int donate;
 	private int status;
 	private int messageCnt;
 
 	public FullMoon(String moonNum, String adminId, String title, String content, Timestamp createdAt, int goal,
-
-			int donate, int status, int messageCnt) {
+			Timestamp finishAt,int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
 		this.title = title;
 		this.content = content;
 		this.createdAt = createdAt;
+		this.finishAt = finishAt;
 		this.goal = goal;
 		this.donate = donate;
 		this.status = status;
@@ -48,7 +49,11 @@ public class FullMoon {
 	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
-
+	
+	public Timestamp getFinishAt() {
+		return finishAt;
+	}
+	
 	public int getGoal() {
 		return goal;
 	}
@@ -64,5 +69,7 @@ public class FullMoon {
 	public int getMessageCnt() {
 		return messageCnt;
 	}
+	
+	
 
 }
