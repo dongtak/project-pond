@@ -89,10 +89,12 @@ div#wrap {
 
 .footer {
 	grid-area: footer;
-
 	text-align: center;
 }
 
+.footer>h1 {
+	font-size: 20px;
+}
 
 .nav-bar li {
 	display: inline-block;

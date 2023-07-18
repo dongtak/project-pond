@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <title>나눗샘</title>
-
 <link rel="stylesheet" href="resources/style/main.css">
 <link rel="stylesheet" href="resources/style/firefly.css">
 </head>
@@ -18,7 +18,6 @@
 <c:set var="moonUp" value="${sessionScope.moonUp }"/>
 <c:set var="id" value="${sessionScope.log }"/>
 	<div id="wrap">
-
 		<jsp:include page="/header"></jsp:include>
 		<div class=firefly_base>
 			<div class="fireflypack"></div>
