@@ -6,7 +6,8 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<title>회원정보수정</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <link rel="stylesheet" href="resources/style/form.css">
