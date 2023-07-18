@@ -7,19 +7,10 @@ import java.sql.SQLException;
 
 import java.sql.Timestamp;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
-import model.article.ArticleRequestDto;
-
-import model.article.Article;
-
-import model.user.User;
-import model.user.UserDao;
-import model.user.UserRequestDto;
 import util.DBManager;
 
 public class PayDao {
@@ -155,6 +146,7 @@ public class PayDao {
 		return ALPHABET.charAt(index);
 	}
 
+	
 
 	
 	public List<PayRequestDto> getPayByNum(String num){

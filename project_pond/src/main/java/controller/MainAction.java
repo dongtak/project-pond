@@ -40,12 +40,18 @@ public class MainAction extends HttpServlet {
 		
 		FullMoonDao dao = FullMoonDao.getInstance();
 		FullMoonResponseDto moon = dao.fullmoonActivated();
+
+		System.out.println("moonNum : "+moon.getMoonNum());
 		
 		PayDao payDao = PayDao.getInstance();
-		List<PayRequestDto> moonMsg = payDao.getPayByNum(moon.getMoonNum());
+		List<PayRequestDto> moonUpPay = payDao.getPayByNum(moon.getMoonNum());
+		
+		if(moonUpPay.isEmpty()) {
+			System.out.println("해당 "+moon.getMoonNum()+"의 pay list 없음");
+		}
 		
 		session.setAttribute("moonUp", moon);
-		request.setAttribute("moonMsg", moonMsg);
+		request.setAttribute("moonUpPay", moonUpPay);
 
 		request.getRequestDispatcher("main").forward(request, response);
 
