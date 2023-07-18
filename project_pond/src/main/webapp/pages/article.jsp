@@ -35,10 +35,19 @@
 								value="${requestScope.article.getArticle_createdAt() }" />
 							<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
 								var="created" />
-							시작 날짜 : ${created}~ 종료 날짜<br /> 목표모금액 : ${moonGoal} <br />
+							시작 날짜 : ${created}~ 종료 날짜<br />
+							
+							<c:set var="fullmoon" value="${requestScope.fullmoon }"/>
+							목표 모금액 : ${fullmoon.getGoal()}<br />
+							
+							종료모금액: 
+							
 							<c:set var="money"
 								value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
-							종료모금액: 달성률 : ${moonUp.getDonate()} <br />
+							
+							
+							
+							달성률 : ${moonUp.getDonate()} <br />
 						</div>
 
 						<div class="arit0le-img">
@@ -69,8 +78,10 @@
 				<textarea  cols="80" rows="10" onclick="this.select()" onfocus="this.select()">댓글을 작성하시려면 로그인 해주세요. </textarea>
 			</c:when>
 			<c:otherwise>
+			<div class="commentBox">
 				<textarea  cols="80" rows="10" onclick="this.select()" onfocus="this.select()">주제와 무관한 댓글, 악플은 삭제될 수 있습니다. </textarea>
-			<input type="submit" value="등록">
+			<input type="button" id="commentBtn" value="등록">
+		</div>
 			</c:otherwise>
 					
 					</c:choose>
