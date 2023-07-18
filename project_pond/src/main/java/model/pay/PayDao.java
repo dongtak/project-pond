@@ -4,20 +4,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
-=======
+
 import java.sql.Timestamp;
->>>>>>> refs/remotes/origin/#3-lee-seoyoung
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-<<<<<<< HEAD
+
 import model.article.ArticleRequestDto;
-=======
+
 import model.article.Article;
->>>>>>> refs/remotes/origin/#3-lee-seoyoung
+
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
