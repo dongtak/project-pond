@@ -13,7 +13,7 @@ public class Pay {
 	private String pay_money;
 	private Timestamp pay_day;
 	
-	
+
 	
 	public Pay(String moon_num, String name, String message) {
 		
@@ -23,8 +23,7 @@ public class Pay {
 	
 	}
 	
-	
-	
+
 	public Pay(String pay_num, String card_num, String user_id, String moon_num, String name, String message,
 			String pay_money, Timestamp pay_day) {
 		this.pay_num = pay_num;

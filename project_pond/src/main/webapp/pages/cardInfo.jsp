@@ -72,7 +72,12 @@ body {
   // additionalData 값 활용
 %>
 
-		<div class=donorinfo>
+	<c:choose>
+			<c:when test="${empty log}">
+				<!-- 
+					비어있는 input
+				 -->
+				 <div class=donorinfo>
 			<div class="form-group">
 				<label for="donorName" class="form-label">성함</label> 
 				<input
@@ -102,7 +107,48 @@ body {
 					class="error-message">이메일을 입력해주세요</span>
 			</div>
 		</div>
-		<div class=cardinfo>
+				 
+			</c:when>
+			<c:otherwise>
+			<!-- 
+				유저 정보를 갖고와서 입력되있는 input
+			 -->
+			 <div class=donorinfo>
+			<div class="form-group">
+				<label for="donorName" class="form-label">성함</label> 
+				<input
+					type="text" name="donorName" id="donorName" placeholder="성함"
+					class="form-input" value="유저 이름"> <span id="nameError"
+					class="error-message">성함을 입력해주세요</span>
+			</div>
+
+			<div class="form-group">
+				<label for="donorBirth" class="form-label">생년월일</label> <input
+					type="text" name="donorBirth" id="donorBirth" placeholder="생년월일"
+					class="form-input" maxlength="8" value="19999999"> <span id="birthError"
+					class="error-message">생년월일을 입력해주세요</span>
+			</div>
+
+			<div class="form-group">
+				<label for="donorPhone" class="form-label">전화번호</label> <input
+					type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호"
+					class="form-input" maxlength="11"value="11111111"> <span id="phoneError"
+					class="error-message">전화번호를 입력해주세요</span>
+			</div>
+
+			<div class="form-group">
+				<label for="donorEmail" class="form-label">이메일</label> <input
+					type="email" name="donorEmail" id="donorEmail" placeholder="이메일"
+					class="form-input" value="email@email.com"> <span id="emailError"
+					class="error-message">이메일을 입력해주세요</span>
+			</div>
+		</div>
+			 
+			</c:otherwise>
+			
+			</c:choose>
+			
+				<div class=cardinfo>
 			<div class="form-group">
 				<label for="cardType" class="form-label">카드 타입</label> <select
 					name="cardType" id="cardType" class="form-input" value="">
@@ -150,7 +196,7 @@ body {
 					유효기간을 입력해주세요</span>
 			</div>
 		</div>
-
+		
 </body>
 <script>
 	function payInfoCheck(htmlForm) {

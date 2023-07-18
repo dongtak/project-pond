@@ -1,7 +1,3 @@
-<%@page import="model.article.ArticleRequestDto"%>
-<%@page import="model.article.Article"%>
-<%@page import="java.util.List"%>
-<%@page import="model.article.ArticleDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -25,7 +21,6 @@
 <c:set var="pageBlock" value="5"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-
 		<div class="section">
 			<div class="menu">
 				<ul>
@@ -95,7 +90,7 @@
 							<c:if test="${startPage>pageBlock }">
 								<div>
 									<a
-										href="articleHomeAction?moonNum=${moonNum }&pageNum=${startPage-pageBlock }">Prev</a>
+										href="articleHomeAction?moonNum=${moonNum }&pageNum=${startPage-pageBlock }">&lt;</a>
 								</div>
 							</c:if>
 							<c:forEach begin="${startPage }" end="${endPage }" varStatus="vs">
@@ -110,7 +105,7 @@
 							</c:forEach>
 							<c:if test="${endPage < pageCount }">
 								<div>
-									<a href="articleHomeAction?pageNum=${startPage+pageBlock }">Next</a>
+									<a href="articleHomeAction?pageNum=${startPage+pageBlock }">&gt;</a>
 								</div>
 							</c:if>
 						</c:if>

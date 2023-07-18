@@ -15,6 +15,7 @@
 <body>
 	<c:set var="moonUp" value="${sessionScope.moonUp }" />
 	<c:set var="id" value="${sessionScope.log }" />
+	<c:set var="moonNum" value="${moonUp.getMoonNum() }" />
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
@@ -62,6 +63,7 @@
 				</c:otherwise>
 			</c:choose>
 			<form id="modal-form" method="post" action="Donate">
+				<input type="hidden" name=moonNum value="${moonNum }">
 				<div class="donor">
 					<label> <input type="radio" name="leavename"
 						value="nominated" onclick="toggleDonorName()" checked> 후원자 이름
@@ -69,7 +71,7 @@
 					</label> 
 					<label><input type="radio" name="leavename" value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기
 					</label> <br /> <span id="nameError" class="error-message"> 후원옵션을
-						선택해주세요 </span> <input type=text id="donorNameInput" name=donorname placeholder="후원자 이름"
+						선택해주세요 </span> <input type=text id="donorNameInput" name=donorName placeholder="후원자 이름"
 						value="">
 				</div>
 
@@ -89,7 +91,9 @@
 						placeholder="마음을 전해보세요"> <span id="moneyError"
 						class="error-message"> 후원금을 입력해주세요 </span> <br> 
 				</div>
-				
+				<input
+						type="submit" value="후원하기test">
+				</div>
 				<input type="button" onclick="showCardInput()" value="다음">
 				
 				<div class="cardform" id="cs" style="display:none;">
@@ -174,8 +178,9 @@
 	    	    button.value = "다음";
 	    	    lid.style.display = "block";
 		       	cs.style.display = "none";
+		       	
 	    	  }
-	        isNext = !isNext;
+	        
 	       
 	    }
 

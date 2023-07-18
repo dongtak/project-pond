@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,9 @@ import javax.servlet.http.HttpSession;
 
 import model.fullmoon.FullMoonDao;
 import model.fullmoon.FullMoonResponseDto;
+import model.pay.PayDao;
+import model.pay.PayRequestDto;
+import model.pay.PayResponseDto;
 
 public class MainAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,8 +42,15 @@ public class MainAction extends HttpServlet {
 		FullMoonResponseDto moon = dao.fullmoonActivated();
 		System.out.println("moon : "+moon.getTitle());
 		
+		PayDao payDao = PayDao.getInstance();
+		List<PayRequestDto> pay = payDao.getMoonMessage();
+		
+		
 		session.setAttribute("moonUp", moon);
-		response.sendRedirect("main");
+		request.setAttribute("payList", pay);
+		System.out.println(pay.get(0).getName());
+		System.out.println(pay);
+		request.getRequestDispatcher("main").forward(request, response);
 
 	}
 
