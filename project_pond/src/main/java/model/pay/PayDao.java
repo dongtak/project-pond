@@ -4,12 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< HEAD
+=======
+import java.sql.Timestamp;
+>>>>>>> refs/remotes/origin/#3-lee-seoyoung
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+<<<<<<< HEAD
 import model.article.ArticleRequestDto;
+=======
+import model.article.Article;
+>>>>>>> refs/remotes/origin/#3-lee-seoyoung
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
@@ -150,8 +158,7 @@ public class PayDao {
 		int index = random.nextInt(ALPHABET.length());
 		return ALPHABET.charAt(index);
 	}
-	
-	
+
 	public List<PayRequestDto> getMoonMessage() {
 		List<PayRequestDto> list = new ArrayList<PayRequestDto>();
 		
@@ -187,9 +194,36 @@ public class PayDao {
 		return list;
 	}
 
-	
-	
-	
+	public List<PayRequestDto> getPayByNum(String num){
+		List<PayRequestDto> payList = new ArrayList<PayRequestDto>();
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql = "SELECT * FROM pay WHERE moon_num=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, num);
+				this.rs = this.pstmt.executeQuery();
+				UserDao userDao = UserDao.getInstance();
+				while(this.rs.next()) {
+					String moonNum = this.rs.getString(4);
+					String name = this.rs.getString(5);
+					String message = this.rs.getString(6);
+					
+					PayRequestDto pay = new PayRequestDto(moonNum,name,message);
+					
+					payList.add(pay);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return payList;
+	}
+
 	
 	
 	

@@ -38,8 +38,11 @@
 	text-align: center;
 	line-height: 30px;
 	height: 30px;
-margin-top: 10px;
+	margin: 30px auto;
+
 }
+
+
 
 .div-form {
 	margin-top: 20px;

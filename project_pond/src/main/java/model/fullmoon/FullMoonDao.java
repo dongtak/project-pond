@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import model.article.ArticleRequestDto;
+
 import model.pay.Pay;
 import util.DBManager;
 
@@ -113,7 +115,32 @@ public class FullMoonDao {
 		return moon;
 	}
 
-	
+	public FullMoonRequestDto getFullMoonByMoonNum(String moonNum) {
+		FullMoonRequestDto fullmoon = null;
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql = "SELECT * FROM fullmoon WHERE moon_num=?";
+			try {
+				this.pstmt=this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, moonNum);
+				this.rs = this.pstmt.executeQuery();
+				if(rs.next()) {
+					int  moonGoal = this.rs.getInt(6);
+					int moonDonate = this.rs.getInt(7);
+					int messageCnt = this.rs.getInt(9);
+					
+					
+			
+					fullmoon = new FullMoonRequestDto(moonGoal,moonDonate,messageCnt);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return fullmoon;
+	}
 	
 	
 

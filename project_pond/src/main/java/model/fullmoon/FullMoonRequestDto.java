@@ -14,6 +14,17 @@ public class FullMoonRequestDto {
 	private int status;
 	private int messageCnt;
 	
+	
+	
+	public FullMoonRequestDto(int goal, int donate,  int messageCnt) {
+		
+		this.goal = goal;
+		this.donate = donate;
+		this.messageCnt = messageCnt;
+	}
+	
+	
+	
 
 	public FullMoonRequestDto(String moonNum, String adminId, String title, String content, Timestamp createdAt,
 			int goal, int donate, int status, int messageCnt) {
@@ -28,6 +39,9 @@ public class FullMoonRequestDto {
 		this.status = status;
 		this.messageCnt = messageCnt;
 	}
+	
+	
+	
 
 	public String getMoonNum() {
 		return moonNum;

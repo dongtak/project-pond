@@ -18,6 +18,7 @@
 		<section id="main-section">
 			<form action="Login" class="user-form" method="POST">
 				<h1>로그인</h1>
+				
 				<input type="text" placeholder="아이디 입력" class="user-input" id="id" name="id">
 				<ul>
 					<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
@@ -27,12 +28,18 @@
 				<ul>
 					<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
 				</ul>
+				
 				<input type="button" id="submit-btn" onclick="checkValue(form)" value=" 로그인">
-			</form>
+			
 			<div class="bottom-nav">
-			<!--  <a href="findUser">아이디/비밀번호 찾기</a>  -->
+			 <!-- <a href="findUser">아이디/비밀번호 찾기</a>   -->
 			<a href="join">회원가입</a>
 			</div>
+			
+					
+			</form>
+			
+			
 		</section>
 		<jsp:include page="/footer"></jsp:include>
 	</div>

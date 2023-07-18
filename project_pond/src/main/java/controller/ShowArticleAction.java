@@ -12,6 +12,10 @@ import model.article.ArticleDao;
 import model.article.ArticleRequestDto;
 import model.articleComment.ArticleCommentDao;
 import model.articleComment.ArticleCommentRequestDto;
+import model.fullmoon.FullMoonDao;
+import model.fullmoon.FullMoonRequestDto;
+import model.pay.PayDao;
+import model.pay.PayRequestDto;
 
 /**
  * Servlet implementation class ShowArticleAction
@@ -36,23 +40,48 @@ public class ShowArticleAction extends HttpServlet {
 		
 		ArticleDao articleDao = ArticleDao.getInstance();
 		ArticleCommentDao articleCommentDao = ArticleCommentDao.getInstance();
+		FullMoonDao fullMoonDao = FullMoonDao.getInstance();
+		PayDao payDao = PayDao.getInstance();
 		
 		// article 받아옴
 		ArticleRequestDto article = articleDao.getArticleByNum(moonNum);
+		
 		// articleComment list 받아옴
 		List<ArticleCommentRequestDto> commentList = articleCommentDao.getCommentByNum(moonNum);
 		
 		// fullmoon
+		FullMoonRequestDto fullmoon = fullMoonDao.getFullMoonByMoonNum(moonNum);
 		
 		// pay list
+		
+		List<PayRequestDto> payList =  payDao.getPayByNum(moonNum);
+		
+		System.out.println("article = " + article);
+		System.out.println("commentList = " + commentList);
+		System.out.println("fullmoon = " + fullmoon);
+		System.out.println("payList = " + payList);
+		System.out.println("moonNum = " + moonNum);
+		if (commentList.isEmpty()) {
+			System.out.println("리스트가 존재한다");
+		}
+		
 		
 		if(moonNum==null){
 			response.sendRedirect("articleHomeAction");
 		}else {
 			request.setAttribute("article",article );
 			request.setAttribute("commentList", commentList);
+			request.setAttribute("fullmoon",fullmoon );
+			request.setAttribute("payList", payList);
+			
+			
+			
 			
 			request.getRequestDispatcher("article").forward(request, response);
+			request.getRequestDispatcher("commentList").forward(request, response);
+			request.getRequestDispatcher("fullmoon").forward(request, response);
+			request.getRequestDispatcher("artpayListicle").forward(request, response);
+			
 		}
 		
 	
