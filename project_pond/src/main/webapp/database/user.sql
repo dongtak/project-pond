@@ -1,8 +1,3 @@
-CREATE database goodsGoods;
-use goodsGoods;
-drop database goodsGoods;
-
-drop table `user`;
 create table `user`(
 
 	user_id VARCHAR(30) primary key,
@@ -30,9 +25,3 @@ VALUES ('uid1', 'pwd1', '유저1', 'uid1@gmail.com', 1999, '010-0000-0001', '서
 
 -- read
 SELECT * FROM `user`;
-
--- update
-UPDATE `user` SET user_name="홍길동" WHERE user_id="uid10";
-
--- delete
-DELETE FROM `user` WHERE user_id="uid10";

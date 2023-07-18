@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<title>Insert title here</title>
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<title>아이디/비밀번호 찾기</title>
 
 <link rel="stylesheet" href="resources/style/form.css">
 

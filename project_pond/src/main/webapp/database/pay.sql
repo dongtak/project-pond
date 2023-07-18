@@ -1,4 +1,3 @@
-drop table pay;
 create table pay(
 	pay_num VARCHAR(10) primary key,
 	card_num VARCHAR(30) ,
@@ -10,6 +9,6 @@ create table pay(
     pay_day timestamp default current_timestamp,
     
 	foreign key (card_num) references `cardInfo` (card_num) on delete set null,
-    foreign key (user_id) references `user` (user_id) on delete set null,
-    foreign key (moon_num) references fullmoon (moon_num) on delete set null
+    foreign key (user_id) references `user` (user_id) on delete set null
+   
 );

@@ -1,4 +1,3 @@
-drop table `cardInfo`;
 create table cardInfo (
 	card_num VARCHAR(30) primary key,
 	user_id VARCHAR(30) not null,
@@ -20,12 +19,3 @@ INSERT INTO cardInfo VALUES('1006','uid7','카카오',55,'2028-01-01');
 INSERT INTO cardInfo VALUES('1007','uid8','농협',64,'2028-01-01');
 INSERT INTO cardInfo VALUES('1008','uid9','신한',17,'2028-01-01');
 INSERT INTO cardInfo VALUES('1009','uid1','국민',95,'2028-01-01');
-
--- read
-SELECT * FROM cardInfo;
-
--- update
-UPDATE cardInfo SET card_name = "은행" WHERE card_num="1009";
-
--- delete
-DELETE FROM cardInfo WHERE card_num="1009"; 
