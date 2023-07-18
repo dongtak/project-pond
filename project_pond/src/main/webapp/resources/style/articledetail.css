@@ -2,6 +2,16 @@
 
 
 /*article.jsp*/
+.article{
+	text-align: center;
+}
+
+
+.article-img{
+	margin:0 auto;
+	
+}
+
 
 .article-cotainer-top{
 	width: 70%;
@@ -31,6 +41,12 @@
 }
 
 
-.comment-write>textarea{
+.comment-write textarea{
 	resize:none;
 }
+
+#commentBtn{
+	width: 40px;
+	height: 30px;
+}
+

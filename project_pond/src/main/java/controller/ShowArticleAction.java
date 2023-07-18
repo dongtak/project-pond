@@ -74,18 +74,19 @@ public class ShowArticleAction extends HttpServlet {
 			request.setAttribute("fullmoon",fullmoon );
 			request.setAttribute("payList", payList);
 			
-			
-			
-			
 			request.getRequestDispatcher("article").forward(request, response);
-			request.getRequestDispatcher("commentList").forward(request, response);
-			request.getRequestDispatcher("fullmoon").forward(request, response);
-			request.getRequestDispatcher("artpayListicle").forward(request, response);
-			
+	
 		}
 		
 	
 	}
+	
+	
+	
+	
+	
+	
+	
 
 
 }
