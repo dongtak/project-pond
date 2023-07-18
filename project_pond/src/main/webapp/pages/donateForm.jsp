@@ -19,7 +19,6 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<section id="main-section">
-
 			<c:choose>
 				<c:when test="${empty log}">
 

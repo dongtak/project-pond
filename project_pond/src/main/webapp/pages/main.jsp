@@ -60,11 +60,11 @@
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 
+
+
+</body>
 <script src="resources/script/firefly.js">
 
 </script>
-
-</body>
-
 
 </html>

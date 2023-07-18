@@ -6,7 +6,6 @@ public class FullMoonResponseDto {
 	private String moonNum;
 	private String adminId;
 	private String title;
-	private String content;
 	private Timestamp createdAt;
 	private Timestamp finishAt;
 	private int goal;
@@ -14,13 +13,12 @@ public class FullMoonResponseDto {
 	private int status;
 	private int messageCnt;
 	
-	public FullMoonResponseDto(String moonNum, String adminId, String title, String content, Timestamp createdAt,
+	public FullMoonResponseDto(String moonNum, String adminId, String title,Timestamp createdAt,
 			Timestamp finishAt,int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
 		this.title = title;
-		this.content = content;
 		this.createdAt = createdAt;
 		this.finishAt = finishAt;
 		this.goal = goal;
@@ -55,12 +53,7 @@ public class FullMoonResponseDto {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
+
 	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
