@@ -30,57 +30,59 @@ a:visited {
 }
 
 div#wrap {
-
 	display: grid;
-	grid-template-rows: 120px minmax(60vh, 1fr) 200px;
+	grid-template-rows: 120px 1fr 200px;
 	grid-template-areas: "header" "section" "footer";
 	
 }
 
-
 .header {
-	min-width:860px;
+	display:grid;
 	grid-area: header;
-	display: flex;
-	justify-content: space-between;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-areas: "logo navbar loginbar";
 	align-items: center;
 }
 
-.header a {
-	font-size:20px;
-	font-weight: 800;
-	display:inline-block;
+.header a,.header a:visited,.header span{
+	font-size: 1.8rem;
+}
+
+#userlogin>a{
+	font-size: 1.5rem;
+}
+
+#userlogin>a:first-child{
+	margin-right: 10px;
 }
 
 .logo {
-	width: 250px;
+	grid-area: logo;
 	font-family: 'PyeongChangPeace-Bold';
-	margin-left:100px;
-	font-weight: 100px;
-	font-size: 2rem;
-	background-color: white;
-	border-radius: 10px;
-	padding:0 10px;
+	text-align: center;
 }
 
 .login-bar{
-	width: 250px;
+	grid-area:loginbar;
+	text-align: center;
 }
 
+
 .login-bar a{
-	background-color: white;
-	border-radius: 10px;
 	display: inline-block;
 	height: 35px;
 	line-height: 35px;
 	font-weight: 100;
-	padding:0 10px;
 }
 
+.nav-bar{
+	grid-area:navbar;
+}
 
 .nav-bar>ul{
-	display: flex;
-	justify-content: center;
+	display:flex;
+	justify-content:center;
+	text-align: center;
 }
 
 .section {
@@ -90,32 +92,31 @@ div#wrap {
 .footer {
 	grid-area: footer;
 	text-align: center;
-	padding-top: 30px;
+	display: flex;
+	flex-flow : column wrap;
+	justify-content: center;
 }
 
-.footer>h1 {
-	font-size: 20px;
+.footer>h2 {
+	font-size: 1.5rem;
+	padding: 10px 0;
+}
+
+.footer>span{
+	padding: 3px 0;
 }
 
 .nav-bar li {
 	display: inline-block;
-	border: 1px solid white;
 	width: 100px;
 	height: 50px;
 	line-height: 50px;
-	margin-right: 30px;
-	text-align: center;
-	background-color: white;
-	border-radius: 10px;
+	margin:0 20px;
 }
 
-.nav-bar li:last-child {
-	margin: 0;
-}
 
 .nav-bar li>a {
 	display: inline-block;
 	width: 100%;
-	color: black;
 	font-weight: 300;
 }
