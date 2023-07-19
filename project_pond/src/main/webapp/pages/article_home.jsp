@@ -96,11 +96,10 @@
 							</c:if>
 							<c:forEach begin="${startPage }" end="${endPage }" varStatus="vs">
 								<div>
-									<a
-										href="articleHomeAction?moonNum=${moonNum }&pageNum=${vs.index }"
+									<a href="articleHomeAction?moonNum=${moonNum }&pageNum=${vs.index }"
 										<c:if test="${vs.index==pageNum }">
-								class="currPage"
-							</c:if>>${vs.index }
+										class="currPage"
+									</c:if>>${vs.index }
 									</a>
 								</div>
 							</c:forEach>

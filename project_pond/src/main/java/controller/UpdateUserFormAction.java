@@ -11,11 +11,6 @@ import javax.servlet.http.HttpSession;
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
-
-/**
- * Servlet implementation class UpdateUserFormAction
- */
-@WebServlet("/UpdateUserFormAction")
 public class UpdateUserFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,8 +28,7 @@ public class UpdateUserFormAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("update");
 	}
 
 	/**

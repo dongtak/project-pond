@@ -5,30 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <title>회원탈퇴</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
-	<!-- 비밀번호 가져와서 비밀번호 입력값과 비교 -->
-	<c:set var="pwd" value="${sessionScope.pwd }" />
-
-	<div id="wrap">
-		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
-
-
-
-			<c:if test="${empty sessionScope.log}">
-				<c:redirect url="/login"></c:redirect>
-			</c:if>
-
-			<form method="POST" class=user-form action="Leave">
-<h1>회원탈퇴</h1>
+		<div id="main-section">
+			<form method="POST" class=user-form action="LeaveUser">
+				<h2>회원탈퇴</h2>
 				<div class="div-form">
-					
 					<div>
 						<input type="text" class=user-input id="id" name="id"
 							value="${sessionScope.log}" readonly>
@@ -51,12 +37,7 @@
 					class="cancelBtn" id="cancel-btn" value="취소"
 					onclick="history.back()">
 			</form>
-
-		</section>
-		<jsp:include page="/footer"></jsp:include>
-	</div>
-
-
+		</div>
 </body>
 
 <script>
@@ -68,8 +49,6 @@ $('#id').on('change', e => {
 	}
 });
 
-
-
 $('#password').on('change', e => {
 
 	if ($('#password').val() !== "" ) {
@@ -79,7 +58,6 @@ $('#password').on('change', e => {
 		/*$('#password').css('border-top', 'none');*/
 	}
 });
-
 
 function checkValue(htmlForm) {
 	  const id = htmlForm.id.value;
@@ -98,16 +76,11 @@ function checkValue(htmlForm) {
 	  }else if (password != '${pwd}') {
 	    window.alert('비밀번호가 일치하지 않습니다.');
 	    check = false;
-	  }
-	  else
-	  if (window.confirm('정말 탈퇴하시겠습니까?')) {
+	  }else if (window.confirm('정말 탈퇴하시겠습니까?')) {
 	    if (check === true)
 	      htmlForm.submit();
 	  }
-	}
-	
-
-
+}
 
 
 
