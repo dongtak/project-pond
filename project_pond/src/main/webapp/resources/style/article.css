@@ -51,9 +51,6 @@
 	color:white;
 }
 
-.info{
-	position: absolute;
-}
 
 .items{
 	max-width:1000px;
@@ -100,7 +97,7 @@
 .item span{
     opacity: 0.8;
     font-size: 1.5rem;
-    color:navy;
+    color:black;
 }
 
 .item span.moonTitle{

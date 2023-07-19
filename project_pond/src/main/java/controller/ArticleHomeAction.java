@@ -25,7 +25,9 @@ public class ArticleHomeAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
+		
 		ArticleDao articleDao = ArticleDao.getInstance();
+		FullMoonDao fullmoonDao = FullMoonDao.getInstance();
 		
 		// 메뉴
 		String moonMenu = request.getParameter("moonMenu");
@@ -50,21 +52,14 @@ public class ArticleHomeAction extends HttpServlet {
 		// 첫 행 번호
 		int startRow = (currentPage-1)*pageSize+1;
 		
-		// 추가
-		FullMoonDao dao = FullMoonDao.getInstance();
 		ArrayList<FullMoonResponseDto> list = null;
-		list = dao.getMoonAllByKeyword(moonMenu,startRow,pageSize);
+		list = fullmoonDao.getMoonAllByKeyword(moonMenu,startRow,pageSize);
 		
 		request.setAttribute("count", cnt);
 		request.setAttribute("pageNum", pageNum);
-		
-		if(moonMenu.isEmpty()) {
-			moonMenu="new";
-		}
-		
 		request.setAttribute("moonMenu", moonMenu);
 		request.setAttribute("moonList", list);
-
+		
 		request.getRequestDispatcher("articleHome").forward(request, response);
 		
 	}

@@ -14,11 +14,10 @@
 </head>
 <body>
 <c:set var="moonMenu" value="${requestScope.moonMenu }"/>
-<c:set var="count" value="${requestScope.count }"/>
 <c:set var="pageNum" value="${requestScope.pageNum }"/>
-<c:set var="pageSize" value="4"/>
-<c:set var="currentPage" value="${pageNum }"/>
-<c:set var="startRow" value="${(currentPage-1)*pageSize+1}"/>
+<c:set var="count" value="${requestScope.count }"/>
+<c:set var="pageSize" value="8"/>
+<c:set var="startRow" value="${(pageNum-1)*pageSize+1}"/>
 <c:set var="pageBlock" value="5"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
@@ -44,7 +43,6 @@
 					<c:forEach var="moonList" items="${requestScope.moonList }"
 						varStatus="vs">
 						<div class="item">
-							<div class="info">
 								<a href='showArticle?moonNum=${moonList.getMoonNum() }'
 									target='_self'> <img src='https://ifh.cc/g/pOdz9l.jpg'
 									border='0'> <span class="moonNum"> <c:set
@@ -65,51 +63,13 @@
 										</c:forEach> [제 ${num }회]
 								</span> <span class="moonTitle"> ${moonList.getTitle() } </span>
 								</a>
-							</div>
 						</div>
 					</c:forEach>
 				</div>
 				<div class="page">
 					<c:if test="${count!=0 }">
 						<c:if test="${moonMenu eq 'new' || moonMenu eq 'done'  }">
-							<c:set var="tempPageCount"
-								value="${count / pageSize + (count%pageSize==0 ? 0 : 1) }" />
-							<c:set var="exTmp" value="${count/pageSize }" />
-							<fmt:parseNumber value="${tempPageCount}" var="pageCount"
-								type="number" integerOnly="true" />
-							<c:set var="temp1" value="${(currentPage - 1) / pageBlock}" />
-							<fmt:parseNumber value="${temp1 }" var="temp2" type="number"
-								integerOnly="true" />
-							<c:set var="tempStartPage" value="${temp2 * pageBlock + 1 }" />
-							<fmt:parseNumber value="${tempStartPage}" var="startPage"
-								integerOnly="true" />
-							<c:set var="tempEndPage" value="${startPage + pageBlock-1 }" />
-							<fmt:parseNumber value="${tempEndPage }" var="endPage"
-								integerOnly="true" />
-
-							<c:if test="${endPage>pageCount }">
-								<c:set target="${endPage}" value="${pageCount }" />
-							</c:if>
-							<c:if test="${startPage>pageBlock }">
-								<div>
-									<a
-										href="articleHomeAction?moonNum=${moonNum }&pageNum=${startPage-pageBlock }">&lt;</a>
-								</div>
-							</c:if>
-							<c:forEach begin="${startPage }" end="${endPage }" varStatus="vs">
-								<div>
-									<a href="articleHomeAction?moonNum=${moonNum }&pageNum=${vs.index }"
-										<c:if test="${vs.index==pageNum }">
-										class="currPage"
-									</c:if>>${vs.index }
-									</a>
-								</div>
-							</c:forEach>
-							<c:if test="${endPage < pageCount }">
-								<div>
-									<a href="articleHomeAction?pageNum=${startPage+pageBlock }">&gt;</a>
-								</div>
-							</c:if>
+							
 						</c:if>
 					</c:if>
 				</div>
