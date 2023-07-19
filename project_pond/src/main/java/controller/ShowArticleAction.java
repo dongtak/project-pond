@@ -70,12 +70,10 @@ public class ShowArticleAction extends HttpServlet {
 			request.setAttribute("commentList", commentList);
 			request.setAttribute("fullmoon",fullmoon );
 			request.setAttribute("payList", payList);
-//			if(payList.isEmpty()) {
-//				System.out.println("리스트 비어있음");
-//			}else {
-//				System.out.println("리스트가 비어있지 않음");
+//			if(payList!=null) {
 //				System.out.println(payList);
 //			}
+			
 			request.getRequestDispatcher("article").forward(request, response);
 	
 		}
