@@ -44,7 +44,6 @@
 					<c:forEach var="moonList" items="${requestScope.moonList }"
 						varStatus="vs">
 						<div class="item">
-							<div class="info">
 								<a href='showArticle?moonNum=${moonList.getMoonNum() }'
 									target='_self'> <img src='https://ifh.cc/g/pOdz9l.jpg'
 									border='0'> <span class="moonNum"> <c:set
@@ -65,7 +64,6 @@
 										</c:forEach> [제 ${num }회]
 								</span> <span class="moonTitle"> ${moonList.getTitle() } </span>
 								</a>
-							</div>
 						</div>
 					</c:forEach>
 				</div>

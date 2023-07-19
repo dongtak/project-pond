@@ -16,7 +16,7 @@
 
 .section{
 	width: 100%;
-	padding: 10% 0;
+	padding: 30px 0 10% 0;
 }
 
 .header{
@@ -30,8 +30,8 @@
 .main_moon {
 	position:relative;
 	text-align: center;
-	width: 520px;
-	height: 520px;
+	width:40vw;
+	height:40vw;
 	border-radius: 50%;
 	margin: 0 auto;
 	justify-content: center;
@@ -47,9 +47,7 @@
 
 .main_moon:hover {
 	box-shadow : -10px 0px 30px 15px #feffe3;
-	cursor: pointer;
-	
-	
+	/*cursor: pointer;*/
 }
 
 
@@ -77,18 +75,18 @@ button {
 	transform:translate(-50%,-50%);
 	color:black;
 	font-size: 20px;	
-	min-width: 300px;
-
+	width:300px;
 }
 
 .moon-content h2{
 	font-size: 24px;
-	
 	text-shadow : -20px 0px 30px 15px #feffe3;
 }
+
 .moon-content span{
 	font-size:18px
-	}
+}
+
 .moon-content a {
 	border:1px solid black;
 	margin-top:20px;
