@@ -25,6 +25,7 @@
 	margin: 30px auto;
 	text-align: center;
 	background-color: #FDDCAA;
+	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
 .user-form > h1 {

@@ -103,7 +103,7 @@
 					</div>
 
 				</div>
-				<input type="button" onclick="showCardInput()" value="다음">
+				<input class="nextbtn" type="button" onclick="showCardInput()" value="다음">
 	</div>
 
 

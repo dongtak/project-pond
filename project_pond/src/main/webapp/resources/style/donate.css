@@ -12,8 +12,11 @@
 	display: flex;
 	justify-content: center;
 }
+.donor{
+	padding-top:60px;
+}
 
-.btn-box button{
+.nextbtn,.btn-box button{
 	width: 50%;
 	margin: 20px 20px;
 	text-align: center;
@@ -30,6 +33,7 @@
 	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 
 }
+
 #lid {
 	margin: 0 auto;
 	width: 40px;
@@ -37,6 +41,7 @@
 	 border-radius: 10px;
     text-align: center;
     background-color: #FDDCAA;
+    height: 700px;
 }
 
 
@@ -58,9 +63,9 @@
 	margin: 5px auto;
 }
 
+
 #lid button{
 	margin:5px auto;
-	width:100px;
 	height: 30px;
 	line-height: 30px;
 }
@@ -68,6 +73,7 @@
 .money-btn{
 	display: flex;
     flex-direction: column;
+    margin:20px;
 }
 
 .money-btn button{
