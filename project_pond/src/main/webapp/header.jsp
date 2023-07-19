@@ -11,7 +11,7 @@
 <c:set var="log" value="${sessionScope.log }"/>
 <c:set var="isAdmin" value="${sessionScope.isAdmin }"/>
 	<div class="header">
-		<a href="mainAction"><span class="logo">보름달</span></a>
+		<a href="mainAction" class="logo">보름달</a>
 		<div class="nav-bar">
 			<ul>
 				<li><a href="about">ABOUT</a></li>
@@ -30,8 +30,10 @@
 						<span><a href="adminMainAction">관리자페이지</a></span>
 					</c:when>
 					<c:otherwise>
-						<span><a href="myPage">마이페이지</a></span>
-						<span><a href="logout">로그아웃</a></span>
+						<span id="userlogin">
+							<a href="myPage">마이페이지</a>
+							<a href="logout">로그아웃</a>
+						</span>
 					</c:otherwise>
 				</c:choose>
 			</c:otherwise>
