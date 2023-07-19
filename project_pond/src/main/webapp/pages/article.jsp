@@ -34,13 +34,13 @@
 							회차 : <span id="moonNum">${moonNum }</span><br>
 
 							<c:set var="title" value="${article.getArticle_title() }" />
-							제목 : ${title }
+						<span class="title">제목 : ${title }</span>
 
 							<c:set var="createdAt" value="${article.getArticle_createdAt() }" />
 							<br>
 							<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
 								var="created" />
-							시작 날짜 : ${created}~ 종료 날짜
+							기간  |  ${created} ~ 종료 날짜
 
 						</div>
 
@@ -59,21 +59,21 @@
 
 							</div>
 
-<div class="articleGoal">
+							<div class="articleGoal">
 
 
-<ul>
-							<li><c:set var="fullmoon" value="${fullmoon }" /> 목표 모금액 :
-								${fullmoon.getGoal()} 원</li>
+								<ul>
+									<li><c:set var="fullmoon" value="${fullmoon }" /> 목표 모금액
+										: ${fullmoon.getGoal()} 원</li>
 
-							<li><c:set var="fullmoon" value="${fullmoon }" /> 종료모금액:
-								${fullmoon.getDonate()} 원</li>
-							<li><fmt:parseNumber var="percent"
-									value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
-									integerOnly="true" /> 달성률 : ${percent} %</li>
+									<li><c:set var="fullmoon" value="${fullmoon }" /> 종료모금액:
+										${fullmoon.getDonate()} 원</li>
+									<li><fmt:parseNumber var="percent"
+											value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
+											integerOnly="true" /> 달성률 : ${percent} %</li>
 
-						</ul>
-</div>						
+								</ul>
+							</div>
 						</div>
 
 
@@ -86,7 +86,8 @@
 					<div class="article-category">
 
 						<div class="msgBox">
-							유저이름 : <br> 메세지:<br>
+						유저이름 : <span id="name">${payMsg.getName() }</span><br>
+								메세지: <span id="message">${payMsg.getMessage() }</span><br>
 						</div>
 
 
@@ -102,15 +103,16 @@
 						<div>댓글 ></div>
 						<form method="POST" class="comment">
 							<textarea cols="80" rows="10" id="msg-box" name="msg"
-								onclick="this.select()" onfocus="this.select()">
-							<c:choose>
+								onclick="this.select()" onfocus="this.select()"
+								<c:choose>
 								<c:when test="${empty log}">
-									댓글을 작성하시려면 로그인 해주세요. 
+									placeholder="댓글을 작성하시려면 로그인 해주세요." readonly
 								</c:when>
 								<c:otherwise>
-									주제와 무관한 댓글, 악플은 삭제될 수 있습니다.
+									placeholder="주제와 무관한 댓글, 악플은 삭제될 수 있습니다."
 								</c:otherwise>
-							</c:choose>
+							</c:choose>>
+							
 							</textarea>
 							<input type="button" id="commentBtn" value="등록"
 								onclick="addComment()">
@@ -122,6 +124,7 @@
 							<c:forEach var="li" items="${commentList }">
 								<div class="comments-item">
 									<p>${li.getUserName()}</p>
+									<br>
 									<p>${li.getCommentContent()}</p>
 									<p>${li.getCommentCreatedAt()}</p>
 								</div>
@@ -137,30 +140,25 @@
 
 	<script src="../resources/script/comments-api.js"></script>
 	<script>
-	
-	
-	function navigo() {
-		const header = $('.header'); // 헤더 부분 획득
-		const headerHeight = header.height(); // 헤더 높이
+		function navigo() {
+			const header = $('.header'); // 헤더 부분 획득
+			const headerHeight = header.height(); // 헤더 높이
 
-		$(document).scroll(onScroll); // 스크롤 이벤트
+			$(document).scroll(onScroll); // 스크롤 이벤트
 
-		function onScroll() {
-			const scrollPosition = $(window).scrollTop(); // 스크롤 위치
-			const nav = $('.msgBox'); // 메뉴
+			function onScroll() {
+				const scrollPosition = $(window).scrollTop(); // 스크롤 위치
+				const nav = $('.msgBox'); // 메뉴
 
-			if (headerHeight <= scrollPosition) {
-				nav.addClass('fix'); // fix 클래스를 네비에 추가
-			} else {
-				nav.removeClass('fix'); // fix 클래스를 네비에서 제거
+				if (headerHeight <= scrollPosition ) {
+					nav.addClass('fix'); // fix 클래스를 네비에 추가
+				} else {
+					nav.removeClass('fix'); // fix 클래스를 네비에서 제거
+				}
 			}
 		}
-	}
 
-	navigo();
-
-
-	
+		navigo();
 	</script>
 </body>
 </html>

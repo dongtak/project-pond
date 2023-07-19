@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -53,6 +54,7 @@ public class ShowArticleAction extends HttpServlet {
 		
 		// articleComment list 받아옴
 		List<ArticleCommentRequestDto> commentList = articleCommentDao.getCommentByNum(moonNum);
+		Collections.reverse(commentList);
 		
 		// fullmoon
 		FullMoonRequestDto fullmoon = fullMoonDao.getFullMoonByMoonNum(moonNum);
