@@ -17,7 +17,7 @@ function addComment() {
 		} else {
 			alert('Beep-');
 		}
-	})
+	});
 	
 }
 
@@ -41,7 +41,6 @@ function drawComments() {
 				</div>
 			`);
 		})
-	})
-	
+	});
 	
 }

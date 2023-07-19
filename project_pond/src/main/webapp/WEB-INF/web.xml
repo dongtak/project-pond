@@ -27,7 +27,7 @@
 
 	<servlet-mapping>
 		<servlet-name>UpdateUserFormAction</servlet-name>
-		<url-pattern>/Update</url-pattern>
+		<url-pattern>/UpdateUser</url-pattern>
 	</servlet-mapping>
 
 
@@ -49,7 +49,7 @@
 
 	<servlet-mapping>
 		<servlet-name>DeleteUserFormAction</servlet-name>
-		<url-pattern>/Leave</url-pattern>
+		<url-pattern>/LeaveUser</url-pattern>
 	</servlet-mapping>
 
 
@@ -184,10 +184,18 @@
 		<url-pattern>/comments</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>MyPageMenuAction</servlet-name>
+		<servlet-class>controller.MyPageMenuAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MyPageMenuAction</servlet-name>
+		<url-pattern>/myPageMenu</url-pattern>
+	</servlet-mapping>
 
 
 	<!-- JSP 페이지 맵핑 -->
-
 
 	<servlet>
 		<servlet-name>updateUserForm</servlet-name>

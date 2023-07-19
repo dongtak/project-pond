@@ -1,7 +1,7 @@
 
 let isIdChecked = false; // 중복 체크 완료 상태를 저장하는 변수
 
-$('#id').on('change', e => {
+$('#id').on('change', function() {
 	// id의 값의 변화가 생겼으므로
 	isIdChecked = false; // 다시 중복 체크를 완료해야 함
 	$('#idChecked').hide();
@@ -15,7 +15,7 @@ $('#id').on('change', e => {
 });
 
 
-$('#password').on('change', e => {
+$('#password').on('change', function() {
 	//최소한 하나의 특수문자를 포함하고, 8자 이상 20자 이하
 	if ($('#password').val() !== "" && $('#password').val().match(/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/)) {
 		$('#error-password').hide();
@@ -24,7 +24,7 @@ $('#password').on('change', e => {
 	}
 });
 
-$('#new-password').on('change', e => {
+$('#new-password').on('change', function() {
 	if($('#new-password').val() !== "") {
 		$('#error-password').hide();
 		$('#new-password').css('border-color', 'lightgrey');
@@ -32,7 +32,7 @@ $('#new-password').on('change', e => {
 	}
 });
 
-$('#new-password').on('change', e => {
+$('#new-password').on('change', function() {
 	if($('#new-password').val() !== "") {
 		$('#error-password-con').hide();
 		$('#new-password').css('border-color', 'lightgrey');
@@ -41,21 +41,21 @@ $('#new-password').on('change', e => {
 });
 
 
-$('#email').on('change', e => {
+$('#email').on('change', function() {
 	if($('#email').val() !== "") {
 		$('#error-email').hide();
 		$('#email').css('border-color', 'lightgrey');
 		/* $('#email').parent().css('border-top', 'none'); */
 	}
 });
-$('#name').on('change', e => {
+$('#name').on('change', function() {
 	if($('#name').val() !== "") {
 		$('#error-name').hide();
 		$('#name').css('border-color', 'lightgrey');
 	}
 });
 
-$('#birth').on('change', e => {
+$('#birth').on('change', function() {
 	if($('#birth').val().length === 8 && $('#birth').val().match(/\d{8}/) !== null) {
 		$('#error-birth').hide();
 		$('#birth').css('border-color', 'lightgrey');
@@ -63,7 +63,7 @@ $('#birth').on('change', e => {
 	}
 });
 
-$('#phone').on('change', e => {
+$('#phone').on('change', function() {
 	if($('#phone').val().length === 13 && $('#phone').val().match(/\d{3}-\d{4}-\d{4}/) !== null) {
 		$('#error-phone').hide();
 		$('#phone').css('border-color', 'lightgrey');
@@ -191,7 +191,6 @@ function checkPwd(htmlForm) {
   }
 
   if (check) {
-  
     htmlForm.submit();
   }
 }

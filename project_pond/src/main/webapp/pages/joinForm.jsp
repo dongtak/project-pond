@@ -11,10 +11,9 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
-
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
+		<div id="section">
 		<div class="container">
 			<form method="POST" class=user-form action="Join">
 			<h1>회원가입</h1>
@@ -83,7 +82,7 @@
 						onclick="history.back()">
 				</form>
 			</div>
-		</section>
+		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 
