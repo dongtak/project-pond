@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
+
+import model.admin.AdminDao;
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
@@ -18,50 +21,33 @@ import model.user.UserRequestDto;
 /**
  * Servlet implementation class DuplIdCheckAction
  */
-@WebServlet("/DuplIdCheckAction")
 public class DuplIdCheckAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DuplIdCheckAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("application/json; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
 		
-		 request.setCharacterEncoding("utf8");
-	        response.setCharacterEncoding("utf8");
-		  PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		
-		UserRequestDto user = new UserRequestDto(id);
+		boolean isDuple = false;
+		
 		UserDao userDao = UserDao.getInstance();
-		User result = userDao.getUserById(id);
+		AdminDao adminDao = AdminDao.getInstance();
 		
-		
-		
-		boolean dupl = true;
-		if(result!=null) {
-			dupl=false;
+		if(userDao.getUserById(id)!=null || adminDao.getAdminById(id)!=null) {
+			isDuple=true;
 		}
 		
-		request.setAttribute("dupl", dupl);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/joinForm.jsp");
-		dispatcher.forward(request, response);
+		JSONObject responseBody = new JSONObject();
+		responseBody.put("isDuple", isDuple);
+		
+		response.getWriter().append(responseBody.toString());
+		
 	}
 
 }
