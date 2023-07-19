@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 <title>후원</title>
 <link rel="stylesheet" href="resources/style/form.css">
+<script src="resources/script/validationPay.js"/>
 </head>
 
 <body>
@@ -66,8 +67,9 @@
 						남기기
 					</label> 
 					<label><input type="radio" name="leavename" value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기
-					</label> <br /> <span id="nameError" class="error-message"> 후원옵션을
-						선택해주세요 </span> 
+					</label> <br /> 
+					 <span id="nameError"
+						class="error-message"> 이름을  입력해주세요 </span> <br> 
 						<input type=text id="donorNameInput" name=donorNameInput placeholder="후원자 이름"
 						value="">
 				</div>
@@ -83,9 +85,12 @@
 
 					<input type="text" class="moneyInput" name="moneyInput"
 						id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
-						readonly value="" oninput = "checkNumber(value)"> <input type="text"
+						readonly value="" oninput = "checkNumber(value)"> 
+						<input type="text"
 						class="messageInput" name="messageInput" id="messageInput"
-						placeholder="마음을 전해보세요"> <span id="moneyError"
+						placeholder="마음을 전해보세요"> 
+						
+						<span id="moneyError"
 						class="error-message"> 후원금을 입력해주세요 </span> <br> 
 				</div>
 						<input type="button" onclick="showCardInput()" value="다음">
@@ -113,139 +118,5 @@
 
 
 </body>
-<script type="text/javascript">
-	function showLogin() {//로그인창 보이기
-		document.getElementById("lod").style.display = "block";
-		document.getElementById("lid").style.display = "none";
-		document.getElementById("cs").style.display = "none";
-		
-	}
-
-	function showPayment() {//후원창 보이기
-		document.getElementById("lod").style.display = "none";
-		document.getElementById("lid").style.display = "block";
-	}
-	
-	//
-	
-	function toggleDonorName(){//이름 남기기 버튼
-		document.getElementById("donorNameInput").readOnly=false;
-		document.getElementById("donorNameInput").focus();
-		
-	}
-	
-	
-	function toggleAnonymous() {//익명 버튼
-		  var donorNameInput = document.getElementById("donorNameInput");
-		  donorNameInput.readOnly = true;
-		  donorNameInput.value = "익명";
-		}
-
-		function toggleDonorName() {
-		  var donorNameInput = document.getElementById("donorNameInput");
-		  donorNameInput.readOnly = false;
-		  donorNameInput.focus();
-		  donorNameInput.value = "";
-		}
-
-	function setAmount(amount) {
-		var moneyInput = document.getElementById("moneyInput");
-		moneyInput.readOnly = true;
-		moneyInput.value = amount;
-	}
-
-	function enableCustomAmount() {
-		var moneyInput = document.getElementById("moneyInput");
-		moneyInput.value = "";
-		moneyInput.readOnly = false;
-	}
-	var button = document.getElementById("cs");
-	var isNext = true;
-
-	 
-	function nameAndNumber(form) {
-		var leavenameRadios = document.getElementsByName("leavename");
-		var donorNameInput = document.getElementsByName("donorNameInput")[0];
-		var nameError = document.getElementById("nameError");
-		var moneyInput = document.getElementById("moneyInput");
-		var moneyError = document.getElementById("moneyError");
-
-		var selectedLeaveName = false;
-		for (var i = 0; i < leavenameRadios.length; i++) {
-			if (leavenameRadios[i].checked) {
-				selectedLeaveName = true;
-				break;
-			}
-		}
-
-		if (!selectedLeaveName) {
-			nameError.style.display = "block";
-			return;
-		} else {
-			nameError.style.display = "none";
-		}
-
-		if (leavenameRadios[0].checked && donorNameInput.value.trim() === "") {
-			nameError.style.display = "block";
-			return;
-		}
-
-		if (moneyInput.value === "") {
-			moneyError.style.display = "block";
-			return;
-		} else {
-			moneyError.style.display = "none";
-		}
-
-		
-		console.log()
-		form.submit();
-	}
-
-	function checkNumber(input) {
-		  input.value = input.value.replace(/\D/g, "");
-		}
-	
-	function checkValue(form) {
-		var idInput = document.getElementById("id");
-		var pwdInput = document.getElementById("pwd");
-		var errorId = document.getElementById("error-id");
-		var errorPwd = document.getElementById("error-password");
-
-		if (idInput.value.trim() === "") {
-			errorId.style.display = "block";
-			return;
-		} else {
-			errorId.style.display = "none";
-		}
-
-		if (pwdInput.value.trim() === "") {
-			errorPwd.style.display = "block";
-			return;
-		} else {
-			errorPwd.style.display = "none";
-		}
-
-		form.submit();
-	}
-	
-	function showCardInput() {
-        var lid = document.getElementById("lid");
-        var cs = document.getElementById("cs");
-
-        if (isNext) {
-    	    
-    	    lid.style.display = "none";
-	       	cs.style.display = "block";
-	       	isNext = false;
-    	  } else {
-    	   
-    	    lid.style.display = "block";
-	       	cs.style.display = "none";
-	       	isNext = true;
-	       	
-    	  }
-    }
-</script>
 
 </html>

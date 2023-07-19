@@ -206,6 +206,11 @@ input[type=radio]{
 	width: auto;
 }
 
+.lid form{
+	max-width:1000px;
+	margin:0 auto;
+}
+
 .error,.error-message {
 	display: none;
 	color: red;
