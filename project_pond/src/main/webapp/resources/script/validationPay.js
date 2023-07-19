@@ -25,8 +25,7 @@ function validateDonorName() {
 }
 
 // 초기화
-validateDonorName();
-validateAmount();
+
 
 
 
@@ -159,8 +158,11 @@ function showLogin() {//로그인창 보이기
 		var moneyInput = document.getElementById("moneyInput");
 		var moneyError = document.getElementById("moneyError");
 
+    	
+    
     
 		if(donorNameInput.value ===""){
+			console.log("비어있")
 			nameError.style.display="block";
 			return;
 		}else{
