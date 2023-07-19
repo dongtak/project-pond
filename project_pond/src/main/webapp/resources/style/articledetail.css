@@ -2,56 +2,118 @@
 
 
 /*article.jsp*/
-.article{
-	text-align: center;
+
+
+.articleTitle{
 	margin:30px auto;
 }
 
-
-.article-img>img{
-	margin:0 auto;
-
-}
-
-.article-category{
-	background-color: aliceblue;
+.articleTitle .title{
+	font-size: 30px;
+	font-weight: bold;
+	margin:5px auto;
 }
 
 
-.article-cotainer-top{
-	width: 70%;
-	margin:0 auto;
-	background-color: beige;
-	display: flex;
+
+.msgBox{
+	flex-grow: 2;
+	height: 100px;
+	background-color: aquamarine;
 	
 }
 
-.article-content{
-	flex-grow: 4;
+
+
+.article-container{
+	
+	margin:0 auto;
 }
+
+
+.fix{
+	position:fixed;
+	top:0;
+	opacity: 0.8;
+	
+}
+
+
+
+.article-cotainer-top{
+	text-align: center;
+	width: 70%;
+	margin:30px auto;
+	background-color: beige;
+	display: flex;
+	height: 900px;
+	
+}
+
+
+
+.article-content{
+	flex-grow: 5;
+border: 1px solid gray;
+}
+
+
 
 
 .article-category{
-	flex-grow: 1;
+	flex-grow: 2;
+	background-color: aliceblue;
+	
 }
+
+
+.articleMain{
+	
+	background-color: azure;
+	width: 100%;
+	height: 300px;
+	border-top: 1px solid gray;
+	
+}
+
+.articleContent{
+	
+	height: 70%;
+	
+}
+
+
+.articleImg>img{
+	margin:0 auto;
+
+}
+
+.articleGoal{
+	
+	margin:20px auto;
+	
+	
+}
+
 
 
 .article-cotainer-bottom{
 	
 	width: 70%;
-	margin:0 auto;
+	margin:20px auto;
 	background-color: rgb(253, 238, 225);
-	
+	/*height: 500px;*/
 
 	
 }
 
-
+/*
 .comment {
 
 	margin: 0 auto;
 
 }
+*/
 
 .comment textarea {
   width: 100%;
@@ -64,9 +126,15 @@
 	width: 40px;
 	height: 30px;
 
-
-
 }
+
+
+.comments-item{
+	padding: 30px 10px;
+	border-bottom: 1px gray solid;
+	
+}
+
 
 
 

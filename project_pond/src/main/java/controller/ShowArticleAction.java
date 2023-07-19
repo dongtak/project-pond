@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -48,6 +51,7 @@ public class ShowArticleAction extends HttpServlet {
 		
 		// articleComment list 받아옴
 		List<ArticleCommentRequestDto> commentList = articleCommentDao.getCommentByNum(moonNum);
+		Collections.reverse(commentList);
 		
 		// fullmoon
 		FullMoonRequestDto fullmoon = fullMoonDao.getFullMoonByMoonNum(moonNum);
@@ -63,7 +67,12 @@ public class ShowArticleAction extends HttpServlet {
 			request.setAttribute("commentList", commentList);
 			request.setAttribute("fullmoon",fullmoon );
 			request.setAttribute("payList", payList);
-			
+//			if(payList.isEmpty()) {
+//				System.out.println("리스트 비어있음");
+//			}else {
+//				System.out.println("리스트가 비어있지 않음");
+//				System.out.println(payList);
+//			}
 			request.getRequestDispatcher("article").forward(request, response);
 	
 		}
