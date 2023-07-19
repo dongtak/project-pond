@@ -82,15 +82,16 @@
 
 					<input type="text" class="moneyInput" name="moneyInput"
 						id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
-						tabindex="0" disabled value="" oninput = "checkNumber(value)"> <input type="text"
+						disabled value="" oninput = "checkNumber(value)"> <input type="text"
 						class="messageInput" name="messageInput" id="messageInput"
 						placeholder="마음을 전해보세요"> <span id="moneyError"
 						class="error-message"> 후원금을 입력해주세요 </span> <br> 
 				</div>
 				<input
 						type="submit" value="후원하기test">
+						<input type="button" onclick="showCardInput()" value="다음">
 				</div>
-				<input type="button" onclick="showCardInput()" value="다음">
+				
 				
 				<div class="cardform" id="cs" style="display:none;">
 				<jsp:include page="/cardInput">
@@ -117,6 +118,8 @@
 	function showLogin() {//로그인창 보이기
 		document.getElementById("lod").style.display = "block";
 		document.getElementById("lid").style.display = "none";
+		document.getElementById("cs").style.display = "none";
+		
 	}
 
 	function showPayment() {//후원창 보이기
@@ -149,8 +152,8 @@
 
 	function setAmount(amount) {
 		var moneyInput = document.getElementById("moneyInput");
-		moneyInput.value = amount;
 		moneyInput.disabled = true;
+		moneyInput.value = amount;
 	}
 
 	function enableCustomAmount() {
@@ -167,13 +170,15 @@
 	        var cs = document.getElementById("cs");
 
 	        if (isNext) {
-	    	    button.value = "이전";
+	    	    
 	    	    lid.style.display = "none";
 		       	cs.style.display = "block";
+		       	isNext = false;
 	    	  } else {
-	    	    button.value = "다음";
+	    	   
 	    	    lid.style.display = "block";
 		       	cs.style.display = "none";
+		       	isNext = true;
 		       	
 	    	  }
 	    }

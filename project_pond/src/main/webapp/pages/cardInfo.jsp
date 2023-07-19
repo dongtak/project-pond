@@ -195,6 +195,7 @@ body {
 					유효기간을 입력해주세요</span>
 			</div>
 		</div>
+		<input type="button" onclick="showCardInput()" value="이전">
 		
 </body>
 <script>
