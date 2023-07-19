@@ -171,6 +171,7 @@ public class PayDao {
 					PayRequestDto pay = new PayRequestDto(payNum, cardNum, userId, moonNum, name, message, payMoney, payDay);
 					
 					payList.add(pay);
+					
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

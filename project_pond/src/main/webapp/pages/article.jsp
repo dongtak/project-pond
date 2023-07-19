@@ -18,7 +18,7 @@
 	<c:set var="article" value="${requestScope.article }" />
 	<c:set var="fullmoon" value="${requestScope.fullmoon }" />
 	<c:set var="commentList" value="${requestScope.commentList }" />
-	<c:set var="payList" value="${requestScope.payList} " />
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div id="section">
@@ -29,18 +29,17 @@
 
 
 						<div class="articleTitle">
-
-							<c:set var="moonNum" value="${article.getMoon_num() }" />
-							회차 : <span id="moonNum">${moonNum }</span><br>
-
-							<c:set var="title" value="${article.getArticle_title() }" />
-						<span class="title">제목 : ${title }</span>
-
-							<c:set var="createdAt" value="${article.getArticle_createdAt() }" />
-							<br>
-							<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
-								var="created" />
-							기간  |  ${created} ~ 종료 날짜
+							<ul>
+								<li><c:set var="moonNum" value="${article.getMoon_num() }" />
+									회차 : <span id="moonNum">${moonNum }</span></li>
+								<li><c:set var="title"
+										value="${article.getArticle_title() }" /> <span class="title">
+										${title }</span></li>
+								<li><c:set var="createdAt"
+										value="${article.getArticle_createdAt() }" /> <fmt:formatDate
+										value="${createdAt }" pattern="yyyy-MM-dd" var="created" />
+									기간 &nbsp; | &nbsp; ${created} ~ 종료 날짜</li>
+							</ul>
 
 						</div>
 
@@ -66,11 +65,13 @@
 									<li><c:set var="fullmoon" value="${fullmoon }" /> 목표 모금액
 										: ${fullmoon.getGoal()} 원</li>
 
-									<li><c:set var="fullmoon" value="${fullmoon }" /> 종료모금액:
+									<li><c:set var="fullmoon" value="${fullmoon }" /> 종료 모금액:
 										${fullmoon.getDonate()} 원</li>
 									<li><fmt:parseNumber var="percent"
 											value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
-											integerOnly="true" /> 달성률 : ${percent} %</li>
+											integerOnly="true" /> 달성률 : ${percent} % <br></li>
+
+									<li>후원해주신 모든 분들께 감사드립니다.</li>
 
 								</ul>
 							</div>
@@ -83,11 +84,20 @@
 
 					</div>
 					<!-- 오른쪽 카테고리-->
+
+
+					<c:set var="payList" value="${requestScope.payList}" />
+
 					<div class="article-category">
 
 						<div class="msgBox">
-						유저이름 : <span id="name">${payMsg.getName() }</span><br>
-								메세지: <span id="message">${payMsg.getMessage() }</span><br>
+							<c:if test="${not empty payList }">
+								<c:forEach var="pays" items="${payList }">
+									<p>${pays.getName() }</p>
+									<p>${pays.getMessage() }</p>
+								</c:forEach>
+							</c:if>
+
 						</div>
 
 
@@ -99,8 +109,8 @@
 				<!-- 댓글 부분 -->
 				<div class="article-cotainer-bottom">
 
-					<div class="comment">
-						<div>댓글 ></div>
+					<div class="comments-write">
+						<span>댓글 > </span>
 						<form method="POST" class="comment">
 							<textarea cols="80" rows="10" id="msg-box" name="msg"
 								onclick="this.select()" onfocus="this.select()"
@@ -114,8 +124,11 @@
 							</c:choose>>
 							
 							</textarea>
-							<input type="button" id="commentBtn" value="등록"
-								onclick="addComment()">
+							<div class="commentBtn">
+								<input type="button" id="commentBtn" value="등록하기"
+									onclick="addComment()">
+							</div>
+
 						</form>
 					</div>
 					<!-- 댓글 출력할 공간 -->
@@ -144,13 +157,18 @@
 			const header = $('.header'); // 헤더 부분 획득
 			const headerHeight = header.height(); // 헤더 높이
 
+			const articleCategory = $('.article-category');
+
+			const categoryHeight = articleCategory.height();
+
 			$(document).scroll(onScroll); // 스크롤 이벤트
 
 			function onScroll() {
 				const scrollPosition = $(window).scrollTop(); // 스크롤 위치
 				const nav = $('.msgBox'); // 메뉴
 
-				if (headerHeight <= scrollPosition ) {
+				if (headerHeight <= scrollPosition
+						&& scrollPosition <= categoryHeight) {
 					nav.addClass('fix'); // fix 클래스를 네비에 추가
 				} else {
 					nav.removeClass('fix'); // fix 클래스를 네비에서 제거
