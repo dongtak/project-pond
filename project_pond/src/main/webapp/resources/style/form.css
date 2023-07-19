@@ -229,3 +229,10 @@ input[type=radio]{
 	color: rgb(0, 255, 0);
 	font-size: 0.7em;
 }
+
+#idChecked{
+	display: none;
+	font-size: 0.8em;
+	width: 70%;
+	margin: 0 auto;
+}

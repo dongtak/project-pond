@@ -1,20 +1,23 @@
-/**
- * 
- */
 
- $('#id').on('change', e => {
+let isIdChecked = false; // 중복 체크 완료 상태를 저장하는 변수
+
+$('#id').on('change', e => {
+	// id의 값의 변화가 생겼으므로
+	isIdChecked = false; // 다시 중복 체크를 완료해야 함
+	$('#idChecked').hide();
+	
 	if($('#id').val() !== "") {
 		$('#error-id').hide();
+		$('#error-idChk').hide();
+		$('#error-idCheked').hide();
 		$('#id').css('border-color', 'lightgrey');
 	}
 });
 
 
-
 $('#password').on('change', e => {
 	//최소한 하나의 특수문자를 포함하고, 8자 이상 20자 이하
 	if ($('#password').val() !== "" && $('#password').val().match(/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/)) {
-
 		$('#error-password').hide();
 		$('#password').css('border-color', 'lightgrey');
 		/*$('#password').css('border-top', 'none');*/
@@ -36,7 +39,6 @@ $('#new-password').on('change', e => {
 		/* $('#new-password').parent().css('border-top', 'none'); */
 	}
 });
-
 
 
 $('#email').on('change', e => {
@@ -69,12 +71,6 @@ $('#phone').on('change', e => {
 	}
 });
 
-
-
-
-
-
-
 function checkValue(htmlForm) {
 	const id = htmlForm.id.value;
 	const password = htmlForm.password.value;
@@ -87,10 +83,15 @@ function checkValue(htmlForm) {
 	
 	if(id === "") {
 		$('#error-id').show();
+		$('#idChecked').hide();
+		isIdChecked=false;
 		$('#id').css('border-color', 'red');
-		check = false;		
-	} 
-	else if(password === "") {
+		check = false;	
+	}else if(!isIdChecked){ // 중복체크가 완료되지 않은 경우
+		$('#idChecked').hide();
+		$('#error-idChk').show();
+		check = false;
+	}else if(password === "") {
 		$('#error-password').show();
 		$('#password').css('border-color', 'red');
 		/*$('#password').css('border-bottom', 'solid 1px red');*/
@@ -126,15 +127,40 @@ function checkValue(htmlForm) {
 	
 }
 
+// 아이디 중복체크 버튼
+function dupleChkId(){
+	const id = $('#id').val();
+	console.log(id);
+	
+	if (id !== "") {
+		$.ajax({
+			"method": "POST",
+			"url": `/duplIdCheck?id=${id}`
+		}).done(response => {
+			console.log(response);
 
+			if (response.isDuple === false) { // isDuple=false -> 중복이 아님
+				isIdChecked = true; // 아이디 체크가 완료된 것이므로 true로 변경
+				$('#idChecked').show();
+				$('#error-idCheked').hide();
+				$('#error-idChk').hide();
+			}else{ // 중복됨
+				isIdChecked = false;
+				$('#idChecked').hide();
+				$('#error-idCheked').show();
+			}
+		}).fail(() => {
+			alert("중복 체크 실패");
+		});
 
+	} else {
+		$('#error-id').show();
+		$('#error-idCheked').hide();
+		$('#idChecked').hide();
+		$('#id').css('border-color', 'red');
+	}
 
-
-
-
-
-
-
+}
 
 
 function checkPwd(htmlForm) {

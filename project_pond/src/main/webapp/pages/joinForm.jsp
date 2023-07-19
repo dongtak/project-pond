@@ -22,14 +22,17 @@
 					<div class="input-id">
 						<input type="text" id="id" class="user-input input-id-txt" name="id"
 							placeholder="아이디" autofocus>
-						<!-- 아이디 중복체크 추가-->
-						<button id="idCheckBtn" onclick="idCheck()">중복확인</button>
+						<!-- 아이디 중복체크 추가 -->
+						<input type="button" id="idCheckBtn" onclick="dupleChkId()" value="중복확인">
 					</div>
 					<ul>
 						<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
+						<li class="error" id="error-idChk">아이디 중복체크를 해 주세요.</li>
+						<li class="error" id="error-idCheked">사용 불가능한 아이디입니다.</li>
+						<li id="idChecked">사용 가능한 아이디입니다.</li>
 					</ul>
 					<div>
-						<input type="text" id="password" class=user-input name="password"
+						<input type="password" id="password" class=user-input name="password"
 							placeholder="비밀번호">
 					</div>
 					<ul>
@@ -44,8 +47,6 @@
 						<li class="error" id="error-email">이메일: 필수 정보입니다.</li>
 					</ul>
 				
-			
-
 					<div>
 						<input type="text" class=user-input id="name" name="name"
 							placeholder="이름">
@@ -75,12 +76,12 @@
 
 					</div>
 				</div>
-		
-				<input type="button" class="join-btn" id="submit-btn" value="회원가입"
-					onclick="checkValue(form)"> <input type="button"
-					class="cancelBtn" id="cancel-btn" value="취소"
-					onclick="history.back()">
-			</form>
+
+					<input type="button" class="join-btn" id="submit-btn" value="회원가입"
+						onclick="checkValue(form)"> <input type="button"
+						class="cancelBtn" id="cancel-btn" value="취소"
+						onclick="history.back()">
+				</form>
 			</div>
 		</section>
 		<jsp:include page="/footer"></jsp:include>
@@ -88,16 +89,5 @@
 
 </body>
 <script src="resources/script/validation.js"></script>
-<!-- 아이디중복체크 추가 -->
-<script>
-function idCheck(){
-	var userid=document.all.userid.value;
-	if(userid){
-	url="idcheck.php?userid="+userid;
-	window.open(url,"chkid","width=500,height=500,menubar=no,toolbar=no");
-	}else{
-	alert("ID를 입력하세요!");
-	}
-</script>
 
 </html>
