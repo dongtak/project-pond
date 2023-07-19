@@ -35,9 +35,9 @@ public class FullMoonDao {
 			String sql = "SELECT * FROM fullmoon ";
 
 			if (keyword.equals("new"))
-				sql += "ORDER BY moon_createAt DESC LIMIT ?,?";
+				sql += "ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
 			else if (keyword.equals("done"))
-				sql += "WHERE moon_goal<=moon_donate ORDER BY moon_createAt DESC LIMIT ?,?";
+				sql += "WHERE moon_goal<=moon_donate ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
 			else if (keyword.equals("peak"))
 				sql += "ORDER BY moon_donate DESC LIMIT 8";
 			else if (keyword.equals("topMsg"))
@@ -185,7 +185,28 @@ public class FullMoonDao {
 	}
 
 	
-	
+	// 전체 fullmoon 개수 리턴 함수
+	public int getCount() {
+		int count=0;
+		
+		this.conn = DBManager.getConnection();
+		if(this.conn!=null) {
+			String sql = "SELECT COUNT(*) FROM fullmoon";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				if(this.rs.next()) {
+					count=this.rs.getInt(1);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return count;
+	}
 
 
 }

@@ -124,12 +124,12 @@ public class ArticleDao {
 		
 		this.conn = DBManager.getConnection();
 		if(this.conn!=null) {
-			String sql = "SELECT * FROM article";
+			String sql = "SELECT COUNT(*) FROM fullmoon";
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.rs = this.pstmt.executeQuery();
-				while(this.rs.next()) {
-					count++;
+				if(this.rs.next()) {
+					count=this.rs.getInt(1);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
