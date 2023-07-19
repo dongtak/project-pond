@@ -50,9 +50,9 @@
 .article-cotainer-top{
 	text-align: center;
 	width: 70%;
-	margin:30px auto;
+	margin:0 auto;
 	background-color: beige;
-	display: flex;
+	
 	height: 900px;
 	
 }
@@ -68,9 +68,13 @@ border: 1px solid gray;
 
 
 .article-category{
-	flex-grow: 2;
+	position:fixed;
+	right:0;
+	top:120px;
+	width:120px;
+	height:900px;
 	background-color: aliceblue;
-	
+
 }
 
 

@@ -16,7 +16,7 @@
 
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
-		<section id="main-section">
+		<section id="main-section login-form">
 			<form action="Login" class="user-form" method="POST">
 				<h1>로그인</h1>
 				
