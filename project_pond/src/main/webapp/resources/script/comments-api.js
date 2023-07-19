@@ -7,40 +7,42 @@ function addComment() {
 	const msgBoxValue = $('#msg-box').val();
 	console.log(moonNum);
 	console.log(msgBoxValue);
-	
-	
+	const id = $('#logVal').text();
+
+	console.log("id ="+id);
+
 	$.ajax({
-		"method" : "POST",
-		"url" : `/comments?moonNum=${moonNum}&msg=${$('#msg-box').val()}`,
+		"method": "POST",
+		"url": `/comments?moonNum=${moonNum}&msg=${$('#msg-box').val()}`,
 	}).done(response => {
 		console.log(response);
-		
-		if(response.msg === 'success') {
+
+		if (response.msg === 'success') {
 			drawComments();
-		 $('#msg-box').val(''); 
-			
+			$('#msg-box').val('');
 		} else {
-			
-		
-			alert('댓글을 입력해주세요.');
-		}
+			if (id === "") {
+				alert('로그인 후 이용 가능합니다.');
+			} else {
+				alert('댓글을 입력해주세요.');
+			}
+}
 	});
 	
+
 }
 
 function drawComments() {
-	
+
 	$.ajax({
-		"method" : "GET",
-		"url" : `/comments?moonNum=${$('#moonNum').text()}`
+		"method": "GET",
+		"url": `/comments?moonNum=${$('#moonNum').text()}`
 	}).done(response => {
 		const list = response; // JsonArray
 		console.log(list);
-		
-	
-		
+
 		$('#comments-container').empty();
-		
+
 		list.forEach(comment => {
 			$('#comments-container').prepend(`
 				<div class="comments-item">
@@ -50,6 +52,9 @@ function drawComments() {
 				</div>
 			`);
 		})
+
 	});
 	
 }
+
+

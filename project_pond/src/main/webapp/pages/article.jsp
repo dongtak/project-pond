@@ -15,6 +15,8 @@
 
 </head>
 <body>
+
+	<c:set var="log" value="${sessionScope.log}"/>
 	<c:set var="article" value="${requestScope.article }" />
 	<c:set var="fullmoon" value="${requestScope.fullmoon }" />
 	<c:set var="commentList" value="${requestScope.commentList }" />
@@ -22,6 +24,7 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div id="section">
+			<span id="logVal">${log}</span>
 			<div class=article-container>
 				<!-- 본문 -->
 				<div class="article-cotainer-top">
@@ -60,7 +63,6 @@
 
 							<div class="articleGoal">
 
-
 								<ul>
 									<li><c:set var="fullmoon" value="${fullmoon }" /> 목표 모금액
 										: ${fullmoon.getGoal()} 원</li>
@@ -78,10 +80,6 @@
 						</div>
 
 
-
-
-
-
 					</div>
 					<!-- 오른쪽 카테고리-->
 
@@ -89,8 +87,9 @@
 					<c:set var="payList" value="${requestScope.payList}" />
 
 					<div class="article-category">
-
+					
 						<div class="msgBox">
+						<span> 후원 메세지 </span>
 							<c:if test="${not empty payList }">
 								<c:forEach var="pays" items="${payList }">
 									<p>${pays.getName() }</p>
@@ -113,17 +112,14 @@
 						<span>댓글 > </span>
 						<form method="POST" class="comment">
 							<textarea cols="80" rows="10" id="msg-box" name="msg"
-								onclick="this.select()" onfocus="this.select()"
-								<c:choose>
+							<c:choose>
 								<c:when test="${empty log}">
 									placeholder="댓글을 작성하시려면 로그인 해주세요." readonly
 								</c:when>
 								<c:otherwise>
 									placeholder="주제와 무관한 댓글, 악플은 삭제될 수 있습니다."
 								</c:otherwise>
-							</c:choose>>
-							
-							</textarea>
+							</c:choose>></textarea>
 							<div class="commentBtn">
 								<input type="button" id="commentBtn" value="등록하기"
 									onclick="addComment()">
@@ -133,9 +129,11 @@
 					</div>
 					<!-- 댓글 출력할 공간 -->
 					<div id="comments-container">
+						
 						<c:if test="${not empty commentList}">
 							<c:forEach var="li" items="${commentList }">
 								<div class="comments-item">
+								
 									<p>${li.getUserName()}</p>
 									<br>
 									<p>${li.getCommentContent()}</p>
@@ -175,8 +173,10 @@
 				}
 			}
 		}
-
 		navigo();
+		
+
+
 	</script>
 </body>
 </html>

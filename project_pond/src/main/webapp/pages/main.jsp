@@ -88,7 +88,6 @@ if (msg.length > 100) {
     fireflies = msg.length;
 }
 
-
 	// 반딧불이를 생성하는 부분
 	for (var i = 0; i < fireflies; i++) {
 		 
@@ -113,8 +112,7 @@ if (msg.length > 100) {
 	    $fireflypack.append(firefly);
 	    flyTheFirefly(firefly);
 	}
-
-/* function flyTheFirefly(elm) {
+function flyTheFirefly(elm) {
 	var flyTl = gsap.timeline();
 	var fadeTl = gsap.timeline({
 		delay: Math.floor(Math.random() * 2) + 1,
@@ -139,33 +137,8 @@ if (msg.length > 100) {
 			onComplete: flyTheFirefly,
 			onCompleteParams: [elm]
 		});
-} */
-function flyTheFirefly(elm) {
-	  var flyTl = gsap.timeline();
-	  var fadeTl = gsap.timeline({
-	    delay: Math.floor(Math.random() * 2) + 1,
-	    repeatDelay: Math.floor(Math.random() * 6) + 1,
-	    repeat: -1
-	  });
+} 
 
-	  // 반딧불이 발광효과
-	  fadeTl.to(
-	    [elm],
-	    0.25,
-	    { opacity: 0.25, yoyo: true, repeat: 1, repeatDelay: 0.2, yoyo: true },
-	    Math.floor(Math.random() * 6) + 1
-	  );
-
-	  // 반딧불이 이동
-	  flyTl
-	    .set(elm, { scale: Math.random() * 0.75 + 0.5 })
-	    .to(elm, Math.random() * 100 + 100, {
-	      x: Math.random() * ($ffpackWidth - 400) + 200, // 중앙 400px x 400px를 피하도록 수정
-	      y: Math.random() * ($ffpackHeight - 400) + 200, // 중앙 400px x 400px를 피하도록 수정
-	      onComplete: flyTheFirefly,
-	      onCompleteParams: [elm]
-	    });
-	}
 
 
 $(document).ready(function() {

@@ -20,10 +20,14 @@
 		<section id="main-section">
 			<c:choose>
 				<c:when test="${empty log}">
-					<button class="lodBtn btn" onclick="showLogin()">로그인 후
+				
+				<div class=btn-box>
+				<button class="lodBtn btn" onclick="showLogin()">로그인 후
 						후원하기</button>
 					<button class="lidBtn btn" onclick="showPayment()">비회원
 						후원하기</button>
+				</div>
+					
 
 					<div id="lod">
 						<form action="Login" class="user-form" method="POST">

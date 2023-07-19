@@ -8,6 +8,12 @@
 	width:100%;
 }
 
+.cardform{
+	max-width:720px;
+	margin:0 auto;
+	
+}
+
 .user-form {
 	border-radius: 10px;
 	min-width: 400px;
@@ -159,7 +165,8 @@ select {
 #cancel-btn,
 .addressBtn,
 #lid button,
-#lid input[type=button] {
+#lid input[type=button],
+.lodBtn,.lidBtn  {
 	width: 20%;
 	margin: 20px 20px;
 	text-align: center;
@@ -176,11 +183,18 @@ select {
 	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
+
+
 .updateBtn {
 	width: 40% !important;
 	margin: 0 auto;
 }
 
+.btn-box{
+	border:1px solid black;
+	max-width:400px;
+	margin: 0 auto;	
+}
 
 
 #pwd-submit-btn,#id-submit-btn{

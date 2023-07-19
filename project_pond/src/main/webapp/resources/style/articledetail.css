@@ -3,6 +3,9 @@
 
 /*article.jsp*/
 
+#logVal{
+	display:none;
+}
 
 .articleTitle{
 	margin:30px auto;

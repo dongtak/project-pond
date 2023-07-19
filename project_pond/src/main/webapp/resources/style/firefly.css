@@ -35,6 +35,8 @@
 .box.expanded {
     width: 200px;
     height: 120px;
+    box-shadow: 10px 10px 10px 10px #2bff3a;
+    border-radius: 20px;
 }
 
 .box:hover { 
@@ -64,6 +66,7 @@
 
 .box.expanded:hover {
     background: none;
+    border-radius:15px;
 }
 .beam {
     background: #000;
