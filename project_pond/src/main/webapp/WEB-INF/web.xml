@@ -94,13 +94,13 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>dupleIdCheckAction</servlet-name>
-		<servlet-class>controller.dupleIdCheckAction</servlet-class>
+		<servlet-name>DuplIdCheckAction</servlet-name>
+		<servlet-class>controller.DuplIdCheckAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>dupleIdCheckAction</servlet-name>
-		<url-pattern>/dupleIdCheckt</url-pattern>
+		<servlet-name>DuplIdCheckAction</servlet-name>
+		<url-pattern>/duplIdCheck</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
