@@ -11,22 +11,6 @@ function restrictToNumbers() {
   this.value = this.value.replace(/[^0-9]/g, "").slice(0, 9);
 }
 
-// 3. 직접입력이 기본으로 선택되어 있다.
-document.querySelector('button[onclick="enableCustomAmount()"]').click();
-
-// 4. 후원금액이 1만원 이상부터 메세지 입력 가능, 1만원 미만일경우 메세지 disable, value는 공백("")
-function validateAmount() {
-  var customAmountInput = document.getElementById("moneyInput");
-  var messageInput = document.getElementById("messageInput");
-  
-  if (parseInt(customAmountInput.value) >= 10000) {
-    messageInput.disabled = false;
-    messageInput.value = "";
-  } else {
-    messageInput.disabled = true;
-    messageInput.value = "";
-  }
-}
 
 // 폼 유효성 검사
 function validateDonorName() {
