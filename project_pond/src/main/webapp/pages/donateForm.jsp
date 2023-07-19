@@ -5,10 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="resources/images/favicon-32x32.png">
 <title>후원</title>
 <link rel="stylesheet" href="resources/style/form.css">
-<script src="resources/script/validationPay.js"/>
+<link rel="stylesheet" href="resources/style/donate.css">
+<script src="resources/script/validationPay.js" />
 </head>
 
 <body>
@@ -20,14 +22,14 @@
 		<section id="main-section">
 			<c:choose>
 				<c:when test="${empty log}">
-				
-				<div class=btn-box>
-				<button class="lodBtn btn" onclick="showLogin()">로그인 후
-						후원하기</button>
-					<button class="lidBtn btn" onclick="showPayment()">비회원
-						후원하기</button>
-				</div>
-					
+
+					<div class=btn-box>
+						<button class="lodBtn btn" onclick="showLogin()">로그인 후
+							후원하기</button>
+						<button class="lidBtn btn" onclick="showPayment()">비회원
+							후원하기</button>
+					</div>
+
 
 					<div id="lod">
 						<form action="Login" class="user-form" method="POST">
@@ -66,53 +68,56 @@
 			<form id="modal-form" method="post" action="Donate">
 				<input type="hidden" name=moonNum value="${moonNum }">
 				<div class="donor">
-					<label> <input type="radio" name="leavename"
-						value="nominated" onclick="toggleDonorName()" checked> 후원자 이름
-						남기기
-					</label> 
-					<label><input type="radio" name="leavename" value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기
-					</label> <br /> 
-					 <span id="nameError"
-						class="error-message"> 이름을  입력해주세요 </span> <br> 
-						<input type=text id="donorNameInput" name=donorNameInput placeholder="후원자 이름"
-						value="">
+					<div class="name-radio">
+						<label> <input type="radio" name="leavename"
+							value="nominated" onclick="toggleDonorName()" checked>
+							후원자 이름 남기기
+						</label> <label><input type="radio" name="leavename"
+							value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기 </label>
+
+						<span id="nameError" class="error-message"> 이름을 입력해주세요 </span>
+					</div>
+
+					<input type=text id="donorNameInput" name=donorNameInput
+						placeholder="후원자 이름" value="">
 				</div>
 
 				<div class="donate">
-					<button type="button" onclick="setAmount(1000)">1천원</button>
-					<button type="button" onclick="setAmount(5000)">5천원</button>
-					<button type="button" onclick="setAmount(10000)">1만원</button>
-					<button type="button" onclick="setAmount(20000)">2만원</button>
-					<button type="button" onclick="setAmount(50000)">5만원</button>
-					<button type="button" onclick="setAmount(100000)">10만원</button>
-					<button type="button" onclick="enableCustomAmount()">직접입력</button>
+					<div class="money-btn">
+						<button type="button" onclick="setAmount(1000)">1천원</button>
+						<button type="button" onclick="setAmount(5000)">5천원</button>
+						<button type="button" onclick="setAmount(10000)">1만원</button>
+						<button type="button" onclick="setAmount(20000)">2만원</button>
+						<button type="button" onclick="setAmount(50000)">5만원</button>
+						<button type="button" onclick="setAmount(100000)">10만원</button>
+						<button type="button" onclick="enableCustomAmount()">직접입력</button>
+					</div>
 
-					<input type="text" class="moneyInput" name="moneyInput"
-						id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
-						readonly value="" oninput = "checkNumber(value)"> 
-						<input type="text"
-						class="messageInput" name="messageInput" id="messageInput"
-						placeholder="마음을 전해보세요"> 
-						
-						<span id="moneyError"
-						class="error-message"> 후원금을 입력해주세요 </span> <br> 
-				</div>
-						<input type="button" onclick="showCardInput()" value="다음">
-				</div>
-				
-				
-				<div class="cardform" id="cs" style="display:none;">
-				<jsp:include page="/cardInput">
-				 <jsp:param name="additionalData" value="Some Value" />
-				
-				</jsp:include>
-				<input
-						type="button" onclick="nameAndNumber(form)" value="후원하기">
-				</div>
-				
-			
+					<div class="moneyMsg-input">
+						<input type="text" class="moneyInput" name="moneyInput"
+							id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
+							readonly value="" oninput="checkNumber(value)"> <input
+							type="text" class="messageInput" name="messageInput"
+							id="messageInput" placeholder="마음을 전해보세요(최대 50자)" maxlength="50"> <span
+							id="moneyError" class="error-message"> 후원금을 입력해주세요 </span>
+					</div>
 
-			</form>
+				</div>
+				<input type="button" onclick="showCardInput()" value="다음">
+	</div>
+
+
+	<div class="cardform" id="cs" style="display: none;">
+		<jsp:include page="/cardInput">
+			<jsp:param name="additionalData" value="Some Value" />
+
+		</jsp:include>
+		<input type="button" onclick="nameAndNumber(form)" value="후원하기">
+	</div>
+
+
+
+	</form>
 	</div>
 
 	</section>

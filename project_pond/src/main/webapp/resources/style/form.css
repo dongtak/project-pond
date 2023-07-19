@@ -43,6 +43,8 @@
 
 
 
+
+
 .div-form {
 	margin-top: 20px;
 }
@@ -73,6 +75,10 @@ input.addressBtn {
 .find-right{
 	margin: 30px auto;
 }
+.lid{
+	max-width: 720px;
+	margin:0 auto;
+}
 
 .address-input {
 	width: 30%;
@@ -86,8 +92,7 @@ input.addressBtn {
 	color: black;
 }
 
-.user-input,
-#lid input[type=text] {
+.user-input{
 	width: 70%;
 	margin: 10px auto;
 	padding: 15px;
@@ -167,10 +172,7 @@ select {
 
 #submit-btn,
 #cancel-btn,
-.addressBtn,
-#lid button,
-#lid input[type=button],
-.lodBtn,.lidBtn  {
+.addressBtn{
 	width: 20%;
 	margin: 20px 20px;
 	text-align: center;
@@ -195,7 +197,6 @@ select {
 }
 
 .btn-box{
-	border:1px solid black;
 	max-width:400px;
 	margin: 0 auto;	
 }
@@ -222,11 +223,6 @@ ul {
 
 input[type=radio]{
 	width: auto;
-}
-
-.lid form{
-	max-width:1000px;
-	margin:0 auto;
 }
 
 .error,.error-message {

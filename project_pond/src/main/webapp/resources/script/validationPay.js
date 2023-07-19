@@ -14,13 +14,13 @@ function restrictToNumbers() {
 
 // 폼 유효성 검사
 function validateDonorName() {
-  var donorNameInput = document.querySelector('input[name="donorname"]');
-  var donorNameError = document.getElementById("nameError");
+  var donorNameInput = document.querySelector('input[name="donorNameInput"]');
+  var nameError = document.getElementById("nameError");
   
-  if (donorNameInput.value.trim() === "") {
-    donorNameError.style.display = "block";
+  if (donorNameInput.value === ""||donorNameInput.value ===null) {
+    nameError.style.display = "block";
   } else {
-    donorNameError.style.display = "none";
+    nameError.style.display = "none";
   }
 }
 
