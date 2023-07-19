@@ -37,8 +37,7 @@ public class PayDao {
 		int money = pay.getPayMoney();
 		String message = pay.getMessage();
 
-		System.out.println(name + money + message);
-
+		
 		boolean check = true;
 
 		if (name != null && money !=0 && message != null) {

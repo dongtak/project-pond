@@ -142,6 +142,49 @@ public class FullMoonDao {
 	
 		//금액 추가 만들기 
 	
+	public boolean donateMoney(int money) {
+	    System.out.println("금액접속" + money);
+	    this.conn = DBManager.getConnection();
+	    if (conn != null) {
+	        String moonDonateQuery = "SELECT moon_donate FROM fullmoon WHERE moon_status=1";
+	        String updateQuery = "UPDATE fullmoon SET moon_donate = ? WHERE moon_status = 1";
+	        
+	        try {
+	            this.pstmt = this.conn.prepareStatement(moonDonateQuery);
+	            this.rs = this.pstmt.executeQuery();
+	            
+	            if (rs.next()) {
+	                int moneyBefore = rs.getInt("moon_donate");
+	                System.out.println("이전 기부금: " + moneyBefore);
+	                
+	                int newDonation = moneyBefore + money; // 새로운 기부금 계산
+	                
+	                // UPDATE 문 실행
+	                this.pstmt = this.conn.prepareStatement(updateQuery);
+	                this.pstmt.setInt(1, newDonation);
+	                int rowsAffected = this.pstmt.executeUpdate();
+	                
+	                if (rowsAffected > 0) {
+	                    System.out.println("기부가 성공적으로 업데이트되었습니다.");
+	                    return true;
+	                } else {
+	                    System.out.println("기부 업데이트 실패");
+	                }
+	            } else {
+	                System.out.println("해당하는 레코드가 없습니다.");
+	            }
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	        	DBManager.close(this.conn, this.pstmt, this.rs);
+	        }
+	    }
+	    
+	    return false;
+	}
+
+	
 	
 
 

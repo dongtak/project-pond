@@ -27,10 +27,12 @@ background-image: url("../images/mainbg.jpg");
 
 
 .main_moon:hover {
-	box-shadow : -20px 0px 30px 15px #feffe3;
+	box-shadow : -10px 0px 30px 15px #feffe3;
 	cursor: pointer;
 	
+	
 }
+
 
 .fullmoon {
 	margin-top: 150px;

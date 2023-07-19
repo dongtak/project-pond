@@ -104,16 +104,6 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>IdCheckFormAction</servlet-name>
-		<servlet-class>controller.IdCheckFormAction</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>IdCheckFormAction</servlet-name>
-		<url-pattern>/IdCheck</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 		<servlet-name>FindIdAction</servlet-name>
 		<servlet-class>controller.FindIdAction</servlet-class>
 	</servlet>

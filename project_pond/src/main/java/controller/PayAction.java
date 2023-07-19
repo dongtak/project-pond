@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.fullmoon.FullMoonDao;
 import model.pay.PayDao;
 import model.pay.PayRequestDto;
 import model.user.UserDao;
@@ -31,10 +32,16 @@ public class PayAction extends HttpServlet {
 		
 		
 		String moonNum = request.getParameter("moonNum");
-		String name = request.getParameter("donorName");
+		String name = request.getParameter("donorNameInput");
 		String message = request.getParameter("messageInput");
 		String money = request.getParameter("moneyInput");
 		int payMoney = Integer.parseInt(money);
+		
+		System.out.println(moonNum+"달번호");
+		System.out.println(name+"후원자명");
+		System.out.println(message+"메시지");
+		System.out.println(money+"금액");
+		
 		
 //		if(session.getAttribute("log")!=null) {
 			// 카드정보 dao -> 해당 log를 가지고 있는 유저의 카드 정보 가져오기
@@ -64,6 +71,9 @@ public class PayAction extends HttpServlet {
 
 		PayDao payDao = PayDao.getInstance();
 		boolean result = payDao.donatePayment(pay);
+		
+		FullMoonDao moonDao = FullMoonDao.getInstance();
+		boolean payResult = moonDao.donateMoney(payMoney);
 		
 
 		// 실패 시 후원 form 으로 이동, 나중에 실패 메세지 추가

@@ -67,7 +67,8 @@
 					</label> 
 					<label><input type="radio" name="leavename" value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기
 					</label> <br /> <span id="nameError" class="error-message"> 후원옵션을
-						선택해주세요 </span> <input type=text id="donorNameInput" name=donorNameInput placeholder="후원자 이름"
+						선택해주세요 </span> 
+						<input type=text id="donorNameInput" name=donorNameInput placeholder="후원자 이름"
 						value="">
 				</div>
 
@@ -82,13 +83,11 @@
 
 					<input type="text" class="moneyInput" name="moneyInput"
 						id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
-						disabled value="" oninput = "checkNumber(value)"> <input type="text"
+						readonly value="" oninput = "checkNumber(value)"> <input type="text"
 						class="messageInput" name="messageInput" id="messageInput"
 						placeholder="마음을 전해보세요"> <span id="moneyError"
 						class="error-message"> 후원금을 입력해주세요 </span> <br> 
 				</div>
-				<input
-						type="submit" value="후원하기test">
 						<input type="button" onclick="showCardInput()" value="다음">
 				</div>
 				
@@ -130,58 +129,38 @@
 	//
 	
 	function toggleDonorName(){//이름 남기기 버튼
-		document.getElementById("donorNameInput").disabled=false;
+		document.getElementById("donorNameInput").readOnly=false;
 		document.getElementById("donorNameInput").focus();
 		
 	}
 	
 	
-	
 	function toggleAnonymous() {//익명 버튼
 		  var donorNameInput = document.getElementById("donorNameInput");
-		  donorNameInput.disabled = true;
-		  donorNameInput.value ="익명";
+		  donorNameInput.readOnly = true;
+		  donorNameInput.value = "익명";
 		}
 
 		function toggleDonorName() {
 		  var donorNameInput = document.getElementById("donorNameInput");
-		  donorNameInput.disabled = false;
+		  donorNameInput.readOnly = false;
 		  donorNameInput.focus();
 		  donorNameInput.value = "";
 		}
 
 	function setAmount(amount) {
 		var moneyInput = document.getElementById("moneyInput");
-		moneyInput.disabled = true;
+		moneyInput.readOnly = true;
 		moneyInput.value = amount;
 	}
 
 	function enableCustomAmount() {
 		var moneyInput = document.getElementById("moneyInput");
 		moneyInput.value = "";
-		moneyInput.disabled = false;
+		moneyInput.readOnly = false;
 	}
 	var button = document.getElementById("cs");
 	var isNext = true;
-
-
-	 function showCardInput() {
-	        var lid = document.getElementById("lid");
-	        var cs = document.getElementById("cs");
-
-	        if (isNext) {
-	    	    
-	    	    lid.style.display = "none";
-		       	cs.style.display = "block";
-		       	isNext = false;
-	    	  } else {
-	    	   
-	    	    lid.style.display = "block";
-		       	cs.style.display = "none";
-		       	isNext = true;
-		       	
-	    	  }
-	    }
 
 	 
 	function nameAndNumber(form) {
@@ -218,6 +197,7 @@
 			moneyError.style.display = "none";
 		}
 
+		
 		console.log()
 		form.submit();
 	}
@@ -248,6 +228,24 @@
 
 		form.submit();
 	}
+	
+	function showCardInput() {
+        var lid = document.getElementById("lid");
+        var cs = document.getElementById("cs");
+
+        if (isNext) {
+    	    
+    	    lid.style.display = "none";
+	       	cs.style.display = "block";
+	       	isNext = false;
+    	  } else {
+    	   
+    	    lid.style.display = "block";
+	       	cs.style.display = "none";
+	       	isNext = true;
+	       	
+    	  }
+    }
 </script>
 
 </html>
