@@ -16,11 +16,16 @@
 }
 
 .articleTitle .title{
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: bold;
 	margin:5px auto;
 }
 
+
+#moonNum{
+	margin:0 auto;
+	line-height: 10px;
+}
 
 
 .msgBox{
@@ -52,15 +57,14 @@
 	width: 70%;
 	margin:0 auto;
 	background-color: beige;
-	
-	height: 900px;
-	
+
 }
 
 
 
 .article-content{
-	flex-grow: 5;
+	/*flex-grow: 5;*/
+	margin: 10px auto;
 border: 1px solid gray;
 }
 
@@ -79,25 +83,24 @@ border: 1px solid gray;
 
 
 .articleMain{
-	
+	padding:20px 0;
 	background-color: azure;
 	width: 100%;
-	height: 300px;
+	/*height: 300px;*/
 	border-top: 1px solid gray;
 	
 }
 
 .articleContent{
-	margin-top:10px;
-	height: 70%;
+	margin:30px auto;
+	font-size: 20px;
 	
 }
 
-
-.articleImg>img{
-	margin:0 auto;
-
+.articleContent p{
+	margin:2px;
 }
+
 
 .articleGoal{
 	
@@ -111,11 +114,15 @@ border: 1px solid gray;
 	margin:5px auto;
 }
 
+.articleGoal li:nth-child(4){
+	margin-top: 20px;
+}
 
-.article-cotainer-bottom{
+
+.article-container-bottom{
 	
 	width: 70%;
-	margin:20px auto;
+	margin:30px auto;
 	background-color: rgb(253, 238, 225);
 	/*height: 500px;*/
 
@@ -178,5 +185,12 @@ border: 1px solid gray;
 
 .comments-write>span{
 	font-size: 20px;
+	
 
 }
+
+
+.comments-write textarea{
+	font-size: 16px;
+}
+
