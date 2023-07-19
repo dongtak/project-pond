@@ -29,23 +29,26 @@
 						<div class="moon-content">
 							<c:set var="do_loof" value="true" />
 							<c:set var="moonNum" value="${moonUp.getMoonNum() }" />
-							<c:forEach var="loof" begin="1" end="${fn:length(moonNum)}">
-								<c:if test="${do_loof eq true }">
-									<c:choose>
-										<c:when test="${fn:startsWith(moonNum, '0')}">
-											<c:set var="moonNum"
-												value="${fn:substringAfter(moonNum, '0')}" />
-										</c:when>
-										<c:otherwise>
-											<c:set var="do_loof" value="false" />
-										</c:otherwise>
-									</c:choose>
-								</c:if>
-							</c:forEach>
 							<h2>${moonUp.getTitle()}</h2>
-							<span>${moonNum }회</span><br /> <span>목표모금액 :
-								${moonUp.getGoal() }원</span><br /> <span>누적모금액 :
-								${moonUp.getDonate()}원</span><br />
+							<span> 
+									<c:set var="num" value="${fn:substringAfter(moonNum, '0')}" /> 
+									<c:set var="do_loof" value="true" /> 
+										<c:forEach var="item" begin="1" end="${fn:length(num)}">
+										<c:if test="${do_loof eq true }">
+											<c:choose>
+												<c:when test="${fn:startsWith(num, '0')}">
+													<c:set var="num" value="${fn:substringAfter(num, '0')}" />
+												</c:when>
+												<c:otherwise>
+													<c:set var="do_loof" value="false" />
+												</c:otherwise>
+											</c:choose>
+										</c:if>
+									</c:forEach> ${num }회
+							</span><br> 
+							<span>목표모금액 :
+								${moonUp.getGoal() }원</span><br> <span>누적모금액 :
+								${moonUp.getDonate()}원</span><br>
 							<c:set var="money"
 								value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
 							<fmt:formatNumber var="formattedMoney" value="${money}"
@@ -84,18 +87,7 @@ if (msg.length > 100) {
 } else {
     fireflies = msg.length;
 }
-<<<<<<< HEAD
-=======
-console.log(fireflies)
-console.log(msg)
-/*
-fireflies 변수의 값만큼 반복하는 for 루프를 시작합니다. 
-이 예시에서는 100번 반복합니다.
-firefly 변수에는 jQuery를 사용하여 <div> 요소를 생성하고, 
-firefly 클래스를 추가한 객체를 저장합니다.
-*/
 
->>>>>>> refs/remotes/origin/#2-jo-subin
 
 	// 반딧불이를 생성하는 부분
 	for (var i = 0; i < fireflies; i++) {

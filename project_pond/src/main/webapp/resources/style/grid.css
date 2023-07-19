@@ -45,7 +45,7 @@ div#wrap {
 }
 
 .header a,.header a:visited,.header span{
-	font-size: 1.8rem;
+	font-size: 1.7rem;
 }
 
 #userlogin>a{
@@ -60,6 +60,7 @@ div#wrap {
 	grid-area: logo;
 	font-family: 'PyeongChangPeace-Bold';
 	text-align: center;
+	font-size: 50px !important;
 }
 
 .login-bar{

@@ -44,26 +44,28 @@
 					<c:forEach var="moonList" items="${requestScope.moonList }"
 						varStatus="vs">
 						<div class="item">
-							<a href='showArticle?moonNum=${moonList.getMoonNum() }'
-								target='_self'> <img src='https://ifh.cc/g/pOdz9l.jpg'
-								border='0'> <span class="moonNum"> <c:set
-										var="moonNum" value="${moonList.getMoonNum()}" /> <c:set
-										var="num" value="${fn:substringAfter(moonNum, '0')}" /> <c:set
-										var="do_loof" value="true" /> <c:forEach var="item" begin="1"
-										end="${fn:length(num)}">
-										<c:if test="${do_loof eq true }">
-											<c:choose>
-												<c:when test="${fn:startsWith(num, '0')}">
-													<c:set var="num" value="${fn:substringAfter(num, '0')}" />
-												</c:when>
-												<c:otherwise>
-													<c:set var="do_loof" value="false" />
-												</c:otherwise>
-											</c:choose>
-										</c:if>
-									</c:forEach> [제 ${num }회]
-							</span> <span class="moonTitle"> ${moonList.getTitle() } </span>
-							</a>
+							<div class="info">
+								<a href='showArticle?moonNum=${moonList.getMoonNum() }'
+									target='_self'> <img src='https://ifh.cc/g/pOdz9l.jpg'
+									border='0'> <span class="moonNum"> <c:set
+											var="moonNum" value="${moonList.getMoonNum()}" /> <c:set
+											var="num" value="${fn:substringAfter(moonNum, '0')}" /> <c:set
+											var="do_loof" value="true" /> <c:forEach var="item"
+											begin="1" end="${fn:length(num)}">
+											<c:if test="${do_loof eq true }">
+												<c:choose>
+													<c:when test="${fn:startsWith(num, '0')}">
+														<c:set var="num" value="${fn:substringAfter(num, '0')}" />
+													</c:when>
+													<c:otherwise>
+														<c:set var="do_loof" value="false" />
+													</c:otherwise>
+												</c:choose>
+											</c:if>
+										</c:forEach> [제 ${num }회]
+								</span> <span class="moonTitle"> ${moonList.getTitle() } </span>
+								</a>
+							</div>
 						</div>
 					</c:forEach>
 				</div>
