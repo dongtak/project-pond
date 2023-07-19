@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
 </head>
 <body>
 
-	<c:set var="log" value="${sessionScope.log}"/>
+	<c:set var="log" value="${sessionScope.log}" />
 	<c:set var="article" value="${requestScope.article }" />
 	<c:set var="fullmoon" value="${requestScope.fullmoon }" />
 	<c:set var="commentList" value="${requestScope.commentList }" />
@@ -34,7 +35,7 @@
 						<div class="articleTitle">
 							<ul>
 								<li><c:set var="moonNum" value="${article.getMoon_num() }" />
-									회차 : <span id="moonNum">${moonNum }</span></li>
+									<img src='https://ifh.cc/g/1Jbm3R.png' border='0' width=30 height=30> <span id="moonNum">${moonNum }</span></li>
 								<li><c:set var="title"
 										value="${article.getArticle_title() }" /> <span class="title">
 										${title }</span></li>
@@ -49,14 +50,22 @@
 						<div class="articleMain">
 							<div class="articleContent">
 								<c:set var="content" value="${article.getArticle_content() }" />
-								내용 : ${content }
+								<c:set var="sentences" value="${fn:split(content,'&&')}" />
+								<c:forEach var="sentence" items="${sentences}" >
+									<c:set var="words" value="${fn:split(sentence, '**')}" />
+									<c:forEach var="word" items="${words}" >
+										<p>${word}</p>
+									</c:forEach>
+									<br>
+								</c:forEach>
+
 							</div>
 
 
 
 							<!--  본문 이미지 -->
 							<div class="articleImg">
-								<img src='https://ifh.cc/g/zO5wLd.png' border='0' width=100%
+								<img src='https://ifh.cc/g/nXHA6h.jpg' border='0' width=90%
 									height=400>
 
 							</div>
@@ -67,7 +76,7 @@
 									<li><c:set var="fullmoon" value="${fullmoon }" /> 목표 모금액
 										: ${fullmoon.getGoal()} 원</li>
 
-									<li><c:set var="fullmoon" value="${fullmoon }" /> 종료 모금액:
+									<li><c:set var="fullmoon" value="${fullmoon }" /> 종료 모금액 :
 										${fullmoon.getDonate()} 원</li>
 									<li><fmt:parseNumber var="percent"
 											value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
@@ -87,9 +96,9 @@
 					<c:set var="payList" value="${requestScope.payList}" />
 
 					<div class="article-category">
-					
+
 						<div class="msgBox">
-						<span> 후원 메세지 </span>
+							<span> 후원 메세지 </span>
 							<c:if test="${not empty payList }">
 								<c:forEach var="pays" items="${payList }">
 									<p>${pays.getName() }</p>
@@ -106,15 +115,15 @@
 
 
 				<!-- 댓글 부분 -->
-				<div class="article-cotainer-bottom">
+				<div class="article-container-bottom">
 
 					<div class="comments-write">
-						<span>댓글 > </span>
+						<span>댓글쓰기 </span>
 						<form method="POST" class="comment">
 							<textarea cols="80" rows="10" id="msg-box" name="msg"
-							<c:choose>
+								<c:choose>
 								<c:when test="${empty log}">
-									placeholder="댓글을 작성하시려면 로그인 해주세요." readonly
+									placeholder="댓글을 작성하시려면 로그인을 해주세요." readonly
 								</c:when>
 								<c:otherwise>
 									placeholder="주제와 무관한 댓글, 악플은 삭제될 수 있습니다."
@@ -129,11 +138,11 @@
 					</div>
 					<!-- 댓글 출력할 공간 -->
 					<div id="comments-container">
-						
+
 						<c:if test="${not empty commentList}">
 							<c:forEach var="li" items="${commentList }">
 								<div class="comments-item">
-								
+
 									<p>${li.getUserName()}</p>
 									<br>
 									<p>${li.getCommentContent()}</p>
