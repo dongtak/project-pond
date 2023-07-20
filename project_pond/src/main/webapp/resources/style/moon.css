@@ -70,7 +70,7 @@ color: white;
 
 
 .content{
-	padding:40px;
+	padding:40px 15%;
 	border:1px solid black;
 	text-align: center;
 }
@@ -91,10 +91,6 @@ color: white;
 	background-color:silver;
 }
 
-.moon-container-bottom{
-	margin-top:20px;
-	text-align: center;
-}
 
 .content h3{
 	font-size: 30px;
@@ -163,7 +159,7 @@ section #logVal{
 
 
 .comment textarea {
-  width: 70%;
+  width: 100%;
   box-sizing: border-box;
   resize: none;
   margin-top:10px;
@@ -172,7 +168,6 @@ section #logVal{
 .commentBtn{
 	display: flex;
 	justify-content: flex-end;
-	width:85%;
 }
 
 .comment #commentBtn {
@@ -208,6 +203,10 @@ section #logVal{
 	font-size: 30px;
 }
 */
+
+.comments-write{
+	padding: 30px 20%;
+}
 
 .comments-write>span{
 	font-size: 20px;
