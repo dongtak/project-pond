@@ -61,7 +61,7 @@
 								<li><c:set var="createdAt"
 										value="${article.getArticle_createdAt() }" /> <fmt:formatDate
 										value="${createdAt }" pattern="yyyy-MM-dd" var="created" />
-									기간 &nbsp; | &nbsp; ${created} ~ 종료 날짜</li>
+									기간 &nbsp; | &nbsp; ${created} ~ 2023-07-15</li>
 							</ul>
 
 						</div>
