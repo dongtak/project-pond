@@ -10,6 +10,7 @@
 <body>
 <c:set var="log" value="${sessionScope.log }"/>
 <c:set var="isAdmin" value="${sessionScope.isAdmin }"/>
+<c:set var="moonUp" value="${sessionScope.moonUp }"/>
 	<div class="header">
 		<a href="mainAction" class="logo">보름달</a>
 		<div class="nav-bar">
