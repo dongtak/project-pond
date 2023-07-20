@@ -78,9 +78,9 @@
 					</div>
 
 					<input type=text id="donorNameInput" name=donorNameInput
-						placeholder="후원자 이름" value="">
-								<span id="nameError" class="error-message"> 이름을 입력해주세요 </span>
-				
+						placeholder="후원자 이름" value=""> <span id="nameError"
+						class="error-message"> 이름을 입력해주세요 </span>
+
 				</div>
 
 				<div class="donate">
@@ -96,15 +96,19 @@
 
 					<div class="moneyMsg-input">
 						<input type="text" class="moneyInput" name="moneyInput"
-							id="moneyInput" placeholder="후원금액" numberonly="" maxlength="9"
-							readonly value="" oninput="checkNumber(value)"> <input
-							type="text" class="messageInput" name="messageInput"
-							id="messageInput" placeholder="마음을 전해보세요(최대 50자)" maxlength="50"> <span
-							id="moneyError" class="error-message"> 후원금을 입력해주세요 </span>
+							id="moneyInput" placeholder="후원금액" maxlength="9" value=""
+							oninput="checkNumber(this)"> <input type="text"
+							class="messageInput" name="messageInput" id="messageInput"
+							placeholder="마음을 전해보세요(최대 50자)" maxlength="50"
+							oninput="checkMessage()"> <span id="msgError"
+							class="error-message"> 메세지를 입력해주세요 </span> <span id="moneyError"
+							class="error-message"> 후원금을 입력해주세요 </span>
 					</div>
 
 				</div>
-				<input class="nextbtn" type="button" onclick="showCardInput()" value="다음">
+
+				<input class="nextbtn" type="button" onclick="showCardInput()"
+					value="다음">
 	</div>
 
 
@@ -113,7 +117,7 @@
 			<jsp:param name="additionalData" value="Some Value" />
 
 		</jsp:include>
-		
+
 	</div>
 
 

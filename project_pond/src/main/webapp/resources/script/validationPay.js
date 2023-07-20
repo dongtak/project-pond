@@ -27,8 +27,6 @@ function validateDonorName() {
 // 초기화
 
 
-
-
 function nameAndNumber(htmlForm) {
 	var nameValue = document.querySelector('input[name="leavename"]:checked');
 	var nameError = document.getElementById("nameError");
@@ -123,9 +121,27 @@ function showLogin() {//로그인창 보이기
 	 
 
 	function checkNumber(input) {
-		  input.value = input.value.replace(/\D/g, "");
-		}
-	
+  // Ensure input is defined and has a value property
+  if (input && input.value) {
+    // Regular expression to remove non-numeric characters
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
+}
+
+function checkMessage() {
+    var messageInput = document.getElementById("messageInput");
+    var nextBtn = document.getElementById("nextBtn");
+    var msgError = document.getElementById("msgError");
+
+    if (messageInput.value.trim() === "") {
+        nextBtn.disabled = true;
+        msgError.style.display = "block";
+    } else {
+        nextBtn.disabled = false;
+        msgError.style.display = "none";
+    }
+}
+
 	function checkValue(form) {
 		var idInput = document.getElementById("id");
 		var pwdInput = document.getElementById("pwd");
@@ -157,8 +173,9 @@ function showLogin() {//로그인창 보이기
 		const donorNameInput = document.getElementById("donorNameInput").value.trim();
 		var nameError = document.getElementById("nameError");
 		var moneyInput = document.getElementById("moneyInput");
+		const messageInput = document.getElementById("messageInput");
 		var moneyError = document.getElementById("moneyError");
-
+		var msgError = document.getElementById("msgError");
     	
     
     
@@ -176,6 +193,13 @@ function showLogin() {//로그인창 보이기
 		} else {
 			moneyError.style.display = "none";
 		}
+		if(messageInput.value===""){
+			msgError.style.display="block";
+			return;
+		}else{
+			msgError.style.display="none";
+		}
+		
         
         if (isNext) {
     	    

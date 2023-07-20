@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 .section{
-	background-color:black;
+	
+	
+	background-image:url("../images/history_bg.jpeg");
+	background-size:cover;
 	padding-bottom: 30px;
 	
 }
