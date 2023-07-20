@@ -33,7 +33,7 @@
 					<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
 						var="created" />
 
-					<h4>기간 &nbsp; | &nbsp; ${created} ~ 종료 날짜</h4>
+					<h4>기간 &nbsp; | &nbsp; ${created} ~ 2023-08-03</h4>
 				</div>
 				<div class="content">
 					<h3>
@@ -49,9 +49,6 @@
 						<li>우리는 이제 결식으로 고통받는 어린이들을 돕기 위해 보름달과 함께하는 후원 캠페인을 진행하고 있습니다.<br>
 							이 작은 마음들을 모아 아이들에게 꿈과 희망을 선물하고자 최선을 다하고 있습니다.
 						</li>
-
-
-
 
 						<li>우리의 목표는 결식으로 고통받는 아이들에게 따뜻한 식사를 제공하고,<br> 교육과 의료
 							서비스에 접근할 수 있도록 도와주는 것입니다.<br> 여러분들의 관심과 도움이 있다면, 이 어린이들은 더
@@ -77,14 +74,6 @@
 						<li>
 						<li><h3>저희 보름달과 함께해주세요!</h3></li>
 
-
-
-
-
-
-
-
-
 					</ul>
 
 
@@ -96,70 +85,36 @@
 								<tr>
 									<th>총 집행금액</th>
 									<th colspan="2">12,400,000원</th>
-
-
 								</tr>
 							</thead>
 							<tbody>
 
 								<tr>
-
 									<td>사업비</td>
 									<td>도시락 300인분</td>
 									<td>6,000,000원</td>
 								</tr>
 
 								<tr>
-
 									<td>사업비</td>
 									<td>모니터링 비용</td>
 									<td>400,000원</td>
 								</tr>
 
-
 								<tr>
-
 									<td>교육비</td>
 									<td>문화체험 활동비용</td>
 									<td>6,000,000원</td>
 								</tr>
 
-
-
 							</tbody>
 						</table>
-
-
 					</div>
 
-
-
 				</div>
-				
-				
-				
-					<div class="msgBox">
-							<span>  후원 메세지  </span>
-							<c:if test="${not empty payList }">
-								<c:forEach var="pays" items="${payList }">
-								<div class="msgContent">
-									<p>${pays.getName() }</p>
-									<p>${pays.getMessage() }</p>
-									</div>
-								</c:forEach>
-							</c:if>
-
-						</div>
-				
 
 
 			</div>
-
-
-		
-
-
-
 
 
 			<div class="scroll">
@@ -168,7 +123,7 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
-	
+
 	<script>
 		function scrollToTop() {
 			$("html, body").animate({
@@ -176,11 +131,11 @@
 			}, "slow");
 		}
 	</script>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 </body>
 </html>
