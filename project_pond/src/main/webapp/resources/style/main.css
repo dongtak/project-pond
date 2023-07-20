@@ -76,18 +76,18 @@ button {
 	color:black;
 	font-size: 20px;	
 	min-width: 300px;
-    text-shadow: 1px 0px 20px #ffffb5;
+    text-shadow: 1px 0px 30px 0px rgb(250, 255, 249);
 
 	width:300px;
 }
 
 .moon-content h2{
-	font-size: 24px;
+	font-size: 2rem;
 	text-shadow : -20px 0px 30px 15px #feffe3;
 }
 
 .moon-content span{
-	font-size:18px
+	font-size:1.5rem;
 }
 
 .moon-content a {
