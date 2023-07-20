@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.user.User;
+import model.user.UserDao;
+
 /**
  * Servlet implementation class MyPageAction
  */
@@ -16,16 +19,19 @@ public class MyPageMenuAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		request.setCharacterEncoding("UTF-8");
+		
+		String id = (String) request.getSession().getAttribute("log");
+		
+		if(id==null) {
+			response.sendRedirect("mainAction");
+		}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		UserDao userdao = UserDao.getInstance();
+		User user = userdao.getUserById(id);
+		request.setAttribute("user", user);
+		request.getRequestDispatcher("myPage").forward(request, response);
+	
 	}
 
 }

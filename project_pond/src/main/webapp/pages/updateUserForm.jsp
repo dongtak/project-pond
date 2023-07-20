@@ -18,42 +18,29 @@
 					<input type="text" class=user-input id="id" name="id"
 						value="${sessionScope.log }" readonly>
 				</div>
-
 				<div>
 					<input type="text" class=user-input id="password" name="password"
 						placeholder="비밀번호" autofocus>
 				</div>
 				<div>
 					<input type="text" class=user-input id="new-password"
-						name="new-password" placeholder="새비밀번호">
+						name="new-password" placeholder="새 비밀번호">
 				</div>
-
 				<div>
 					<input type="text" class=user-input id="new-password-con"
-						name="new-password-con" placeholder="새비밀번호 확인">
+						name="new-password-con" placeholder="새 비밀번호 확인">
 				</div>
 				<ul>
-					<li class="error" id="error-password1">비밀번호를 입력해주세요.</li>
-
-					<li class="error" id="error-password2">새비밀번호를 입력해주세요.</li>
-					<li class="error" id="error-password-con">비밀번호 불일치.</li>
+					<li class="error" id="error-password1">새 비밀번호를 입력해주세요.</li>
+					<li class="error" id="error-password2">새 비밀번호를 다시 입력해주세요.</li>
+					<li class="error" id="error-password-con">새 비밀번호가 서로 일치하지 않습니다.</li>
 				</ul>
-
 			</div>
-
-			<input type="hidden" value="${pwd }" name="storedPwd" id="storedPwd">
-
-			<input type="button" class="updateBtn" id="submit-btn"
-				value="비밀번호 변경하기" onclick="checkPwd(form)"> <input
-				type="button" class="cancelBtn" id="cancel-btn" value="취소"
-				onclick="history.back()">
-
+			<input type="hidden" value="${requestScope.user.getPwd() }" name="storedPwd" id="storedPwd">
+			<input type="button" class="updateBtn" id="submit-btn" value="비밀번호 변경하기" onclick="checkPwd(form)"> 
 		</form>
-
 	</div>
-</body>
 <script src="resources/script/validationUpdate.js"></script>
-
-
+</body>
 
 </html>

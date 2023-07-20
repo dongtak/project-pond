@@ -10,20 +10,19 @@
 </head>
 <link rel="stylesheet" href="resources/style/mypage.css">
 <body>
-	<c:if test="${empty sessionScope.log }">
-		<c:redirect url="login"></c:redirect>
-	</c:if>
+	<c:set var="user" value="${requestScope.user }"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
 			<div class="aside">
 				<div class="aside-top">
 					<h2>My Page</h2>
-					<p>${sessionScope.log }님 환영합니다.</p>
+					<p>${user.getName() }님 환영합니다.</p>
 				</div>
 				<div class="aside-menu">
 					<ul>
-						<li id="update">내 정보 수정</li>
+						<li id="myInfo">내 정보</li>
+						<li id="update">비밀번호 변경</li>
 						<li id="addCard">결제 수단 추가</li>
 						<li id="payInfo">내 카드 정보</li>
 						<li id="myPay">후원 기록</li>

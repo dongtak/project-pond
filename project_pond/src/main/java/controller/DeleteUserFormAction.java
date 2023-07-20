@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.user.User;
 import model.user.UserDao;
 
 /**
@@ -14,21 +15,20 @@ import model.user.UserDao;
 public class DeleteUserFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public DeleteUserFormAction() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("leave");
+		request.setCharacterEncoding("UTF-8");
+		String id = (String) request.getSession().getAttribute("log");
+
+		if(id!=null) {
+			UserDao dao = UserDao.getInstance();
+			User user = dao.getUserById(id);
+			String pwd = user.getPwd();
+	        response.setContentType("text/plain");
+	        response.setCharacterEncoding("UTF-8");
+	        response.getWriter().write(pwd);
+		}
+		request.getRequestDispatcher("/leave").forward(request, response);
 	}
 
 	/**
@@ -39,27 +39,27 @@ public class DeleteUserFormAction extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
+		
 		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		System.out.println(id + "action");
-		UserDao userDao = UserDao.getInstance();
-		boolean result = userDao.deleteUserById(id, password);
+		System.out.println("del id : "+id);
+		String pwd = request.getParameter("password");
+		
+		String url = "myPageAction";
+		boolean result=false;
 
-		String url = "leave";
-
-		System.out.println(result + "확인용");
-		if (result) {
-			request.getSession().removeAttribute("log");
-			url = "main";
-
+		if(id!=null) {
+			UserDao userDao = UserDao.getInstance();
+			result = userDao.deleteUserById(id, pwd);
+			
+			if (result) {
+				request.getSession().removeAttribute("log");
+			}
 		}
+		
+		
+		request.getRequestDispatcher(url).forward(request, response);
+		
 
-		if (url.equals("leave")) {
-			System.out.println("탈퇴 실패");
-		} else {
-			System.out.println("탈퇴 성공");
-		}
-		response.sendRedirect(url);
 	}
 
 }

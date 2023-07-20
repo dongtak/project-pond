@@ -1,14 +1,22 @@
+
+
 $('.aside-menu li').on('click', function() {
 	const liId = $(this).attr('id');
 	console.log(liId);
 	
 	$('.aside-menu li').removeClass('curr-menu');
     $(this).addClass('curr-menu');
-    
+	
+	let url="";
+	
 	switch (liId) {
+		case 'myInfo':
+		// 내 정보
+			break;
         case 'update':
-		// 내 정보 수정
-			insertPage(liId);
+		// 비밀번호 수정
+			url="/UpdateUser";
+			insertPage(url);
             break;
         case 'addCard':
         // 결제 수단 추가
@@ -24,7 +32,8 @@ $('.aside-menu li').on('click', function() {
             break;
         case 'delete':
 		// 회원 탈퇴
-			insertPage(liId);
+			url = "/LeaveUser";
+			insertPage(url);
             break;
         default:
             break;
@@ -33,27 +42,18 @@ $('.aside-menu li').on('click', function() {
 });
 
 
-function insertPage(liId) {
-	$('#menu-container').empty();
+function insertPage(url) {
 	
-	let url = "";
-	
-	if(liId==="update"){
-		url="/UpdateUser";
-	}else if(liId==="delete"){
-		url = "/LeaveUser";
-	}
-
 	if (url !== "") {
 		$.ajax({
 			"method": "GET",
-			"url": url,
+			"url": url
 		}).done(function(response) {
+			$('#menu-container').empty();
 			$('#menu-container').append(response);
 		}).fail(function() {
-			console.log("Failed to load JSP page.");
+			console.log("페이지를 불러오는 데 실패하였습니다.");
 		});
 	}
-
 }
 

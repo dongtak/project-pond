@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
+<c:if test="${requestScope.pwd }">
+	<input type="hidden" id="pwd" value="${requestScope.pwd}">
+</c:if>
 		<div id="main-section">
 			<form method="POST" class=user-form action="LeaveUser">
 				<h2>회원탈퇴</h2>
@@ -19,51 +22,52 @@
 						<input type="text" class=user-input id="id" name="id"
 							value="${sessionScope.log}" readonly>
 					</div>
-
 					<div>
 						<input type="text" class=user-input id="password" name="password"
 							placeholder="비밀번호" autofocus>
 					</div>
-
-
 					<ul>
-						<li class="error" id="error-id">아이디: 필수 정보입니다.</li>
 						<li class="error" id="error-password">비밀번호: 필수 정보입니다.</li>
 					</ul>
 				</div>
 
-				<input type="button" id="submit-btn" value="회원탈퇴"
-					onclick="checkValue(form)"> <input type="button"
-					class="cancelBtn" id="cancel-btn" value="취소"
-					onclick="history.back()">
+				<input type="button" id="submit-btn" value="회원탈퇴" onclick="checkValue(form)">
 			</form>
 		</div>
 </body>
 
 <script>
-
-$('#id').on('change', e => {
-	if($('#id').val() !== "") {
-		$('#error-id').hide();
-		$('#id').css('border-color', 'lightgrey');
+$('#password').on('change', e => {
+	if ($('#password').val() !== "" ) {
+		$('#error-password').hide();
+		$('#password').css('border-color', 'lightgrey');
 	}
 });
 
-$('#password').on('change', e => {
-
-	if ($('#password').val() !== "" ) {
-
-		$('#error-password').hide();
-		$('#password').css('border-color', 'lightgrey');
-		/*$('#password').css('border-top', 'none');*/
+$(document).ready(function () {
+	let pwd = $('#pwd');
+	if(pwd.length>0){
+		  pwd=pwd.val();
+	  }else{
+		  pwd="";
 	}
+	console.log("pwd : "+pwd);
 });
 
 function checkValue(htmlForm) {
 	  const id = htmlForm.id.value;
 	  const password = htmlForm.password.value;
+	  let pwd = $('#pwd');
 	  
 	  let check = true;
+	  
+	  if(pwd.length>0){
+		  pwd=pwd.val();
+		  console.log(pwd);
+	  }else{
+		  pwd="";
+		  console.log("pwd 없음;;");
+	  }
 	  
 	  if (id === "") {
 	    $('#error-id').show();
@@ -73,9 +77,9 @@ function checkValue(htmlForm) {
 	    $('#error-password').show();
 	    $('#password').css('border-color', 'red');
 	    check = false;
-	  }else if (password != '${pwd}') {
-	    window.alert('비밀번호가 일치하지 않습니다.');
-	    check = false;
+	  }else if (pwd!==password) {
+		   window.alert('비밀번호가 일치하지 않습니다.');
+		   check = false;
 	  }else if (window.confirm('정말 탈퇴하시겠습니까?')) {
 	    if (check === true)
 	      htmlForm.submit();

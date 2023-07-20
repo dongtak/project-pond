@@ -1,6 +1,3 @@
-/**
- * 
- */
 
  $('#password').on('change', e => {
 	if($('#password').val() !== "") {
@@ -61,7 +58,6 @@ $('#new-password-con').on('change', e => {
   }
   
   if (check) {
-  
     htmlForm.submit();
   }
 }
