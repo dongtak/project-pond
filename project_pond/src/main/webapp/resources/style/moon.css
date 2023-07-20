@@ -5,7 +5,7 @@
 	flex-flow: column wrap;
 	position:relative;
 	min-height: 1200px;
-	text-align: center;
+	
 	
 }
 
@@ -15,6 +15,7 @@
 	overflow: hidden;
 	max-width: 100%;
 	text-shadow: 0 0 10px 10px white;
+	text-align: center;
 	
 }
 
@@ -53,8 +54,9 @@ color: white;
 
 
 .content{
-	padding:30px;
+	padding:40px;
 	border:1px solid black;
+	text-align: center;
 }
 
 
@@ -75,11 +77,11 @@ color: white;
 
 .moon-container-bottom{
 	margin-top:20px;
+	text-align: center;
 }
 
 .content h3{
 	font-size: 30px;
-	margin-top: 20px;
 	letter-spacing: 1px;
 	font-weight: bold;
 }
@@ -95,9 +97,9 @@ font-size: 20px;
 .content-table {
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 30px;
   max-width: 600px;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .content-table > h3 {
@@ -193,7 +195,9 @@ section #logVal{
 
 .comments-write>span{
 	font-size: 20px;
+	text-align: start;
 	
+
 
 }
 

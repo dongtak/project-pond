@@ -101,8 +101,10 @@
 							<span> 후원 메세지 </span>
 							<c:if test="${not empty payList }">
 								<c:forEach var="pays" items="${payList }">
+								<div class="msgContent">
 									<p>${pays.getName() }</p>
 									<p>${pays.getMessage() }</p>
+									</div>
 								</c:forEach>
 							</c:if>
 
@@ -164,9 +166,9 @@
 			const header = $('.header'); // 헤더 부분 획득
 			const headerHeight = header.height(); // 헤더 높이
 
-			const articleCategory = $('.article-category');
+			//const articleCategory = $('.article-category');
 
-			const categoryHeight = articleCategory.height();
+			//const categoryHeight = articleCategory.height();
 
 			$(document).scroll(onScroll); // 스크롤 이벤트
 
@@ -175,7 +177,7 @@
 				const nav = $('.msgBox'); // 메뉴
 
 				if (headerHeight <= scrollPosition
-						&& scrollPosition <= categoryHeight) {
+					) {
 					nav.addClass('fix'); // fix 클래스를 네비에 추가
 				} else {
 					nav.removeClass('fix'); // fix 클래스를 네비에서 제거
