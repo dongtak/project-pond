@@ -65,8 +65,8 @@
 
 							<!--  본문 이미지 -->
 							<div class="articleImg">
-								<img src='https://ifh.cc/g/nXHA6h.jpg' border='0' width=90%
-									height=400>
+								<img src='https://ifh.cc/g/kwX9Zl.jpg' border='0' width=80%
+									height=420>
 
 							</div>
 
@@ -82,7 +82,7 @@
 											value="${fullmoon.getDonate() / fullmoon.getGoal()*100}"
 											integerOnly="true" /> 달성률 : ${percent} % <br></li>
 
-									<li>후원해주신 모든 분들께 감사드립니다.</li>
+									<li class="lastLi">후원해주신 모든 분들께 감사드립니다!</li>
 
 								</ul>
 							</div>
