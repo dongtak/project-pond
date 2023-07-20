@@ -12,11 +12,11 @@ $('.aside-menu li').on('click', function() {
 	switch (liId) {
 		case 'myInfo':
 		// 내 정보
+			url="/showMyInfo";
 			break;
         case 'update':
 		// 비밀번호 수정
 			url="/UpdateUser";
-			insertPage(url);
             break;
         case 'addCard':
         // 결제 수단 추가
@@ -33,11 +33,14 @@ $('.aside-menu li').on('click', function() {
         case 'delete':
 		// 회원 탈퇴
 			url = "/LeaveUser";
-			insertPage(url);
             break;
         default:
             break;
     }
+    
+    if(url!==""){
+		insertPage(url);
+	}
 	
 });
 

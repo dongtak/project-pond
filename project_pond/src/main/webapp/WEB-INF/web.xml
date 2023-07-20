@@ -17,9 +17,6 @@
 
 	<!-- 서블릿 페이지 맵핑 -->
 
-	<!-- 회원수정 추가 -->
-
-
 	<servlet>
 		<servlet-name>UpdateUserFormAction</servlet-name>
 		<servlet-class>controller.UpdateUserFormAction</servlet-class>
@@ -193,6 +190,18 @@
 		<servlet-name>MyPageMenuAction</servlet-name>
 		<url-pattern>/myPageMenu</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowMyInfoAction</servlet-name>
+		<servlet-class>controller.ShowMyInfoAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ShowMyInfoAction</servlet-name>
+		<url-pattern>/showMyInfo</url-pattern>
+	</servlet-mapping>
+	
+	
 
 
 	<!-- JSP 페이지 맵핑 -->
@@ -368,6 +377,16 @@
 	<servlet-mapping>
 		<servlet-name>idCheckForm</servlet-name>
 		<url-pattern>/idCheckForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>myInfo</servlet-name>
+		<jsp-file>/pages/myInfo.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>myInfo</servlet-name>
+		<url-pattern>/myInfo</url-pattern>
 	</servlet-mapping>
 
 	

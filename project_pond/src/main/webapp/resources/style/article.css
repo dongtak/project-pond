@@ -8,15 +8,12 @@
 
 
 html{
-		background-image:url("../images/history_bg.jpeg");
+	background-image:url("../images/history_bg.jpeg");
 	background-size:cover;
 }
 
 .section{
-	
 	padding-bottom: 30px;
-	
-	
 }
 
 body{
@@ -174,7 +171,6 @@ a.currPage{
 }
 
 .footer{
-	background-color: black;
 	color:white;
 }
 
