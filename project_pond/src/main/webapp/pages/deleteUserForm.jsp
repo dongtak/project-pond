@@ -23,7 +23,7 @@
 							value="${sessionScope.log}" readonly>
 					</div>
 					<div>
-						<input type="text" class=user-input id="password" name="password"
+						<input type="password" class=user-input id="password" name="password"
 							placeholder="비밀번호" autofocus>
 					</div>
 					<ul>
@@ -44,16 +44,6 @@ $('#password').on('change', e => {
 	}
 });
 
-$(document).ready(function () {
-	let pwd = $('#pwd');
-	if(pwd.length>0){
-		  pwd=pwd.val();
-	  }else{
-		  pwd="";
-	}
-	console.log("pwd : "+pwd);
-});
-
 function checkValue(htmlForm) {
 	  const id = htmlForm.id.value;
 	  const password = htmlForm.password.value;
@@ -63,10 +53,9 @@ function checkValue(htmlForm) {
 	  
 	  if(pwd.length>0){
 		  pwd=pwd.val();
-		  console.log(pwd);
 	  }else{
 		  pwd="";
-		  console.log("pwd 없음;;");
+		  console.log("회원 동기화 오류");
 	  }
 	  
 	  if (id === "") {

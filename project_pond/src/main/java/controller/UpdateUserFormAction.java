@@ -40,18 +40,26 @@ public class UpdateUserFormAction extends HttpServlet {
 		
 		// 입력값 받아오기
 		String id = (String) session.getAttribute("log");
-		String inputPwd = request.getParameter("password");
-		String inputNewPwd = request.getParameter("new-password");
+		String inputPwd = request.getParameter("new-password");
+		
+		
+		boolean result=false;
 		
 		if(!id.equals("")) {
 			if(inputPwd!=null) {
 				UserDao userDao = UserDao.getInstance();
 				UserRequestDto userDto = new UserRequestDto(id, inputPwd);
-				userDao.updateUser(userDto,inputNewPwd);
+				result = userDao.updateUser(userDto);
+				if(result) {
+					System.out.println("비밀번호 변경 성공");
+				}else {
+					System.out.println("비밀번호 변경 실패");
+				}
 			}
 		}
 		
 		response.sendRedirect("myPageMenu");
+//		request.getRequestDispatcher("/myPageMenu").forward(request, response);
 
 	}
 

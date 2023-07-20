@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="main-section">
-		<form method="POST" class=user-form>
+		<form method="POST" class=user-form action="UpdateUser">
 			<h2>비밀번호 변경</h2>
 			<div class="div-form">
 				<div>

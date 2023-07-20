@@ -286,31 +286,31 @@ public class UserDao {
 	}
 	
 	
-	public void updateUser(UserRequestDto userDto, String newPassword) {
+	// 비밀번호 변경
+	public boolean updateUser(UserRequestDto userDto) {
 		this.conn = DBManager.getConnection();
-
-		System.out.println("안녕~");
-		System.out.println(newPassword);
-		System.out.println(userDto.getId());
-		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && newPassword != null) {
-
-			String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
+		boolean result = false;
+		
+		if (this.conn != null) {
+			String id= userDto.getId();
+			String pwd = userDto.getPwd();
+			
+			String sql = "UPDATE user SET user_pwd=? WHERE user_id=?";
 
 			try {
-				System.out.println("뚱이2");
 				this.pstmt = this.conn.prepareStatement(sql);
-				this.pstmt.setString(1, newPassword);
-				this.pstmt.setString(2, userDto.getId());
-				this.pstmt.setString(3, userDto.getPwd());
+				this.pstmt.setString(1, pwd);
+				this.pstmt.setString(2, id);
 
 				this.pstmt.execute();
-
+				result = true;
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				DBManager.close(this.conn, this.pstmt);
 			}
 		}
+		return result;
 	}
 
 	// 유저 아이디로 해당 유저의 이름만 리턴
