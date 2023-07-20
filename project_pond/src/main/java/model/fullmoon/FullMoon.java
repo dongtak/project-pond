@@ -1,5 +1,6 @@
 package model.fullmoon;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class FullMoon {
@@ -8,14 +9,14 @@ public class FullMoon {
 	private String adminId;
 	private String title;
 	private Timestamp createdAt;
-	private Timestamp finishAt;
+	private String finishAt;
 	private int goal;
 	private int donate;
 	private int status;
 	private int messageCnt;
 
 	public FullMoon(String moonNum, String adminId, String title, Timestamp createdAt, int goal,
-			Timestamp finishAt,int donate, int status, int messageCnt) {
+			String finishAt,int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
@@ -44,7 +45,7 @@ public class FullMoon {
 		return createdAt;
 	}
 	
-	public Timestamp getFinishAt() {
+	public String getFinishAt() {
 		return finishAt;
 	}
 	

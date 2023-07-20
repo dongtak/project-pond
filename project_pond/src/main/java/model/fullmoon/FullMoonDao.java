@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import util.DBManager;
@@ -14,6 +15,8 @@ public class FullMoonDao {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	private FullMoonDao() {
 	}
@@ -56,7 +59,7 @@ public class FullMoonDao {
 					String adminId = this.rs.getString(2);
 					String title = this.rs.getString(3);
 					Timestamp createdAt = this.rs.getTimestamp(4);
-					Timestamp finishAt = this.rs.getTimestamp(5);
+					String finishAt = sdf.format(this.rs.getDate(5));
 					int goal = this.rs.getInt(6);
 					int donate = this.rs.getInt(7);
 					int status = this.rs.getInt(8);
@@ -95,7 +98,7 @@ public class FullMoonDao {
 					String adminId = this.rs.getString(2);
 					String title = this.rs.getString(3);
 					Timestamp createdAt = this.rs.getTimestamp(4);
-					Timestamp finishAt = this.rs.getTimestamp(5);
+					String finishAt = sdf.format(this.rs.getDate(5));
 					int goal = this.rs.getInt(6);
 					int donate = this.rs.getInt(7);
 					int status = this.rs.getInt(8);

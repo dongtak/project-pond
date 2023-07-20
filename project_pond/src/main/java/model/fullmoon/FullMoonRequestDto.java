@@ -1,5 +1,6 @@
 package model.fullmoon;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class FullMoonRequestDto {
@@ -8,7 +9,7 @@ public class FullMoonRequestDto {
 	private String adminId;
 	private String title;
 	private Timestamp createdAt;
-	private Timestamp finishAt;
+	private String finishAt;
 	private int goal;
 	private int donate;
 	private int status;
@@ -20,8 +21,17 @@ public class FullMoonRequestDto {
 		this.messageCnt = messageCnt;
 	}
 	
+	public FullMoonRequestDto(String finishAt, int goal, int donate, int messageCnt) {
+		super();
+		this.finishAt = finishAt;
+		this.goal = goal;
+		this.donate = donate;
+		this.messageCnt = messageCnt;
+	}
+
+
 	public FullMoonRequestDto(String moonNum, String adminId, String title, Timestamp createdAt,
-			Timestamp finishAt,int goal, int donate, int status, int messageCnt) {
+			String finishAt,int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
@@ -35,11 +45,11 @@ public class FullMoonRequestDto {
 	}
 	
 	
-	public Timestamp getFinishAt() {
+	public String getFinishAt() {
 		return finishAt;
 	}
 
-	public void setFinishAt(Timestamp finishAt) {
+	public void setFinishAt(String finishAt) {
 		this.finishAt = finishAt;
 	}
 

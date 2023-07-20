@@ -7,7 +7,7 @@ public class FullMoonResponseDto {
 	private String adminId;
 	private String title;
 	private Timestamp createdAt;
-	private Timestamp finishAt;
+	private String finishAt;
 	private int goal;
 	private int donate;
 	private int status;
@@ -15,7 +15,7 @@ public class FullMoonResponseDto {
 	
 
 	public FullMoonResponseDto(String moonNum, String adminId, String title, Timestamp createdAt,
-			Timestamp finishAt,int goal, int donate, int status, int messageCnt) {
+			String finishAt,int goal, int donate, int status, int messageCnt) {
 		super();
 		this.moonNum = moonNum;
 		this.adminId = adminId;
@@ -28,11 +28,11 @@ public class FullMoonResponseDto {
 		this.messageCnt = messageCnt;
 	}
 	
-	public Timestamp getFinishAt() {
+	public String getFinishAt() {
 		return finishAt;
 	}
 
-	public void setFinishAt(Timestamp finishAt) {
+	public void setFinishAt(String finishAt) {
 		this.finishAt = finishAt;
 	}
 
