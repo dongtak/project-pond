@@ -44,18 +44,7 @@ $('#password').on('change', e => {
 	}
 });
 
-<<<<<<< HEAD
-=======
-$(document).ready(function () {
-	let pwd = $('#pwd');
-	if(pwd.length>0){
-		  pwd=pwd.val();
-	  }else{
-		  pwd="";
-	}
-});
 
->>>>>>> refs/remotes/origin/#3-lee-seoyoung
 function checkValue(htmlForm) {
 	  const id = htmlForm.id.value;
 	  const password = htmlForm.password.value;
