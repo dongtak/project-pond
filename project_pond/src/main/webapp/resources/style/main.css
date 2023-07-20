@@ -151,6 +151,9 @@ button {
   
 }
 
+.donateDate{
+	font-size:1rem;
+}
 
 .donateBtn{
 	position: absolute;

@@ -58,7 +58,11 @@
 								pattern="#0.0" />
 							<progress value="${formattedMoney }" max="100"></progress>
 							<br> <span class="moon_status">달성률 : ${formattedMoney }%
-							</span><br> <span>모금기간 : ${moonUp.getCreatedAt() }</span> <a
+							</span><br> <c:set var="createdAt" value="${moonUp.getCreatedAt() }" />
+					<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
+						var="created" />
+					<br>
+							<span class=donateDate>모금기간 &nbsp; | &nbsp; ${created} ~ 2023-08-03</span> <a
 								class="donateBtn" href="donate">후원하기</a>
 						</div>
 					</div>
