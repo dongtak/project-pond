@@ -79,7 +79,15 @@ function checkValue(htmlForm) {
 
 
 </script>
+<script>
+    $(document).on("keyup", function(e){
+        if (e.which == 13) {
+            $("#submit-btn").click();
+        }
+    });
 
+
+</script>
 
 
 </html>

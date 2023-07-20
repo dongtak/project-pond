@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
+
 	<div class="input-addr">
 		<input type="text" class="address-input" id="sample6_postcode"
 			name="sample6_postcode" placeholder="우편번호"> <input

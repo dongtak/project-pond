@@ -26,6 +26,7 @@ public class ShowMyInfoAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
 		String id = (String) request.getSession().getAttribute("id");
 		
 		if(id==null) {
@@ -58,6 +59,7 @@ public class ShowMyInfoAction extends HttpServlet {
 		
 		request.getRequestDispatcher("myInfo").forward(request, response);
 		
+
 	}
 
 

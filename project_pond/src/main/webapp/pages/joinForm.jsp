@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="resources/images/favicon-32x32.png">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <title>회원가입</title>
@@ -13,6 +14,7 @@
 <body>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
+
 		<div class="section login-form">
 			<form method="POST" class="user-form" action="Join">
 				<h2>회원가입</h2>
@@ -53,5 +55,13 @@
 
 </body>
 <script src="resources/script/validation.js"></script>
+<script>
+$(document).on("keyup", function(e){
+    if (e.which == 13) {
+        $("#submit-btn").click();
+    }
+});
+</script>
+
 
 </html>

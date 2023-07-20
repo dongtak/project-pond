@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="resources/images/favicon-32x32.png">
 <title>로그인</title>
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
+
 <c:set var="msg" value="${requestScoope.msg }"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
@@ -29,9 +31,18 @@
 					<a href="join">회원가입</a>
 				</div>
 			</form>
+
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+
 <script src="resources/script/validationLogin.js"></script>
+<script>
+$(document).on("keyup", function(e){
+    if (e.which == 13) {
+        $("#submit-btn").click();
+    }
+});
+</script>
 </body>
 </html>
