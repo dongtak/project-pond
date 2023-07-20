@@ -15,9 +15,12 @@
 .donor{
 	padding-top:60px;
 }
+.donorinfo{
+	width:70%;
+	margin:0 auto;
+}
 
 .nextbtn,.btn-box button{
-	width: 50%;
 	margin: 20px 20px;
 	text-align: center;
 	padding: 15px;
@@ -40,16 +43,16 @@
 	min-width: 420px;
 	 border-radius: 10px;
     text-align: center;
-    background-color: #FDDCAA;
+    background-color: #f2f2f2;
     height: 700px;
     box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
 }
 
 
-#lid input[type=text],.cardform input[type=text] {
+#lid input[type=text] {
+	padding-left:15px;
 	width: 70%;
 	margin: 10px auto;
-	padding: 15px;
 	border: none;
 	outline: none;
 	border-radius: 20px;
@@ -65,9 +68,14 @@
 	min-width: 420px;
 	 border-radius: 10px;
     text-align: center;
-    background-color: #FDDCAA;
+   background-color: #f2f2f2;
    
     box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+}
+
+.cardform input[type=text]{
+	
+	
 }
 
 
@@ -89,21 +97,42 @@
 }
 
 .money-btn button{
-	width: 40%;
-	margin: 20px auto;
-	text-align: center;
-	color: rgb(0, 0, 0);
-	font-weight: bold;
-	outline: none;
-	font-size: 13px;
-	letter-spacing: 1px;
-	border: none;
-	border-radius: 20px;
-	background-color: #dce8e1;
-	cursor: pointer;
+	margin:10px 0;
+	margin: 10px 10px 10px 0;
+	height : 40px;
+	width:60%;
+	background-color:#46649B;
+	border-radius: 10px;
+	color:white;
 	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+}
+
+.money-btn button:nth-child(1){
+	background: rgb(144, 193, 237);
+
+}.money-btn button:nth-child(2){
+		background: rgb(226, 231, 119);
 	
+
+}.money-btn button:nth-child(3){
+	background: rgb(223, 175, 139);
 	
+
+}.money-btn button:nth-child(4){
+	background: rgb(172, 205, 149);
+	
+
+}.money-btn button:nth-child(5){
+	background: rgb(215, 185, 121);
+
+
+}.money-btn button:nth-child(6){
+	background: pink;
+
+}
+
+.money-btn button{
+	background-color: #1E3269;
 }
 
 #lid .name-radio{
