@@ -77,7 +77,8 @@
 				</div>
 
 					<input type="button" class="join-btn" id="submit-btn" value="회원가입"
-						onclick="checkValue(form)"> <input type="button"
+						onclick="checkValue(form)" onkeyup="enterkey()">
+						 <input type="button"
 						class="cancelBtn" id="cancel-btn" value="취소"
 						onclick="history.back()">
 				</form>
@@ -88,5 +89,15 @@
 
 </body>
 <script src="resources/script/validation.js"></script>
+
+<script>
+function enterkey() {
+    if (window.event.keyCode == 13) {
+
+         // 엔터키가 눌렸을 때 실행하는 반응
+         $("#form").submit();
+    }
+}
+</script>
 
 </html>

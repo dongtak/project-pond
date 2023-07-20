@@ -136,16 +136,15 @@
 
 				</div>
 				
-				<c:set var="payList" value="${requestScope.payList}" />
 				
-					<div class="msgBox msgSlider">
+				
+					<div class="msgBox">
 							<span>  후원 메세지  </span>
 							<c:if test="${not empty payList }">
 								<c:forEach var="pays" items="${payList }">
 								<div class="msgContent">
 									<p>${pays.getName() }</p>
 									<p>${pays.getMessage() }</p>
-								
 									</div>
 								</c:forEach>
 							</c:if>
