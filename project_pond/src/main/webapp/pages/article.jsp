@@ -62,7 +62,6 @@
 							</div>
 
 
-
 							<!--  본문 이미지 -->
 							<div class="articleImg">
 								<img src='https://ifh.cc/g/kwX9Zl.jpg' border='0' width=80%
