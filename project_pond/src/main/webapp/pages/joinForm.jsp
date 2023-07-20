@@ -56,13 +56,11 @@
 </body>
 <script src="resources/script/validation.js"></script>
 <script>
-	$(function() {
-		$(document).on("keyup", function(e) {
-			if (e.which == 13) {
-				$("#submit-btn").click();
-			}
-		});
-	});
+$(document).on("keyup", function(e){
+    if (e.which == 13) {
+        $("#submit-btn").click();
+    }
+});
 </script>
 
 

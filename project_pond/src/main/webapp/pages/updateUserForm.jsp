@@ -40,19 +40,17 @@
 			</div>
 			<input type="hidden" value="${requestScope.user.getPwd() }" name="storedPwd" id="storedPwd">
 			<input type="button" class="updateBtn" id="submit-btn" value="비밀번호 변경하기" onclick="checkPwd(form)"> 
+		
 		</form>
 	</div>
 <script src="resources/script/validationUpdate.js"></script>
 
 <script>
-$(function() {
-    $(document).on("keyup", function(e){
-        if (e.which == 13) {
-            $("#submit-btn").click();
-        }
-    });
+$(document).on("keyup", function(e){
+    if (e.which == 13) {
+        $("#submit-btn").click();
+    }
 });
-
 </script>
 </body>
 

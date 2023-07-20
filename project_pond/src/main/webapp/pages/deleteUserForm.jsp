@@ -80,13 +80,12 @@ function checkValue(htmlForm) {
 
 </script>
 <script>
-$(function() {
     $(document).on("keyup", function(e){
         if (e.which == 13) {
             $("#submit-btn").click();
         }
     });
-});
+
 
 </script>
 
