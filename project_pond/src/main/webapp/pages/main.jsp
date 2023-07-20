@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="resources/images/favicon-32x32.png">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <title>나눗샘</title>
@@ -23,6 +24,10 @@
 		<div id="back-img">
 			<jsp:include page="/header"></jsp:include>
 			<div class="section">
+				<div class="notice-box">
+					<span class="icon">🌟</span> <span class="hover-text">*반딧불이를
+						눌러보세요!</span>
+				</div>
 				<div class="firefly_base">
 					<div class="fireflypack"></div>
 					<div href="moon" class="main_moon">
@@ -30,32 +35,31 @@
 							<c:set var="do_loof" value="true" />
 							<c:set var="moonNum" value="${moonUp.getMoonNum() }" />
 							<h2>${moonUp.getTitle()}</h2>
-							<span> 
-									<c:set var="num" value="${fn:substringAfter(moonNum, '0')}" /> 
-									<c:set var="do_loof" value="true" /> 
-										<c:forEach var="item" begin="1" end="${fn:length(num)}">
-										<c:if test="${do_loof eq true }">
-											<c:choose>
-												<c:when test="${fn:startsWith(num, '0')}">
-													<c:set var="num" value="${fn:substringAfter(num, '0')}" />
-												</c:when>
-												<c:otherwise>
-													<c:set var="do_loof" value="false" />
-												</c:otherwise>
-											</c:choose>
-										</c:if>
-									</c:forEach> ${num }회
-							</span><br> 
-							<span>목표모금액 :
-								${moonUp.getGoal() }원</span><br> <span>누적모금액 :
-								${moonUp.getDonate()}원</span><br>
+							<span> <c:set var="num"
+									value="${fn:substringAfter(moonNum, '0')}" /> <c:set
+									var="do_loof" value="true" /> <c:forEach var="item" begin="1"
+									end="${fn:length(num)}">
+									<c:if test="${do_loof eq true }">
+										<c:choose>
+											<c:when test="${fn:startsWith(num, '0')}">
+												<c:set var="num" value="${fn:substringAfter(num, '0')}" />
+											</c:when>
+											<c:otherwise>
+												<c:set var="do_loof" value="false" />
+											</c:otherwise>
+										</c:choose>
+									</c:if>
+								</c:forEach> ${num }회
+							</span><br> <span>목표모금액 : ${moonUp.getGoal() }원</span><br> <span>누적모금액
+								: ${moonUp.getDonate()}원</span><br>
 							<c:set var="money"
 								value="${moonUp.getDonate() / moonUp.getGoal() * 100 }" />
 							<fmt:formatNumber var="formattedMoney" value="${money}"
 								pattern="#0.0" />
 							<progress value="${formattedMoney }" max="100"></progress>
-							<br> <span class="moon_status">달성률 : ${formattedMoney }% </span><br> <span>모금기간
-								: ${moonUp.getCreatedAt() }</span> <a class="donateBtn" href="donate">후원하기</a>
+							<br> <span class="moon_status">달성률 : ${formattedMoney }%
+							</span><br> <span>모금기간 : ${moonUp.getCreatedAt() }</span> <a
+								class="donateBtn" href="donate">후원하기</a>
 						</div>
 					</div>
 				</div>
