@@ -10,19 +10,23 @@
 	href="resources/images/favicon-32x32.png">
 <link rel="stylesheet" href="resources/style/moon.css">
 <script src="../resources/script/comments-api.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <title>보름달</title>
 </head>
 <body>
-<c:set var="log" value="${sessionScope.log}" />
-	<c:set var="moonUp" value="${sessionScope.moonUp }" />
+
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
+		<c:if test="${not empty log }">
+			<input type="hidden" id="logVal" value="${log}">
+		</c:if>
+		<c:set var="moonNum" value="${requestScope.moonNum }" />
+		<input type="hidden" id="moonNum" value="${moonNum}">
 		<div class="section">
-			<span id="logVal">${log}</span>
+
 			<div class="moon-container">
 				<div id="title">
-				<img src="https://i.imgur.com/N37csnK.jpgul">
+					<img src="https://i.imgur.com/N37csnK.jpgul">
 					<h2>${moonUp.getTitle()}</h2>
 					<c:set var="createdAt" value="${moonUp.getCreatedAt() }" />
 					<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
@@ -132,12 +136,6 @@
 				</div>
 
 
-
-
-
-
-
-
 			</div>
 
 
@@ -145,9 +143,9 @@
 			<div class="moon-container-bottom">
 
 				<div class="comments-write">
-						<span>댓글쓰기 </span>
+					<span>댓글쓰기 </span>
 					<form method="POST" class="comment">
-				
+
 						<textarea cols="80" rows="10" id="msg-box" name="msg"
 							<c:choose>
 								<c:when test="${empty log}">
@@ -190,7 +188,7 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
-		<script src="../resources/script/comments-api.js"></script>
+	<script src="../resources/script/comments-api.js"></script>
 	<script>
 		function scrollToTop() {
 			$("html, body").animate({

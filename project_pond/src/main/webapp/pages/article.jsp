@@ -25,18 +25,18 @@
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div id="section">
-			<span id="logVal">${log}</span>
+		<c:if test="${not empty log }">
+			<input type="hidden" id="logVal" value="${log}">
+		</c:if>
 			<div class=article-container>
 				<!-- 본문 -->
 				<div class="article-cotainer-top">
 					<div class="article-content">
-
-
 						<div class="articleTitle">
 							<ul>
 								<li><c:set var="moonNum" value="${article.getMoon_num() }" />
 									<img src='https://ifh.cc/g/1Jbm3R.png' border='0' width=30 height=30> 
-									
+									<input type="hidden" id="moonNum" value="${moonNum}">
 									<c:set var="num" value="${fn:substringAfter(moonNum, '0')}" /> 
 									<c:set var="do_loof" value="true" /> 
 										<c:forEach var="item" begin="1" end="${fn:length(num)}">
@@ -50,8 +50,10 @@
 												</c:otherwise>
 											</c:choose>
 										</c:if>
-									</c:forEach> ${num }회
-									
+									</c:forEach> 
+									<span>
+										${num }회
+									</span>
 									</li>
 								<li><c:set var="title"
 										value="${article.getArticle_title() }" /> <span class="title">

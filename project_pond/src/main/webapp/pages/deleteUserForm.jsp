@@ -51,7 +51,6 @@ $(document).ready(function () {
 	  }else{
 		  pwd="";
 	}
-	console.log("pwd : "+pwd);
 });
 
 function checkValue(htmlForm) {

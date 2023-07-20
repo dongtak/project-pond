@@ -3,17 +3,13 @@ $('#msg-box').click(e => {
 })
 
 function addComment() {
-	const moonNum = $('#moonNum').text();
-	const msgBoxValue = $('#msg-box').val();
-	console.log(moonNum);
-	console.log(msgBoxValue);
-	const id = $('#logVal').text();
-
-	console.log("id ="+id);
+	const moonNum = $('#moonNum').val();
+	const msgBoxValue=$('#msg-box').val();
+	const id = $('#logVal').val();
 
 	$.ajax({
 		"method": "POST",
-		"url": `/comments?moonNum=${moonNum}&msg=${$('#msg-box').val()}`,
+		"url": `/comments?moonNum=${moonNum}&msg=${msgBoxValue}`,
 	}).done(response => {
 		console.log(response);
 
@@ -26,9 +22,8 @@ function addComment() {
 			} else {
 				alert('댓글을 입력해주세요.');
 			}
-}
+		}
 	});
-	
 
 }
 
@@ -36,7 +31,7 @@ function drawComments() {
 
 	$.ajax({
 		"method": "GET",
-		"url": `/comments?moonNum=${$('#moonNum').text()}`
+		"url": `/comments?moonNum=${$('#moonNum').val()}`
 	}).done(response => {
 		const list = response; // JsonArray
 		console.log(list);

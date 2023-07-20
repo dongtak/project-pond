@@ -44,6 +44,8 @@ public class CommentAction extends HttpServlet {
 		// 받아온 댓글
 		String moonNum = request.getParameter("moonNum");
 		String addMsg = request.getParameter("msg");
+		
+		System.out.println("msg : "+addMsg);
 
 		// 세션에 저장되어 있는 로그인중인 유저 id
 		String id = (String) session.getAttribute("log");
