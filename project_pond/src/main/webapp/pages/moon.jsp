@@ -76,13 +76,7 @@
 							행동이 미래의 빛을 비춰주며,<br> 어린이들이 희망을 가질 수 있는 더 나은 세상을 만들어낼 것입니다.
 						<li>
 						<li><h3>저희 보름달과 함께해주세요!</h3></li>
-
-
-
-
-
-
-
+						<a class="donateBtn" href="donate">지금 보름달에서 후원하기</a>
 
 
 					</ul>
@@ -95,7 +89,7 @@
 							<thead>
 								<tr>
 									<th>총 집행금액</th>
-									<th colspan="2">12,0400,000원</th>
+									<th colspan="2">12,400,000원</th>
 
 
 								</tr>
@@ -136,16 +130,15 @@
 
 				</div>
 				
-				<c:set var="payList" value="${requestScope.payList}" />
 				
-					<div class="msgBox msgSlider">
+				
+					<div class="msgBox">
 							<span>  후원 메세지  </span>
 							<c:if test="${not empty payList }">
 								<c:forEach var="pays" items="${payList }">
 								<div class="msgContent">
 									<p>${pays.getName() }</p>
 									<p>${pays.getMessage() }</p>
-								
 									</div>
 								</c:forEach>
 							</c:if>

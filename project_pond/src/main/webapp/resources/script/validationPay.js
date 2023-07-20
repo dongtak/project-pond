@@ -33,7 +33,6 @@ function nameAndNumber(htmlForm) {
 	var customAmountInput = document.getElementById("moneyInput");
 	var moneyError = document.getElementById("moneyError");
 	var resultN = nameValue !== null ? 1 : 0;
-	var url;
 	if (resultN === 0) {
 		nameError.style.display = "block";
 	} else {
@@ -55,17 +54,6 @@ function nameAndNumber(htmlForm) {
 
 		htmlForm.submit();
 
-		alert("test");
-		//if (nameValue === "anonymous") {
-		//	url="anonymous?"
-		//}else{
-		//	url="modal2?"
-		//}
-
-		//	form = document.getElementById("modal-form");
-		//	url += new URLSearchParams(new FormData(form)).toString();
-		//	console.log(url)
-		//	window.location.href = url;
 	} 
 }
 
