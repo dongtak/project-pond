@@ -43,6 +43,17 @@
 		</form>
 	</div>
 <script src="resources/script/validationUpdate.js"></script>
+
+<script>
+$(function() {
+    $(document).on("keyup", function(e){
+        if (e.which == 13) {
+            $("#submit-btn").click();
+        }
+    });
+});
+
+</script>
 </body>
 
 </html>

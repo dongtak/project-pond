@@ -95,7 +95,7 @@
 							<thead>
 								<tr>
 									<th>총 집행금액</th>
-									<th colspan="2">12,0400,000원</th>
+									<th colspan="2">12,400,000원</th>
 
 
 								</tr>

@@ -53,7 +53,16 @@
 </c:if>
 
 <script src="resources/script/validationLogin.js"></script>
+<script>
+$(function() {
+    $(document).on("keyup", function(e){
+        if (e.which == 13) {
+            $("#submit-btn").click();
+        }
+    });
+});
 
+</script>
 </body>
 
 </html>

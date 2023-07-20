@@ -13,6 +13,7 @@
 		<span>주소 : (01234) 서울시 강남구 보름로 11 (보름동)</span>
 		<span>email : help@moon.com</span>
 		<span>&copy; 2023 보름달. ALL RIGHTS RESERVED.</span>
+		<a href="/profilePage">프로필 페이지</a>
 	</div>
 </body>
 </html>

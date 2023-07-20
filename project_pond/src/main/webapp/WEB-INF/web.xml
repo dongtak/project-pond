@@ -412,7 +412,17 @@
 		<url-pattern>/adminManage</url-pattern>
 	</servlet-mapping>
 	
+	<!-- profile 페이지 매핑 -->
 	
+	<servlet>
+		<servlet-name>profilePage</servlet-name>
+		<jsp-file>/pages/profilePage.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>profilePage</servlet-name>
+		<url-pattern>/profilePage</url-pattern>
+	</servlet-mapping>
 	
 	
 
