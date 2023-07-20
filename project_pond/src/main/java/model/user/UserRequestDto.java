@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class UserRequestDto {
 	
-
 	private String id;
 	private String pwd;
 	private String name;
@@ -20,8 +19,7 @@ public class UserRequestDto {
 	}
 	
 	
-	public UserRequestDto(String id, String pwd, String name, String email, int birth, String phone, String address
-			) {
+	public UserRequestDto(String id, String pwd, String name, String email, int birth, String phone, String address) {
 		
 		this.id = id;
 		this.pwd = pwd;
@@ -59,8 +57,7 @@ public class UserRequestDto {
 	public UserRequestDto(String id, String pwd) {
 			this.id = id;
 			this.pwd = pwd;
-
-		}
+	}
 	
 	
 	public String getId() {
