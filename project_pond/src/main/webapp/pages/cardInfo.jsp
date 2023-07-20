@@ -64,139 +64,145 @@ body {
 .form-input:focus {
 	border-color:
 }
+.donorinfo,.cardinfo,.btn2{
+	width: 40%;
+	margin:0 auto;
+}
+
 </style>
 <body>
-		<%
-  String additionalData = request.getParameter("additionalData");
-  // additionalData 값 활용
-%>
+	<%
+	String additionalData = request.getParameter("additionalData");
+	// additionalData 값 활용
+	%>
 
 	<c:choose>
-			<c:when test="${empty log}">
-				<!-- 
+		<c:when test="${empty log}">
+			<!-- 
 					비어있는 input
 				 -->
-				 <div class=donorinfo>
-			<div class="form-group">
-				<label for="donorName" class="form-label">성함</label> 
-				<input
-					type="text" name="donorName" id="donorName" placeholder="성함"
-					class="form-input" value=""> <span id="nameError"
-					class="error-message">성함을 입력해주세요</span>
+			<div class=donorinfo>
+				<div class="form-group">
+					<label for="donorName" class="form-label">성함</label> <input
+						type="text" name="donorName" id="donorName" placeholder="성함"
+						class="form-input" value=""> <span id="nameError"
+						class="error-message">성함을 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorBirth" class="form-label">생년월일</label> <input
+						type="text" name="donorBirth" id="donorBirth" placeholder="생년월일"
+						class="form-input" maxlength="8" value=""> <span
+						id="birthError" class="error-message">생년월일을 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorPhone" class="form-label">전화번호</label> <input
+						type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호"
+						class="form-input" maxlength="11" value=""> <span
+						id="phoneError" class="error-message">전화번호를 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorEmail" class="form-label">이메일</label> <input
+						type="email" name="donorEmail" id="donorEmail" placeholder="이메일"
+						class="form-input" value=""> <span id="emailError"
+						class="error-message">이메일을 입력해주세요</span>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="donorBirth" class="form-label">생년월일</label> <input
-					type="text" name="donorBirth" id="donorBirth" placeholder="생년월일"
-					class="form-input" maxlength="8" value=""> <span id="birthError"
-					class="error-message">생년월일을 입력해주세요</span>
-			</div>
-
-			<div class="form-group">
-				<label for="donorPhone" class="form-label">전화번호</label> <input
-					type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호"
-					class="form-input" maxlength="11"value=""> <span id="phoneError"
-					class="error-message">전화번호를 입력해주세요</span>
-			</div>
-
-			<div class="form-group">
-				<label for="donorEmail" class="form-label">이메일</label> <input
-					type="email" name="donorEmail" id="donorEmail" placeholder="이메일"
-					class="form-input" value=""> <span id="emailError"
-					class="error-message">이메일을 입력해주세요</span>
-			</div>
-		</div>
-				 
-			</c:when>
-			<c:otherwise>
+		</c:when>
+		<c:otherwise>
 			<!-- 
 				유저 정보를 갖고와서 입력되있는 input
 			 -->
-			 <div class=donorinfo>
-			<div class="form-group">
-				<label for="donorName" class="form-label">성함</label> 
-				<input
-					type="text" name="donorName" id="donorName" placeholder="성함"
-					class="form-input" value="유저 이름"> <span id="nameError"
-					class="error-message">성함을 입력해주세요</span>
+			<div class=donorinfo>
+				<div class="form-group">
+					<label for="donorName" class="form-label">성함</label> <input
+						type="text" name="donorName" id="donorName" placeholder="성함"
+						class="form-input" value="유저 이름"> <span id="nameError"
+						class="error-message">성함을 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorBirth" class="form-label">생년월일</label> <input
+						type="text" name="donorBirth" id="donorBirth" placeholder="생년월일"
+						class="form-input" maxlength="8" value="19999999"> <span
+						id="birthError" class="error-message">생년월일을 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorPhone" class="form-label">전화번호</label> <input
+						type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호"
+						class="form-input" maxlength="11" value="11111111"> <span
+						id="phoneError" class="error-message">전화번호를 입력해주세요</span>
+				</div>
+
+				<div class="form-group">
+					<label for="donorEmail" class="form-label">이메일</label> <input
+						type="email" name="donorEmail" id="donorEmail" placeholder="이메일"
+						class="form-input" value="email@email.com"> <span
+						id="emailError" class="error-message">이메일을 입력해주세요</span>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="donorBirth" class="form-label">생년월일</label> <input
-					type="text" name="donorBirth" id="donorBirth" placeholder="생년월일"
-					class="form-input" maxlength="8" value="19999999"> <span id="birthError"
-					class="error-message">생년월일을 입력해주세요</span>
-			</div>
+		</c:otherwise>
 
-			<div class="form-group">
-				<label for="donorPhone" class="form-label">전화번호</label> <input
-					type="tel" name="donorPhone" id="donorPhone" placeholder="전화번호"
-					class="form-input" maxlength="11"value="11111111"> <span id="phoneError"
-					class="error-message">전화번호를 입력해주세요</span>
-			</div>
+	</c:choose>
 
-			<div class="form-group">
-				<label for="donorEmail" class="form-label">이메일</label> <input
-					type="email" name="donorEmail" id="donorEmail" placeholder="이메일"
-					class="form-input" value="email@email.com"> <span id="emailError"
-					class="error-message">이메일을 입력해주세요</span>
-			</div>
+	<div class=cardinfo>
+		<div class="form-group">
+			<label for="cardType" class="form-label">카드 타입</label> <select
+				name="cardType" id="cardType" class="form-input" value="">
+				<option value="">카드 타입 선택</option>
+				<option value="visa">Visa</option>
+				<option value="mastercard">Mastercard</option>
+			</select> <span id="cardTypeError" class="error-message">카드 타입을 선택해주세요</span>
 		</div>
-			 
-			</c:otherwise>
-			
-			</c:choose>
-			
-				<div class=cardinfo>
-			<div class="form-group">
-				<label for="cardType" class="form-label">카드 타입</label> <select
-					name="cardType" id="cardType" class="form-input" value="">
-					<option value="">카드 타입 선택</option>
-					<option value="visa">Visa</option>
-					<option value="mastercard">Mastercard</option>
-				</select> <span id="cardTypeError" class="error-message">카드 타입을 선택해주세요</span>
-			</div>
 
-			<div class="form-group">
-				<label for="cardNumber" class="form-label">카드번호</label> <input
-					type="text" name="cardNumber" id="cardNumber" placeholder="카드번호"
-					class="form-input" value=""> <span id="cardNumberError"
-					class="error-message">카드번호를 입력해주세요</span>
-			</div>
-
-			<div class="form-group">
-				<label for="cardPassword" class="form-label">카드 비밀번호 2자리</label> <input
-					type="text" name="cardPassword" id="cardPassword"
-					placeholder="카드 비밀번호 2자리" maxlength="2" class="form-input" value="">
-				<span id="cardPasswordError" class="error-message">카드 비밀번호
-					앞자리2개를 입력해주세요</span>
-			</div>
-
-			<div class="form-group">
-				<label for="cardExpYear" class="form-label">카드 유효기간</label> <select
-					name="cardExpYear" id="cardExpYear" class="form-input" value="">
-					<option value="">연도</option>
-					<!-- 현재 연도부터 50년까지의 옵션 -->
-					<c:forEach var="year" begin="23" end="50" step="1">
-						<option value="${year}">${year}</option>
-					</c:forEach>
-				</select>
-			</div>
-
-			<div class="form-group">
-				<label for="cardExpMonth" class="form-label">카드 유효기간</label> <select
-					name="cardExpMonth" id="cardExpMonth" class="form-input" value="">
-					<option value="">월</option>
-					<!-- 1부터 12까지의 옵션 -->
-					<c:forEach var="month" begin="1" end="12" step="1">
-						<option value="${month}">${month}</option>
-					</c:forEach>
-				</select> <span id="cardExpirationError" class="error-message">카드
-					유효기간을 입력해주세요</span>
-			</div>
+		<div class="form-group">
+			<label for="cardNumber" class="form-label">카드번호</label> <input
+				type="text" name="cardNumber" id="cardNumber" placeholder="카드번호"
+				class="form-input" value=""> <span id="cardNumberError"
+				class="error-message">카드번호를 입력해주세요</span>
 		</div>
-		<input class="nextbtn" type="button" onclick="showCardInput()" value="이전">
-		
+
+		<div class="form-group">
+			<label for="cardPassword" class="form-label">카드 비밀번호 2자리</label> <input
+				type="text" name="cardPassword" id="cardPassword"
+				placeholder="카드 비밀번호 2자리" maxlength="2" class="form-input" value="">
+			<span id="cardPasswordError" class="error-message">카드 비밀번호
+				앞자리2개를 입력해주세요</span>
+		</div>
+
+		<div class="form-group">
+			<label for="cardExpYear" class="form-label">카드 유효기간</label> <select
+				name="cardExpYear" id="cardExpYear" class="form-input" value="">
+				<option value="">연도</option>
+				<!-- 현재 연도부터 50년까지의 옵션 -->
+				<c:forEach var="year" begin="23" end="50" step="1">
+					<option value="${year}">${year}</option>
+				</c:forEach>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="cardExpMonth" class="form-label">카드 유효기간</label> <select
+				name="cardExpMonth" id="cardExpMonth" class="form-input" value="">
+				<option value="">월</option>
+				<!-- 1부터 12까지의 옵션 -->
+				<c:forEach var="month" begin="1" end="12" step="1">
+					<option value="${month}">${month}</option>
+				</c:forEach>
+			</select> <span id="cardExpirationError" class="error-message">카드 유효기간을
+				입력해주세요</span>
+				<input class="nextbtn btn2" type="button" onclick="showCardInput()"
+		value="이전">
+		<input type="button" onclick="nameAndNumber(form)" value="후원하기">
+		</div>
+	</div>
+	
+
 </body>
 <script>
 	function payInfoCheck(htmlForm) {

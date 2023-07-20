@@ -149,6 +149,7 @@ function showLogin() {//로그인창 보이기
 		form.submit();
 	}
 	
+	
 	function showCardInput() {
         var lid = document.getElementById("lid");
         var cs = document.getElementById("cs");
@@ -161,8 +162,8 @@ function showLogin() {//로그인창 보이기
     	
     
     
-		if(donorNameInput.value ===""){
-			console.log("비어있")
+		if(donorNameInput.trim()===""){
+			console.log("비어있음")
 			nameError.style.display="block";
 			return;
 		}else{
