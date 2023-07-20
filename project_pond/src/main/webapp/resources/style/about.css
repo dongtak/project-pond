@@ -118,6 +118,7 @@ i{color: black;}
 
 .scroll button {
 	background: none;
+	color: #b3c7dc;
 	border: 2px solid white;
 	width: 60px;
 	height: 60px;
@@ -137,7 +138,7 @@ i{color: black;}
 
 .scroll button:hover {
 	background: white;
-	color: #b3c7dc;
+	color: rgb(146, 175, 205);
 
 	transition: 0.3s ease-in;
 	cursor: grab;
