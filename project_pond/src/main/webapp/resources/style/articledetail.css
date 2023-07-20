@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 /*article.jsp*/
 
@@ -18,9 +31,11 @@ section #logVal {
 }
 
 .articleTitle .title {
-	font-size: 35px;
+	font-size: 33px;
 	font-weight: bold;
 	margin: 5px auto;
+	
+font-family: 'LINESeedKR-Bd';
 }
 
 
@@ -91,9 +106,16 @@ border-bottom: 1px solid #ccc;
 	top: 120px;
 	width: 120px;
 	height: 900px;
-
-
 }
+
+.msgBox>span{
+	font-weight: bold;
+	font-family: 'SUIT-Regular';
+	font-size: 20px;
+	margin-bottom: 5px;
+	
+}
+
 
 
 .articleMain {
@@ -107,6 +129,7 @@ border-bottom: 1px solid #ccc;
 	margin: 30px auto;
 	font-size: 20px;
 	padding: 30px;
+	  font-family: 'SUIT-Regular';
 
 }
 
@@ -117,14 +140,14 @@ border-bottom: 1px solid #ccc;
 
 .articleGoal {
 
-	margin: 20px auto;
+	margin: 30px auto;
 
 
 }
 
 
 .articleGoal li {
-	margin: 5px auto;
+	margin: 10px auto;
 }
 
 .articleGoal li:nth-child(4) {

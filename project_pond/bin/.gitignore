@@ -1,1 +1,6 @@
-/controller/
+/build/
+build/
+.classpath
+.gitignore
+.project
+.settings
