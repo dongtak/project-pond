@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/style/my.css">
+<link rel="stylesheet" href="resources/style/mypageContent.css">
 </head>
 <body>
 <c:set var="user" value="${requestScope.user }"/>
