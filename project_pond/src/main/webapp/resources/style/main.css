@@ -81,6 +81,7 @@ button {
 	width:300px;
 }
 
+
 .moon-content h2{
 	font-size: 2rem;
 	text-shadow : -20px 0px 30px 15px #feffe3;
@@ -95,6 +96,16 @@ button {
 	padding:5px 50px;
 	border-radius: 25px;
 	
+}
+
+.moon_status{
+	
+	
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8800, 0 0 30px #ffff00, 0 0 40px #00ff00, 0 0 50px #00aaff, 0 0 60px #0000ff, 0 0 70px #aa00ff;
+  
 }
 
 

@@ -1,11 +1,22 @@
 @charset "UTF-8";
 
+html{
+		background-image:url("../images/history_bg.jpeg");
+	background-size:cover;
+}
+
 .section{
 	
-	
-	background-image:url("../images/history_bg.jpeg");
-	background-size:cover;
 	padding-bottom: 30px;
+	
+	
+}
+
+body{
+	background: none;
+}
+.header{
+	background: white;
 	
 }
 
