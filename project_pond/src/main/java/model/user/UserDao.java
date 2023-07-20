@@ -289,104 +289,30 @@ public class UserDao {
 	public void updateUser(UserRequestDto userDto, String newPassword) {
 		this.conn = DBManager.getConnection();
 
-		
 		System.out.println("안녕~");
 		System.out.println(newPassword);
 		System.out.println(userDto.getId());
-		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && newPassword!=null) {
-			
-				String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
+		if (this.conn != null && userDto.getPwd() != null && userDto.getId() != null && newPassword != null) {
 
-				try {
-					System.out.println("뚱이2");
-					this.pstmt = this.conn.prepareStatement(sql);
-					this.pstmt.setString(1, newPassword);
-					this.pstmt.setString(2, userDto.getId());
-					this.pstmt.setString(3, userDto.getPwd());
-					
-					
-					
-					
-					this.pstmt.execute();
+			String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
 
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					DBManager.close(this.conn, this.pstmt);
-				}
+			try {
+				System.out.println("뚱이2");
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, newPassword);
+				this.pstmt.setString(2, userDto.getId());
+				this.pstmt.setString(3, userDto.getPwd());
+
+				this.pstmt.execute();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt);
 			}
 		}
-	
-	
-	
-	
-	
-	
-	//아이디 찾기 1)
-	
-//	public boolean findIdbyEmail(UserRequestDto userDto) {
-//		boolean check =false;
-//		try {
-//			this.conn = DBManager.getConnection();
-//			String sql = "SELECT id FROM User WHERE name=? AND email=?";
-//			//이름과 이메일이 일치하는 id 조회
-//			this.pstmt = this.conn.prepareStatement(sql);
-//			this.pstmt.setString(1, userDto.getName());
-//			this.pstmt.setString(2, userDto.getEmail());
-//			this.pstmt = this.conn.prepareStatement(sql);
-//			this.pstmt.executeQuery();
-//			if (rs.next()) {	//이름과 이메일이 일치되면 아이디 
-//				String id = rs.getString("id");
-//		
-//				
-//				
-//			}
-//			
-//			
-//		}catch(Exception e) {
-//			check = false;
-//			System.out.println("이메일 중복확인 실패 : " +  e);
-//			
-//		}finally {
-//			DBManager.close(this.conn, this.pstmt, this.rs);
-//			
-//			
-//		}
-//		
-//		return check;
-//		
-//	}
-//	
-//	
-	
-	
-	//아이디찾기 2)
-
-	
-	public String findIdbyEmail(String name, String email) {
-		String id = null;
-		String sql = "SELECT user_id FROM user WHERE user_name=? AND user_email=?";
-		this.conn = DBManager.getConnection();
-		try {
-			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setString(1, name);
-			this.pstmt.setString(2, email);
-			rs = this.pstmt.executeQuery();
-			if (rs.next()) {
-				id = rs.getString("id");
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(this.conn, this.pstmt, this.rs);
-		}
-
-		System.out.print("id 확인용 =" + id);
-		return id;
-
 	}
-	
+
 	// 유저 아이디로 해당 유저의 이름만 리턴
 	public String findUserNameById(String id) {
 		String name = null;

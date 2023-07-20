@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="resources/style/form.css">
 </head>
 <body>
-<c:if test="${requestScope.pwd }">
-	<input type="hidden" id="pwd" value="${requestScope.pwd}">
+<c:if test="${not empty requestScope.user }">
+	<input type="hidden" id="pwd" value="${requestScope.user.getPwd()}">
 </c:if>
 		<div id="main-section">
 			<form method="POST" class=user-form action="LeaveUser">

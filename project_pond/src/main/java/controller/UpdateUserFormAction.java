@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
 
@@ -15,6 +16,14 @@ public class UpdateUserFormAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String id = (String) request.getSession().getAttribute("log");
+
+		if (id != null) {
+			UserDao userdao = UserDao.getInstance();
+			User user = userdao.getUserById(id);
+			request.setAttribute("user", user);
+		}
 		
 		request.getRequestDispatcher("update").forward(request, response);
 	}
@@ -42,7 +51,7 @@ public class UpdateUserFormAction extends HttpServlet {
 			}
 		}
 		
-		request.getRequestDispatcher("myPageMenu").forward(request, response);
+		response.sendRedirect("myPageMenu");
 
 	}
 

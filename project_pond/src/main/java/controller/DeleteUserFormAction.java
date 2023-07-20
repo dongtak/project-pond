@@ -18,17 +18,16 @@ public class DeleteUserFormAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		String id = (String) request.getSession().getAttribute("log");
-
+		
 		if(id!=null) {
-			UserDao dao = UserDao.getInstance();
-			User user = dao.getUserById(id);
-			String pwd = user.getPwd();
-	        response.setContentType("text/plain");
-	        response.setCharacterEncoding("UTF-8");
-	        response.getWriter().write(pwd);
+			UserDao userdao = UserDao.getInstance();
+			User user = userdao.getUserById(id);
+			request.setAttribute("user", user);
 		}
-		request.getRequestDispatcher("/leave").forward(request, response);
+		
+		request.getRequestDispatcher("leave").forward(request, response);
 	}
 
 	/**
@@ -53,11 +52,13 @@ public class DeleteUserFormAction extends HttpServlet {
 			
 			if (result) {
 				request.getSession().removeAttribute("log");
+				url="mainAction";
+				
 			}
 		}
 		
 		
-		request.getRequestDispatcher(url).forward(request, response);
+		response.sendRedirect(url);
 		
 
 	}
