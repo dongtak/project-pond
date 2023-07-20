@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.user.UserDao;
 import model.user.UserRequestDto;
 
-/**
- * Servlet implementation class JoinFormAction
- */
-@WebServlet("/JoinFormAction")
 public class JoinFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -21,7 +16,6 @@ public class JoinFormAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
 		String id = request.getParameter("id");
@@ -36,8 +30,7 @@ public class JoinFormAction extends HttpServlet {
 		address += request.getParameter("sample6_detailAddress");	
 		address += request.getParameter("sample6_extraAddress");
 		
-		
-		System.out.print(address + " = address 확인용");
+		System.out.print("address : "+address);
 
 		UserRequestDto user = new UserRequestDto(id, password, name, email, birth, phone,address);
 
@@ -47,15 +40,15 @@ public class JoinFormAction extends HttpServlet {
 		String url = "";
 		
 		if(result) {
+			System.out.println("회원가입 성공");
 			String msg="회원가입이 완료되었습니다.";
 			request.setAttribute("msg", msg);
-			
 			url = "login";
 		}else {
+			System.out.println("회원가입 실패");
 			url = "join";
 		}
 		
-
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 

@@ -4,26 +4,27 @@
 		$('#error-pwd').hide();
 		$('#error-password1').hide();
 		$('#error-pwd-same').hide();
-		$('#password').css('border-color', 'lightgrey');
-		$('#password').css('border', 'none');
+		$('#password').css('border-color', 'black');
 	}
 });
 
 $('#new-password').on('change', e => {
 	if($('#new-password').val() !== "") {
 		$('#error-password2').hide();
+		$('#error-password-con').hide();
 		$('#error-pwd-same').hide();
-		$('#new-password').css('border-color', 'lightgrey');
-		$('#new-password').css('border', 'none');
+		$('#new-password').css('border-color', 'black');
+		$('#new-password-con').css('border-color', 'black');
 	}
 });
 
 $('#new-password-con').on('change', e => {
 	if($('#new-password').val() !== "") {
+		$('#error-password2').hide();
 		$('#error-password-con').hide();
 		$('#error-pwd-same').hide();
-		$('#new-password').css('border-color', 'lightgrey');
-		$('#new-password').css('border', 'none');
+		$('#new-password').css('border-color', 'black');
+		$('#new-password-con').css('border-color', 'black');
 	}
 });
  
@@ -48,14 +49,15 @@ function checkPwd(htmlForm) {
     check = false;
   } else if (newPassword === "") {
     $('#error-password2').show();
-		$('#newPassword').css('border-color', 'red');
-		/*$('#password').css('border', 'solid 1px red');*/
-		check = false;
-
-  } else if (newPassword !== newPasswordCon) {
+	$('#new-password').css('border-color', 'red');
+	check = false;
+  }else if(newPasswordCon===""){
+	$('#new-password-con').css('border-color', 'red');
+	$('#error-password2').show();
+	check = false;
+  }else if (newPassword !== newPasswordCon) {
     $('#error-password-con').show();
     $('#new-password').css('border-color', 'red');
-    /*$('#new-password').css('border', 'solid 1px red');*/
     check = false;
   }else if(storedPwd !==password  ){
 	  $('#error-pwd').show();

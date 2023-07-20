@@ -32,7 +32,7 @@
 					<input type="password" id="password" class=user-input
 						name="password" placeholder="비밀번호">
 				<span class="error" id="error-password">비밀번호: 필수 정보입니다.</span>
-					<input type="email" class=user-input id="email" name="email"
+					<input type="email" class="user-input" id="email" name="email"
 						placeholder="이메일"> 
 						<span class="error" id="error-email">이메일: 필수 정보입니다.</span>
 				<input type="text" class=user-input id="name" name="name"
@@ -40,13 +40,13 @@
 					<input type="text" class=user-input id="birth" name="birth"
 						placeholder="생년월일 8자리">
 				<span class="error" id="error-birth">생년월일: 필수 정보입니다.</span>
-					<input type="text" class=user-input id="phone" name="phone"
+					<input type="text" class="user-input" id="phone" name="phone"
 						placeholder="휴대전화 번호 ( - 포함)">
 				<span class="error" id="error-phone">휴대전화: 필수 정보입니다.</span>
 					<jsp:include page="/address"></jsp:include>
 				<div class="joinform-btns">
 					<input type="button" class="join-btn" id="submit-btn" value="회원가입" onclick="checkValue(form)"> 
-					<input type="button" class="cancelBtn" id="cancel-btn" value="취소" onclick="history.back()">
+					<input type="button" class="cancelBtn" id="cancel-btn" value="취소" onclick="goBack()">
 				</div>
 			</form>
 		</div>
@@ -61,6 +61,18 @@ $(document).on("keyup", function(e){
         $("#submit-btn").click();
     }
 });
+// history.back() 실행 시 뷰포트 크기가 변경되거나 화면이 이상하게 작아지는 문제가 있으므로
+// 뷰포트 고정 후 뒤로가기를 실행해야 함.
+function goBack() {
+	  // 현재 스크롤 위치를 최상단으로 올려줌
+	  window.scrollTo(0, 0);
+	  // 뷰포트 크기를 고정
+	  document.documentElement.style.overflow = 'hidden';
+	  // 뒤로가기 실행
+	  history.back();
+	  // 뷰포트 크기 고정을 해제
+	  document.documentElement.style.overflow = 'auto';
+}
 </script>
 
 

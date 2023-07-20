@@ -309,3 +309,7 @@ border-bottom: 1px solid #ccc;
 	color: black;
 	
 }
+
+.footer>a{
+	color:black !important;	
+}

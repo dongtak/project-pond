@@ -7,7 +7,6 @@ create table `user`(
 	user_birth int not null,
 	user_phone VARCHAR(20) unique not null,
 	user_addr VARCHAR(100) not null
-   
 );
 
 -- create

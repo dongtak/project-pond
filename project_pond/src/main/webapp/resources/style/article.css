@@ -55,6 +55,11 @@ body{
 	line-height: 40px;
 }
 
+.menu li:hover{
+	background-color: white;
+	color: silver;
+}
+
 .menu a{
 	display: inline-block;
 	width: 100%;

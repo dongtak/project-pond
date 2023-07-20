@@ -38,26 +38,37 @@ public class UserDao {
 	// ㄴ Delete (DELETE FROM 테이블명 WHERE 기본키=값1)
 
 	public boolean createUser(UserRequestDto userDto) {
-		User result = getUserById(userDto.getId());//아이디 중복체크 user 모든 정보를 채워서 온다
+
+		// 아이디 중복체크 -> 해당 유저가 이미 있을 경우 result에 객체가 들어있음
+		String id = userDto.getId();
+		User result = getUserById(userDto.getId());
 		if (result != null)
 			return false;
 
-		String id = userDto.getId();
 		String pwd = userDto.getPwd();
 		String name = userDto.getName();
+
+		// 이메일 중복체크
 		String email = userDto.getEmail();
+		if(getUserByEmail(email)) {
+			return false;
+		}
+		
 		int birth = userDto.getBirth();
+		
+		// 전화번호 중복체크
 		String phone = userDto.getPhone();
+		if(getUserByPhone(phone)) {
+			return false;
+		}
 		String address = userDto.getAddress();
 
 		boolean check = true;
 
-		if (id != null && pwd != null && name != null && birth != 0 && phone != null) {
+		if (id != null && pwd != null && name != null && birth != 0 && phone != null && email!=null) {
 			this.conn = DBManager.getConnection();
 			if (this.conn != null) {
-				if (!email.equals("")) {
-					String sql = "INSERT INTO user(user_id, user_pwd, user_name, user_email, user_birth, user_phone,user_addr) VALUES(?, ?, ?, ?, DATE(?), ?,?)";
-
+					String sql = "INSERT INTO user VALUES(?, ?, ?, ?, ?, ?, ?)";
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, id);
@@ -76,26 +87,6 @@ public class UserDao {
 					} finally {
 						DBManager.close(this.conn, this.pstmt);
 					}
-				} else {
-					String sql = "INSERT INTO user(user_id, user_pwd, user_name, user_birth, user_phone,user_addr) VALUES(?, ?, ?, DATE(?), ?,?)";
-
-					try {
-						this.pstmt = this.conn.prepareStatement(sql);
-						this.pstmt.setString(1, id);
-						this.pstmt.setString(2, pwd);
-						this.pstmt.setString(3, name);
-						this.pstmt.setInt(4, birth);
-						this.pstmt.setString(5, phone);
-						this.pstmt.setString(6, address);
-						this.pstmt.execute();
-
-					} catch (Exception e) {
-						e.printStackTrace();
-						check = false;
-					} finally {
-						DBManager.close(this.conn, this.pstmt);
-					}
-				}
 			} else {
 				check = false;
 			}
@@ -146,6 +137,8 @@ public class UserDao {
 		return list;
 	}
 
+	
+	// id 중복체크
 	public User getUserById(String id) {
 		User user = null;
 
@@ -178,54 +171,57 @@ public class UserDao {
 
 		return user;
 	}
+	
+	// email 중복체크
+	public boolean getUserByEmail(String email) {
+		boolean result = false; // true일 경우 user 있음(중복)
 
-	public void User(UserRequestDto userDto, String password) {
 		this.conn = DBManager.getConnection();
 
-		if (this.conn != null && userDto.getPwd() != null  && userDto.getId() != null) {
-			if (userDto.getPwd() != "") {
-				String sql = "UPDATE user SET user_pwd=? WHERE user_id=? AND user_pwd=?";
-
-				try {
-					this.pstmt = this.conn.prepareStatement(sql);
-					this.pstmt.setString(1, userDto.getPwd());
-					this.pstmt.setString(2, userDto.getId());
-					this.pstmt.setString(3, password);
-
-					this.pstmt.execute();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					DBManager.close(this.conn, this.pstmt);
+		if (this.conn != null) {
+			String sql = "SELECT * FROM `user` WHERE user_email=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, email);
+				this.rs = this.pstmt.executeQuery();
+				if (this.rs.next()) {
+					result=true;
 				}
-			} 
-		}
-	}
-			
-			
-			/*
-			else {
-				String sql = "UPDATE user SET user_email=? WHERE user_id=? AND user_pwd=?";
-
-				try {
-					this.pstmt = this.conn.prepareStatement(sql);
-					this.pstmt.setString(1, userDto.getEmail());
-					this.pstmt.setString(2, userDto.getId());
-					this.pstmt.setString(3, password);
-
-					this.pstmt.execute();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					DBManager.close(this.conn, this.pstmt);
-				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
 			}
 		}
+		return result;
 	}
-	*/
+	
+	// phone 중복체크
+	public boolean getUserByPhone(String Phone) {
+		boolean result = false; // true일 경우 user 있음(중복)
 
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM `user` WHERE user_phone=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, Phone);
+				this.rs = this.pstmt.executeQuery();
+				if (this.rs.next()) {
+					result=true;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return result;
+	}
+
+
+	// 탈퇴
 	public boolean deleteUserById(String id, String password) {
 	    this.conn = DBManager.getConnection();
 

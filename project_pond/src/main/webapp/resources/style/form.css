@@ -25,7 +25,6 @@ html{
 	
 }
 
-
 .user-form {
 	background-color:#fff;
 	border-radius: 10px;
@@ -51,6 +50,7 @@ html{
 
 input{
 	border:none;
+	padding:0 3%;
 }
 
 input[type="text" i],
@@ -58,7 +58,7 @@ input[type="password" i],
 input[type="email" i]{
 	border: 1px solid #1E3269;
 	border-radius : 10px;
-	width: 80%;
+	width: 76%;
 	height: 40px;
 	margin: 10px 0;
 	background-color: #f2f2f2;
@@ -66,15 +66,16 @@ input[type="email" i]{
 
 #submit-btn{
 	margin:10px 0;
-	margin: 10px 10px 10px 0;
 	height : 40px;
 	background-color:#46649B;
 	border-radius: 10px;
 	color:white;
 	width: 80%;
+	padding:0;
 }
 
 #submit-btn:hover,
+#idCheckBtn:hover,
 input[type="submit" i]:hover,
 input[type="button" i]:hover{
 	background-color: #1E3269;
@@ -138,4 +139,8 @@ input[type="button" i]:hover{
 
 .joinform-btns>input[type="button" i]{
 	width: 40%;
+}
+
+#cancel-btn{
+	margin-left:3%;
 }
