@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.mypage-content{
+	background-color:#F1F6F9;
+	border-radius: 10px;
+	display:flex;
+	flex-direction : column;
+	align-content: center;
+	justify-content : center;
+	padding:3% 0;
+}
+
+.info-box{
+	width: 100%;
+}

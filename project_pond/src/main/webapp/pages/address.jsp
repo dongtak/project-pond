@@ -16,6 +16,7 @@
 	</div>
 	<input type="text" class="user-input" id="sample6_address"
 		name="sample6_address" placeholder="주소">
+		<span class="error" id="error-addr">주소 : 필수 입력 항목입니다.</span>
 	<input type="text" class="user-input" id="sample6_detailAddress"
       name="sample6_detailAddress" placeholder="상세주소">
    <input type="text" class="user-input" id="sample6_extraAddress"
@@ -23,12 +24,11 @@
 
 </body>
 
-
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	function sample6_execDaumPostcode() {
-		
+
 		new daum.Postcode(
 				{
 					oncomplete : function(data) {
@@ -80,6 +80,10 @@
 					}
 				}).open();
 	}
+	
+	
+	
+	
 </script>
 
 

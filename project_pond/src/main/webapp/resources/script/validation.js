@@ -101,7 +101,6 @@ function checkValue(htmlForm) {
 		$('#name').css('border-color', 'red');
 		check = false;
 	}
-	
 	else if(birth.length !== 8 || birth.match(/\d{8}/) === null) {
 		$('#error-birth').show();
 		$('#birth').css('border-color', 'red');

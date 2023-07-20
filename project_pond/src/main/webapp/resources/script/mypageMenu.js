@@ -10,9 +10,15 @@ $('.aside-menu li').on('click', function() {
 	let url="";
 	
 	switch (liId) {
-		case 'myInfo':
 		// 내 정보
-			url="/showMyInfo";
+		case 'myInfo':
+        // 카드 정보	
+		case 'myCardInfo':
+        // 내가 쓴 댓글
+		case 'myMsg':
+        // 후원 기록
+		case 'myPay':
+			url=`/showMyInfo?menu=${liId}`;
 			break;
         case 'update':
 		// 비밀번호 수정
@@ -20,15 +26,7 @@ $('.aside-menu li').on('click', function() {
             break;
         case 'addCard':
         // 결제 수단 추가
-            break;
-        case 'payInfo':
-        // 카드 정보
-            break;
-        case 'myPay':
-        // 후원 기록
-            break;
-        case 'myMsg':
-        // 내가 쓴 댓글
+        	url="";
             break;
         case 'delete':
 		// 회원 탈퇴
@@ -54,6 +52,7 @@ function insertPage(url) {
 		}).done(function(response) {
 			$('#menu-container').empty();
 			$('#menu-container').append(response);
+			console.log("페이지 로드 성공");
 		}).fail(function() {
 			console.log("페이지를 불러오는 데 실패하였습니다.");
 		});

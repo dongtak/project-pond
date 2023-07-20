@@ -24,8 +24,6 @@
 					</h1>
 					<h1 class="per slide-up">기부 달성</h1>
 
-
-
 				</div>
 
 				<div class="container title1 ">

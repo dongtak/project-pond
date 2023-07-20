@@ -143,3 +143,9 @@ i{color: black;}
 	transition: 0.3s ease-in;
 	cursor: grab;
 }
+
+.footer{
+	background-color: black;
+	color:white;
+}
+

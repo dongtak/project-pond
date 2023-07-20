@@ -1,13 +1,73 @@
 @charset "UTF-8";
 
-.info-container{
-	width:100%;
-	height: 100%;
+.mypage-form{
+	background-color:#F1F6F9;
+	border-radius: 10px;
+	display:flex;
+	flex-flow : column wrap;
+	align-content: center;
+	justify-content : center;
+	padding:3% 0;
 }
 
-.info-box{
-	width: 40%;
-	min-width:200px;
-	height : 40%;
-	background-color:orange;
+.mypage-form>*{
+	width: 100%;
+	margin: 3% 0;
+	min-height: 20px;
+}
+
+.mypage-form>h2{
+	font-size: 1.5rem;
+}
+
+.error{
+	margin:0;
+	color:#F96666;
+	display: none;
+}
+
+.info-input{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.info-input>p{
+	width: 20%;
+	word-break: keep-all;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+.info-input>input{
+	width:60%;
+	margin-right: 5%;
+	min-height: 40px;
+}
+
+input[type="text" i],
+input[type="password" i]{
+	padding: 0 2%;
+	border-radius: 10px;
+}
+
+
+#submit-btn {
+	width: 30%;
+	margin : 3% auto;
+	min-height: 40px;
+	display: inline-block;
+	border-radius: 10px;
+	border:none;
+	color:#212A3E;
+	background: linear-gradient(to right, rgba(173, 216, 230, 0.7) 25%, rgba(173, 216, 230, 1) 75%);
+	background-position: 1% 50%;
+	background-size: 400% 300%;
+	transition: all 0.2s ease-in-out;
+}
+
+#submit-btn:hover{
+  	background-position: 99% 50%;
 }
