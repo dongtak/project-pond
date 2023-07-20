@@ -154,7 +154,7 @@ function showLogin() {//로그인창 보이기
         var lid = document.getElementById("lid");
         var cs = document.getElementById("cs");
       
-		var donorNameInput = document.getElementsByName("donorNameInput");
+		const donorNameInput = document.getElementById("donorNameInput").value.trim();
 		var nameError = document.getElementById("nameError");
 		var moneyInput = document.getElementById("moneyInput");
 		var moneyError = document.getElementById("moneyError");
@@ -162,7 +162,7 @@ function showLogin() {//로그인창 보이기
     	
     
     
-		if(donorNameInput.trim()===""){
+		if(donorNameInput===""){
 			console.log("비어있음")
 			nameError.style.display="block";
 			return;

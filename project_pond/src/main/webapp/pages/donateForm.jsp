@@ -75,11 +75,12 @@
 						</label> <label><input type="radio" name="leavename"
 							value="anonymous" onclick="toggleAnonymous()">익명으로 후원하기 </label>
 
-						<span id="nameError" class="error-message"> 이름을 입력해주세요 </span>
 					</div>
 
 					<input type=text id="donorNameInput" name=donorNameInput
 						placeholder="후원자 이름" value="">
+								<span id="nameError" class="error-message"> 이름을 입력해주세요 </span>
+				
 				</div>
 
 				<div class="donate">
