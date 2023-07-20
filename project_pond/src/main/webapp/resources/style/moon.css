@@ -100,11 +100,10 @@ color: white;
 }
 
 .content li{
-font-size: 20px;
-margin:40px 0;
-line-height: 30px;
-
-
+	font-size: 20px;
+	margin: 40px 0;
+	line-height: 30px;
+	word-break: keep-all;
 }
 
 .content li>img{

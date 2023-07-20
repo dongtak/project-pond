@@ -6,6 +6,7 @@ public class CardInfoResponseDto {
 	private String cardName;
 	private String cardPwd;
 	private String cardExpire;
+	
 	public CardInfoResponseDto(String cardNum, String userId, String cardName, String cardPwd, String cardExpire) {
 		super();
 		this.cardNum = cardNum;
