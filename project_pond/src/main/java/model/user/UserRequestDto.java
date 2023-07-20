@@ -59,7 +59,6 @@ public class UserRequestDto {
 	public UserRequestDto(String id, String pwd) {
 			this.id = id;
 			this.pwd = pwd;
-	
 
 		}
 	

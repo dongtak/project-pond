@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="main-section">
-		<form method="POST" class=user-form action="UpdateUser">
+		<form method="POST" class=user-form>
 			<h2>비밀번호 변경</h2>
 			<div class="div-form">
 				<div>
@@ -19,21 +19,23 @@
 						value="${sessionScope.log }" readonly>
 				</div>
 				<div>
-					<input type="text" class=user-input id="password" name="password"
+					<input type="password" class=user-input id="password" name="password"
 						placeholder="비밀번호" autofocus>
 				</div>
 				<div>
-					<input type="text" class=user-input id="new-password"
+					<input type="password" class=user-input id="new-password"
 						name="new-password" placeholder="새 비밀번호">
 				</div>
 				<div>
-					<input type="text" class=user-input id="new-password-con"
+					<input type="password" class=user-input id="new-password-con"
 						name="new-password-con" placeholder="새 비밀번호 확인">
 				</div>
 				<ul>
-					<li class="error" id="error-password1">새 비밀번호를 입력해주세요.</li>
+					<li class="error" id="error-pwd">비밀번호가 일치하지 않습니다.</li>
+					<li class="error" id="error-password1">비밀번호를 입력해주세요.</li>
 					<li class="error" id="error-password2">새 비밀번호를 다시 입력해주세요.</li>
 					<li class="error" id="error-password-con">새 비밀번호가 서로 일치하지 않습니다.</li>
+					<li class="error" id="error-pwd-same">현재 비밀번호와 동일합니다.</li>
 				</ul>
 			</div>
 			<input type="hidden" value="${requestScope.user.getPwd() }" name="storedPwd" id="storedPwd">
