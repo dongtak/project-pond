@@ -199,7 +199,7 @@ body {
 				<div class=cardBtns>
 							<input class="nextbtn btn2" type="button" onclick="showCardInput()"
 		value="이전">
-		<input type="button" onclick="nameAndNumber(form)" value="후원하기">
+		<input class = "donateBtn"type="button" onclick="nameAndNumber(form)" value="후원하기">
 				</div>
 	
 		</div>
