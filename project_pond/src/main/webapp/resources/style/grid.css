@@ -102,7 +102,6 @@ div#wrap {
 	text-align: center;
 	display: flex;
 	flex-flow : column wrap;
-	justify-content: center;
 }
 
 .footer>h2 {

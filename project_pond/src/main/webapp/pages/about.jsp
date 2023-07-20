@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
-<link rel="stylesheet" href="resources/style/form.css">
 <link rel="stylesheet" href="resources/style/about.css">
 <title>about</title>
 </head>

@@ -8,20 +8,18 @@
 </head>
 <body>
 
-	<input type="text" class="address-input" id="sample6_postcode"
-		name="sample6_postcode" placeholder="우편번호">
-	<input class="addressBtn" type="button"
-		onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
-	<br>
+	<div class="input-addr">
+		<input type="text" class="address-input" id="sample6_postcode"
+			name="sample6_postcode" placeholder="우편번호"> <input
+			class="addressBtn" type="button" onclick="sample6_execDaumPostcode()"
+			value="우편번호 찾기">
+	</div>
 	<input type="text" class="user-input" id="sample6_address"
 		name="sample6_address" placeholder="주소">
-	<br>
 	<input type="text" class="user-input" id="sample6_detailAddress"
-		name="sample6_detailAddress" placeholder="상세주소">
-	<input type="text" class="user-input" id="sample6_extraAddress"
-		name="sample6_extraAddress" placeholder="참고항목">
-
-
+      name="sample6_detailAddress" placeholder="상세주소">
+   <input type="text" class="user-input" id="sample6_extraAddress"
+      name="sample6_extraAddress" placeholder="참고항목">
 
 </body>
 
