@@ -3,194 +3,196 @@
 
 /*article.jsp*/
 
-section #logVal{
-	display:none;
+
+
+section #logVal {
+	display: none;
 }
 
-.articleTitle{
-	margin:30px auto;
+.articleTitle {
+	margin: 30px auto;
 }
 
-.articleTitle li{
-	margin:10px auto;
+.articleTitle li {
+	margin: 10px auto;
 }
 
-.articleTitle .title{
+.articleTitle .title {
 	font-size: 35px;
 	font-weight: bold;
-	margin:5px auto;
+	margin: 5px auto;
 }
 
 
-#moonNum{
-	margin:0 auto;
+#moonNum {
+	margin: 0 auto;
 	line-height: 10px;
 }
 
+.msgContent {
+	border-bottom: 1px solid gray;
+	padding: 5px;
+}
 
-.msgBox{
-	flex-grow: 2;
-	height: 100px;
-	background-color: aquamarine;
-	
+.msgContent >p{
+	padding: 2px;
+}
+
+.article-container {
+
+	margin: 0 auto;
 }
 
 
+/*카테고리 박스*/
 
-.article-container{
-	
-	margin:0 auto;
-}
-
-
-.fix{
-	position:fixed;
-	top:0;
+.fix {
 	opacity: 0.8;
+	position: fixed;
+	top: 80px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.msgBox {
+	margin-bottom: 20px;
+	padding: 10px;
+border-bottom: 1px solid #ccc;
+	background-color: #f9f9f9;
+	color: black;
 	
 }
 
 
-
-.article-cotainer-top{
+.article-cotainer-top {
 	text-align: center;
 	width: 70%;
-	margin:0 auto;
-	background-color: beige;
+	margin: 0 auto;
+
 
 }
 
 
 
-.article-content{
-	/*flex-grow: 5;*/
+.article-content {
 	margin: 10px auto;
-border: 1px solid gray;
+	border: 1px solid gray;
 }
 
 
 
 
-.article-category{
-	position:fixed;
-	right:0;
-	top:120px;
-	width:120px;
-	height:900px;
-	background-color: aliceblue;
+.article-category {
+	position: fixed;
+	right: 0;
+	top: 120px;
+	width: 120px;
+	height: 900px;
+
 
 }
 
 
-.articleMain{
-	padding:20px 0;
-	background-color: azure;
+.articleMain {
+	
 	width: 100%;
-	/*height: 300px;*/
 	border-top: 1px solid gray;
-	
+
 }
 
-.articleContent{
-	margin:30px auto;
+.articleContent {
+	margin: 30px auto;
 	font-size: 20px;
-	
+	padding: 30px;
+
 }
 
-.articleContent p{
-	margin:2px;
-}
-
-
-.articleGoal{
-	
-	margin:20px auto;
-	
-	
+.articleContent p {
+	margin: 2px;
 }
 
 
-.articleGoal li{
-	margin:5px auto;
+.articleGoal {
+
+	margin: 20px auto;
+
+
 }
 
-.articleGoal li:nth-child(4){
+
+.articleGoal li {
+	margin: 5px auto;
+}
+
+.articleGoal li:nth-child(4) {
 	margin-top: 20px;
 }
 
+.lastLi{
+	font-size: 20px;
+}
 
-.article-container-bottom{
-	
+
+.article-container-bottom {
+
 	width: 70%;
-	margin:30px auto;
-	background-color: rgb(253, 238, 225);
-	/*height: 500px;*/
+	margin: 30px auto;
 
-	
-}
-
-/*
-.comment {
-
-	margin: 0 auto;
 
 }
-*/
 
 .comment textarea {
-  width: 100%;
-  box-sizing: border-box;
-  resize: none;
-  margin-top:10px;
-  
+	width: 100%;
+	box-sizing: border-box;
+	resize: none;
+	margin-top: 10px;
+
 }
-.commentBtn{
+
+.commentBtn {
 	display: flex;
 	justify-content: flex-end;
 }
 
 .comment #commentBtn {
 
-    font-size: 14px;
+	font-size: 14px;
 	width: 65px;
 	height: 40px;
 	color: rgb(0, 0, 0);
-	border:1px solid gray;
+	border: 1px solid gray;
 	border-radius: 5px;
 	outline: none;
 	background-color: white;
 	letter-spacing: 1px;
 	cursor: pointer;
-	
+
 	transition: transform 80ms ease-in;
-	
+
 
 }
 
 
-.comments-item{
+.comments-item {
 	padding: 30px 10px;
 	border-bottom: 1px gray solid;
-	
+
 }
 
-.comments-item >p{
-	margin:6px 0;
+.comments-item>p {
+	margin: 6px 0;
 }
-/*
-.comments-item >p:nth-child(2){
-	font-size: 30px;
-}
-*/
 
-.comments-write>span{
+.comments-write>span {
 	font-size: 20px;
-	
+
 
 }
 
 
-.comments-write textarea{
+.comments-write textarea {
 	font-size: 16px;
 }
-

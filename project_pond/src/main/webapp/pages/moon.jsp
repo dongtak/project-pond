@@ -145,8 +145,9 @@
 			<div class="moon-container-bottom">
 
 				<div class="comments-write">
-					<span>댓글쓰기 </span>
+						<span>댓글쓰기 </span>
 					<form method="POST" class="comment">
+				
 						<textarea cols="80" rows="10" id="msg-box" name="msg"
 							<c:choose>
 								<c:when test="${empty log}">
