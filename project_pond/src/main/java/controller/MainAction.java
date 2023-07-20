@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +13,6 @@ import model.fullmoon.FullMoonDao;
 import model.fullmoon.FullMoonResponseDto;
 import model.pay.PayDao;
 import model.pay.PayRequestDto;
-import model.pay.PayResponseDto;
 
 public class MainAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;

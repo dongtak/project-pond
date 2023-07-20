@@ -74,6 +74,10 @@
 						<li>
 						<li><h3>저희 보름달과 함께해주세요!</h3></li>
 
+						<a class="donateBtn" href="donate">지금 보름달에서 후원하기</a>
+
+
+
 					</ul>
 
 
@@ -85,6 +89,7 @@
 								<tr>
 									<th>총 집행금액</th>
 									<th colspan="2">12,400,000원</th>
+
 								</tr>
 							</thead>
 							<tbody>

@@ -25,7 +25,7 @@
 			<div class="section">
 				<div class="firefly_base">
 					<div class="fireflypack"></div>
-					<div class="main_moon">
+					<div href="moon" class="main_moon">
 						<div class="moon-content">
 							<c:set var="do_loof" value="true" />
 							<c:set var="moonNum" value="${moonUp.getMoonNum() }" />

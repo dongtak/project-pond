@@ -3,8 +3,13 @@ package model.cardInfo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
+import model.pay.PayRequestDto;
 import model.user.User;
 import model.user.UserDao;
 import model.user.UserRequestDto;
@@ -95,4 +100,34 @@ public class CardInfoDao {
 		return check;
 	}
 	
+	public List<CardInfoResponseDto> getUserCardListById(String id){
+		List<CardInfoResponseDto> list = new ArrayList<CardInfoResponseDto>();
+
+		this.conn = DBManager.getConnection();
+		if (conn != null) {
+			String sql = "SELECT * FROM cardInfo WHERE user_id=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, id);
+				this.rs = this.pstmt.executeQuery();
+				while (this.rs.next()) {
+					String cardNum = this.rs.getString(1);
+					String userId = this.rs.getString(2);
+					String cardName = this.rs.getString(3);
+					String cardPwd = this.rs.getString(4);
+					String cardExpire = this.rs.getString(5);
+					
+					CardInfoResponseDto card = new CardInfoResponseDto(cardNum, userId, cardName, cardPwd, cardExpire);
+					list.add(card);
+
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+
+		return list;
+	}
 }

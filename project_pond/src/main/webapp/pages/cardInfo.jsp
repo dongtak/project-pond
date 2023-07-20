@@ -196,9 +196,12 @@ body {
 				</c:forEach>
 			</select> <span id="cardExpirationError" class="error-message">카드 유효기간을
 				입력해주세요</span>
-				<input class="nextbtn btn2" type="button" onclick="showCardInput()"
+				<div class=cardBtns>
+							<input class="nextbtn btn2" type="button" onclick="showCardInput()"
 		value="이전">
 		<input type="button" onclick="nameAndNumber(form)" value="후원하기">
+				</div>
+	
 		</div>
 	</div>
 	

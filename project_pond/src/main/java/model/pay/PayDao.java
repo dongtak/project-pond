@@ -114,9 +114,6 @@ public class PayDao {
 		return check;
 	}
 
-	// 회원 후원
-	
-	
 	
 	// 랜덤 코드 생성
 	private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -147,7 +144,7 @@ public class PayDao {
 
 	
 
-	
+	// moonNum의 pay리스트 받아오기
 	public List<PayRequestDto> getPayByNum(String num){
 		List<PayRequestDto> payList = new ArrayList<PayRequestDto>();
 		
@@ -183,7 +180,41 @@ public class PayDao {
 		return payList;
 	}
 
-	
+	// 유저의 id로 pay list 받아오기
+	public List<PayResponseDto> getUserPayListById(String id){
+		List<PayResponseDto> payList = new ArrayList<PayResponseDto>();
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			String sql = "SELECT * FROM pay WHERE user_id=?";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, id);
+				this.rs = this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					String payNum = this.rs.getString(1);
+					String cardNum = this.rs.getString(2);
+					String userId = this.rs.getString(3);
+					String moonNum = this.rs.getString(4);
+					String name = this.rs.getString(5);
+					String message = this.rs.getString(6);
+					int payMoney = this.rs.getInt(7);
+					Timestamp payDay = this.rs.getTimestamp(8);
+					
+					PayResponseDto pay = new PayResponseDto(payNum, cardNum, userId, moonNum, name, message, payMoney, payDay);
+					payList.add(pay);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		
+		return payList;
+	}
 	
 	
 

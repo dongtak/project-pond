@@ -141,7 +141,37 @@ public class ArticleCommentDao {
 		return commentList;
 	}
 	
-	
-
+	// user_id로 comment 모두 찾기
+	public List<ArticleCommentRequestDto> getUserCommentById(String id){
+		List<ArticleCommentRequestDto> commentList = new ArrayList<ArticleCommentRequestDto>();
+		
+		this.conn = DBManager.getConnection();
+		if(conn!=null) {
+			// 시간 기준으로 오름차순 정렬
+			String sql="SELECT * FROM articleComment WHERE user_id=? ORDER BY comment_createdAt ASC";
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, id);
+				this.rs=this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					String commentNum = this.rs.getString(1);
+					String userId = this.rs.getString(2);
+					String moonNum = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					Timestamp created = this.rs.getTimestamp(5);
+					Timestamp modified = this.rs.getTimestamp(6);
+					int like = this.rs.getInt(7);
+					ArticleCommentRequestDto comment = new ArticleCommentRequestDto(commentNum, userId, moonNum, content, created, modified, like);
+					commentList.add(comment);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return commentList;
+	}
 	
 }

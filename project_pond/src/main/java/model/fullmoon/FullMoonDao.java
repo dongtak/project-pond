@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import util.DBManager;
 
@@ -29,8 +30,44 @@ public class FullMoonDao {
 
 	
 	
-	public ArrayList<FullMoonResponseDto> getMoonAllByKeyword(String keyword,int startRow, int pageSize) {
-		ArrayList<FullMoonResponseDto> list = new ArrayList<FullMoonResponseDto>();
+	public FullMoonResponseDto fullmoonActivated() {
+		FullMoonResponseDto moon = null;
+		
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM fullmoon WHERE moon_status=1";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				if(this.rs.next()) {
+					String moonNum = this.rs.getString(1);
+					String adminId = this.rs.getString(2);
+					String title = this.rs.getString(3);
+					Timestamp createdAt = this.rs.getTimestamp(4);
+					String finishAt = sdf.format(this.rs.getDate(5));
+					int goal = this.rs.getInt(6);
+					int donate = this.rs.getInt(7);
+					int status = this.rs.getInt(8);
+					int messageCnt = this.rs.getInt(9);
+					moon = new FullMoonResponseDto(moonNum, adminId, title, createdAt,finishAt, goal, donate, status, messageCnt);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+			
+		}
+		return moon;
+	}
+	
+	// 히스토리 풀문 리스트 가져오기
+	public List<FullMoonResponseDto> getMoonAllByKeyword(String keyword,int startRow, int pageSize) {
+		List<FullMoonResponseDto> list = new ArrayList<FullMoonResponseDto>();
 
 		this.conn = DBManager.getConnection();
 
@@ -38,13 +75,13 @@ public class FullMoonDao {
 			String sql = "SELECT * FROM fullmoon ";
 
 			if (keyword.equals("new"))
-				sql += "ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
+			    sql += "WHERE moon_status=0 ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
 			else if (keyword.equals("done"))
-				sql += "WHERE moon_goal<=moon_donate ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
+			    sql += "WHERE moon_status=0 AND moon_goal <= moon_donate ORDER BY CAST(SUBSTRING(moon_num, 3) AS UNSIGNED) DESC LIMIT ?, ?";
 			else if (keyword.equals("peak"))
-				sql += "ORDER BY moon_donate DESC LIMIT 8";
+			    sql += "WHERE moon_status=0 ORDER BY moon_donate DESC LIMIT 8";
 			else if (keyword.equals("topMsg"))
-				sql += "ORDER BY message_cnt DESC LIMIT 8";
+			    sql += "WHERE moon_status=0 ORDER BY message_cnt DESC LIMIT 8";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
@@ -79,41 +116,6 @@ public class FullMoonDao {
 		}
 
 		return list;
-	}
-	
-	public FullMoonResponseDto fullmoonActivated () {
-		FullMoonResponseDto moon = null;
-		
-		this.conn = DBManager.getConnection();
-
-		if (this.conn != null) {
-			String sql = "SELECT * FROM fullmoon WHERE moon_status=1";
-
-			try {
-				this.pstmt = this.conn.prepareStatement(sql);
-				this.rs = this.pstmt.executeQuery();
-
-				if(this.rs.next()) {
-					String moonNum = this.rs.getString(1);
-					String adminId = this.rs.getString(2);
-					String title = this.rs.getString(3);
-					Timestamp createdAt = this.rs.getTimestamp(4);
-					String finishAt = sdf.format(this.rs.getDate(5));
-					int goal = this.rs.getInt(6);
-					int donate = this.rs.getInt(7);
-					int status = this.rs.getInt(8);
-					int messageCnt = this.rs.getInt(9);
-					moon = new FullMoonResponseDto(moonNum, adminId, title, createdAt,finishAt, goal, donate, status, messageCnt);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.close(this.conn, this.pstmt, this.rs);
-			}
-			
-		}
-		return moon;
 	}
 
 	
