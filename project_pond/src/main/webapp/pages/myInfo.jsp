@@ -9,13 +9,14 @@
 </head>
 <body>
 <c:set var="user" value="${requestScope.user }"/>
+<c:if test="${empty user }">
+	location.href = "mainAction";
+</c:if>
 	<div id="info-container">
 		<div class="info-box">
 			<span>아이디 : 유저아이디</span>
+			<span>이름 : 이름</span>
 		</div>
-		<div class="info-box"></div>
-		<div class="info-box"></div>
-		<div class="info-box"></div>
 	</div>
 </body>
 </html>

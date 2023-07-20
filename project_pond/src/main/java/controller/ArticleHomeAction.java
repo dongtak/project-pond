@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.article.ArticleDao;
+import model.article.ArticleRequestDto;
 import model.fullmoon.FullMoonDao;
 import model.fullmoon.FullMoonResponseDto;
 
@@ -26,7 +28,6 @@ public class ArticleHomeAction extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		
-		ArticleDao articleDao = ArticleDao.getInstance();
 		FullMoonDao fullmoonDao = FullMoonDao.getInstance();
 		
 		// 메뉴
@@ -35,9 +36,8 @@ public class ArticleHomeAction extends HttpServlet {
 			moonMenu="new";
 		}
 		
-		
 		// 전체 게시글 수 
-		int cnt = articleDao.getCount();
+		int cnt = fullmoonDao.getCount()-1;
 		
 		// 현재 페이지 정보
 		String pageNum = request.getParameter("pageNum");
@@ -52,8 +52,7 @@ public class ArticleHomeAction extends HttpServlet {
 		// 첫 행 번호
 		int startRow = (currentPage-1)*pageSize+1;
 		
-		ArrayList<FullMoonResponseDto> list = null;
-		list = fullmoonDao.getMoonAllByKeyword(moonMenu,startRow,pageSize);
+		List<FullMoonResponseDto> list = fullmoonDao.getMoonAllByKeyword(moonMenu, startRow, pageSize);
 		
 		request.setAttribute("count", cnt);
 		request.setAttribute("pageNum", pageNum);

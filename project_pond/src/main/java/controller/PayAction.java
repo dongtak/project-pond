@@ -75,7 +75,10 @@ public class PayAction extends HttpServlet {
 		FullMoonDao moonDao = FullMoonDao.getInstance();
 		boolean payResult = moonDao.donateMoney(payMoney);
 		
-
+		if(payResult) {
+			System.out.println("기부 성공");
+		}
+		
 		// 실패 시 후원 form 으로 이동, 나중에 실패 메세지 추가
 		String url = "donate";
 
