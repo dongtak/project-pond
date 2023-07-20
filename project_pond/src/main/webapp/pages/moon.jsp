@@ -14,14 +14,17 @@
 <title>보름달</title>
 </head>
 <body>
+<c:set var="log" value="${sessionScope.log}" />
 	<c:set var="moonUp" value="${sessionScope.moonUp }" />
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
 		<div class="section">
+			<span id="logVal">${log}</span>
 			<div class="moon-container">
 				<div id="title">
+				<img src="https://i.imgur.com/N37csnK.jpgul">
 					<h2>${moonUp.getTitle()}</h2>
-					<c:set var="createdAt" value="${article.getArticle_createdAt() }" />
+					<c:set var="createdAt" value="${moonUp.getCreatedAt() }" />
 					<fmt:formatDate value="${createdAt }" pattern="yyyy-MM-dd"
 						var="created" />
 
@@ -65,7 +68,7 @@
 							border='0' width=700 height=500></li>
 
 						<li>그들의 미래를 밝히고, 꿈을 이루도록 우리 모두가 손을 건네어주길 바랍니다.<br> 이 작은
-							행동이 미래의 빛을 비춰주며, 어린이들이 희망을 가질 수 있는 더 나은 세상을 만들어낼 것입니다.
+							행동이 미래의 빛을 비춰주며,<br> 어린이들이 희망을 가질 수 있는 더 나은 세상을 만들어낼 것입니다.
 						<li>
 						<li><h3>저희 보름달과 함께해주세요!</h3></li>
 
@@ -87,7 +90,7 @@
 							<thead>
 								<tr>
 									<th>총 집행금액</th>
-									<th colspan="2">원</th>
+									<th colspan="2">12,0400,000원</th>
 
 
 								</tr>
@@ -104,7 +107,7 @@
 								<tr>
 
 									<td>사업비</td>
-									<td>모니터링비용</td>
+									<td>모니터링 비용</td>
 									<td>400,000원</td>
 								</tr>
 
@@ -186,6 +189,7 @@
 		</div>
 		<jsp:include page="/footer"></jsp:include>
 	</div>
+		<script src="../resources/script/comments-api.js"></script>
 	<script>
 		function scrollToTop() {
 			$("html, body").animate({
