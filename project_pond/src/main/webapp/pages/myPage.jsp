@@ -26,7 +26,7 @@
 						<!--  <li id="addCard">결제 수단 추가</li>-->
 						<li id="myCardInfo">내 카드 정보</li>
 						<li id="myPay">후원 기록</li>
-						<li id="myMsg">내가 쓴 댓글</li>
+						<!-- <li id="myMsg">내가 쓴 댓글</li>  -->
 						<li id="delete">회원 탈퇴</li>
 					</ul>
 				</div>
