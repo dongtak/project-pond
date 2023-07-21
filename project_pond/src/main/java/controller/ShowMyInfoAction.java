@@ -40,8 +40,8 @@ public class ShowMyInfoAction extends HttpServlet {
 		// 파라미터(메뉴)
 		String menu = request.getParameter("menu");
 		
-		System.out.println("menu : "+menu);
-		if(menu.equals("")) {
+		if(!menu.equals("")) {
+			System.out.println("menu : "+menu);
 			request.setAttribute("menu", menu);
 		}
 		
@@ -49,32 +49,32 @@ public class ShowMyInfoAction extends HttpServlet {
 			// 내 정보
 			UserDao userdao = UserDao.getInstance();
 			User user = userdao.getUserById(id);
-			System.out.println("user : "+user);
 			if(user!=null) {
-				request.setAttribute("user",user );
+				System.out.println("user : "+user);
+				request.setAttribute("user", user);
 			}
 		}else if(menu.equals("myCardInfo")) {
 			// 카드 정보
 			CardInfoDao carddao = CardInfoDao.getInstance();
 			List<CardInfoResponseDto> cardList = carddao.getUserCardListById(id);
-			System.out.println("cardList : "+cardList);
 			if(cardList.size()!=0) {
+				System.out.println("cardList : "+cardList);
 				request.setAttribute("cardList",cardList );
 			}
 		}else if(menu.equals("myPay")) {
 			// 결제 정보
 			PayDao paydao = PayDao.getInstance();
 			List<PayResponseDto> payList = paydao.getUserPayListById(id);
-			System.out.println("payList : "+payList);
 			if (payList.size()!=0) {
+				System.out.println("payList : "+payList);
 				request.setAttribute("payList",payList );
 			}
 		}else if(menu.equals("myMsg")) {
 			// 댓글 정보
 			ArticleCommentDao commdao = ArticleCommentDao.getInstance();
 			List<ArticleCommentRequestDto> commentList = commdao.getUserCommentById(id);
-			System.out.println("commentList : "+commentList);
 			if (commentList.size()!=0) {
+				System.out.println("commentList : "+commentList);
 				request.setAttribute("commentList",commentList );
 			}
 		}
