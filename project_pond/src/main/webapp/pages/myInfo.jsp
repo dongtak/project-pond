@@ -9,12 +9,8 @@
 <link rel="stylesheet" href="resources/style/myInfo.css">
 </head>
 <body>
-<c:if test="${empty user }">
-	location.href = "mainAction";
-</c:if>
 <c:set var="user" value="${requestScope.user }"/>
 <c:set var="menu" value="${requestScope.menu }"/>
-
 	<div class="mypage-content">
 		<c:choose>
 			<c:when test="${menu eq 'myInfo'}">
@@ -30,10 +26,10 @@
 			</c:when>
 			<c:when test="${menu eq 'myCardInfo'}">
 				<h2>내 카드 정보</h2>
-				<div class="info-box" id="cardList-box">
+				<div class="info-box" id="list-box">
 					<c:choose>
 						<c:when test="${not empty requestScope.cardList }">
-							<c:set var="cardList" value="${requestScope.payList }"/>
+							<c:set var="cardList" value="${requestScope.cardList }"/>
 							<c:forEach var="card" items="${cardList }">
 							<div class="card-item">
 								<span>카드 번호 : ${card.getCardNum()}</span>
@@ -50,11 +46,11 @@
 			</c:when>
 			<c:when test="${menu eq 'myPay'}">
 				<h2>후원 기록</h2>
-				<div class="info-box" id="payList-box">
+				<div class="info-box" id="list-box">
 					<c:choose>
 						<c:when test="${not empty requestScope.payList }">
 							<c:set var="payList" value="${requestScope.payList }" />
-							<c:forEach var="pay" items="${cardList }">
+							<c:forEach var="pay" items="${payList }">
 								<div class="pay-item">
 									<c:set var="do_loof" value="true" />
 									<c:set var="moonNum" value="${pay.getMoonNum() }" />
@@ -77,7 +73,7 @@
 									<span>결제 카드 : ${pay.getCardNum() }</span>
 									<span>후원 금액 : ${pay.getPayMoney() }</span>
 									<span>후원일 : ${pay.getPayDay() }</span>
-									<span class="psyMsg">
+									<span class="msg">
 										등록 메세지<br>
 										${pay.getMessage() }
 									</span>
@@ -92,12 +88,33 @@
 			</c:when>
 			<c:when test="${menu eq 'myMsg'}">
 				<h2>내가 쓴 댓글</h2>
-				<div class="info-box" id="commentList-box">
+				<div class="info-box" id="list-box">
 					<c:choose>
 						<c:when test="${not empty requestScope.commentList }">
 							<c:set var="commentList" value="${requestScope.commentList }" />
 							<c:forEach var="comment" items="${commentList }">
-								<span></span>
+								<c:set var="do_loof" value="true" />
+								<c:set var="moonNum" value="${comment.getMoonNum() }" />
+								<c:set var="num" value="${fn:substringAfter(moonNum, '0')}" /> 
+								<c:set var="do_loof" value="true" /> 
+								<c:forEach var="item" begin="1" end="${fn:length(num)}">
+									<c:if test="${do_loof eq true }">
+										<c:choose>
+											<c:when test="${fn:startsWith(num, '0')}">
+												<c:set var="num" value="${fn:substringAfter(num, '0')}" />
+											</c:when>
+											<c:otherwise>
+												<c:set var="do_loof" value="false" />
+											</c:otherwise>
+										</c:choose>
+									</c:if>
+								</c:forEach>
+								<span>모금 회차 : ${num }회</span>
+								<span>작성일 : ${comment.getCommentCreatedAt() }</span>
+								<span class="msg">
+									등록 메세지<br>
+									${comment.getCommentContent() }
+								</span>
 							</c:forEach>
 						</c:when>
 						<c:otherwise>
@@ -108,5 +125,11 @@
 			</c:when>
 		</c:choose>
 	</div>
+		<script>
+		$(document).ready(function() {
+			const mypageContentHeight = $('.mypage-content').height();
+			console.log('mypage-content 높이:', mypageContentHeight);
+		});
+	</script>
 </body>
 </html>

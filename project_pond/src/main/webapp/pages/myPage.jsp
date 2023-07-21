@@ -23,7 +23,7 @@
 					<ul>
 						<li id="myInfo">내 정보</li>
 						<li id="update">비밀번호 변경</li>
-						<li id="addCard">결제 수단 추가</li>
+						<!--  <li id="addCard">결제 수단 추가</li>-->
 						<li id="myCardInfo">내 카드 정보</li>
 						<li id="myPay">후원 기록</li>
 						<li id="myMsg">내가 쓴 댓글</li>
@@ -36,5 +36,6 @@
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 	<script src="../resources/script/mypageMenu.js"></script>
+
 </body>
 </html>
