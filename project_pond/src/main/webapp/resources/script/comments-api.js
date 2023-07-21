@@ -5,7 +5,16 @@ $('#msg-box').click(e => {
 function addComment() {
 	const moonNum = $('#moonNum').val();
 	const msgBoxValue=$('#msg-box').val();
-	const id = $('#logVal').val();
+	let id = $('#logVal');
+	
+	console.log(id);
+
+	if(id.length===0){
+		id = "";
+	}else{
+		id = $('#logVal').val();
+	}
+	
 
 	$.ajax({
 		"method": "POST",
