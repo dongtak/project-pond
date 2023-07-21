@@ -14,6 +14,8 @@ $('.aside-menu li').on('click', function() {
 		case 'myInfo':
         // 후원 기록
 		case 'myPay':
+		// 내 카드 정보
+		case 'myCardInfo':
 			url=`/showMyInfo?menu=${liId}`;
 			break;
         case 'update':
