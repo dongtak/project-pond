@@ -109,9 +109,7 @@ function showLogin() {//로그인창 보이기
 	 
 
 	function checkNumber(input) {
-  // Ensure input is defined and has a value property
   if (input && input.value) {
-    // Regular expression to remove non-numeric characters
     input.value = input.value.replace(/[^0-9]/g, '');
   }
 }
@@ -158,10 +156,10 @@ function checkMessage() {
         var lid = document.getElementById("lid");
         var cs = document.getElementById("cs");
       
-		const donorNameInput = document.getElementById("donorNameInput").value.trim();
+		var donorNameInput = document.getElementById("donorNameInput").value.trim();
 		var nameError = document.getElementById("nameError");
 		var moneyInput = document.getElementById("moneyInput");
-		const messageInput = document.getElementById("messageInput");
+		var messageInput = document.getElementById("messageInput");
 		var moneyError = document.getElementById("moneyError");
 		var msgError = document.getElementById("msgError");
     	

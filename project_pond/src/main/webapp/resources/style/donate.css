@@ -132,7 +132,13 @@
 }
 
 .donateBtn{
-	
+	width: 100px;
+height: 30px;
+border-radius: 15px;
+margin: 5px;
+background: #dce8e1;
+	box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+
 }
 
 .money-btn button{
