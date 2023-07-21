@@ -16,8 +16,9 @@
 <c:set var="moonMenu" value="${requestScope.moonMenu }"/>
 <c:set var="pageNum" value="${requestScope.pageNum }"/>
 <c:set var="count" value="${requestScope.count }"/>
-<c:set var="pageSize" value="8"/>
+<c:set var="pageSize" value="4"/>
 <c:set var="startRow" value="${(pageNum-1)*pageSize+1}"/>
+<fmt:parseNumber var="startRow" value="${startRow }" integerOnly="true" />
 <c:set var="pageBlock" value="5"/>
 	<div id="wrap">
 		<jsp:include page="/header"></jsp:include>
@@ -69,7 +70,38 @@
 				<div class="page">
 					<c:if test="${count!=0 }">
 						<c:if test="${moonMenu eq 'new' || moonMenu eq 'done'  }">
-							
+							<c:set var="pageCount" value="${count / pageSize + (count % pageSize == 0 ? 0 : 1) }" />
+							<fmt:parseNumber var="pageCount" value="${pageCount }" integerOnly="true" />
+
+							<c:set var="temp1" value="${(pageNum - 1) / pageBlock}" />
+							<fmt:parseNumber value="${temp1}" var="temp2" type="number"
+								integerOnly="true" />
+							<c:set var="startPage" value="${temp2 * pageBlock + 1}" />
+
+							<c:set var="endPage" value="${startPage + pageBlock-1 }" />
+							<fmt:parseNumber value="${endPage }" var="endPage" integerOnly="true" />
+							<c:if test="${endPage > pageCount}">
+								<c:set var="endPage" value="${pageCount}" />
+							</c:if>
+							<c:if test="${startPage>pageBlock }">
+								<div>
+									<a href="articleHomeAction?moonNum=${moonNum }&pageNum=${startPage - pageBlock}">&lt;</a>
+								</div>
+							</c:if>
+							<c:forEach begin="${startPage }" end="${endPage }" varStatus="vs">
+								<div>
+									<a href="articleHomeAction?moonNum=${moonNum }&pageNum=${vs.index }"
+										<c:if test="${vs.index==pageNum }">
+										class="currPage"
+									</c:if>>${vs.index }
+									</a>
+								</div>
+							</c:forEach>
+							<c:if test="${endPage < pageCount }">
+								<div>
+									<a href="articleHomeAction?moonNum=${moonNum }&pageNum=${startPage+pageBlock }">&gt;</a>
+								</div>
+							</c:if>
 						</c:if>
 					</c:if>
 				</div>
@@ -78,5 +110,14 @@
 		<jsp:include page="/footer"></jsp:include>
 	</div>
 	<script type="text/javascript" src="resources/script/moonMenu.js"></script>
+	<script>
+		console.log("pageBlock : ",${pageBlock});
+		console.log("count : ",${count});
+		console.log("pageNum : ",${pageNum});
+		console.log("startRow : ",${startRow});
+		console.log("startPage : ",${startPage});
+		console.log("pageCount : ",${pageCount});
+		console.log("endPage : ",${endPage});
+	</script>
 </body>
 </html>

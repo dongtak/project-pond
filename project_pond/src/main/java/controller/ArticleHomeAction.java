@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.article.ArticleDao;
-import model.article.ArticleRequestDto;
 import model.fullmoon.FullMoonDao;
 import model.fullmoon.FullMoonResponseDto;
 
@@ -46,7 +43,7 @@ public class ArticleHomeAction extends HttpServlet {
 		}
 		
 		// 한 페이지에서 보여 줄 게시글 수
-		int pageSize = 8;
+		int pageSize = 4;
 		// 현재 페이지
 		int currentPage = Integer.parseInt(pageNum);
 		// 첫 행 번호
@@ -60,6 +57,8 @@ public class ArticleHomeAction extends HttpServlet {
 		request.setAttribute("moonList", list);
 		
 		request.getRequestDispatcher("articleHome").forward(request, response);
+		
+		
 		
 	}
 
