@@ -12,10 +12,6 @@ $('.aside-menu li').on('click', function() {
 	switch (liId) {
 		// 내 정보
 		case 'myInfo':
-        // 카드 정보	
-		case 'myCardInfo':
-        // 내가 쓴 댓글
-		case 'myMsg':
         // 후원 기록
 		case 'myPay':
 			url=`/showMyInfo?menu=${liId}`;
@@ -23,10 +19,6 @@ $('.aside-menu li').on('click', function() {
         case 'update':
 		// 비밀번호 수정
 			url="/UpdateUser";
-            break;
-        case 'addCard':
-        // 결제 수단 추가
-        	url="";
             break;
         case 'delete':
 		// 회원 탈퇴
