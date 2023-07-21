@@ -120,6 +120,7 @@ if (msg.length > 100) {
 	    $fireflypack.append(firefly);
 	    flyTheFirefly(firefly);
 	}
+	
 function flyTheFirefly(elm) {
 	var flyTl = gsap.timeline();
 	var fadeTl = gsap.timeline({
