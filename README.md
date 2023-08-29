@@ -10,7 +10,6 @@
 - JSTL
 - MySQL
 
-
 ### 작업기간
 -2023.07.03~2023.07.21(3주)
 
@@ -19,33 +18,28 @@
 
 ### 기능 및 담당자
 
-1. 팀장 [조동현](mailto:sourcefilmer@gmail.com)([Github]())
-   
- 메인페이지
-    - 반딧불이 구현
-    - 회원가입 (아이디 중복체크 및 유효성검사)
-    - 이메일 인증 API 구현
-    
-3. 서기 [이서영](mailto:tjdud2249@gmail.com)([Github](https://github.com/joobal521))
-  회원관리
-    - 로그인
-    - 회원가입 (아이디 중복체크 및 유효성검사)
-    - 이메일 인증 API 구현
-    
-  게시글 댓글
-    - 로그인 유무 확인
-    - 로그인 시 작성 기능
+팀장 [조동현](mailto:sourcefilmer@gmail.com)([Github](https://github.com/dongtak))
+    <h5>메인페이지</h5>
+    - 반딧불이 구현 (무작위 배치 및 메세지 출력)<br>
+    - 결제 페이지 구현<br>
+<br>
+서기 [이서영](mailto:tjdud2249@gmail.com)([Github](https://github.com/joobal521))
+    <h5>회원관리</h5>
+    - 로그인<br>
+    - 회원가입 (아이디 중복체크 및 유효성검사)<br>
+    - 이메일 인증 API 구현<br>
+    <h5>게시글 댓글</h5>
+    - 로그인 유무 확인<br>
+    - 로그인 시 작성 기능<br>
 
 
-
-3. 팀원 [조수빈](mailto:cc030110@gmail.com)([Github](https://github.com/cc030110))
-  마이페이지
-    - 비밀번호 변경
-    - 회원정보 조회
-    - 후원내역 조회
-    - 회원탈퇴
-
-  히스토리 페이지
-    - 카테고리 별 게시글 조회 기능
-    - 페이지 기능 구현
+팀원 [조수빈](mailto:cc030110@gmail.com)([Github](https://github.com/cc030110))
+    <h5>마이페이지</h5>
+    - 비밀번호 변경<br>
+    - 회원정보 조회<br>
+    - 후원내역 조회<br>
+    - 회원탈퇴<br>
+    <h5>히스토리 페이지</h5>
+    - 카테고리 별 게시글 조회 기능<br>
+    - 페이지 기능 구현<br>
 
