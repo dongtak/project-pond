@@ -20,11 +20,9 @@
 ### 기능 및 담당자
 
 1. 팀장 [조동현](mailto:sourcefilmer@gmail.com)([Github]())
-  메인페이지
-
-   -반딧불이 프론트앤드 구현
-
-   -후원금 결제 페이지 구현
+   메인페이지
+     -반딧불이 프론트앤드 구현
+     -후원금 결제 페이지 구현
 
 3. 서기 [이서영](mailto:tjdud2249@gmail.com)([Github](https://github.com/joobal521))
   회원관리
