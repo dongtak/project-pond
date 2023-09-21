@@ -15,13 +15,36 @@ $('#id').on('change', function() {
 });
 
 
-$('#password').on('change', function() {
+/*$('#password').on('change', function() {
 	//최소한 하나의 특수문자를 포함하고, 8자 이상 20자 이하
 	if ($('#password').val() !== "" && $('#password').val().match(/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/)) {
 		$('#error-password').hide();
 		$('#password').css('border-color', '#1E3269');
-	}
-});
+	}else {
+        $('#error-exclamation').show();  // 비밀번호 유효성 검사를 통과하지 못한 경우 에러 메시지를 표시합니다.
+        $('#password').css('border-color', 'red');  // 입력 필드 테두리를 빨간색으로 변경합니다.
+    }
+});*/
+$('#password').on('change', function() {
+        var password = $('#password').val();
+        if (password === "") {
+            $('#error-password').show();
+            $('#error-password').text('비밀번호: 필수 정보입니다.');
+            $('#error-exclamation').hide();
+            $('#password').css('border-color', 'red');
+        } else if (password.match(/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/)) {
+            $('#error-password').hide();
+            $('#error-exclamation').hide();
+            $('#password').css('border-color', '#1E3269');
+        } else {
+            $('#error-password').hide();
+            $('#error-exclamation').show();
+            $('#error-exclamation').text('비밀번호: 최소한 하나의 특수문자를 포함하고, 8자 이상 20자 이하여야입니다.');
+            $('#password').css('border-color', 'red');
+        }
+    });
+
+
 
 $('#new-password').on('change', function() {
 	if($('#new-password').val() !== "") {
@@ -92,8 +115,8 @@ function checkValue(htmlForm) {
 		check = false;
 	}
 	else if(email === "") {
-		$('#error-password').show();
-		$('#password').css('border-color', 'red');
+		$('#error-email').show();
+		$('#eamil').css('border-color', 'red');
 		check = false;
 	}
 	else if(name === "") {
@@ -183,3 +206,6 @@ function checkPwd(htmlForm) {
     htmlForm.submit();
   }
 }
+
+
+
